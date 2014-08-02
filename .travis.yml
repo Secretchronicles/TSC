@@ -1,0 +1,34 @@
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+before_install:
+  # new boost packages (1.54 and 1.55)
+  - sudo add-apt-repository -y ppa:boost-latest/ppa
+  # new cmake (2.8.7 -> 2.18.11)
+  - sudo add-apt-repository -y ppa:kalakris/cmake
+  - sudo apt-get update -qq
+
+install:
+  - >
+   sudo apt-get install -qq cmake gettext bison pkg-config gperf
+   libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
+   ruby-full rake libglew-dev libpng-dev libpcre3-dev libxml++2.6-dev
+   libfreetype6-dev libdevil-dev libboost-filesystem1.54-dev libboost-chrono1.54-dev
+   libboost-thread1.54-dev
+
+before_script:
+    # pull all sub modules recursively
+  - git submodule update --init --recursive
+    # ubuntu precise does not ship a pkg-config file, fall back to FindXXX.cmake module
+  - sed 's|pkg_check_modules(SDL_TTF REQUIRED SDL_ttf)|find_package(SDL_ttf REQUIRED)|' -i smc/CMakeLists.txt
+
+script:
+  - mkdir smc/build && cd smc/build && cmake .. && make -j2 && sudo make install
