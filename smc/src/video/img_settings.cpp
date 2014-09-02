@@ -18,6 +18,7 @@
 #include "../core/math/utilities.hpp"
 #include "../core/math/size.hpp"
 #include "../core/filesystem/filesystem.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../core/global_basic.hpp"
 
 using namespace std;
@@ -292,7 +293,7 @@ bool cImage_Settings_Parser :: HandleMessage(const std::string* parts, unsigned 
                         settings_file.replace_extension(".settings");
 
                     // not found
-                    if (!fs::exists(settings_file)) {
+                    if (!pVfs->File_Exists(settings_file)) {
                         break;
                     }
 

@@ -16,6 +16,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
 
+#include "../core/filesystem/vfs.hpp"
 #include "../core/global_basic.hpp"
 #include "../core/file_parser.hpp"
 #include "../core/game_core.hpp"
@@ -40,9 +41,9 @@ cFile_parser :: ~cFile_parser(void)
 
 bool cFile_parser :: Parse(const fs::path& filename)
 {
-    fs::ifstream ifs(filename, ios::in);
-
-    if (!ifs) {
+    std::istream* s = pVfs->Open_Stream(filename);
+    if(!s)
+    {
         cerr << "Could not load data file : " << path_to_utf8(filename) << endl;
         return 0;
     }
@@ -52,11 +53,12 @@ bool cFile_parser :: Parse(const fs::path& filename)
     std::string line;
     unsigned int line_num = 0;
 
-    while (std::getline(ifs, line)) {
+    while (std::getline(*s, line)) {
         line_num++;
         Parse_Line(line, line_num);
     }
 
+    delete s;
     return 1;
 }
 

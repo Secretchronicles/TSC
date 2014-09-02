@@ -199,6 +199,7 @@ namespace SMC {
 // Returns the entire content of the nonbinary file `file'.
 // This function does not call close() on `file'.
     std::string readfile(boost::filesystem::ifstream& file);
+    std::string readfile(std::istream& file);
 
 #ifdef _DEBUG
     template <typename T>

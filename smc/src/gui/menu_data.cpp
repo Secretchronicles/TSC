@@ -36,6 +36,7 @@
 #include "../core/filesystem/filesystem.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../core/main.hpp"
 
 using namespace std;
@@ -497,7 +498,7 @@ void cMenu_Start :: Get_Levels(fs::path dir, CEGUI::colour color)
     CEGUI::Listbox* listbox_levels = static_cast<CEGUI::Listbox*>(CEGUI::WindowManager::getSingleton().getWindow("listbox_levels"));
 
     // get all files
-    vector<fs::path> lvl_files = Get_Directory_Files(dir, ".smclvl", false, false);
+    vector<fs::path> lvl_files = pVfs->Get_Directory_Files(dir, ".smclvl", false, false);
 
     // list all available levels
     for (vector<fs::path>::iterator itr = lvl_files.begin(); itr != lvl_files.end(); ++itr) {

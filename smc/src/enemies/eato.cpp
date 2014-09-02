@@ -22,6 +22,7 @@
 #include "../core/filesystem/filesystem.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../core/xml_attributes.hpp"
 #include "../core/global_basic.hpp"
 
@@ -108,7 +109,7 @@ void cEato :: Set_Image_Dir(fs::path dir)
     }
 
     // if not image directory
-    if (!File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/1.settings", true)) && !File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/1.png"))) {
+    if (!pVfs->File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/1.settings", true)) && !File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/1.png"))) {
         cerr    << "Warning: Eato image files not found; does the eato directory "
                 << path_to_utf8(dir) << " exist?" << endl;
         return;

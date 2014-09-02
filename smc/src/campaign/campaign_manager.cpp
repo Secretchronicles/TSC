@@ -20,6 +20,7 @@
 #include "../core/filesystem/filesystem.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../core/i18n.hpp"
 #include "../core/global_basic.hpp"
 
@@ -84,8 +85,8 @@ void cCampaign_Manager :: Load(void)
         Delete_All();
     }
 
-    vector<fs::path> user_files = Get_Directory_Files(pPackage_Manager->Get_User_Campaign_Path(), ".smccpn", false, false);
-    vector<fs::path> game_files = Get_Directory_Files(pPackage_Manager->Get_Game_Campaign_Path(), ".smccpn", false, false);
+    vector<fs::path> user_files = pVfs->Get_Directory_Files(pPackage_Manager->Get_User_Campaign_Path(), ".smccpn", false, false);
+    vector<fs::path> game_files = pVfs->Get_Directory_Files(pPackage_Manager->Get_Game_Campaign_Path(), ".smccpn", false, false);
 
     for (vector<fs::path>::iterator itr = user_files.begin(); itr != user_files.end(); ++itr) {
         fs::path user_campaign_filename = (*itr);
@@ -126,7 +127,7 @@ void cCampaign_Manager :: Load(void)
 
 cCampaign* cCampaign_Manager :: Load_Campaign(const fs::path& filename)
 {
-    if (!File_Exists(filename)) {
+    if (!pVfs->File_Exists(filename)) {
         cerr << "Error : Campaign loading failed : " << path_to_utf8(filename) << endl;
         return NULL;
     }

@@ -29,6 +29,7 @@
 #include "../core/filesystem/filesystem.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../gui/spinner.hpp"
 #include "../core/global_basic.hpp"
 
@@ -1058,7 +1059,7 @@ cVideo::cSoftware_Image cVideo :: Load_Image_Helper(boost::filesystem::path file
         if (settings_file.extension() != fs::path(".settings"))
             settings_file.replace_extension(".settings");
 
-        if (fs::exists(settings_file) && fs::is_regular_file(settings_file)) {
+        if (pVfs->File_Exists(settings_file)) {
             settings = pSettingsParser->Get(settings_file);
 
             // With packages support, an image loaded from a user path would have a relative path
@@ -1073,14 +1074,17 @@ cVideo::cSoftware_Image cVideo :: Load_Image_Helper(boost::filesystem::path file
                 img_filename_cache = m_imgcache_dir / rel; // Why add .png here? Should be in the return value of fs::relative() anyway.
 
             // check if image cache file exists
-            if (!img_filename_cache.empty() && fs::exists(img_filename_cache) && fs::is_regular_file(img_filename_cache))
-                sdl_surface = IMG_Load(path_to_utf8(img_filename_cache).c_str());
+            if (!img_filename_cache.empty() && pVfs->File_Exists(img_filename_cache)) {
+                SDL_RWops* ops = pVfs->Open_RWops(img_filename_cache);
+                if(ops)
+                    sdl_surface = IMG_Load_RW(ops, 1);
+            }
             // image given in base settings
             else if (!settings->m_base.empty()) {
                 // use current directory
                 fs::path img_filename = filename.parent_path() / settings->m_base;
 
-                if (!exists(img_filename)) {
+                if (!pVfs->File_Exists(img_filename)) {
                     // use data dir
                     img_filename = settings->m_base;
 
@@ -1091,14 +1095,18 @@ cVideo::cSoftware_Image cVideo :: Load_Image_Helper(boost::filesystem::path file
                         img_filename = fs::absolute(img_filename, pResource_Manager->Get_Game_Pixmaps_Directory());
                 }
 
-                sdl_surface = IMG_Load(path_to_utf8(img_filename).c_str());
+                SDL_RWops* ops = pVfs->Open_RWops(img_filename);
+                if(ops)
+                    sdl_surface = IMG_Load_RW(ops, 1);
             }
         }
     }
 
     // if not set in image settings and file exists
-    if (!sdl_surface && exists(filename) && (!settings || settings->m_base.empty())) {
-        sdl_surface = IMG_Load(path_to_utf8(filename).c_str());
+    if (!sdl_surface && pVfs->File_Exists(filename) && (!settings || settings->m_base.empty())) {
+        SDL_RWops* ops = pVfs->Open_RWops(filename);
+        if(ops)
+            sdl_surface = IMG_Load_RW(ops, 1);
     }
 
     if (!sdl_surface) {

@@ -149,6 +149,7 @@ find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(Gettext)
 find_package(BISON REQUIRED)
+find_package(PhysFS REQUIRED)
 find_package(Freetype REQUIRED)
 
 if (WIN32)
@@ -202,6 +203,7 @@ include_directories(
 #  ${IL_INCLUDE_DIR}
   ${PCRE_INCLUDE_DIRS}
   ${LibXmlPP_INCLUDE_DIRS}
+#  ${PhysFS_INCLUDE_DIRS}
   ${FREETYPE_INCLUDE_DIRS}
   )
 
@@ -302,6 +304,7 @@ if (WIN32)
     ${PCRE_STATIC_LIBRARIES}
     ${LibXmlPP_STATIC_LIBRARIES}
     ${PNG_STATIC_LIBRARIES}
+    ${PhysFS_LIBRARIES}
     ${FREETYPE_LIBRARIES}
     intl
     ws2_32
@@ -327,6 +330,7 @@ else()
     ${PCRE_LIBRARIES}
     ${LibXmlPP_LIBRARIES}
     ${PNG_LIBRARIES}
+    ${PhysFS_LIBRARIES}
     ${FREETYPE_LIBRARIES}
     dl
     )

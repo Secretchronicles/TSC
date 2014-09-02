@@ -25,13 +25,19 @@ namespace SMC {
     struct PackageInfo {
         PackageInfo();
 
-        bool hidden;
+        // Internally set properties
+        bool found_user;
+        bool found_game;
+        boost::filesystem::path game_data_dir;
+        boost::filesystem::path user_data_dir;
+
+        // Package properties
         std::string name;
+
+        bool hidden;
         std::string desc;
         std::string menu_level;
         std::vector<std::string> dependencies;
-        boost::filesystem::path game_data_dir;
-        boost::filesystem::path user_data_dir;
     };
 
     /* *** *** *** *** *** cPackage_Loader *** *** *** *** *** *** *** *** *** *** *** *** */
@@ -65,8 +71,6 @@ namespace SMC {
         cPackage_Manager(void);
         ~cPackage_Manager(void);
 
-        // Scan the available list of packages
-        void Scan_Packages(void);
         // Get the list of known packages
         std::vector<PackageInfo> Get_Packages(void);
         PackageInfo Get_Package(const std::string& name);
@@ -112,10 +116,11 @@ namespace SMC {
 
 
     private:
-        void Scan_Packages_Helper(boost::filesystem::path base, boost::filesystem::path path);
+        void Scan_Packages(boost::filesystem::path base, boost::filesystem::path path, bool user_packages);
+        void Load_Package_Info( const boost::filesystem::path& dir, bool user_package );
+        void Fix_Package_Paths( void );
         void Build_Search_Path(void);
         void Build_Search_Path_Helper(const std::string& package, std::vector<std::string>& processed);
-        PackageInfo Load_Package_Info(const std::string& package);
 
         boost::filesystem::path Find_Reading_Path(boost::filesystem::path dir, boost::filesystem::path resource, std::vector<std::string> extra_ext);
         boost::filesystem::path Find_Relative_Path(boost::filesystem::path dir, boost::filesystem::path path);
@@ -128,7 +133,7 @@ namespace SMC {
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
-// Package Manager
+    // Package Manager
     extern cPackage_Manager* pPackage_Manager;
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

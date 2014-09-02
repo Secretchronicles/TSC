@@ -1,5 +1,6 @@
 #include "../video/gl_surface.hpp"
 #include "../core/filesystem/resource_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "overworld_loader.hpp"
 #include "overworld_description_loader.hpp"
 #include "overworld.hpp"
@@ -34,7 +35,11 @@ cOverworld* cOverworldLoader::Get_Overworld()
 void cOverworldLoader::parse_file(fs::path filename)
 {
     m_worldfile = filename;
-    xmlpp::SaxParser::parse_file(path_to_utf8(m_worldfile));
+    std::istream* s = pVfs->Open_Stream(filename);
+    if(s) {
+        xmlpp::SaxParser::parse_stream(*s);
+        delete s;
+    }
 }
 
 void cOverworldLoader::on_start_document()

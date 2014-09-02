@@ -945,6 +945,19 @@ std::string readfile(boost::filesystem::ifstream& file)
     return content;
 }
 
+std::string readfile(std::istream& file)
+{
+	std::string content;
+	std::string line;
+	while(!file.eof()) {
+		std::getline(file, line);
+		content.append(line);
+		content.append("\n");
+	}
+
+	return content;
+}
+
 /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
 } // namespace SMC

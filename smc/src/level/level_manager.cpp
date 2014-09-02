@@ -24,6 +24,7 @@
 #include "../level/level_editor.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../input/mouse.hpp"
 #include "../core/global_basic.hpp"
 
@@ -168,7 +169,7 @@ fs::path cLevel_Manager :: Get_Path(const std::string& levelname, bool check_onl
     // use new file type as default
     user_filename.replace_extension(".smclvl");
 
-    if (File_Exists(user_filename)) {
+    if (pVfs->File_Exists(user_filename)) {
         // found
         return user_filename;
     }
@@ -176,7 +177,7 @@ fs::path cLevel_Manager :: Get_Path(const std::string& levelname, bool check_onl
     // use old file type
     user_filename.replace_extension(".txt");
 
-    if (File_Exists(user_filename)) {
+    if (pVfs->File_Exists(user_filename)) {
         // found
         return user_filename;
     }
@@ -187,7 +188,7 @@ fs::path cLevel_Manager :: Get_Path(const std::string& levelname, bool check_onl
         // use new file type
         game_filename.replace_extension(".smclvl");
 
-        if (File_Exists(game_filename)) {
+        if (pVfs->File_Exists(game_filename)) {
             // found
             return game_filename;
         }
@@ -195,7 +196,7 @@ fs::path cLevel_Manager :: Get_Path(const std::string& levelname, bool check_onl
         // use old file type
         game_filename.replace_extension(".txt");
 
-        if (File_Exists(game_filename)) {
+        if (pVfs->File_Exists(game_filename)) {
             // found
             return game_filename;
         }

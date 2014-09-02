@@ -16,6 +16,7 @@
 #include "../core/global_basic.hpp"
 #include "../core/game_core.hpp"
 #include "../core/main.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
 #include "../core/filesystem/filesystem.hpp"
@@ -173,7 +174,7 @@ int main(int argc, char** argv)
     }
 
     // initialize everything
-    Init_Game();
+    Init_Game(argv[0]);
 
     // command line level entering
     if (argc > 2 && (arguments[1] == "--level" || arguments[1] == "-l") && !arguments[2].empty()) {
@@ -222,13 +223,14 @@ int main(int argc, char** argv)
 // namespace is set here to exclude main() from it
 namespace SMC {
 
-void Init_Game(void)
+void Init_Game( const char* argv0 )
 {
     // init random number generator
     srand(static_cast<unsigned int>(time(NULL)));
 
     // Init Stage 1 - core classes
     debug_print("Initializing resource manager and core classes\n");
+    pVfs = new cVfs(argv0);
     pResource_Manager = new cResource_Manager();
     pPackage_Manager = new cPackage_Manager();
     pVideo = new cVideo();
@@ -466,6 +468,11 @@ void Exit_Game(void)
     if (pResource_Manager) {
         delete pResource_Manager;
         pResource_Manager = NULL;
+    }
+	
+    if(pVfs) {
+        delete pVfs;
+        pVfs = NULL;
     }
 
     char* last_sdl_error = SDL_GetError();

@@ -1,3 +1,4 @@
+#include "../core/filesystem/vfs.hpp"
 #include "overworld_layer_loader.hpp"
 #include "world_layer.hpp"
 #include "overworld.hpp"
@@ -40,7 +41,11 @@ cOverworld* cOverworldLayerLoader::Get_Overworld()
 void cOverworldLayerLoader::parse_file(fs::path filename)
 {
     m_layerfile = filename;
-    xmlpp::SaxParser::parse_file(path_to_utf8(filename));
+    std::istream* s = pVfs->Open_Stream(filename);
+    if(s) {
+        xmlpp::SaxParser::parse_stream(*s);
+        delete s;
+    }
 }
 
 void cOverworldLayerLoader::on_start_document()

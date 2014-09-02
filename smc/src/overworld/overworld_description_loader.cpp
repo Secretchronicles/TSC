@@ -1,3 +1,4 @@
+#include "../core/filesystem/vfs.hpp"
 #include "overworld_description_loader.hpp"
 #include "overworld.hpp"
 #include "../core/global_basic.hpp"
@@ -32,7 +33,11 @@ cOverworld_description* cOverworldDescriptionLoader::Get_Overworld_Description()
 void cOverworldDescriptionLoader::parse_file(fs::path filename)
 {
     m_descfile = filename;
-    xmlpp::SaxParser::parse_file(path_to_utf8(filename));
+    std::istream* s = pVfs->Open_Stream(filename);
+    if(s) {
+        xmlpp::SaxParser::parse_stream(*s);
+        delete s;
+    }
 }
 
 void cOverworldDescriptionLoader::on_start_document()

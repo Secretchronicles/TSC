@@ -21,6 +21,7 @@
 #include "../core/math/utilities.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../input/mouse.hpp"
 #include "../video/gl_surface.hpp"
 #include "../core/i18n.hpp"
@@ -149,7 +150,7 @@ void cFlyon :: Set_Image_Dir(fs::path dir)
     }
 
     // if not image directory
-    if (!File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/closed_1.settings", true)) && !File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/closed_1.png"))) {
+    if (!pVfs->File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/closed_1.settings", true)) && !File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/closed_1.png"))) {
         cerr    << "Warning: Flyon image files not found; does the flyon directory "
                 << path_to_utf8(dir) << " exist?" << endl;
         return;

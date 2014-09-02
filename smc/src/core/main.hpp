@@ -22,7 +22,7 @@ namespace SMC {
 
 // Initialize everything, called before everything else
 // Seed random numbers, init SDL, OpenGL, CEGUI, load preferences, and create globals
-    void Init_Game(void);
+    void Init_Game(const char* argv0);
 
 // Save preferences, delete globals, and closes SDL
     void Exit_Game(void);

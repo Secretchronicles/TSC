@@ -1,3 +1,4 @@
+#include "../core/filesystem/vfs.hpp"
 #include "campaign_loader.hpp"
 #include "../core/global_basic.hpp"
 
@@ -31,7 +32,12 @@ cCampaign* cCampaignLoader::Get_Campaign()
 void cCampaignLoader::parse_file(boost::filesystem::path filename)
 {
     m_campaignfile = filename;
-    xmlpp::SaxParser::parse_file(path_to_utf8(filename));
+    std::istream* s = pVfs->Open_Stream(filename);
+    if(s)
+    {
+        xmlpp::SaxParser::parse_stream(*s);
+        delete s;
+    }
 }
 
 void cCampaignLoader::on_start_document()

@@ -23,6 +23,7 @@
 #include "../core/filesystem/filesystem.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../core/framerate.hpp"
 #include "../audio/audio.hpp"
 #include "../gui/generic.hpp"
@@ -560,7 +561,7 @@ bool cLevel_Settings :: Update_BG_Image(const CEGUI::EventArgs& event)
     fs::path bg_filename = pPackage_Manager->Get_Pixmap_Reading_Path(bg_name);
 
     // invalid file
-    if (!File_Exists(bg_filename)) {
+    if (!pVfs->File_Exists(bg_filename)) {
         // clear image
         bg_filename.clear();
     }

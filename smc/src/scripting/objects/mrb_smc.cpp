@@ -3,6 +3,7 @@
 #include "../../core/property_helper.hpp"
 #include "../../core/filesystem/resource_manager.hpp"
 #include "../../core/filesystem/package_manager.hpp"
+#include "../../core/filesystem/vfs.hpp"
 #include "../../core/framerate.hpp"
 
 /**
@@ -49,14 +50,14 @@ static mrb_value Require(mrb_state* p_state, mrb_value self)
 
     // Open the MRuby file for reading
     fs::path scriptfile = pPackage_Manager->Get_Scripting_Path(cpackage ? cpackage : "", spath);
-    fs::ifstream file(scriptfile);
+    std::istream* s = pVfs->Open_Stream(scriptfile);
     debug_print("require: Loading '%s'\n", path_to_utf8(scriptfile).c_str());
-    if (!file.is_open())
+    if (!s)
         mrb_raisef(p_state, MRB_RUNTIME_ERROR(p_state), "Cannot open file '%s' for reading", scriptfile.generic_string().c_str());
 
     // Read it
-    std::string code = readfile(file);
-    file.close();
+    std::string code = readfile(*s);
+    delete s;
 
     // Create our context for exception handling
     mrbc_context* p_context = mrbc_context_new(p_state);

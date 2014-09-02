@@ -3,6 +3,7 @@
 #include "../core/sprite_manager.hpp"
 #include "../core/property_helper.hpp"
 #include "../core/filesystem/resource_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../video/font.hpp"
 #include "../objects/enemystopper.hpp"
 #include "../objects/level_exit.hpp"
@@ -68,7 +69,11 @@ cLevel* cLevelLoader::Get_Level()
 void cLevelLoader::parse_file(boost::filesystem::path filename)
 {
     m_levelfile = filename;
-    xmlpp::SaxParser::parse_file(path_to_utf8(filename));
+    std::istream* s = pVfs->Open_Stream(filename);
+    if(s) {
+        xmlpp::SaxParser::parse_stream(*s);
+        delete s;
+    }
 }
 
 void cLevelLoader::on_start_document()

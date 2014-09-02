@@ -19,6 +19,7 @@
 #include "../core/filesystem/filesystem.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
+#include "../core/filesystem/vfs.hpp"
 #include "../overworld/world_editor.hpp"
 #include "../input/mouse.hpp"
 #include "../video/animation.hpp"
@@ -87,7 +88,7 @@ void cOverworld_Manager :: Init(void)
 void cOverworld_Manager :: Load_Dir(const fs::path& dir, bool user_dir /* = false */)
 {
     // set world directory
-    vector<fs::path> subdirs = Get_Directory_Files(dir, "", true, false);
+    vector<fs::path> subdirs = pVfs->Get_Directory_Files(dir, "", true, false);
     std::sort(subdirs.begin(), subdirs.end());
 
     for (vector<fs::path>::iterator curdir = subdirs.begin(); curdir != subdirs.end(); ++curdir) {
@@ -95,7 +96,7 @@ void cOverworld_Manager :: Load_Dir(const fs::path& dir, bool user_dir /* = fals
             fs::path current_dir = *curdir;
 
             // only directories with an existing description
-            if (File_Exists(current_dir / "description.xml")) {
+            if (pVfs->File_Exists(current_dir / "description.xml")) {
                 cOverworld* overworld = Get_from_Path(current_dir);
 
                 // already available
