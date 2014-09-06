@@ -16,6 +16,7 @@
 #include "../objects/spinbox.hpp"
 #include "../core/framerate.hpp"
 #include "../core/game_core.hpp"
+#include "../user/savegame.hpp"
 
 namespace SMC {
 
@@ -76,6 +77,33 @@ void cSpinBox :: Load_From_XML(XmlAttributes& attributes)
 xmlpp::Element* cSpinBox :: Save_To_XML_Node(xmlpp::Element* p_element)
 {
     return cBaseBox::Save_To_XML_Node(p_element);
+}
+
+void cSpinBox :: Load_From_Savegame(cSave_Level_Object* save_object)
+{
+    if(save_object->exists("spin_counter")) {
+        // Let Activate do the work, then just set the counter
+        Activate();
+        m_spin_counter = string_to_float(save_object->Get_Value("spin_counter"));
+    }
+}
+
+cSave_Level_Object* cSpinBox :: Save_To_Savegame(void)
+{
+    if(!m_spin)
+        return NULL;
+
+    cSave_Level_Object* save_object = new cSave_Level_Object();
+
+    // default values
+    save_object->m_type = m_type;
+    save_object->m_properties.push_back(cSave_Level_Object_Property("posx", int_to_string(static_cast<int>(m_start_pos_x))));
+    save_object->m_properties.push_back(cSave_Level_Object_Property("posy", int_to_string(static_cast<int>(m_start_pos_y))));
+
+    // spin counter
+    save_object->m_properties.push_back(cSave_Level_Object_Property("spin_counter", float_to_string(m_spin_counter)));
+
+    return save_object;
 }
 
 void cSpinBox :: Activate(void)
