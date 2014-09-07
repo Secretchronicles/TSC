@@ -42,6 +42,11 @@ namespace SMC {
         // load from stream
         virtual void Load_From_XML(XmlAttributes& attributes);
 
+        // load from savegame
+        virtual void Load_From_Savegame(cSave_Level_Object* save_object);
+        // save to savegame
+        virtual cSave_Level_Object* Save_To_Savegame(void);
+
         // Create the MRuby object for this
         virtual mrb_value Create_MRuby_Object(mrb_state* p_state)
         {
