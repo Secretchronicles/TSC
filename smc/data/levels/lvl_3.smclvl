@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <level>
   <information>
-    <property name="game_version" value="2.0.0"/>
+    <property name="game_version" value="2.1.0"/>
     <property name="engine_version" value="40"/>
-    <property name="save_time" value="1403106130"/>
+    <property name="save_time" value="1412477105"/>
   </information>
   <settings>
     <property name="lvl_author" value="SMC_Team"/>
@@ -17,6 +17,7 @@
     <property name="cam_limit_w" value="17960"/>
     <property name="cam_limit_h" value="-4600"/>
     <property name="cam_fixed_hor_vel" value="0.000000"/>
+    <property name="unload_after_exit" value="0"/>
   </settings>
   <background>
     <property name="type" value="103"/>
@@ -7671,12 +7672,12 @@
     <property name="direction" value="right"/>
   </enemy>
   <enemy>
-    <property name="posx" value="16571"/>
-    <property name="posy" value="-664"/>
-    <property name="uid" value="1081"/>
-    <property name="image" value="enemy/furball/blue/walk_1.png"/>
+    <property name="posx" value="17122"/>
+    <property name="posy" value="-669"/>
+    <property name="uid" value="1444"/>
+    <property name="image" value="enemy/furball/brown/walk_1.png"/>
     <property name="type" value="furball"/>
-    <property name="color" value="blue"/>
+    <property name="color" value="brown"/>
     <property name="direction" value="right"/>
   </enemy>
   <enemy>
@@ -7687,15 +7688,6 @@
     <property name="type" value="rokko"/>
     <property name="direction" value="right"/>
     <property name="speed" value="8.500000"/>
-  </enemy>
-  <enemy>
-    <property name="posx" value="17127"/>
-    <property name="posy" value="-668"/>
-    <property name="uid" value="1083"/>
-    <property name="image" value="enemy/furball/blue/walk_1.png"/>
-    <property name="type" value="furball"/>
-    <property name="color" value="blue"/>
-    <property name="direction" value="right"/>
   </enemy>
   <enemy>
     <property name="posx" value="12744"/>
@@ -8460,8 +8452,8 @@
     <property name="useable_count" value="-1"/>
   </box>
   <box>
-    <property name="posx" value="12785"/>
-    <property name="posy" value="-157"/>
+    <property name="posx" value="12783"/>
+    <property name="posy" value="-156"/>
     <property name="uid" value="1158"/>
     <property name="image" value="game/box/yellow/default.png"/>
     <property name="type" value="bonus"/>
@@ -10270,8 +10262,8 @@
     <property name="rot_y" value="0.000000"/>
     <property name="rot_z" value="0.000000"/>
     <property name="start_rot_z_uses_direction" value="0"/>
-    <property name="const_rot_x" value="-0.200000"/>
-    <property name="const_rot_x_rand" value="0.400000"/>
+    <property name="const_rot_x" value="0.000000"/>
+    <property name="const_rot_x_rand" value="0.000000"/>
     <property name="const_rot_y" value="0.000000"/>
     <property name="const_rot_y_rand" value="0.000000"/>
     <property name="const_rot_z" value="0.000000"/>
@@ -10559,6 +10551,39 @@
     <property name="image" value="pipes/grey/up.png"/>
     <property name="type" value="massive"/>
   </sprite>
+  <item>
+    <property name="posx" value="7827"/>
+    <property name="posy" value="-1703"/>
+    <property name="uid" value="1441"/>
+    <property name="image" value="game/items/goldpiece/red/1.png"/>
+    <property name="type" value="goldpiece"/>
+    <property name="color" value="red"/>
+  </item>
+  <item>
+    <property name="posx" value="7827"/>
+    <property name="posy" value="-1737"/>
+    <property name="uid" value="1233"/>
+    <property name="image" value="game/items/goldpiece/red/1.png"/>
+    <property name="type" value="goldpiece"/>
+    <property name="color" value="red"/>
+  </item>
+  <item>
+    <property name="posx" value="7825"/>
+    <property name="posy" value="-1770"/>
+    <property name="uid" value="1442"/>
+    <property name="image" value="game/items/goldpiece/red/1.png"/>
+    <property name="type" value="goldpiece"/>
+    <property name="color" value="red"/>
+  </item>
+  <enemy>
+    <property name="posx" value="16578"/>
+    <property name="posy" value="-665"/>
+    <property name="uid" value="1443"/>
+    <property name="image" value="enemy/furball/brown/walk_1.png"/>
+    <property name="type" value="furball"/>
+    <property name="color" value="brown"/>
+    <property name="direction" value="right"/>
+  </enemy>
   <script>SMC.require "std/climbing_box"
 
 Std::ClimbingBox.new(UIDS[1130], count: 9).attach
