@@ -72,6 +72,9 @@ SMC on Ubuntu Linux 14.04:
   libfreetype6-dev libdevil-dev libboost1.55-all-dev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Linux building is also monitored by travis-ci, a continuous integration
+service: [![Build Status](https://travis-ci.org/Secretchronicles/SMC.svg)][2]
+
 ### Windows dependencies ###
 
 * The FreeImage library.
@@ -141,7 +144,7 @@ have to even touch a Windows system in order to generate the
 executable that will run on Windows, and indeed this is how we produce
 the Windows releases. Regardless whether you compile
 from Git or from a release tarball, you will need a crosscompilation
-toolchain for that. We recommend you to use [MXE][2] for that, which
+toolchain for that. We recommend you to use [MXE][3] for that, which
 includes all dependencies necessary for building SMC. Even more, I
 (Quintus) have set up an MXE fork that contains versions that I know
 to work with SMC.
@@ -274,4 +277,5 @@ $ git submodule update
 Then continue with “Crosscompiling from a released tarball” above.
 
 [1]: http://cmake.org
-[2]: http://mxe.cc
+[2]: https://travis-ci.org/Secretchronicles/SMC
+[3]: http://mxe.cc
