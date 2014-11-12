@@ -26,281 +26,301 @@
 using namespace TSC;
 
 cBeetle::cBeetle(cSprite_Manager* p_sprite_manager)
-    : cEnemy(p_sprite_manager)
+	: cEnemy(p_sprite_manager)
 {
-    Init();
+	Init();
 }
 
 cBeetle::cBeetle(XmlAttributes& attributes, cSprite_Manager* p_sprite_manager)
-    : cEnemy(p_sprite_manager)
+	: cEnemy(p_sprite_manager)
 {
-    Init();
+	Init();
 
-    // position
-    Set_Pos(attributes.fetch<float>("posx", 0), attributes.fetch<float>("posy", 0), true);
-    // color
-    Set_Color(Get_Color_Id(attributes.fetch<std::string>("color", "blue")));
-    // direction
-    Set_Direction(Get_Direction_Id(attributes.fetch<std::string>("direction", "left")), true);
+	// position
+	Set_Pos(attributes.fetch<float>("posx", 0), attributes.fetch<float>("posy", 0), true);
+	// color
+	Set_Color(Get_Color_Id(attributes.fetch<std::string>("color", "blue")));
+	// direction
+	Set_Direction(Get_Direction_Id(attributes.fetch<std::string>("direction", "left")), true);
 
-    Update_Rotation_Hor();
+	Update_Rotation_Hor();
 }
 
 cBeetle::~cBeetle()
 {
-    //
+	//
 }
 
 void cBeetle::Init()
 {
-    m_type = TYPE_BEETLE;
-    m_pos_z = 0.092f; // Ensure this is behind cBeetleBarrage
-    m_gravity_max = 0.0f;
-    m_editor_pos_z = 0.089f;
-    m_name = "Beetle";
-    m_velx = -2.5;
-    m_rest_living_time = Get_Random_Float(150.0f, 250.0f);
-    m_start_direction = m_direction = DIR_LEFT;
-    m_generation_max_y = 0.0f;
-    m_generation_in_progress = false;
+	m_type = TYPE_BEETLE;
+	m_pos_z = 0.092f; // Ensure this is behind cBeetleBarrage
+	m_gravity_max = 0.0f;
+	m_editor_pos_z = 0.089f;
+	m_name = "Beetle";
+	m_velx = -2.5;
+	m_rest_living_time = Get_Random_Float(350.0f, 450.0f);
+	m_move_time = 40.0f;
+	m_movement_smoothness = 2.0f;
+	m_start_direction = m_direction = DIR_LEFT;
+	m_generation_max_y = 0.0f;
+	m_generation_in_progress = false;
 
-    // Select random color
-    DefaultColor ary[] = {COL_RED, COL_YELLOW, COL_GREEN, COL_BLUE, COL_VIOLET};
-    Set_Color(ary[rand() % 5]);
+	// Select random color
+	DefaultColor ary[] = {COL_RED, COL_YELLOW, COL_GREEN, COL_BLUE, COL_VIOLET};
+	Set_Color(ary[rand() % 5]);
 
-    m_state = STA_FLY;
-    Set_Direction(DIR_LEFT);
+	m_state = STA_FLY;
+	Set_Direction(DIR_LEFT);
 
-    // TODO: Own die sound
-    m_kill_sound = "enemy/gee/die.ogg";
-    m_kill_points = 100;
+	// TODO: Own die sound
+	m_kill_sound = "enemy/gee/die.ogg";
+	m_kill_points = 10;
 
-    Set_Animation(true);
-    Set_Time_All(140, true);
+	Set_Animation(true);
+	Set_Time_All(140, true);
 }
 
 cBeetle* cBeetle::Copy() const
 {
-    cBeetle* p_beetle = new cBeetle(m_sprite_manager);
-    p_beetle->Set_Pos(m_start_pos_x, m_start_pos_y);
-    p_beetle->Set_Direction(m_start_direction);
-    p_beetle->Set_Color(m_color);
-    return p_beetle;
+	cBeetle* p_beetle = new cBeetle(m_sprite_manager);
+	p_beetle->Set_Pos(m_start_pos_x, m_start_pos_y);
+	p_beetle->Set_Direction(m_start_direction);
+	p_beetle->Set_Color(m_color);
+	return p_beetle;
 }
 
 std::string cBeetle::Get_XML_Type_Name()
 {
-    return "beetle";
+	return "beetle";
 }
 
 xmlpp::Element* cBeetle::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cEnemy::Save_To_XML_Node(p_element);
+	xmlpp::Element* p_node = cEnemy::Save_To_XML_Node(p_element);
 
-    Add_Property(p_node, "direction", Get_Direction_Name(m_start_direction));
-    Add_Property(p_node, "color", Get_Color_Name(m_color));
+	Add_Property(p_node, "direction", Get_Direction_Name(m_start_direction));
+	Add_Property(p_node, "color", Get_Color_Name(m_color));
 
-    return p_node;
+	return p_node;
 }
 
 void cBeetle::DownGrade(bool force /* = false */)
 {
-    if (force) // Falling/lava death
-        Set_Rotation_Z(180.0f);
+	if (force) // Falling/lava death
+		Set_Rotation_Z(180.0f);
 
-    Set_Dead(true);
-    m_massive_type = MASS_PASSIVE;
-    m_velx = 0.0f;
-    m_vely = 0.0f;
+	Set_Dead(true);
+	m_massive_type = MASS_PASSIVE;
+	m_velx = 0.0f;
+	m_vely = 0.0f;
 }
 
 void cBeetle::Update()
 {
-    cEnemy::Update();
+	cEnemy::Update();
 
-    if (!m_valid_update || !Is_In_Range())
-        return;
+	if (!m_valid_update || !Is_In_Range())
+		return;
 
-    // This will be true if the beetle is generated from a beetle barrage
-    if (m_generation_in_progress) {
-        // Let our beetle fly upwards until the requested position is reached.
-        if (m_pos_y <= m_generation_max_y) {
-            m_generation_in_progress = false;
-            m_generation_max_y = 0.0f;
-            m_vely = 0.0f;
-            m_pos_z = 0.094f; // Ensure this is now in front of cBeetleBarrage -- looks weird if they fly behind the plant
-        }
-    }
-    else {
-        // When living time is up, die.
-        m_rest_living_time -= pFramerate->m_speed_factor;
-        if (m_rest_living_time <= 0) {
-            m_rest_living_time = 0;
-            DownGrade(true);
-        }
+	// This will be true if the beetle is generated from a beetle barrage
+	if (m_generation_in_progress) {
+		// Let our beetle fly upwards until the requested position is reached.
+		if (m_pos_y <= m_generation_max_y) {
+			m_generation_in_progress = false;
+			m_generation_max_y = 0.0f;
+			//m_vely = 0.0f;
+			m_pos_z = 0.094f; // Ensure this is now in front of cBeetleBarrage -- looks weird if they fly behind the plant
+		}
+	}
+	else {
+		// When living time is up, die.
+		m_rest_living_time -= pFramerate->m_speed_factor;
+		if (m_rest_living_time <= 0) {
+			m_rest_living_time = 0;
+			DownGrade(true);
+		}
 
-        // Make it go into random directions on random occasions
-        if (rand() % 10 > 6) {
-            m_velx = Get_Random_Float(-10.0f, 10.0f);
-            m_vely = Get_Random_Float(-10.0f, 10.0f);
+		// Make it go into random directions on random occasions
+		if (m_move_time <= 0.0f) {
+			m_move_time = 0.0f;
+			if (rand() % 500 > 495) {
+				Move_Random(2.0f);
+				// Can’t use Set_Direction, because we set m_velx ourselves.
+				// Therefore we also need to call Update_Rotation_Hor() ourselves.
+				Correct_Direction();
+				m_move_time = 20.0f;
+			}
+		}
+		else
+			m_move_time -= pFramerate->m_speed_factor;
+		
+		// We want the beetle's movement to slow down over time
+		m_velx += ((0)-m_velx)/(100 * m_movement_smoothness);
+		m_vely += ((0)-m_vely)/(100 * m_movement_smoothness);
+	}
 
-            // Can’t use Set_Direction, because we set m_velx ourselves.
-            // Therefore we also need to call Update_Rotation_Hor() ourselves.
-            if (m_velx < 0)
-                m_direction = DIR_LEFT;
-            else
-                m_direction = DIR_RIGHT;
-
-            Update_Rotation_Hor();
-        }
-    }
-
-    // This enemy is immune to both gravity and air resistance.
-    // We don’t update the velocity or gravity therefore.
-    Update_Animation();
+	// This enemy is immune to both gravity and air resistance.
+	// We don’t update the velocity or gravity therefore.
+	Update_Animation();
 }
 
 void cBeetle::Draw(cSurface_Request* p_request /* = NULL */)
 {
-    if (!m_valid_draw)
-        return;
+	if (!m_valid_draw)
+		return;
 
-    cEnemy::Draw(p_request);
+	cEnemy::Draw(p_request);
 }
 
 Col_Valid_Type cBeetle::Validate_Collision(cSprite* p_obj)
 {
-    if (p_obj->m_massive_type == MASS_MASSIVE) {
-        switch (p_obj->m_type) {
-        case TYPE_PLAYER:
-        case TYPE_BALL: // fallthru
-            return COL_VTYPE_INTERNAL;
-        default:
-            break;
-        }
-        return COL_VTYPE_NOT_VALID;
-    }
-    else
-        return COL_VTYPE_NOT_VALID;
+	if (p_obj->m_massive_type == MASS_MASSIVE) {
+		switch(p_obj->m_type) {
+		case TYPE_PLAYER:
+		case TYPE_BALL: // fallthru
+			return COL_VTYPE_INTERNAL;
+		default:
+			break;
+		}
+		return COL_VTYPE_NOT_VALID;
+	}
+	else
+		return COL_VTYPE_NOT_VALID;
 }
 
 void cBeetle::Handle_Collision_Player(cObjectCollision* p_collision)
 {
-    // invalid
-    if (p_collision->m_direction == DIR_UNDEFINED)
-        return;
+	// invalid
+	if (p_collision->m_direction == DIR_UNDEFINED)
+		return;
 
-    // We will die only when hit from the top
-    if (p_collision->m_direction == DIR_TOP && pLevel_Player->m_state != STA_FLY) {
-        pAudio->Play_Sound(m_kill_sound);
-        DownGrade();
-        pLevel_Player->Action_Jump(true);
-        pHud_Points->Add_Points(m_kill_points, m_pos_x, m_pos_y - 5.0f, "", static_cast<Uint8>(255), 1);
-        pLevel_Player->Add_Kill_Multiplier();
-    }
-    else if (!pLevel_Player->m_invincible) {
-        if (p_collision->m_direction == DIR_LEFT) {
-            pLevel_Player->m_velx = -7.0f;
-            Turn_Around();
-        }
-        else if (p_collision->m_direction == DIR_RIGHT) {
-            pLevel_Player->m_velx = 7.0f;
-            Turn_Around();
-        }
+	// We will die only when hit from the top
+	if (p_collision->m_direction == DIR_TOP && pLevel_Player->m_state != STA_FLY) {
+		pAudio->Play_Sound(m_kill_sound);
+		DownGrade();
+		pLevel_Player->Action_Jump(true);
+		pHud_Points->Add_Points(m_kill_points, m_pos_x, m_pos_y - 5.0f, "", static_cast<Uint8>(255), 1 );
+		pLevel_Player->Add_Kill_Multiplier();
+	}
+	else if (!pLevel_Player->m_invincible) {
+		if (p_collision->m_direction == DIR_LEFT) {
+			pLevel_Player->m_velx = -7.0f;
+			Turn_Around();
+		}
+		else if (p_collision->m_direction == DIR_RIGHT) {
+			pLevel_Player->m_velx = 7.0f;
+			Turn_Around();
+		}
 
-        pLevel_Player->DownGrade_Player();
-    }
+		pLevel_Player->DownGrade_Player();
+	}
 }
 
 void cBeetle::Handle_Collision_Massive(cObjectCollision* p_collision)
 {
-    Send_Collision(p_collision);
+	Send_Collision(p_collision);
 }
 
 float cBeetle::Get_Rest_Living_Time()
 {
-    return m_rest_living_time;
+	return m_rest_living_time;
 }
 
 void cBeetle::Set_Rest_Living_Time(float time)
 {
-    m_rest_living_time = time;
+	m_rest_living_time = time;
 }
 
 void cBeetle::Set_Color(DefaultColor color)
 {
-    Clear_Images();
-    Add_Image(pVideo->Get_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_1.png")));
-    Add_Image(pVideo->Get_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_2.png")));
-    Add_Image(pVideo->Get_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_3.png")));
+	Clear_Images();
+	Add_Image(pVideo->Get_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_1.png")));
+	Add_Image(pVideo->Get_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_2.png")));
+	Add_Image(pVideo->Get_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_3.png")));
 
-    Set_Animation_Image_Range(0, 2);
-    Reset_Animation();
-    Set_Image_Num(0, true);
+	Set_Animation_Image_Range(0, 2);
+	Reset_Animation();
+	Set_Image_Num(0, true);
 
-    m_color = color;
+	m_color = color;
 }
 
 DefaultColor cBeetle::Get_Color()
 {
-    return m_color;
+	return m_color;
 }
 
+void cBeetle::Move_Random(float distance)
+{
+	m_velx = Get_Random_Float(-distance, distance);
+	m_vely = Get_Random_Float(-distance/2, distance/2);
+}
+
+void cBeetle::Correct_Direction()
+{
+	if (m_velx < 0)
+		m_direction = DIR_LEFT;
+	else
+		m_direction = DIR_RIGHT;
+
+	Update_Rotation_Hor();
+}
 void cBeetle::Editor_Activate()
 {
-    CEGUI::WindowManager& wmgr = CEGUI::WindowManager::getSingleton();
+	CEGUI::WindowManager& wmgr = CEGUI::WindowManager::getSingleton();
 
-    // direction
-    CEGUI::Combobox* p_combo = static_cast<CEGUI::Combobox*>(wmgr.createWindow("TaharezLook/Combobox", "editor_beetle_direction"));
-    Editor_Add(UTF8_("Direction"), UTF8_("Starting direction."), p_combo, 100, 75);
-    p_combo->addItem(new CEGUI::ListboxTextItem("left"));
-    p_combo->addItem(new CEGUI::ListboxTextItem("right"));
-    p_combo->setText(Get_Direction_Name(m_start_direction));
-    p_combo->subscribeEvent(CEGUI::Combobox::EventListSelectionAccepted, CEGUI::Event::Subscriber(&cBeetle::Editor_Direction_Select, this));
+	// direction
+	CEGUI::Combobox* p_combo = static_cast<CEGUI::Combobox*>(wmgr.createWindow("TaharezLook/Combobox", "editor_beetle_direction"));
+	Editor_Add(UTF8_("Direction"), UTF8_("Starting direction."), p_combo, 100, 75);
+	p_combo->addItem(new CEGUI::ListboxTextItem("left"));
+	p_combo->addItem(new CEGUI::ListboxTextItem("right"));
+	p_combo->setText(Get_Direction_Name(m_start_direction));
+	p_combo->subscribeEvent(CEGUI::Combobox::EventListSelectionAccepted, CEGUI::Event::Subscriber(&cBeetle::Editor_Direction_Select, this));
 
-    // color
-    p_combo = static_cast<CEGUI::Combobox*>(wmgr.createWindow("TaharezLook/Combobox", "editor_beetle_color"));
-    Editor_Add(UTF8_("Color"), UTF8_("Color."), p_combo, 100, 75);
-    p_combo->addItem(new CEGUI::ListboxTextItem("blue"));
-    p_combo->addItem(new CEGUI::ListboxTextItem("green"));
-    p_combo->addItem(new CEGUI::ListboxTextItem("red"));
-    p_combo->addItem(new CEGUI::ListboxTextItem("violet"));
-    p_combo->addItem(new CEGUI::ListboxTextItem("yellow"));
-    p_combo->setText(Get_Color_Name(m_color));
-    p_combo->subscribeEvent(CEGUI::Combobox::EventListSelectionAccepted, CEGUI::Event::Subscriber(&cBeetle::Editor_Color_Select, this));
+	// color
+	p_combo = static_cast<CEGUI::Combobox*>(wmgr.createWindow("TaharezLook/Combobox", "editor_beetle_color"));
+	Editor_Add(UTF8_("Color"), UTF8_("Color."), p_combo, 100, 75);
+	p_combo->addItem(new CEGUI::ListboxTextItem("blue"));
+	p_combo->addItem(new CEGUI::ListboxTextItem("green"));
+	p_combo->addItem(new CEGUI::ListboxTextItem("red"));
+	p_combo->addItem(new CEGUI::ListboxTextItem("violet"));
+	p_combo->addItem(new CEGUI::ListboxTextItem("yellow"));
+	p_combo->setText(Get_Color_Name(m_color));
+	p_combo->subscribeEvent(CEGUI::Combobox::EventListSelectionAccepted, CEGUI::Event::Subscriber(&cBeetle::Editor_Color_Select, this));
 
-    Editor_Init();
+	Editor_Init();
 }
 
 bool cBeetle::Editor_Direction_Select(const CEGUI::EventArgs& event)
 {
-    const CEGUI::WindowEventArgs& args = static_cast<const CEGUI::WindowEventArgs&>(event);
-    CEGUI::ListboxItem* p_item = static_cast<CEGUI::Combobox*>(args.window)->getSelectedItem();
-    Set_Direction(Get_Direction_Id(p_item->getText().c_str()), true);
+	const CEGUI::WindowEventArgs& args = static_cast<const CEGUI::WindowEventArgs&>(event);
+	CEGUI::ListboxItem* p_item = static_cast<CEGUI::Combobox*>(args.window)->getSelectedItem();
+	Set_Direction(Get_Direction_Id(p_item->getText().c_str()), true);
 
-    Update_Rotation_Hor();
-    return true;
+	Update_Rotation_Hor();
+	return true;
 }
 
 bool cBeetle::Editor_Color_Select(const CEGUI::EventArgs& event)
 {
-    const CEGUI::WindowEventArgs& args = static_cast<const CEGUI::WindowEventArgs&>(event);
-    CEGUI::ListboxItem* p_item = static_cast<CEGUI::Combobox*>(args.window)->getSelectedItem();
-    Set_Color(Get_Color_Id(p_item->getText().c_str()));
+	const CEGUI::WindowEventArgs& args = static_cast<const CEGUI::WindowEventArgs&>(event);
+	CEGUI::ListboxItem* p_item = static_cast<CEGUI::Combobox*>(args.window)->getSelectedItem();
+	Set_Color(Get_Color_Id(p_item->getText().c_str()));
 
-    return true;
+	return true;
 }
 
 bool cBeetle::Is_Doing_Beetle_Barrage_Generation()
 {
-    return m_generation_in_progress;
+	return m_generation_in_progress;
 }
 
-void cBeetle::Do_Beetle_Barrage_Generation(float distance)
+void cBeetle::Do_Beetle_Barrage_Generation(float fly_distance, float fly_speed, float rand_direction)
 {
-    m_generation_max_y = m_pos_y - distance;
-    m_generation_in_progress = true;
-    // Slowly move up
-    m_vely = -2.0f;
-    m_velx = 0.0f;
+	m_generation_max_y = m_pos_y - fly_distance;
+	m_generation_in_progress = true;
+	m_vely = fly_speed;
+	m_velx = Get_Random_Float(-rand_direction,rand_direction);
+	Correct_Direction();
 }
