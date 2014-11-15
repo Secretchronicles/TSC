@@ -211,9 +211,13 @@ namespace TSC {
         // Save the game with the given description
         bool Save_Game(unsigned int save_slot, std::string description);
 
-        /* Load a Save
-        * The returned object should be deleted if not used anymore
-        */
+        /**
+         * \brief Load a Save
+         *
+         * The returned object should be deleted if not used anymore.
+         * Raises xmlpp exceptions or Errors::InvalidSavegameError when
+         * something is wrong with the savegame file.
+         */
         cSave* Load(unsigned int save_slot);
 
         // Create the MRuby object for this
@@ -224,7 +228,11 @@ namespace TSC {
             return mrb_obj_value(Data_Wrap_Struct(p_state, mrb_class_get(p_state, "LevelClass"), &Scripting::rtTSC_Scriptable, this));
         }
 
-        // Returns only the Savegame description
+        /**
+         * \brief Returns only the Savegame description.
+         *
+         * Raises the same exceptions as Load().
+         */
         std::string Get_Description(unsigned int save_slot, bool only_description = 0);
 
         // Returns true if the Savegame is valid

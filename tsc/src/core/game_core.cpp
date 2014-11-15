@@ -488,8 +488,8 @@ void Preload_Sounds(bool draw_gui /* = 0 */)
     sound_files.push_back(utf8_to_path("item/fireball_explosion.wav"));
     sound_files.push_back(utf8_to_path("item/iceball_explosion.wav"));
     sound_files.push_back(utf8_to_path("item/fireplant.ogg"));
-    sound_files.push_back(utf8_to_path("item/goldpiece_1.ogg"));
-    sound_files.push_back(utf8_to_path("item/goldpiece_red.wav"));
+    sound_files.push_back(utf8_to_path("item/jewel_1.ogg"));
+    sound_files.push_back(utf8_to_path("item/jewel_2.ogg"));
     sound_files.push_back(utf8_to_path("item/live_up.ogg"));
     sound_files.push_back(utf8_to_path("item/live_up_2.ogg"));
     sound_files.push_back(utf8_to_path("item/mushroom.ogg"));

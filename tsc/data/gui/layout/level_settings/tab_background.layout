@@ -52,14 +52,6 @@
             <Property Name="UnifiedAreaRect" Value="{{0.14,0},{0.26,0},{0.25,0},{0.31,0}}" />
             <Property Name="BackgroundEnabled" Value="False" />
         </Window>
-        <Window Type="TaharezLook/StaticText" Name="text_bg_images_preview" >
-            <Property Name="Text" Value="Preview" />
-            <Property Name="Tooltip" Value="Gradient and selected background image preview" />
-            <Property Name="FrameEnabled" Value="False" />
-            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
-            <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.01,0},{0.5,0},{0.06,0}}" />
-            <Property Name="BackgroundEnabled" Value="False" />
-        </Window>
         <Window Type="TaharezLook/StaticText" Name="text_bg_image_speed" >
             <Property Name="Text" Value="Speed X" />
             <Property Name="Tooltip" Value="Image X scrolling speed. A value of 5 is the camera speed" />
@@ -195,11 +187,6 @@
             <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
             <Property Name="UnifiedAreaRect" Value="{{0.01,0},{0.13,0},{0.135,0},{0.18,0}}" />
             <Property Name="BackgroundEnabled" Value="False" />
-        </Window>
-        <Window Type="TaharezLook/StaticText" Name="window_background_preview" >
-            <Property Name="FrameEnabled" Value="False" />
-            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
-            <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.07,0},{0.6,0},{0.22,0}}" />
         </Window>
         <Window Type="TaharezLook/StaticText" Name="text_bg_image_speed_y" >
             <Property Name="Text" Value="Y" />

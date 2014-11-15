@@ -294,7 +294,7 @@ void cBonusBox::Activate(void)
         m_sprite_manager->Add(star);
     }
     else if (box_type == TYPE_GOLDPIECE) {
-        pAudio->Play_Sound("item/goldpiece_1.ogg");
+        pAudio->Play_Sound("item/jewel_1.ogg");
 
         cJGoldpiece* goldpiece = new cJGoldpiece(m_sprite_manager);
         goldpiece->Set_Pos(m_start_pos_x - ((m_item_image->m_w - m_rect.m_w) / 2), m_pos_y, 1);

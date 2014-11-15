@@ -375,6 +375,7 @@ the MRuby scripting API, grouped by topic:
 | [InputClass](inputclass.html)         |                                             |
 | [Lava](lava.html)                     |                                             |
 | [MovingPlatform](movingplatform.html) |                                             |
+| [ParticleEmitter](particleemitter.html)|                                            |
 | [Path](path.html)                     |                                             |
 | [Path::Segment](path_segment.html)    |                                             |
 | [Timer](timer.html)                   |                                             |

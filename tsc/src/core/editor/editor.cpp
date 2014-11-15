@@ -570,7 +570,8 @@ bool cEditor::Key_Down(SDLKey key)
             window_help->setPosition(CEGUI::UVector2(CEGUI::UDim(0, (game_res_w * 0.1f) * global_upscalex), CEGUI::UDim(0, (game_res_h * 0.1f) * global_upscalex)));
             window_help->setSize(CEGUI::UVector2(CEGUI::UDim(0, (game_res_w * 0.8f) * global_upscalex), CEGUI::UDim(0, (game_res_h * 0.8f) * global_upscalex)));
             window_help->getCloseButton()->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&cEditor::Window_Help_Exit_Clicked, this));
-            window_help->setText("Editor Help");
+            // TRANS: Title of the help window
+            window_help->setText(UTF8_("Editor Help"));
 
             CEGUI::Window* text_help = CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/StaticText", "editor_help_text");
             text_help->setPosition(CEGUI::UVector2(CEGUI::UDim(0.00f, 0.0f), CEGUI::UDim(0.00f, 0.0f)));

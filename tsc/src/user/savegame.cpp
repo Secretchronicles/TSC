@@ -18,6 +18,7 @@
 #include "preferences.hpp"
 #include "../core/game_core.hpp"
 #include "../core/obj_manager.hpp"
+#include "../core/errors.hpp"
 #include "../level/level.hpp"
 #include "../overworld/world_manager.hpp"
 #include "../level/level_player.hpp"
@@ -768,20 +769,19 @@ cSave* cSavegame::Load(unsigned int save_slot)
 {
     fs::path filename = m_savegame_dir / utf8_to_path(int_to_string(save_slot) + ".smcsav");
 
+    if (File_Exists(filename)) {
+        return cSave::Load_From_File(filename);
+    }
+
     // if not new format try the old
-    if (!File_Exists(filename)) {
-        filename = m_savegame_dir / utf8_to_path(int_to_string(save_slot) + ".save");
+    fs::path filename_old = m_savegame_dir / utf8_to_path(int_to_string(save_slot) + ".save");
+    if (File_Exists(filename_old)) {
+        return cSave::Load_From_File(filename_old);
     }
 
-    if (!File_Exists(filename)) {
-        // FIXME: This should raise an exception.
-        std::cerr << "Error : cSavegame::Load() : No savegame found at slot " << filename << std::endl;
-        return NULL;
-    }
-
-    cSave* savegame = cSave::Load_From_File(filename);
-
-    return savegame;
+    std::stringstream ss;
+    ss << "No savegame found at slot " << save_slot << " (filename '" << filename << "' or '" << filename_old << "')!";
+    throw(InvalidSavegameError(save_slot, ss.str()));
 }
 
 std::string cSavegame::Get_Description(unsigned int save_slot, bool only_description /* = 0 */)
@@ -789,15 +789,15 @@ std::string cSavegame::Get_Description(unsigned int save_slot, bool only_descrip
     std::string str_description;
 
     if (!Is_Valid(save_slot)) {
-        str_description = int_to_string(save_slot) + ". Free Save";
-        return str_description;
+        char str[255];
+
+        // TRANS: %u is replaced by the number of the save slot, starting with 1.
+        int count = sprintf(str, _("%u. Free Save"), save_slot);
+        return std::string(str, count);
     }
 
+    // Raises exceptions if fails; caller must take care of them.
     cSave* savegame = Load(save_slot);
-
-    if (!savegame) {
-        return "Savegame loading failed";
-    }
 
     // complete description
     if (!only_description) {

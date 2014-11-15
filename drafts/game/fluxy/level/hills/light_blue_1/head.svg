@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -13,9 +14,8 @@
    height="128"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.48.4 r9939"
    version="1.0"
-   sodipodi:docbase="D:\Dateien\Desktop\Secret Maryo Chronicles\Drafts\Game\Frostbringer\level\ground\green_2\hedges"
    sodipodi:docname="head.svg"
    inkscape:export-filename="D:\Dateien\Desktop\Secret Maryo Chronicles\SMC\data\pixmaps\hills\light_blue_1\head.png"
    inkscape:export-xdpi="90"
@@ -117,7 +117,8 @@
      inkscape:window-x="72"
      inkscape:window-y="73"
      showguides="true"
-     inkscape:snap-global="false">
+     inkscape:snap-global="false"
+     inkscape:window-maximized="0">
     <inkscape:grid
        id="GridFromPre046Settings"
        type="xygrid"
@@ -157,49 +158,13 @@
     <path
        sodipodi:type="inkscape:offset"
        inkscape:radius="0"
-       inkscape:original="M 255.5 1.3125 C 119.31919 1.3125 3.5000001 74.449416 3.5 131 C 142.146 132.6889 382.15471 133.16379 509 131 C 509 74.934269 391.68083 1.3124999 255.5 1.3125 z "
+       inkscape:original="M 255.5 1.3125 C 119.31919 1.3125 3.5 74.449412 3.5 131 C 142.146 132.6889 382.15471 133.16379 509 131 C 509 74.934269 391.68083 1.3125 255.5 1.3125 z "
        xlink:href="#path1874"
        style="fill:url(#radialGradient3182);fill-opacity:1;stroke:none;stroke-width:2.99996114;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:inline;filter:url(#filter3194)"
        id="path3184"
        inkscape:href="#path1874"
        d="M 257.5,1.3125 C 121.31919,1.3125 5.5000001,74.449416 5.5,131 C 144.146,132.6889 384.15471,133.16379 511,131 C 511,74.934269 393.68083,1.3124999 257.5,1.3125 z"
        transform="matrix(0.9971797,0,0,1.0456347,0.721992,4.7054706)" />
-    <path
-       sodipodi:type="arc"
-       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.97300005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path3233"
-       sodipodi:cx="207.0303"
-       sodipodi:cy="41.21212"
-       sodipodi:rx="16"
-       sodipodi:ry="11.151515"
-       d="M 223.0303,41.21212 A 16,11.151515 0 1 1 191.0303,41.21212 A 16,11.151515 0 1 1 223.0303,41.21212 z"
-       transform="matrix(1,0,0,0.8967391,-1.0303135,4.1969765)" />
-    <path
-       sodipodi:type="inkscape:offset"
-       inkscape:radius="0"
-       inkscape:original="M 207.03125 30.0625 C 198.19925 30.0625 191.03125 35.063114 191.03125 41.21875 C 191.03125 47.374386 198.19925 52.374999 207.03125 52.375 C 215.86325 52.375 223.03125 47.374386 223.03125 41.21875 C 223.03125 35.063114 215.86325 30.062501 207.03125 30.0625 z "
-       xlink:href="#path3233"
-       style="opacity:1;fill:#fdff91;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.97300005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter3210)"
-       id="path3200"
-       inkscape:href="#path3233"
-       d="M 207.03125,30.0625 C 198.19925,30.0625 191.03125,35.063114 191.03125,41.21875 C 191.03125,47.374386 198.19925,52.374999 207.03125,52.375 C 215.86325,52.375 223.03125,47.374386 223.03125,41.21875 C 223.03125,35.063114 215.86325,30.062501 207.03125,30.0625 z"
-       transform="matrix(0.5151515,0,0,0.5151515,96.378791,17.984849)" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path3233"
-       id="use3218"
-       transform="translate(100.00001,0)"
-       width="512"
-       height="128" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path3200"
-       id="use3220"
-       transform="translate(100.00001,0)"
-       width="512"
-       height="128" />
   </g>
   <g
      inkscape:groupmode="layer"

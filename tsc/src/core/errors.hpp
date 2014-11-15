@@ -54,6 +54,15 @@ namespace TSC {
         virtual ~InvalidLevelError() throw();
     };
 
+    class InvalidSavegameError: public TSCError {
+    public:
+        InvalidSavegameError(unsigned int slot, std::string message);
+        virtual ~InvalidSavegameError() throw();
+        inline unsigned int Get_Slot(){return m_slot;}
+    private:
+        unsigned int m_slot;
+    };
+
     class RestartedXmlParserError: public TSCError {
     public:
         RestartedXmlParserError();

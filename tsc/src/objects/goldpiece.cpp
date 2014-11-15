@@ -242,10 +242,10 @@ void cGoldpiece::Activate(void)
     }
     else {
         if (m_color_type == COL_RED) {
-            pAudio->Play_Sound("item/goldpiece_red.wav");
+            pAudio->Play_Sound("item/jewel_2.ogg");
         }
         else {
-            pAudio->Play_Sound("item/goldpiece_1.ogg");
+            pAudio->Play_Sound("item/jewel_1.ogg");
         }
     }
 

@@ -25,6 +25,7 @@
 #include "../input/joystick.hpp"
 #include "../input/mouse.hpp"
 #include "../core/framerate.hpp"
+#include "../core/errors.hpp"
 #include "../user/savegame.hpp"
 #include "../video/renderer.hpp"
 #include "../level/level.hpp"
@@ -2890,11 +2891,25 @@ void cMenu_Savegames::Update_Load(void)
         return;
     }
 
-    pAudio->Play_Sound("savegame_load.ogg");
     // reset before loading the level to keep the level in the manager
     pLevel_Player->Reset_Save();
 
-    cSave* savegame = pSavegame->Load(save_num);
+    cSave* savegame = NULL;
+    try {
+        savegame = pSavegame->Load(save_num);
+    }
+    catch(xmlpp::parse_error& err) {
+        pAudio->Play_Sound("error.ogg");
+        std::cerr << "Error: Failed to load savegame '" << save_num << "' (parsing error). xmlpp parsing exception: " << err.what() << std::endl;
+        return;
+    }
+    catch(InvalidSavegameError& err) {
+        pAudio->Play_Sound("error.ogg");
+        std::cerr << "Error: Failed to load savegame '" << save_num << "' (invalid savegame). TSC exception: " << err.what() << std::endl;
+        return;
+    }
+
+    pAudio->Play_Sound("savegame_load.ogg");
     std::string level_name = savegame->Get_Active_Level();
     delete savegame;
 
@@ -3000,7 +3015,23 @@ void cMenu_Savegames::Update_Saved_Games_Text(void)
 
     for (HudSpriteList::iterator itr = m_savegame_temp.begin(); itr != m_savegame_temp.end(); ++itr) {
         save_slot++;
-        (*itr)->Set_Image(pFont->Render_Text(pFont->m_font_normal, pSavegame->Get_Description(save_slot), m_text_color_value), 1, 1);
+
+        std::string text;
+        try {
+            text = pSavegame->Get_Description(save_slot);
+        }
+        catch(xmlpp::parse_error& err) {
+            std::cerr << "Error: Failed to load savegame '" << save_slot << "' (parsing error). xmlpp parsing exception: " << err.what() << std::endl;
+            (*itr)->Set_Image(pFont->Render_Text(pFont->m_font_normal,  _("Savegame loading failed"), red), true, true);
+            continue;
+        }
+        catch(InvalidSavegameError& err) {
+            std::cerr << "Error: Failed to load savegame '" << save_slot << "' (invalid savegame). TSC exception: " << err.what() << std::endl;
+            (*itr)->Set_Image(pFont->Render_Text(pFont->m_font_normal,  _("Savegame loading failed"), red), true, true);
+            continue;
+        }
+
+        (*itr)->Set_Image(pFont->Render_Text(pFont->m_font_normal, text, m_text_color_value), true, true);
     }
 }
 

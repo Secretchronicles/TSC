@@ -76,6 +76,17 @@ InvalidLevelError::~InvalidLevelError() throw()
     //
 }
 
+InvalidSavegameError::InvalidSavegameError(unsigned int slot, std::string message)
+    : TSCError(message)
+{
+    m_slot = slot;
+}
+
+InvalidSavegameError::~InvalidSavegameError() throw()
+{
+    //
+}
+
 RestartedXmlParserError::RestartedXmlParserError()
 {
     //
