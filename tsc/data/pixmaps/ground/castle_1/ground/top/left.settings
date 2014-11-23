@@ -2,6 +2,6 @@ width 64
 height 64
 editor_tags level;castle;ground
 name Top_Left
-type halfmassive
+type massive
 ground_type stone
 author pollila86

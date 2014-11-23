@@ -1,7 +1,8 @@
 /***************************************************************************
  * savegame.cpp  -  Savegame handler
  *
- * Copyright © 2003 - 2011 The TSC Contributors
+ * Copyright © 2003 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify
@@ -494,13 +495,13 @@ int cSavegame::Load_Game(unsigned int save_slot)
                 int posy = string_to_int(save_object->Get_Value("posy"));
 
                 // get level object
-                bool checkPosition = true;
+                int checkPosition = 1;
 
                 /*The Get_from_Position method below searches for the saved object in the level definition using its original position information.
                 Loose shells will slightly have their current position offset based on their image during the initialization process during level loading
                 Only require the original position field be checked for them.*/
-                if (save_object ->m_type == TYPE_SHELL) {
-                    checkPosition = false;
+                if (save_object->m_type == TYPE_SHELL || save_object->m_type == TYPE_BONUS_BOX /* FIXME: Why bonusboxes are set off?*/ ) {
+                    checkPosition = 0;
                 }
 
                 cSprite* level_object = level->m_sprite_manager->Get_from_Position(posx, posy, save_object->m_type, checkPosition);
@@ -641,9 +642,19 @@ bool cSavegame::Save_Game(unsigned int save_slot, std::string description)
                 // Custom data a script writer wants to store in the
                 // savegame (pSavegame holds the event table for the
                 // level saving events).
-                Scripting::cLevel_Save_Event evt;
+                mrb_state* p_state = pActive_Level->m_mruby->Get_MRuby_State();
+                mrb_value storage_hash = mrb_hash_new(p_state);
+                mrb_int key = pActive_Level->m_mruby->Protect_From_GC(storage_hash);
+
+                Scripting::cLevel_Save_Event evt(storage_hash);
                 evt.Fire(pActive_Level->m_mruby, pSavegame);
-                save_level->m_mruby_data = evt.Get_Save_Data();
+
+                // We use JSON to store the data for now, as mruby doesn’t have Marshal, sadly.
+                mrb_value mod_json = mrb_const_get(p_state, mrb_obj_value(p_state->object_class), mrb_intern_cstr(p_state, "JSON"));
+                mrb_value result = mrb_funcall(p_state, mod_json, "stringify", 1, storage_hash);
+                save_level->m_mruby_data = std::string(mrb_string_value_ptr(p_state, result));
+
+                pActive_Level->m_mruby->Unprotect_From_GC(key); // GC can collect it now
             }
 
             // spawned objects

@@ -1,4 +1,17 @@
-# Build configuration file for mruby.
+# -*- coding: utf-8 -*-
+#############################################################################
+# mruby_tsc_build_config.rb  -  Build configuration file for mruby
+#
+# Copyright © 2013-2014 The TSC Contributors
+#############################################################################
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Absolute path to the directory this file resides in,
 # independent of any PWD or invocation stuff.

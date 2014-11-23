@@ -1,7 +1,8 @@
 /***************************************************************************
  * level_manager.cpp  -  class for handling levels
  *
- * Copyright © 2007 - 2011 The TSC Contributors
+ * Copyright © 2007 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify
@@ -17,6 +18,8 @@
 #include "../core/main.hpp"
 #include "../core/game_core.hpp"
 #include "../core/filesystem/filesystem.hpp"
+#include "../core/i18n.hpp"
+#include "../core/errors.hpp"
 #include "../overworld/overworld.hpp"
 #include "../core/framerate.hpp"
 #include "../objects/path.hpp"
@@ -452,7 +455,15 @@ void cLevel_Manager::Goto_Sub_Level(std::string str_level, const std::string& st
     }
     // another level
     else {
-        cLevel* level = pLevel_Manager->Load(str_level, true);
+        cLevel* level = NULL;
+        try {
+            level = pLevel_Manager->Load(str_level, true);
+        }
+        catch(InvalidLevelError& err) {
+            pHud_Debug->Set_Text(_("Invalid target level."));
+            pLevel_Player->DownGrade(true);
+            return;
+        }
 
         if (level) {
             Game_Action = GA_ENTER_LEVEL;

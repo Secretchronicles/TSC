@@ -1,4 +1,18 @@
-# -*- ruby -*-
+# -*- coding: utf-8; mode: ruby -*-
+#############################################################################
+# Rakefile  -  Rake instruction file
+#
+# Copyright © 2013-2014 The TSC Contributors
+#############################################################################
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 require "rake"
 require "rake/clean"
 require "pathname"
@@ -13,8 +27,8 @@ TSC_VERSION_PATCH = str.match(/^set\(TSC_VERSION_PATCH (\d+)\)/)[1]
 TSC_SOURCE_FILES = FileList["src/**/*.cpp"] + FileList["src/**/*.hpp"]
 
 # This is called from CMake for generating the credits file.
-rule %r{credits.cpp} => "docs/authors.txt" do |t|
-  puts "Converting docs/authors.txt to C++ source file"
+rule %r{credits.cpp} => ["docs/authors.txt", "docs/specialthanks.txt"] do |t|
+  puts "Converting docs/authors.txt and docs/specialthanks.txt to C++ source file"
 
   File.open(t.name, "w") do |f|
     # Write first part
@@ -35,13 +49,32 @@ namespace TSC {
 
       # Write out the remaining part to the cpp file
       while (line = f2.gets)
-        f.write(line.chomp)
+        f.write(line.chomp.gsub(/<.*>/, "").strip) # Remove email address
         f.puts("\\n\\")
       end
-
-      # Write final part
-      f.write("\";\n}\n")
     end
+
+    f.puts("\\n\\")
+    f.puts("-- Special Thanks --\\n\\")
+    f.puts("\\n\\")
+
+    File.open("docs/specialthanks.txt") do |f2|
+      # Skip to real content
+      loop do
+        line = f2.gets
+        break if line.start_with?("=-=-=-")
+      end
+      f2.gets
+
+      # Write out the remaining part to the cpp file
+      while (line = f2.gets)
+        f.write(line.chomp.gsub(/<.*>/, "").strip) # Remove email address
+        f.puts("\\n\\")
+      end
+    end
+
+    # Write final part
+    f.write("\";\n}\n")
   end
 end
 

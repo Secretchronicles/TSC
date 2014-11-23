@@ -77,12 +77,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Graphics, music, and any other artistic content in the game is _not_
 licensed under the GPL. These assets undergo different terms as
-outlined as follows: any content contributed after 7th November 2014
-is licensed as [CC-BY-SA
-4.0](https://creativecommons.org/licenses/by-sa/4.0/). Any content
-contributed prior to that date is licensed under the old SMC
-Contribution license, which is included as the file
-`tsc/docs/old_smc_contribution_license.md`. The authors of any assets
-included in the game, whether they are licensed under the old or the
-new license, are noted in each respective `.txt` file that accompanies
-each asset in the same directory.
+outlined as follows: any asset is accompanied by a `.txt` or a
+`.settings` file that specifies both the author(s) and the license of
+the asset in question. Those assets whose accompanying `.txt` or
+`.settings` file does not specify a license are licensed under the
+old SMC Contribution license, which is included as the file
+`tsc/docs/old_smc_contribution_license.md`.

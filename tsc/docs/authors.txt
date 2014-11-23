@@ -13,145 +13,46 @@ this command from the "tsc" directory:
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
--- Project Leaders --
-
-Marvin Gülker (Quintus)
- - Project Leader
- - Main Developer
-
-Luiji
- - Project Assistant Lead
- - Forum moderator
-
-Florian Richter (FluXy)
- - Former SMC Project Leader
- - German Translator
-
 -- Coders --
 
-Chris Jacobsen (datahead8888)
- - Coder
+Marvin Gülker (Quintus) <quintus@quintilianus.eu>
+Tristan Heaven (nyhm) <tristanheaven@gmail.com>
+Luiji <luiji@users.sourceforge.net>
+Tobias Maasland (Weirdnose) <tobias@tobiasmaasland.de>
+Florian Richter (FluXy) <fluxey@gmail.com>
+Brian Allen Vanderburg II (brianvanderburg2) <brianvanderburg@users.sourceforge.net>
 
-Brian Allen Vanderburg II (brianvanderburg2)
- - Coder
+-- Graphic Artists --
 
--- Artists --
+Fabian Bissig (Fabianius) <fabian.bissig@bluewin.ch>
+Bugsbane <user581@xymail.info>
+Johan Brodd (jobromedia) <info@m4um.net>
+Bodhi Crandall-Rus (Bodhi) <bodhi.biz@gmail.com>
+Crabmaster <crabmaster84@hotmail.com>
+John Daly (Johnlein)
+Mario Fink (maYO) <losfinkos@web.de>
+Grant (youngheart80) <youngheart80@gmail.com>
+Gustavo Gutierrez (Enzakun)
+Markus Hiebl (Frostbringer) <quandia@gmx.net>
+Polilla86 <mendezpoli86@gmail.com>
+Mark Richards (dteck) <darkteck04@gmail.com>
+Justin Rissler (DarkAceZ) <jbrrissler@gmail.com>
+Anthony Smith (mrvertigo27) <mrvertigo27@gmail.com>
+Ursula (Pipgirl) <pipgirl.smc@gmail.com>
+Yoshis_Fan <yoshis_fan@gmx.de>
 
-Johan Brodd (jobromedia)
- - Music Artist
+-- Music Artists --
 
-Crabmaster
- - Graphic Designer
+Justin (LoXodonte)
+David Hernandez (vencabot_teppoo)
+Robert (Consonance) <theangryartist@gmail.com>
+Norbu Tsering (RedFT) <ntsering91@gmail.com>
 
-Fabian (Fabianius)
- - Graphic Designer
+-- Level Designers --
 
-Anthony Smith (mrvertigo27)
- - Graphic Designer
-
-Yoshis_Fan
- - Graphic Designer
-
--- Level Contributors --
-
-Sauer2
- - Level Building
- - Features Integration for Levels
+sauer2
 
 -- Translators --
 
-josephgbr
- - Portugese Translator
-
-Lauri Ojansivu (xet7)
- - Finnish Translator
-
--- Most Valued Persons (MVP) --
-
-DarkAceZ
- - Game Tester
-
-Tristan Heaven (nyhm)
- - Gentoo eBuild Maintainer
- - IRC Channel Operator
-
-Muammar El Khatib (muammar)
- - Debian Package Maintainer
-
-Robert W. (BowserJr)
- - Forum/Wiki Moderator
- - Game Tester
-
--- Retired --
-
-Bodhi Crandall-Rus (Boder)
- - All Hands Person
- - Game Tester
- - Assistant Graphic Designer
-
-John Daly (Johnlein)
- - Graphic Designer
-
-Holger Fey (Nemo)
- - Game Tester
- - German Publicity
- - Torrent Packager
-
-Mario Fink (maYO)
- - Graphic Designer
- - Website Graphic Designer
- - Other Support
-
-Gustavo Gutierrez (Enzakun)
- - Maryo Graphic Designer
-
-Grant (youngheart80)
- - Graphic Designer
-
-Helios
- - Graphic Designer
-
-Thomas Huth (Thothy)
- - Linux Maintainer
-
-Matt J. (mattwj)
- - eDonkey Packager
- - Quality Assurance
-
-Justin (LoXodonte)
- - Music Artist
-
-David Hernandez (vencabot_teppoo)
- - Music Artist
-
-Markus Hiebl (Frostbringer)
- - Graphic Designer
- - Level Contributor
-
-Tobias Maasland (Weirdnose)
- - Level and World Contributor
- - Assistant Developer
-
-Polilla86
- - Graphic Designer
-
-Mark Richards (dteck)
- - Graphic Designer
-
-Robert (Consonance)
- - Sound and Music Artist
-
-Norbu Tsering (Naerbu)
- - Music Artist
-
-Ursula (Pipgirl)
- - Graphic Designer
-
--- Special Thanks --
-
-Jason Cox (XOC)
-Ricardo Cruz
-Devendra (Yuki)
-Hans de Goede (Hans)
-Rolando Gonzalez (rolosworld)
-xPatrickx
+Rafael Ferreira (josephbgr) <rafael.f.f1@gmail.com>
+Lauri Ojansivu (xet7) <x@xet7.org>

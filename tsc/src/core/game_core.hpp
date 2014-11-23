@@ -1,17 +1,18 @@
 /***************************************************************************
  * game_core.h
  *
- * Copyright © 2005 - 2011 The TSC Contributors
+ * Copyright © 2005 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
-   This program is free software; you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3 of the License, or
-   (at your option) any later version.
-
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ *   This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef TSC_GAME_CORE_HPP
 #define TSC_GAME_CORE_HPP

@@ -1,3 +1,17 @@
+/***************************************************************************
+ * scripting.cpp - Glue for the scripting implementation.
+ *
+ * Copyright © 2013-2014 The TSC Contributors
+ ***************************************************************************
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #ifndef TSC_SCRIPTING_HPP
 #define TSC_SCRIPTING_HPP
 #include "../core/global_basic.hpp"
@@ -77,6 +91,10 @@ namespace TSC {
             mrb_state* Get_MRuby_State();
             // Returns the cLevel* we’re associated with.
             cLevel* Get_Level();
+            // Ensure an object doesn't get GC'ed.
+            mrb_int Protect_From_GC(mrb_value obj);
+            // Release the protection for an object created with Protect_From_GC().
+            void Unprotect_From_GC(mrb_int index);
 
             // Retrieve an mruby class object.
             inline struct RClass* Get_MRuby_Class(const std::string& name)

@@ -1,7 +1,8 @@
 /***************************************************************************
  * powerup.h
  *
- * Copyright © 2003 - 2011 The TSC Contributors
+ * Copyright © 2003 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify
@@ -21,7 +22,7 @@
 #include "../objects/animated_sprite.hpp"
 #include "../scripting/objects/powerups/mrb_powerup.hpp"
 #include "../scripting/objects/powerups/mrb_mushroom.hpp"
-#include "../scripting/objects/powerups/mrb_fireplant.hpp"
+#include "../scripting/objects/powerups/mrb_fireberry.hpp"
 #include "../scripting/objects/powerups/mrb_moon.hpp"
 
 namespace TSC {
@@ -139,7 +140,7 @@ namespace TSC {
         // Create the MRuby object for this
         virtual mrb_value Create_MRuby_Object(mrb_state* p_state)
         {
-            return mrb_obj_value(Data_Wrap_Struct(p_state, mrb_class_get(p_state, "Fireplant"), &Scripting::rtTSC_Scriptable, this));
+            return mrb_obj_value(Data_Wrap_Struct(p_state, mrb_class_get(p_state, "Fireberry"), &Scripting::rtTSC_Scriptable, this));
         }
 
         // Activates the item

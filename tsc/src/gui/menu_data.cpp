@@ -1,7 +1,8 @@
 /***************************************************************************
  * menu_data.cpp  -  menu data and handling classes
  *
- * Copyright © 2004 - 2011 The TSC Contributors
+ * Copyright © 2004 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify

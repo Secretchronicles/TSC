@@ -1,7 +1,8 @@
 /***************************************************************************
  * img_settings.cpp  -  Image settings
  *
- * Copyright © 2005 - 2011 The TSC Contributors
+ * Copyright © 2005 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify
@@ -493,6 +494,9 @@ bool cImage_Settings_Parser::HandleMessage(const std::string* parts, unsigned in
         }
 
         m_settings_temp->m_author = parts[1];
+    }
+    else if (parts[0].compare("license") == 0) {
+        // Ignore, this is only for human information
     }
     else if (parts[0].compare("obsolete") == 0) {
         if (count != 2) {

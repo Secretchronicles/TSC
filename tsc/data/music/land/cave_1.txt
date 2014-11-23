@@ -1,3 +1,2 @@
-from Jason Cox
-
-http://www.archive.org/audio/audio-details-db.php?collection=opensource_audio&collectionid=xoc_SMW
+by Aakburns
+license CC-BY-SA 4.0

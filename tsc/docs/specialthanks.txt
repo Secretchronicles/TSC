@@ -1,0 +1,22 @@
+Special Thanks
+==============
+
+This file lists all persons the people involved in the TSC project
+want to express their gratitude to. While they do not hold copyright
+on the game, TSC would not be where it is today without their mental
+and practical support.
+
+The list is in alphabetical order.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Jason Cox (XOC)
+Ricardo Cruz
+Devendra (Yuki)
+Holger Fey (Nemo)
+Hans de Goede (Hans)
+Rolando Gonzalez (rolosworld)
+Thomas Huth (Thothy)
+Matt J. (mattwj)
+Muammar El Khatib (muammar)
+xPatrickx

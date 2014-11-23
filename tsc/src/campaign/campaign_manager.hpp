@@ -1,7 +1,8 @@
 /***************************************************************************
  * campaign_manager.h
  *
- * Copyright © 2010 - 2011 The TSC Contributors
+ * Copyright © 2010 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify

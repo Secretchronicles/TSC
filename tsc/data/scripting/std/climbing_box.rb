@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 TSC.require "std/enable"
 
 module Std
@@ -11,6 +12,10 @@ module Std
   # This will create a climbing plant with 4 middle sprites (and a top
   # sprite) and attaches it to the box with UID 14. When that one gets
   # activated, the climbing plant will come out of it.
+  #
+  # Once you called #attach, Climbing boxes automatically save its
+  # state to a savegame, so you don’t have to do that manually by
+  # hooking into the level save and load events.
   class ClimbingBox
 
     # All the plant sprites.
@@ -36,6 +41,7 @@ module Std
       opts[:middle_graphic] ||= "ground/green_1/kplant.png"
       opts[:top_graphic]    ||= "ground/green_1/kplant_head.png"
 
+      @activated = false
       @box = box.kind_of?(Integer) ? UIDS[box] : box
       @sprites = []
 
@@ -66,27 +72,46 @@ module Std
 
     # Attach the climbing plant to its box.
     def attach
-      @spritelist = @sprites.dup # We will empty this array on showing the plant
+      spritelist = @sprites.dup # We will empty this array on showing the plant
       @timer = nil
       @box.on_activate do
         Audio.play_sound("stomp_4.ogg")
 
         @timer = Timer.every(250) do
-          @spritelist.shift.enable
+          spritelist.shift.enable
 
-          @timer.stop! if @spritelist.empty?
+          @timer.stop! if spritelist.empty?
         end
       end
+
+      # Automatic saving and loading.
+      Level.on_save do |store|
+        store["_ssl"] ||= {}
+        store["_ssl"]["climbingboxes"] ||= {}
+        store["_ssl"]["climbingboxes"][@box.uid] = @activated
+      end
+
+      Level.on_load do |store|
+        if store["_ssl"] && store["_ssl"]["climbingboxes"] && store["_ssl"]["climbingboxes"][@box.uid]
+          @sprites.each{|sprite| sprite.enable}
+        end
+      end
+    end
+
+    def activated?
+      @activated
     end
 
     # Immediately show the entire climbing plant.
     def show_plant
       @sprites.each{|sprite| sprite.enable}
+      @activated = true
     end
 
     # Immediately hide the entire climbing plant.
     def hide_plant
       @sprites.each{|sprite| sprite.disable}
+      @activated = false
     end
 
   end

@@ -1,7 +1,8 @@
 /***************************************************************************
  * random_sound.cpp  -  random sounds support
  *
- * Copyright © 2008 - 2011 The TSC Contributors
+ * Copyright © 2008 - 2011 Florian Richter
+ * Copyright © 2013 - 2014 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify

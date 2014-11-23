@@ -3,7 +3,7 @@
   <information>
     <property name="game_version" value="2.0.0"/>
     <property name="engine_version" value="40"/>
-    <property name="save_time" value="1412246563"/>
+    <property name="save_time" value="1416219984"/>
   </information>
   <settings>
     <property name="lvl_author" value=""/>
@@ -17934,8 +17934,23 @@
   </sprite>
   <script>TSC.require "std/enable"
 
+dead = false
+
 UIDS[107].disable
-UIDS[52].on_die{UIDS[107].enable}
+UIDS[52].on_die do
+  UIDS[107].enable
+  dead = true
+end
+
+Level.on_save do |store|
+  store["is_dead"] = dead
+end
+
+Level.on_load do |store|
+  if store["is_dead"]
+    UIDS[107].enable
+  end
+end
 
 </script>
 </level>

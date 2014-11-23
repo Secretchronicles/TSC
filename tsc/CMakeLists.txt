@@ -1,3 +1,17 @@
+#############################################################################
+# CMakeLists.txt  -  Build file
+#
+# Copyright © 2013-2014 The TSC Contributors
+#############################################################################
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 cmake_minimum_required(VERSION 2.8)
 enable_language(CXX)
 project(TSC)
@@ -14,7 +28,7 @@ include(ExternalProject)
 set(TSC_VERSION_MAJOR 2)
 set(TSC_VERSION_MINOR 0)
 set(TSC_VERSION_PATCH 0)
-set(TSC_VERSION_POSTFIX "beta5+")
+set(TSC_VERSION_POSTFIX "beta6+")
 
 ###############################################
 # Flags & Options
