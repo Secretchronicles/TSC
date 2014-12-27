@@ -2,8 +2,8 @@
 <level>
   <information>
     <property name="game_version" value="2.0.0"/>
-    <property name="engine_version" value="40"/>
-    <property name="save_time" value="1412151838"/>
+    <property name="engine_version" value="42"/>
+    <property name="save_time" value="1419425924"/>
   </information>
   <settings>
     <property name="lvl_author" value="FluXy"/>
@@ -191,21 +191,21 @@
     <property name="posx" value="620"/>
     <property name="posy" value="-214"/>
     <property name="uid" value="15"/>
-    <property name="image" value="pipes/green/up.png"/>
+    <property name="image" value="pipes/grey/up.png"/>
     <property name="type" value="massive"/>
   </sprite>
   <sprite>
     <property name="posx" value="620"/>
     <property name="posy" value="-164"/>
     <property name="uid" value="17"/>
-    <property name="image" value="pipes/green/ver.png"/>
+    <property name="image" value="pipes/grey/ver_1.png"/>
     <property name="type" value="massive"/>
   </sprite>
   <sprite>
     <property name="posx" value="620"/>
     <property name="posy" value="-114"/>
     <property name="uid" value="16"/>
-    <property name="image" value="pipes/green/ver.png"/>
+    <property name="image" value="pipes/grey/ver_1.png"/>
     <property name="type" value="massive"/>
   </sprite>
   <sprite>
@@ -304,7 +304,7 @@
   </sprite>
   <sprite>
     <property name="posx" value="681"/>
-    <property name="posy" value="-227"/>
+    <property name="posy" value="-211"/>
     <property name="uid" value="19"/>
     <property name="image" value="ground/green_2/hedges/small_4.png"/>
     <property name="type" value="passive"/>
@@ -386,20 +386,18 @@
     <property name="image" value="game/box/yellow/bonus/1.png"/>
     <property name="type" value="bonus"/>
     <property name="animation" value="Bonus"/>
-    <property name="item" value="25"/>
+    <property name="item" value="24"/>
     <property name="invisible" value="0"/>
     <property name="useable_count" value="1"/>
-    <property name="force_best_item" value="0"/>
+    <property name="force_best_item" value="1"/>
   </box>
   <levelexit>
-    <property name="posx" value="665"/>
-    <property name="posy" value="-218"/>
-    <property name="uid" value="32"/>
+    <property name="posx" value="666"/>
+    <property name="posy" value="-204"/>
+    <property name="uid" value="46"/>
     <property name="image" value=""/>
     <property name="type" value="1"/>
-    <property name="camera_motion" value="2"/>
-    <property name="level_name" value="menu_brown_1_2"/>
-    <property name="entry" value="A1"/>
+    <property name="camera_motion" value="1"/>
     <property name="direction" value="down"/>
   </levelexit>
   <box>
@@ -450,6 +448,13 @@
     <property name="useable_count" value="1"/>
     <property name="force_best_item" value="0"/>
   </box>
-  <script>
+  <script># Hide the static Alex image, that's only for the menu
+# background, not for playing. The menu level, when loaded
+# on game start, has no script interpreter attached, hence
+# the static Alex figure is shown in the menu background level,
+# but gets hidden by this script when loaded regularyly as a
+# level to play.
+UIDS[27].warp(-100, 100)
+
 </script>
 </level>

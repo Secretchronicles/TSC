@@ -1860,9 +1860,9 @@
     <property name="shake_time" value="16.000000"/>
     <property name="touch_move_time" value="0.000000"/>
     <property name="middle_img_count" value="3"/>
-    <property name="image_top_left" value="ground\green_1\slider\1\brown\left.png"/>
-    <property name="image_top_middle" value="ground\green_1\slider\1\brown\middle.png"/>
-    <property name="image_top_right" value="ground\green_1\slider\1\brown\right.png"/>
+    <property name="image_top_left" value="ground/green_1/slider/1/brown/left.png"/>
+    <property name="image_top_middle" value="ground/green_1/slider/1/brown/middle.png"/>
+    <property name="image_top_right" value="ground/green_1/slider/1/brown/right.png"/>
   </moving_platform>
   <sprite>
     <property name="posx" value="869"/>

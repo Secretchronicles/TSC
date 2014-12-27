@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Description>
-	<World>
-		<Property Name="name" Value="World 4" />
-		<Property Name="visible" Value="0" />
-	</World>
-</Description>
+<description>
+  <world>
+    <property name="name" value="World 4"/>
+    <property name="visible" value="0"/>
+  </world>
+</description>

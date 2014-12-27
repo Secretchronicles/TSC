@@ -438,9 +438,9 @@ set(CPACK_COMPONENT_BASE_REQUIRED ON)
 set(CPACK_RESOURCE_FILE_LICENSE "${TSC_SOURCE_DIR}/docs/license.txt")
 set(CPACK_CREATE_DESKTOP_LINKS tsc)
 set(CPACK_NSIS_MODIFY_PATH "ON") # Required for desktop shortcuts
-set(CPACK_NSIS_MUI_ICON "${TSC_SOURCE_DIR}/extras/icons/idr_main.ico") # Installer icon
-set(CPACK_NSIS_MUI_UNIICON "${TSC_SOURCE_DIR}/extras/icons/idr_main.ico") # Uninstaller icon
+set(CPACK_NSIS_MUI_ICON "${TSC_SOURCE_DIR}/extras/icons/windows_icon.ico") # Installer icon
+set(CPACK_NSIS_MUI_UNIICON "${TSC_SOURCE_DIR}/extras/icons/windows_icon.ico") # Uninstaller icon
 set(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\tsc.exe") # Icon for system control panel
-set(CPACK_PACKAGE_ICON "${TSC_SOURCE_DIR}/extras/icons/idr_main.ico") # Installer window bar icon
+set(CPACK_PACKAGE_ICON "${TSC_SOURCE_DIR}/extras/icons/windows_icon.ico") # Installer window bar icon
 
 include(CPack)

@@ -1,7 +1,8 @@
 width 100
 height 50
-col_rect 10 0 80 50
+col_rect 12 19 76 31
 editor_tags level;pipe
 name Grey_Up
 type massive
-author FluXy
+author sydneyjd
+license CC-BY-SA_4.0

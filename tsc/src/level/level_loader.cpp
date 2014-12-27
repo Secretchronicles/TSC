@@ -392,6 +392,28 @@ std::vector<cSprite*> cLevelLoader::Create_Sprites_From_XML_Tag(const std::strin
         attributes.relocate_image("animation/fire_1/3.png", "animation/particles/fire_3.png");
         attributes.relocate_image("animation/fire_1/4.png", "animation/particles/fire_4.png");
     }
+    // V2.0.0-beta6 and lower: green pipes have been removed, change to grey pipes.
+    if (engine_version < 41) {
+        attributes.relocate_image("pipes/green/ver.png", "pipes/grey/ver.png");
+        attributes.relocate_image("pipes/green/hor.png", "pipes/grey/hor.png");
+        attributes.relocate_image("pipes/green/up.png", "pipes/grey/up.png");
+        attributes.relocate_image("pipes/green/left.png", "pipes/grey/left.png");
+        attributes.relocate_image("pipes/green/right.png", "pipes/grey/right.png");
+        attributes.relocate_image("pipes/green/down.png", "pipes/grey/down.png");
+    }
+    // V2.0.0-beta6 and lower: ver.png was renamed to ver_1.png. Note this
+    // builds upon the previous line for green pipes. hor.png was renamed to hor_1.png.
+    if (engine_version < 42) {
+        attributes.relocate_image("pipes/blue/ver.png", "pipes/blue/ver_1.png");
+        attributes.relocate_image("pipes/blue/hor.png", "pipes/blue/hor_1.png");
+        attributes.relocate_image("pipes/grey/ver.png", "pipes/grey/ver_1.png");
+        attributes.relocate_image("pipes/grey/hor.png", "pipes/grey/hor_1.png");
+        attributes.relocate_image("pipes/orange/ver.png", "pipes/orange/ver_1.png");
+        attributes.relocate_image("pipes/orange/hor.png", "pipes/orange/hor_1.png");
+        attributes.relocate_image("pipes/yellow/ver.png", "pipes/yellow/ver_1.png");
+        attributes.relocate_image("pipes/yellow/hor.png", "pipes/yellow/hor_1.png");
+        // green was removed (see above)
+    }
     // always: fix sprite with undefined massive-type
     if (attributes.count("type") > 0 && attributes["type"] == "undefined") {
         cerr << "Warning: Fixing type 'undefined' by forcing it to 'passive'" << endl;

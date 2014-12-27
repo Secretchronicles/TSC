@@ -141,23 +141,23 @@ static mrb_value Jump(mrb_state* p_state,  mrb_value self)
  */
 static mrb_value Get_Type(mrb_state* p_state,  mrb_value self)
 {
-    switch (pLevel_Player->m_alex_type) {
-    case ALEX_DEAD:
+    switch (pLevel_Player->m_maryo_type) {
+    case MARYO_DEAD:
         return str2sym(p_state, "dead");
-    case ALEX_SMALL:
+    case MARYO_SMALL:
         return str2sym(p_state, "small");
-    case ALEX_BIG:
+    case MARYO_BIG:
         return str2sym(p_state, "big");
-    case ALEX_FIRE:
+    case MARYO_FIRE:
         return str2sym(p_state, "fire");
-    case ALEX_ICE:
+    case MARYO_ICE:
         return str2sym(p_state, "ice");
-    //case ALEX_CAPE:
+    //case MARYO_CAPE:
     //  return str2sym(p_state, "cape"); // Not implemented officially in TSC
-    case ALEX_GHOST:
+    case MARYO_GHOST:
         return str2sym(p_state, "ghost");
     default:
-        std::cerr << "Warning: Invalid Alex state: " << pLevel_Player->m_alex_type << std::endl;
+        std::cerr << "Warning: Invalid Alex state: " << pLevel_Player->m_maryo_type << std::endl;
         return mrb_nil_value();
     }
 }
@@ -207,22 +207,22 @@ static mrb_value Set_Type(mrb_state* p_state,  mrb_value self)
     mrb_sym sym;
     mrb_get_args(p_state, "n", &sym);
     const char* typestr = mrb_sym2name(p_state, sym);
-    Alex_type type;
+    Maryo_type type;
 
     if (strcmp(typestr, "dead") == 0)
-        type = ALEX_DEAD;
+        type = MARYO_DEAD;
     else if (strcmp(typestr, "small") == 0)
-        type = ALEX_SMALL;
+        type = MARYO_SMALL;
     else if (strcmp(typestr, "big") == 0)
-        type = ALEX_BIG;
+        type = MARYO_BIG;
     else if (strcmp(typestr, "fire") == 0)
-        type = ALEX_FIRE;
+        type = MARYO_FIRE;
     else if (strcmp(typestr, "ice") == 0)
-        type = ALEX_ICE;
+        type = MARYO_ICE;
     //else if (strcmp(typestr, "cape") == 0) // Not implemented officially by TSC
-    //  type = ALEX_CAPE;
+    //  type = MARYO_CAPE;
     else if (strcmp(typestr, "ghost") == 0)
-        type = ALEX_GHOST;
+        type = MARYO_GHOST;
     else {
         mrb_raisef(p_state, MRB_ARGUMENT_ERROR(p_state), "Invalid Alex type '%s'.", typestr);
         return mrb_nil_value();

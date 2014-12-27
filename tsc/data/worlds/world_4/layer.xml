@@ -1,59 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layer>
-	<line>
-		<Property name="X1" value="252" />
-		<Property name="Y1" value="-239" />
-		<Property name="X2" value="462" />
-		<Property name="Y2" value="-240" />
-		<Property name="origin" value="0" />
-	</line>
-	<line>
-		<Property name="X1" value="467" />
-		<Property name="Y1" value="-237" />
-		<Property name="X2" value="465" />
-		<Property name="Y2" value="-94" />
-		<Property name="origin" value="1" />
-	</line>
-	<line>
-		<Property name="X1" value="472" />
-		<Property name="Y1" value="-90" />
-		<Property name="X2" value="707" />
-		<Property name="Y2" value="-89" />
-		<Property name="origin" value="2" />
-	</line>
-	<line>
-		<Property name="X1" value="713" />
-		<Property name="Y1" value="-94" />
-		<Property name="X2" value="715" />
-		<Property name="Y2" value="-239" />
-		<Property name="origin" value="3" />
-	</line>
-	<line>
-		<Property name="X1" value="716" />
-		<Property name="Y1" value="-249" />
-		<Property name="X2" value="713" />
-		<Property name="Y2" value="-384" />
-		<Property name="origin" value="4" />
-	</line>
-	<line>
-		<Property name="X1" value="719" />
-		<Property name="Y1" value="-390" />
-		<Property name="X2" value="1018" />
-		<Property name="Y2" value="-390" />
-		<Property name="origin" value="5" />
-	</line>
-	<line>
-		<Property name="X1" value="1023" />
-		<Property name="Y1" value="-394" />
-		<Property name="X2" value="1021" />
-		<Property name="Y2" value="-476" />
-		<Property name="origin" value="6" />
-	</line>
-	<line>
-		<Property name="X1" value="1015" />
-		<Property name="Y1" value="-481" />
-		<Property name="X2" value="858" />
-		<Property name="Y2" value="-481" />
-		<Property name="origin" value="7" />
-	</line>
+  <line>
+    <property name="X1" value="252"/>
+    <property name="Y1" value="-239"/>
+    <property name="X2" value="462"/>
+    <property name="Y2" value="-240"/>
+    <property name="origin" value="0"/>
+  </line>
+  <line>
+    <property name="X1" value="466"/>
+    <property name="Y1" value="-158"/>
+    <property name="X2" value="465"/>
+    <property name="Y2" value="-94"/>
+    <property name="origin" value="1"/>
+  </line>
+  <line>
+    <property name="X1" value="472"/>
+    <property name="Y1" value="-90"/>
+    <property name="X2" value="707"/>
+    <property name="Y2" value="-89"/>
+    <property name="origin" value="2"/>
+  </line>
+  <line>
+    <property name="X1" value="713"/>
+    <property name="Y1" value="-94"/>
+    <property name="X2" value="715"/>
+    <property name="Y2" value="-239"/>
+    <property name="origin" value="3"/>
+  </line>
+  <line>
+    <property name="X1" value="716"/>
+    <property name="Y1" value="-249"/>
+    <property name="X2" value="713"/>
+    <property name="Y2" value="-384"/>
+    <property name="origin" value="4"/>
+  </line>
+  <line>
+    <property name="X1" value="719"/>
+    <property name="Y1" value="-390"/>
+    <property name="X2" value="1018"/>
+    <property name="Y2" value="-390"/>
+    <property name="origin" value="5"/>
+  </line>
+  <line>
+    <property name="X1" value="1023"/>
+    <property name="Y1" value="-394"/>
+    <property name="X2" value="1021"/>
+    <property name="Y2" value="-476"/>
+    <property name="origin" value="6"/>
+  </line>
+  <line>
+    <property name="X1" value="1015"/>
+    <property name="Y1" value="-481"/>
+    <property name="X2" value="858"/>
+    <property name="Y2" value="-481"/>
+    <property name="origin" value="7"/>
+  </line>
+  <line>
+    <property name="X1" value="466"/>
+    <property name="Y1" value="-234"/>
+    <property name="X2" value="466"/>
+    <property name="Y2" value="-171"/>
+    <property name="origin" value="0"/>
+  </line>
 </layer>

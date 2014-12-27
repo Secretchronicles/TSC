@@ -48,7 +48,7 @@
 	</background>
 	<global_effect>
 		<Property name="type" value="1" />
-		<Property name="image" value="animation\particles\windtrail_1.png" />
+		<Property name="image" value="animation/particles/windtrail_1.png" />
 		<Property name="rect_x" value="-256" />
 		<Property name="rect_y" value="0" />
 		<Property name="rect_w" value="0" />

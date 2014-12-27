@@ -46,6 +46,7 @@ install to.
 * Boost >= 1.50.0 (to be exact: boost_system, boost_filesystem, boost_thread)
 * For generating the docs:
   * `kramdown` RubyGem.
+  * The `coderay` RubyGem.
   * The `dot` program.
   * The `doxygen` program.
   * Ruby’s `rdoc` program.

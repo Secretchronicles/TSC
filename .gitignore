@@ -20,6 +20,11 @@
 # The normal build directories
 /tsc/build
 /tsc/crossbuild
+/tsc/CMakeFiles
+
+# Dependencies
+/tsc/mruby
+/tsc/cegui
 
 # Generated
 /tsc/*.log
@@ -28,12 +33,18 @@
 /tsc/*.manifest
 /tsc/stdout.txt
 /tsc/stderr.txt
+/tsc/CMakeCache.txt
+/tsc/install_manifest.txt
+/tsc/Makefile
+/tsc/config.hpp
+/tsc/credits.cpp
 /tsc/docs/scripting/html/
 /tsc/docs/scripting/rdoc/
 /tsc/docs/api/
 /tsc/docs/ssl/
 Thumbs.db
 *.mo
+*.gmo
 
 # Arch package
 /tsc/extras/archlinux/TSC
