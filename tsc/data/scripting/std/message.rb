@@ -33,6 +33,9 @@ module Std
 
       # Actual activation
       super
+
+      #Now move the box away so it doesn't interact with the player (this won't move the text)
+      self.warp(-100,100)
     end
 
   end
