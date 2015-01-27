@@ -18,14 +18,14 @@
 #define TSC_ENEMYSTOPPER_HPP
 
 #include "../core/global_basic.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../scripting/objects/specials/mrb_enemy_stopper.hpp"
 
 namespace TSC {
 
     /* *** *** *** *** *** cEnemyStopper *** *** *** *** *** *** *** *** *** *** *** *** */
 
-    class cEnemyStopper : public cAnimated_Sprite {
+    class cEnemyStopper : public cMovingSprite {
     public:
         // constructor
         cEnemyStopper(cSprite_Manager* sprite_manager);

@@ -16,13 +16,13 @@
 #include "../../../core/sprite_manager.hpp"
 #include "../../../level/level.hpp"
 #include "mrb_level_entry.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 #include "../../events/event.hpp"
 
 /**
  * Class: LevelEntry
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * A _level entry_ can be used as a warp target for Alex even
@@ -142,7 +142,7 @@ static mrb_value Get_Type(mrb_state* p_state, mrb_value self)
  *   : Make Alex immediately stand at the entry’s position.
  *   `:warp`
  *   : Make Alex slowly move into the direction specified
- *     by AnimatedSprite#direction. This is useful for pipes.
+ *     by MovingSprite#direction. This is useful for pipes.
  */
 static mrb_value Set_Type(mrb_state* p_state, mrb_value self)
 {
@@ -168,7 +168,7 @@ static mrb_value Set_Type(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_LevelEntry(mrb_state* p_state)
 {
-    struct RClass* p_rcLevel_Entry = mrb_define_class(p_state, "LevelEntry", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcLevel_Entry = mrb_define_class(p_state, "LevelEntry", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcLevel_Entry, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcLevel_Entry, "initialize", Initialize, MRB_ARGS_NONE());

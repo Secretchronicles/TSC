@@ -21,7 +21,7 @@
 /**
  * Class: Crate
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * _Crates_ are heavy boxes Alex can move around. They can be
@@ -63,7 +63,7 @@ static mrb_value Initialize(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Crate(mrb_state* p_state)
 {
-    struct RClass* p_rcCrate = mrb_define_class(p_state, "Crate", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcCrate = mrb_define_class(p_state, "Crate", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcCrate, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcCrate, "initialize", Initialize, MRB_ARGS_NONE());

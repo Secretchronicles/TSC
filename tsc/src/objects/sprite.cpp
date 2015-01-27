@@ -28,6 +28,7 @@
 #include "../core/i18n.hpp"
 #include "../scripting/events/touch_event.hpp"
 #include "../level/level_editor.hpp"
+#include "../core/file_parser.hpp"
 #include "../core/filesystem/resource_manager.hpp"
 #include "../core/filesystem/package_manager.hpp"
 #include "../core/xml_attributes.hpp"
@@ -321,7 +322,14 @@ cSprite::cSprite(XmlAttributes& attributes, cSprite_Manager* sprite_manager, con
     // position
     Set_Pos(string_to_float(attributes["posx"]), string_to_float(attributes["posy"]), true);
     // image
-    Set_Image(pVideo->Get_Package_Surface(utf8_to_path(attributes["image"])), true) ;
+    m_image_filename = attributes["image"];
+    if(utf8_to_path(m_image_filename).extension() == utf8_to_path(".png")) {
+        Set_Image(pVideo->Get_Package_Surface(utf8_to_path(attributes["image"])), true) ;
+    }
+    else {
+        Add_Image_Set("main", utf8_to_path(m_image_filename));
+        Set_Image_Set("main", true);
+    }
     // Massivity.
     // FIXME: Should be separate "massivity" attribute or so.
     Set_Massive_Type(Get_Massive_Type_Id(attributes["type"]));
@@ -340,6 +348,16 @@ void cSprite::Init(void)
     // undefined
     m_type = TYPE_UNDEFINED;
     m_sprite_array = ARRAY_UNDEFINED;
+
+    // animation data
+    m_curr_img = -1;
+    m_anim_enabled = 0;
+    m_anim_img_start = 0;
+    m_anim_img_end = 0;
+    m_anim_time_default = 1000;
+    m_anim_counter = 0;
+    m_anim_last_ticks = pFramerate->m_last_ticks - 1;
+    m_anim_mod = 1.0f;
 
     // collision data
     m_col_pos.m_x = 0.0f;
@@ -415,7 +433,24 @@ void cSprite::Init(void)
 cSprite* cSprite::Copy(void) const
 {
     cSprite* basic_sprite = new cSprite(m_sprite_manager);
+ 
+    // current image
+    basic_sprite->m_image_filename = m_image_filename;
     basic_sprite->Set_Image(m_start_image, true);
+
+    // animation details
+    basic_sprite->m_curr_img = m_curr_img;
+    basic_sprite->m_anim_enabled = m_anim_enabled;
+    basic_sprite->m_anim_img_start = m_anim_img_start;
+    basic_sprite->m_anim_img_end = m_anim_img_end;
+    basic_sprite->m_anim_time_default = m_anim_time_default;
+    basic_sprite->m_anim_counter = m_anim_counter;
+    basic_sprite->m_anim_last_ticks = m_anim_last_ticks;
+    basic_sprite->m_anim_mod = m_anim_mod;
+    basic_sprite->m_images = m_images;
+    basic_sprite->m_named_ranges = m_named_ranges;
+
+    // basic settings
     basic_sprite->Set_Pos(m_start_pos_x, m_start_pos_y, 1);
     basic_sprite->m_type = m_type;
     basic_sprite->m_sprite_array = m_sprite_array;
@@ -456,7 +491,9 @@ xmlpp::Element* cSprite::Save_To_XML_Node(xmlpp::Element* p_element)
 
     // image
     boost::filesystem::path img_filename;
-    if (m_start_image)
+    if (!m_image_filename.empty())
+        img_filename = utf8_to_path(m_image_filename);
+    else if (m_start_image)
         img_filename = m_start_image->m_path;
     else if (m_image)
         img_filename = m_image->m_path;

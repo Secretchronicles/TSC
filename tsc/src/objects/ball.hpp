@@ -18,13 +18,13 @@
 #define TSC_BALL_HPP
 
 #include "../video/video.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 
 namespace TSC {
 
     /* *** *** *** *** *** *** *** Ball class *** *** *** *** *** *** *** *** *** *** */
 
-    class cBall : public cAnimated_Sprite {
+    class cBall : public cMovingSprite {
     public:
         // constructor
         cBall(cSprite_Manager* sprite_manager);

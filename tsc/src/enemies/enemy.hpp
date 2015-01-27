@@ -17,7 +17,7 @@
 #ifndef TSC_ENEMY_HPP
 #define TSC_ENEMY_HPP
 
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../core/framerate.hpp"
 #include "../audio/audio.hpp"
 #include "../scripting/objects/enemies/mrb_enemy.hpp"
@@ -27,7 +27,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
-    class cEnemy : public cAnimated_Sprite {
+    class cEnemy : public cMovingSprite {
     public:
         // constructor
         cEnemy(cSprite_Manager* sprite_manager);

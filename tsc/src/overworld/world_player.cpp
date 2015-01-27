@@ -32,7 +32,7 @@ namespace TSC {
 /* *** *** *** *** *** *** *** *** cOverworld_Player *** *** *** *** *** *** *** *** *** */
 
 cOverworld_Player::cOverworld_Player(cSprite_Manager* sprite_manager, cOverworld* overworld)
-    : cAnimated_Sprite(sprite_manager)
+    : cMovingSprite(sprite_manager)
 {
     m_sprite_array = ARRAY_PLAYER;
     m_type = TYPE_PLAYER;
@@ -149,7 +149,7 @@ void cOverworld_Player::Set_Direction(const ObjectDirection dir, bool new_start_
         Set_Image_Num(m_anim_img_start);
     }
 
-    cAnimated_Sprite::Set_Direction(dir, new_start_direction);
+    cMovingSprite::Set_Direction(dir, new_start_direction);
 
     Update_Vel();
 }
@@ -167,7 +167,7 @@ void cOverworld_Player::Set_Type(Alex_type new_type)
 
 void cOverworld_Player::Update(void)
 {
-    cAnimated_Sprite::Update();
+    cMovingSprite::Update();
 
     Update_Animation();
 
@@ -196,7 +196,7 @@ void cOverworld_Player::Draw(cSurface_Request* request /* = NULL */)
     }
 
     // Draw player
-    cAnimated_Sprite::Draw(request);
+    cMovingSprite::Draw(request);
     // alpha in debug mode
     if (pOverworld_Manager->m_debug_mode) {
         request->m_color.alpha = 64;

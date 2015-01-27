@@ -54,9 +54,10 @@ cStaticEnemy::cStaticEnemy(XmlAttributes& attributes, cSprite_Manager* sprite_ma
     Set_Rotation_Speed(string_to_float(attributes.fetch("rotation_speed", "-7.5")));
 
     // image
+    m_image_filename = attributes.fetch("image", m_image_filename); // Init sets m_image_filename default
     Clear_Images();
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path(attributes.fetch("image", "enemy/static/saw/default.png"))));
-    Set_Image_Num(0, true);
+    Add_Image_Set("main", utf8_to_path(m_image_filename));
+    Set_Image_Set("main", true);
 
     // path
     Set_Path_Identifier(attributes["path"]);
@@ -86,7 +87,11 @@ void cStaticEnemy::Init(void)
 
     Set_Rotation_Speed(0.0f);
     Set_Speed(0.0f);
-    Set_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/static/blocks/spike_1/2_grey.png")), true);
+
+    m_image_filename = "enemy/static/blocks/spike_1/2_grey.png";
+    Clear_Images();
+    Add_Image_Set("main", utf8_to_path(m_image_filename));
+    Set_Image_Set("main", true);
 }
 
 void cStaticEnemy::Init_Links(void)
@@ -99,7 +104,10 @@ cStaticEnemy* cStaticEnemy::Copy(void) const
 {
     cStaticEnemy* static_enemy = new cStaticEnemy(m_sprite_manager);
     static_enemy->Set_Pos(m_start_pos_x, m_start_pos_y, 1);
-    static_enemy->Set_Image(pVideo->Get_Package_Surface(m_image->Get_Path()), true);
+    static_enemy->Clear_Images();
+    static_enemy->m_image_filename = m_image_filename;
+    static_enemy->Add_Image_Set("main", utf8_to_path(m_image_filename));
+    static_enemy->Set_Image_Set("main", true);
     static_enemy->Set_Rotation_Speed(m_rotation_speed);
     static_enemy->Set_Path_Identifier(m_path_state.m_path_identifier);
     static_enemy->Set_Speed(m_speed);
@@ -117,6 +125,7 @@ xmlpp::Element* cStaticEnemy::Save_To_XML_Node(xmlpp::Element* p_element)
 {
     xmlpp::Element* p_node = cEnemy::Save_To_XML_Node(p_element);
 
+    Replace_Property(p_node, "image", m_image_filename);
     Add_Property(p_node, "rotation_speed", m_rotation_speed);
     Add_Property(p_node, "path", m_path_state.m_path_identifier);
     Add_Property(p_node, "speed", m_speed);
@@ -179,6 +188,9 @@ void cStaticEnemy::DownGrade(bool force /* = 0 */)
 void cStaticEnemy::Update(void)
 {
     cEnemy::Update();
+    if (!m_freeze_counter) {
+        Update_Animation();
+    }
 
     if (!m_valid_update || !Is_In_Range()) {
         return;
@@ -205,6 +217,7 @@ void cStaticEnemy::Update(void)
         // move to position
         Set_Velocity(diff_x, diff_y);
     }
+
 }
 
 void cStaticEnemy::Draw(cSurface_Request* request /* = NULL */)
@@ -293,7 +306,7 @@ void cStaticEnemy::Editor_Activate(void)
     CEGUI::Editbox* editbox = static_cast<CEGUI::Editbox*>(wmgr.createWindow("TaharezLook/Editbox", "editor_static_enemy_image"));
     Editor_Add(UTF8_("Image"), UTF8_("Image filename"), editbox, 200);
 
-    editbox->setText(path_to_utf8(pPackage_Manager->Get_Relative_Pixmap_Path(m_image->Get_Path())));
+    editbox->setText(m_image_filename.c_str());
     editbox->subscribeEvent(CEGUI::Editbox::EventTextChanged, CEGUI::Event::Subscriber(&cStaticEnemy::Editor_Image_Text_Changed, this));
 
     // rotation speed
@@ -353,8 +366,9 @@ bool cStaticEnemy::Editor_Image_Text_Changed(const CEGUI::EventArgs& event)
     std::string str_text = static_cast<CEGUI::Editbox*>(windowEventArgs.window)->getText().c_str();
 
     Clear_Images();
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path(str_text), true));
-    Set_Image_Num(0, true);
+    m_image_filename = str_text;
+    Add_Image_Set("main", utf8_to_path(m_image_filename));
+    Set_Image_Set("main", true);
 
     return 1;
 }

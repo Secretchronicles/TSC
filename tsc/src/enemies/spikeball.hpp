@@ -115,6 +115,10 @@ namespace TSC {
         float m_counter_running;
         // particle counter if running
         float m_running_particle_counter;
+
+        // image indexes
+        int m_turn_start;
+        int m_turn_end;
     };
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

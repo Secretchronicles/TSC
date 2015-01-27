@@ -20,6 +20,7 @@
 #include "../core/global_game.hpp"
 #include "../core/math/rect.hpp"
 #include "../video/video.hpp"
+#include "../video/img_set.hpp"
 #include "../core/collision.hpp"
 #include "../scripting/scriptable_object.hpp"
 #include "../scripting/scripting.hpp"
@@ -113,7 +114,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** cSprite *** *** *** *** *** *** *** *** *** *** */
 
-    class cSprite : public cCollidingSprite {
+    class cSprite : public cCollidingSprite, public cImageSet {
     public:
         // constructor
         cSprite(cSprite_Manager* sprite_manager, const std::string type_name = "sprite");
@@ -144,6 +145,18 @@ namespace TSC {
 
         /// Sets the image for drawing
         virtual void Set_Image(cGL_Surface* new_image, bool new_start_image = 0, bool del_img = 0);
+        virtual void Set_Image_Set_Image(cGL_Surface* new_image, bool new_startimage /* = 0 */)
+        {
+            Set_Image(new_image, new_startimage, 0);
+        }
+
+        // Identity reported by image set
+        virtual std::string Get_Identity()
+        {
+            std::stringstream ss;
+            ss << "sprite type " << m_type << ", name " << m_name.c_str();
+            return ss.str();
+        }
 
         // Set the sprite type
         void Set_Sprite_Type(SpriteType type);
@@ -346,8 +359,8 @@ namespace TSC {
 
         // Update the position rect values
         void Update_Position_Rect(void);
-        // default update
-        virtual void Update(void) {};
+        // default update, derived updates should not call this again if they also call Update_Animation()
+        virtual void Update(void) { Update_Animation(); };
         /* late update
          * use if it is needed that other objects are already updated
         */
@@ -441,6 +454,8 @@ namespace TSC {
         cGL_Surface* m_image;
         /// editor and first image
         cGL_Surface* m_start_image;
+        /// image filename
+        std::string m_image_filename;
 
         /// complete image rect
         GL_rect m_rect;

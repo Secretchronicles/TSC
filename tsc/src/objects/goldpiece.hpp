@@ -19,7 +19,7 @@
 
 #include "../core/global_basic.hpp"
 #include "../core/xml_attributes.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../scripting/objects/specials/mrb_jewel.hpp"
 #include "../scripting/objects/specials/mrb_jumping_jewel.hpp"
 #include "../scripting/objects/specials/mrb_falling_jewel.hpp"
@@ -28,7 +28,7 @@ namespace TSC {
 
     /* *** *** *** *** *** cGoldpiece *** *** *** *** *** *** *** *** *** *** *** *** */
 
-    class cGoldpiece : public cAnimated_Sprite {
+    class cGoldpiece : public cMovingSprite {
     public:
         // constructor
         cGoldpiece(cSprite_Manager* sprite_manager);

@@ -35,7 +35,7 @@ namespace TSC {
 /* *** *** *** *** *** *** cPowerUp *** *** *** *** *** *** *** *** *** *** *** */
 
 cPowerUp::cPowerUp(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "item")
+    : cMovingSprite(sprite_manager, "item")
 {
     m_sprite_array = ARRAY_ACTIVE;
     m_massive_type = MASS_PASSIVE;
@@ -125,7 +125,7 @@ void cPowerUp::Draw(cSurface_Request* request /* = NULL */)
         return;
     }
 
-    cAnimated_Sprite::Draw(request);
+    cMovingSprite::Draw(request);
 }
 
 bool cPowerUp::Is_Update_Valid(void)
@@ -304,7 +304,7 @@ void cMushroom::Set_Type(SpriteType new_type)
 
     m_type = new_type;
 
-    Set_Image_Num(0, 1, 0);
+    Set_Image_Num(0, 1);
 }
 
 void cMushroom::Activate(void)
@@ -503,7 +503,7 @@ void cFirePlant::Init(void)
     Add_Image(pVideo->Get_Package_Surface("game/items/fireberry_2.png"));
     Add_Image(pVideo->Get_Package_Surface("game/items/fireberry_3.png"));
 
-    Set_Image_Num(0, 1, 0);
+    Set_Image_Num(0, 1);
 
     m_name = _("Fireberry");
 

@@ -136,6 +136,12 @@ namespace TSC {
     protected:
 
         virtual std::string Get_XML_Type_Name();
+
+        // image indexes
+        int m_walk_start;
+        int m_shell_start;
+        int m_turn_start;
+        int m_turn_end;
     };
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

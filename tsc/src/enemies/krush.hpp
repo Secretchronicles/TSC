@@ -97,6 +97,10 @@ namespace TSC {
     protected:
 
         virtual std::string Get_XML_Type_Name();
+
+        // image indexes
+        int m_big_end;
+        int m_small_start;
     };
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

@@ -25,13 +25,13 @@ namespace TSC {
 /* *** *** *** *** *** cEnemyStopper *** *** *** *** *** *** *** *** *** *** *** *** */
 
 cEnemyStopper::cEnemyStopper(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "enemystopper")
+    : cMovingSprite(sprite_manager, "enemystopper")
 {
     cEnemyStopper::Init();
 }
 
 cEnemyStopper::cEnemyStopper(XmlAttributes& attributes, cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "enemystopper")
+    : cMovingSprite(sprite_manager, "enemystopper")
 {
     cEnemyStopper::Init();
     Set_Pos(string_to_float(attributes["posx"]), string_to_float(attributes["posy"]), true);

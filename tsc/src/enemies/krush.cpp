@@ -60,14 +60,8 @@ void cKrush::Init(void)
     m_pos_z = 0.093f;
     m_gravity_max = 27.0f;
 
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/big_1.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/big_2.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/big_3.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/big_4.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/small_1.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/small_2.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/small_3.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/krush/small_4.png"));
+    Add_Image_Set("big", "enemy/krush/big.imgset", 0, NULL, &m_big_end);
+    Add_Image_Set("small", "enemy/krush/small.imgset", 0, &m_small_start);
 
     m_state = STA_FALL;
     Set_Moving_State(STA_WALK);
@@ -145,7 +139,8 @@ void cKrush::DownGrade(bool force /* = 0 */)
         if (m_state == STA_WALK) {
             Set_Moving_State(STA_RUN);
 
-            Col_Move(0.0f, m_images[3].m_image->m_col_h - m_images[4].m_image->m_col_h, 1, 1);
+            if(m_big_end >= 0 && m_small_start >= 0)
+                Col_Move(0.0f, m_images[m_big_end].m_image->m_col_h - m_images[m_small_start].m_image->m_col_h, 1, 1);
 
             // animation
             cParticle_Emitter* anim = new cParticle_Emitter(m_sprite_manager);
@@ -188,20 +183,12 @@ void cKrush::Set_Moving_State(Moving_state new_state)
     }
 
     if (new_state == STA_WALK) {
-        Set_Animation(1);
-        Set_Animation_Image_Range(0, 3);
-        Set_Time_All(120, 1);
-        Reset_Animation();
-        Set_Image_Num(m_anim_img_start);
+        Set_Image_Set("big");
 
         m_kill_points = 20;
     }
     else if (new_state == STA_RUN) {
-        Set_Animation(1);
-        Set_Animation_Image_Range(4, 7);
-        Set_Time_All(70, 1);
-        Reset_Animation();
-        Set_Image_Num(m_anim_img_start);
+        Set_Image_Set("small");
 
         m_kill_points = 40;
     }

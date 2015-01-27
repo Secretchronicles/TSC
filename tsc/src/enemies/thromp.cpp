@@ -216,7 +216,7 @@ void cThromp::Activate(void)
     m_move_back = 0;
 
     // active image
-    Set_Image_Num(1);
+    Set_Image_Set("active");
 }
 
 bool cThromp::Move_Back(void)
@@ -231,7 +231,7 @@ bool cThromp::Move_Back(void)
     m_move_back = 1;
 
     // default image
-    Set_Image_Num(0);
+    Set_Image_Set("main");
 
     return 1;
 }
@@ -268,9 +268,12 @@ void cThromp::Update(void)
 {
     cEnemy::Update();
 
+
     if (!m_valid_update || !Is_In_Range()) {
         return;
     }
+
+    Update_Animation();
 
     // standing ( waiting )
     if (m_state == STA_STAY) {
@@ -377,14 +380,14 @@ void cThromp::Update_Images(void)
     // clear images
     Clear_Images();
     // set images
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path(Get_Direction_Name(m_start_direction) + ".png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path(Get_Direction_Name(m_start_direction) + "_active.png")));
+    Add_Image_Set("main", m_img_dir / utf8_to_path(Get_Direction_Name(m_start_direction) + ".imgset"));
+    Add_Image_Set("active", m_img_dir / utf8_to_path(Get_Direction_Name(m_start_direction) + "_active.imgset"));
     // set start image
-    Set_Image_Num(0, 1);
+    Set_Image_Set("main", true);
 
     // set active image
     if (m_state == STA_FLY) {
-        Set_Image_Num(1);
+        Set_Image_Set("active");
     }
 }
 

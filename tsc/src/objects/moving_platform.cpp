@@ -40,13 +40,13 @@ namespace TSC {
 /* *** *** *** *** *** *** *** cMoving_Platform *** *** *** *** *** *** *** *** *** *** */
 
 cMoving_Platform::cMoving_Platform(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "moving_platform"), m_path_state(sprite_manager)
+    : cMovingSprite(sprite_manager, "moving_platform"), m_path_state(sprite_manager)
 {
     cMoving_Platform::Init();
 }
 
 cMoving_Platform::cMoving_Platform(XmlAttributes& attributes, cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "moving_platform"), m_path_state(sprite_manager)
+    : cMovingSprite(sprite_manager, "moving_platform"), m_path_state(sprite_manager)
 {
     cMoving_Platform::Init();
 
@@ -88,13 +88,13 @@ cMoving_Platform::cMoving_Platform(XmlAttributes& attributes, cSprite_Manager* s
     Set_Middle_Count(attributes.fetch<int>("middle_img_count", m_middle_count));
 
     // image top left
-    Set_Image_Top_Left(pVideo->Get_Package_Surface(utf8_to_path(attributes.fetch("image_top_left", path_to_utf8(m_images[0].m_image->Get_Path())))));
+    Set_Image_Top_Left(utf8_to_path(attributes.fetch("image_top_left", path_to_utf8(m_left_filename))));
 
     // image top middle
-    Set_Image_Top_Middle(pVideo->Get_Package_Surface(utf8_to_path(attributes.fetch("image_top_middle", path_to_utf8(m_images[1].m_image->Get_Path())))));
+    Set_Image_Top_Middle(utf8_to_path(attributes.fetch("image_top_middle", path_to_utf8(m_middle_filename))));
 
     // image top right
-    Set_Image_Top_Right(pVideo->Get_Package_Surface(utf8_to_path(attributes.fetch("image_top_right", path_to_utf8(m_images[2].m_image->Get_Path())))));
+    Set_Image_Top_Right(utf8_to_path(attributes.fetch("image_top_right", path_to_utf8(m_right_filename))));
 }
 
 cMoving_Platform::~cMoving_Platform(void)
@@ -137,10 +137,10 @@ void cMoving_Platform::Init(void)
 
     Set_Middle_Count(4);
     // create default images
-    Add_Image(pVideo->Get_Package_Surface("ground/green_1/slider/1/brown/left.png"));
-    Add_Image(pVideo->Get_Package_Surface("ground/green_1/slider/1/brown/middle.png"));
-    Add_Image(pVideo->Get_Package_Surface("ground/green_1/slider/1/brown/right.png"));
-    Set_Image_Num(1, 1);
+    Set_Image_Top_Left(utf8_to_path("ground/green_1/slider/1/brown/left.png"));
+    Set_Image_Top_Middle(utf8_to_path("ground/green_1/slider/1/brown/middle.png"));
+    Set_Image_Top_Right(utf8_to_path("ground/green_1/slider/1/brown/right.png"));
+    Set_Image(m_left_image.m_image, 1);
 
     Update_Rect();
 }
@@ -165,9 +165,9 @@ cMoving_Platform* cMoving_Platform::Copy(void) const
     moving_platform->Set_Shake_Time(m_shake_time);
     moving_platform->Set_Touch_Move_Time(m_touch_move_time);
     moving_platform->Set_Middle_Count(m_middle_count);
-    moving_platform->Set_Image_Top_Left(m_images[0].m_image);
-    moving_platform->Set_Image_Top_Middle(m_images[1].m_image);
-    moving_platform->Set_Image_Top_Right(m_images[2].m_image);
+    moving_platform->Set_Image_Top_Left(m_left_filename);
+    moving_platform->Set_Image_Top_Middle(m_middle_filename);
+    moving_platform->Set_Image_Top_Right(m_right_filename);
     return moving_platform;
 }
 
@@ -178,7 +178,7 @@ std::string cMoving_Platform::Get_XML_Type_Name()
 
 xmlpp::Element* cMoving_Platform::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cAnimated_Sprite::Save_To_XML_Node(p_element);
+    xmlpp::Element* p_node = cMovingSprite::Save_To_XML_Node(p_element);
 
     // massive type
     Add_Property(p_node, "massive_type", Get_Massive_Type_Name(m_massive_type));
@@ -210,17 +210,11 @@ xmlpp::Element* cMoving_Platform::Save_To_XML_Node(xmlpp::Element* p_element)
 
     fs::path rel;
     // image top left
-    rel = pPackage_Manager->Get_Relative_Pixmap_Path(m_images[0].m_image->Get_Path());
-    Convert_Path_Separators(rel);
-    Add_Property(p_node, "image_top_left", path_to_utf8(rel));
+    Add_Property(p_node, "image_top_left", path_to_utf8(m_left_filename));
     // image top middle
-    rel = pPackage_Manager->Get_Relative_Pixmap_Path(m_images[1].m_image->Get_Path());
-    Convert_Path_Separators(rel);
-    Add_Property(p_node, "image_top_middle", path_to_utf8(rel));
+    Add_Property(p_node, "image_top_middle", path_to_utf8(m_middle_filename));
     // image top right
-    rel = pPackage_Manager->Get_Relative_Pixmap_Path(m_images[2].m_image->Get_Path());
-    Convert_Path_Separators(rel);
-    Add_Property(p_node, "image_top_right", path_to_utf8(rel));
+    Add_Property(p_node, "image_top_right", path_to_utf8(m_right_filename));
 
     return p_node;
 }
@@ -352,7 +346,7 @@ void cMoving_Platform::Set_Direction(const ObjectDirection dir, bool new_start_d
     // save old direction
     ObjectDirection start_direction_old = m_start_direction;
     // set direction
-    cAnimated_Sprite::Set_Direction(dir, new_start_direction);
+    cMovingSprite::Set_Direction(dir, new_start_direction);
 
     if (new_start_direction) {
         // changed direction
@@ -429,38 +423,34 @@ void cMoving_Platform::Set_Middle_Count(const unsigned int val)
     }
 }
 
-void cMoving_Platform::Set_Image_Top_Left(cGL_Surface* surface)
+void cMoving_Platform::Set_Image_Top_Left(const fs::path& path)
 {
-    if (!surface) {
-        return;
-    }
-
-    m_images[0].m_image = surface;
-
-    // top left image sets main image
-    m_curr_img = -1;
-    Set_Image_Num(0, 1);
+    m_left_filename = path;
+    m_left_image.Clear_Images();
+    m_left_image.Add_Image_Set("main", path);
+    m_left_image.Set_Image_Set("main");
+    Set_Image(m_left_image.m_image, 1);
 
     Update_Rect();
 }
 
-void cMoving_Platform::Set_Image_Top_Middle(cGL_Surface* surface)
+void cMoving_Platform::Set_Image_Top_Middle(const fs::path& path)
 {
-    if (!surface) {
-        return;
-    }
+    m_middle_filename = path;
+    m_middle_image.Clear_Images();
+    m_middle_image.Add_Image_Set("main", path);
+    m_middle_image.Set_Image_Set("main");
 
-    m_images[1].m_image = surface;
     Update_Rect();
 }
 
-void cMoving_Platform::Set_Image_Top_Right(cGL_Surface* surface)
+void cMoving_Platform::Set_Image_Top_Right(const fs::path& path)
 {
-    if (!surface) {
-        return;
-    }
+    m_right_filename = path;
+    m_right_image.Clear_Images();
+    m_right_image.Add_Image_Set("main", path);
+    m_right_image.Set_Image_Set("main");
 
-    m_images[2].m_image = surface;
     Update_Rect();
 }
 
@@ -469,6 +459,10 @@ void cMoving_Platform::Update(void)
     if (!m_valid_update || !Is_In_Range()) {
         return;
     }
+
+    m_left_image.Update_Animation();
+    m_middle_image.Update_Animation();
+    m_right_image.Update_Animation();
 
     // move time should be smaller than touch time
     // because it should start moving (if it is moving) before shaking starts.
@@ -729,45 +723,45 @@ void cMoving_Platform::Draw(cSurface_Request* request /* = NULL */)
     }
 
     // top left
-    if (m_images[0].m_image) {
+    if (m_left_image.m_image) {
         // Start
-        m_image = m_images[0].m_image;
+        m_image = m_left_image.m_image;
         m_start_image = m_image;
         // create request
 
         surface_request = new cSurface_Request();
         // draw only first image complete
-        cAnimated_Sprite::Draw(surface_request);
+        cMovingSprite::Draw(surface_request);
         surface_request->m_pos_x += x;
-        x += m_images[0].m_image->m_w;
+        x += m_left_image.m_image->m_w;
         // add request
         pRenderer->Add(surface_request);
     }
 
     // top middle
-    if (m_images[1].m_image) {
+    if (m_middle_image.m_image) {
         // Middle
-        m_image = m_images[1].m_image;
+        m_image = m_middle_image.m_image;
         m_start_image = m_image;
         for (unsigned int i = 0; i < m_middle_count; i++) {
             // create request
             surface_request = new cSurface_Request();
-            cAnimated_Sprite::Draw_Image(surface_request);
+            cMovingSprite::Draw_Image(surface_request);
             surface_request->m_pos_x += x;
-            x += m_images[1].m_image->m_w;
+            x += m_middle_image.m_image->m_w;
             // add request
             pRenderer->Add(surface_request);
         }
     }
 
     // top right
-    if (m_images[2].m_image) {
+    if (m_right_image.m_image) {
         // End
-        m_image = m_images[2].m_image;
+        m_image = m_right_image.m_image;
         m_start_image = m_image;
         // create request
         surface_request = new cSurface_Request();
-        cAnimated_Sprite::Draw_Image(surface_request);
+        cMovingSprite::Draw_Image(surface_request);
         surface_request->m_pos_x += x;
         //x += m_images[2]->w;
         // add request
@@ -812,20 +806,34 @@ void cMoving_Platform::Update_Rect(void)
     m_col_rect.m_w = 0;
     m_rect.m_w = 0;
 
-    // get width
-    if (m_images[0].m_image) {
-        m_rect.m_w += m_images[0].m_image->m_w;
+    m_col_rect.m_h = 0;
+    m_rect.m_h = 0;
+
+    // get width and height
+    if (m_left_image.m_image) {
+        m_rect.m_w += m_left_image.m_image->m_w;
+        m_rect.m_h = m_left_image.m_image->m_h;
     }
-    if (m_images[1].m_image) {
-        m_rect.m_w += m_images[1].m_image->m_w * m_middle_count;
+    if (m_middle_image.m_image) {
+        m_rect.m_w += m_middle_image.m_image->m_w * m_middle_count;
+        if(m_middle_image.m_image->m_h > m_rect.m_h) {
+            m_rect.m_h = m_middle_image.m_image->m_h;
+        }
     }
-    if (m_images[2].m_image) {
-        m_rect.m_w += m_images[2].m_image->m_w;
+    if (m_right_image.m_image) {
+        m_rect.m_w += m_right_image.m_image->m_w;
+        if(m_right_image.m_image->m_h > m_rect.m_h) {
+            m_rect.m_h = m_right_image.m_image->m_h;
+        }
     }
 
     // set width
     m_col_rect.m_w = m_rect.m_w;
     m_start_rect.m_w = m_rect.m_w;
+
+    // set height
+    m_col_rect.m_h = m_rect.m_h;
+    m_start_rect.m_h = m_rect.m_h;
 }
 
 void cMoving_Platform::Update_Velocity(void)
@@ -875,7 +883,7 @@ bool cMoving_Platform::Is_Update_Valid()
 
 bool cMoving_Platform::Is_Draw_Valid(void)
 {
-    bool valid = cAnimated_Sprite::Is_Draw_Valid();
+    bool valid = cMovingSprite::Is_Draw_Valid();
 
     // if editor enabled
     if (editor_enabled) {
@@ -1044,24 +1052,21 @@ void cMoving_Platform::Editor_Activate(void)
     editbox = static_cast<CEGUI::Editbox*>(wmgr.createWindow("TaharezLook/Editbox", "editor_moving_platform_image_top_left"));
     Editor_Add(UTF8_("Image top left"), UTF8_("Image top left"), editbox, 200);
 
-    rel = pPackage_Manager->Get_Relative_Pixmap_Path(m_images[0].m_image->Get_Path());
-    editbox->setText(path_to_utf8(rel));
+    editbox->setText(path_to_utf8(m_left_filename));
     editbox->subscribeEvent(CEGUI::Editbox::EventTextChanged, CEGUI::Event::Subscriber(&cMoving_Platform::Editor_Image_Top_Left_Text_Changed, this));
 
     // image top middle
     editbox = static_cast<CEGUI::Editbox*>(wmgr.createWindow("TaharezLook/Editbox", "editor_moving_platform_image_top_middle"));
     Editor_Add(UTF8_("Image top middle"), UTF8_("Image top middle"), editbox, 200);
 
-    rel = pPackage_Manager->Get_Relative_Pixmap_Path(m_images[1].m_image->Get_Path());
-    editbox->setText(path_to_utf8(rel));
+    editbox->setText(path_to_utf8(m_middle_filename));
     editbox->subscribeEvent(CEGUI::Editbox::EventTextChanged, CEGUI::Event::Subscriber(&cMoving_Platform::Editor_Image_Top_Middle_Text_Changed, this));
 
     // image top right
     editbox = static_cast<CEGUI::Editbox*>(wmgr.createWindow("TaharezLook/Editbox", "editor_moving_platform_image_top_right"));
     Editor_Add(UTF8_("Image top right"), UTF8_("Image top right"), editbox, 200);
 
-    rel = pPackage_Manager->Get_Relative_Pixmap_Path(m_images[2].m_image->Get_Path());
-    editbox->setText(path_to_utf8(rel));
+    editbox->setText(path_to_utf8(m_right_filename));
     editbox->subscribeEvent(CEGUI::Editbox::EventTextChanged, CEGUI::Event::Subscriber(&cMoving_Platform::Editor_Image_Top_Right_Text_Changed, this));
 
     // init
@@ -1231,7 +1236,7 @@ bool cMoving_Platform::Editor_Image_Top_Left_Text_Changed(const CEGUI::EventArgs
     const CEGUI::WindowEventArgs& windowEventArgs = static_cast<const CEGUI::WindowEventArgs&>(event);
     std::string str_text = static_cast<CEGUI::Editbox*>(windowEventArgs.window)->getText().c_str();
 
-    Set_Image_Top_Left(pVideo->Get_Package_Surface(utf8_to_path(str_text)));       // Automatically converted to absolute path by Get_Surface()
+    Set_Image_Top_Left(utf8_to_path(str_text));       // Automatically converted to absolute path by Get_Surface()
 
     return 1;
 }
@@ -1241,7 +1246,7 @@ bool cMoving_Platform::Editor_Image_Top_Middle_Text_Changed(const CEGUI::EventAr
     const CEGUI::WindowEventArgs& windowEventArgs = static_cast<const CEGUI::WindowEventArgs&>(event);
     std::string str_text = static_cast<CEGUI::Editbox*>(windowEventArgs.window)->getText().c_str();
 
-    Set_Image_Top_Middle(pVideo->Get_Package_Surface(utf8_to_path(str_text)));       // Automatically converted to absolute path by Get_Surface()
+    Set_Image_Top_Middle(utf8_to_path(str_text));       // Automatically converted to absolute path by Get_Surface()
 
     return 1;
 }
@@ -1251,7 +1256,7 @@ bool cMoving_Platform::Editor_Image_Top_Right_Text_Changed(const CEGUI::EventArg
     const CEGUI::WindowEventArgs& windowEventArgs = static_cast<const CEGUI::WindowEventArgs&>(event);
     std::string str_text = static_cast<CEGUI::Editbox*>(windowEventArgs.window)->getText().c_str();
 
-    Set_Image_Top_Right(pVideo->Get_Package_Surface(utf8_to_path(str_text)));       // Automatically converted to absolute path by Get_Surface()
+    Set_Image_Top_Right(utf8_to_path(str_text));       // Automatically converted to absolute path by Get_Surface()
 
     return 1;
 }

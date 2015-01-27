@@ -15,7 +15,7 @@
 
 #ifndef TSC_CRATE_HPP
 #define TSC_CRATE_HPP
-#include "animated_sprite.hpp"
+#include "movingsprite.hpp"
 #include "../core/global_basic.hpp"
 #include "../core/xml_attributes.hpp"
 #include "../scripting/objects/specials/mrb_crate.hpp"
@@ -31,7 +31,7 @@ namespace TSC {
     /**
      * Box that can be moved around by Alex.
      */
-    class cCrate: public cAnimated_Sprite {
+    class cCrate: public cMovingSprite {
     public:
         // contructor
         cCrate(cSprite_Manager* p_sprite_manager);

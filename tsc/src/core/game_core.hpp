@@ -128,6 +128,34 @@ namespace TSC {
         Add_Property(p_element, name, uint_to_string(value));
     }
 
+// Replace a property if it exists (or add it if it does not exist)
+    void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, const Glib::ustring& value);
+
+    inline void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, int value)
+    {
+        Replace_Property(p_element, name, int_to_string(value));
+    }
+    inline void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, Uint64 value)
+    {
+        Replace_Property(p_element, name, int64_to_string(value));
+    }
+    inline void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, long value)
+    {
+        Replace_Property(p_element, name, long_to_string(value));
+    }
+    inline void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, float value)
+    {
+        Replace_Property(p_element, name, float_to_string(value));
+    }
+    inline void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, bool value)
+    {
+        Replace_Property(p_element, name, bool_to_string(value));
+    }
+    inline void Replace_Property(xmlpp::Element* p_element, const Glib::ustring& name, unsigned int value)
+    {
+        Replace_Property(p_element, name, uint_to_string(value));
+    }
+
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
 } // namespace TSC

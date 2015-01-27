@@ -17,7 +17,7 @@
 #ifndef TSC_ANIMATION_HPP
 #define TSC_ANIMATION_HPP
 
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../core/obj_manager.hpp"
 
 namespace TSC {
@@ -33,7 +33,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** Base Animation class *** *** *** *** *** *** *** *** *** *** */
 
-    class cAnimation : public cAnimated_Sprite {
+    class cAnimation : public cMovingSprite {
     public:
         cAnimation(cSprite_Manager* sprite_manager, std::string type_name = "sprite");
         virtual ~cAnimation(void);
@@ -88,10 +88,10 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** Fireball Animation *** *** *** *** *** *** *** *** *** *** */
 
-    class cAnimation_Fireball_Item : public cAnimated_Sprite {
+    class cAnimation_Fireball_Item : public cMovingSprite {
     public:
         cAnimation_Fireball_Item(cSprite_Manager* sprite_manager)
-            : cAnimated_Sprite(sprite_manager)
+            : cMovingSprite(sprite_manager)
         {
             m_counter = 0.0f;
         }

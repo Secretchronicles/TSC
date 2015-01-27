@@ -26,13 +26,13 @@
 using namespace TSC;
 
 cCrate::cCrate(cSprite_Manager* p_sprite_manager)
-    : cAnimated_Sprite(p_sprite_manager, "crate")
+    : cMovingSprite(p_sprite_manager, "crate")
 {
     Init();
 }
 
 cCrate::cCrate(XmlAttributes& attributes, cSprite_Manager* p_sprite_manager)
-    : cAnimated_Sprite(p_sprite_manager, "crate")
+    : cMovingSprite(p_sprite_manager, "crate")
 {
     Init();
     Set_Pos(attributes.fetch<float>("posx", 0), attributes.fetch<float>("posy", 0), true);
@@ -65,7 +65,7 @@ void cCrate::Init()
 
     Add_Image(pVideo->Get_Package_Surface("blocks/extra/box.png"));
     Set_Animation(false);
-    Set_Image_Num(0, true, false);
+    Set_Image_Num(0, true);
 }
 
 void cCrate::Load_From_Savegame(cSave_Level_Object* p_saveobj)
@@ -125,7 +125,7 @@ void cCrate::Update()
     if (m_crate_state == CRATE_DEAD)
         return;
 
-    cAnimated_Sprite::Update();
+    cMovingSprite::Update();
 
     // Slow down if moving
     if (m_crate_state == CRATE_SLIDE && !Is_Float_Equal(m_velx, 0.0f)) {
@@ -146,7 +146,7 @@ std::string cCrate::Get_XML_Type_Name()
 
 xmlpp::Element* cCrate::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cAnimated_Sprite::Save_To_XML_Node(p_element);
+    xmlpp::Element* p_node = cMovingSprite::Save_To_XML_Node(p_element);
 
     // No configuration currently
 

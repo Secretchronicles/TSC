@@ -61,20 +61,8 @@ void cPip::Init()
     m_pos_z = 0.093f;
     m_gravity_max = 13.0f;
 
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_1.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_2.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_3.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_4.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_5.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_6.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_7.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_8.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_9.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/big_10.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/small_1.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/small_2.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/small_3.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/pip/small_4.png")));
+    Add_Image_Set("big", "enemy/pip/big.imgset", 0, &m_big_start);
+    Add_Image_Set("small", "enemy/pip/small.imgset", 0, &m_small_start);
 
     m_state = STA_FALL;
     Set_Moving_State(STA_WALK);
@@ -150,7 +138,8 @@ void cPip::DownGrade(bool force /* = false */)
     else {
         if (m_state == STA_WALK) { // Split big up into two small ones
             Set_Moving_State(STA_RUN);
-            Col_Move(m_images[10].m_image->m_col_w - m_images[0].m_image->m_col_w, 0.0f, true, true);
+            if(m_big_start >= 0 && m_small_start >= 0)
+                Col_Move(m_images[m_small_start].m_image->m_col_w - m_images[m_big_start].m_image->m_col_w, 0.0f, true, true);
 
             // Spawn a second pip so it looks as if cut in twice
             cPip* p_newpip = Copy();
@@ -203,20 +192,11 @@ void cPip::Set_Moving_State(Moving_state new_state)
         return;
 
     if (new_state == STA_WALK) {
-        Set_Animation(true);
-        Set_Animation_Image_Range(0, 9);
-        Set_Time_All(120, true);
-        Reset_Animation();
-        Set_Image_Num(m_anim_img_start);
-
+        Set_Image_Set("big");
         m_kill_points = 35;
     }
     else if (new_state == STA_RUN) {
-        Set_Animation(true);
-        Set_Animation_Image_Range(10, 13);
-        Set_Time_All(70, true);
-        Reset_Animation();
-        Set_Image_Num(m_anim_img_start);
+        Set_Image_Set("small");
         m_kill_points = 70;
     }
 

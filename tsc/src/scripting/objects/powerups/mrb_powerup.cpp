@@ -13,14 +13,14 @@
  */
 
 #include "mrb_powerup.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 #include "../../../objects/powerup.hpp"
 #include "../../events/event.hpp"
 
 /**
  * Class: Powerup
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * _Powerups_ are goodies (well, or badies) that affect Alex’s
@@ -67,7 +67,7 @@ static mrb_value Activate(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Powerup(mrb_state* p_state)
 {
-    struct RClass* p_rcPowerup = mrb_define_class(p_state, "Powerup", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcPowerup = mrb_define_class(p_state, "Powerup", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcPowerup, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcPowerup, "initialize", Initialize, MRB_ARGS_NONE());

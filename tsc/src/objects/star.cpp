@@ -58,7 +58,7 @@ void cjStar::Init(void)
     m_velx = 5;
 
     Add_Image(pVideo->Get_Package_Surface("game/items/star.png"));
-    Set_Image_Num(0, 1, 0);
+    Set_Image_Num(0, 1);
 
     m_name = _("Star");
 }

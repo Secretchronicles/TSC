@@ -34,13 +34,13 @@ namespace TSC {
 /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
 cLevel_Entry::cLevel_Entry(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "level_entry")
+    : cMovingSprite(sprite_manager, "level_entry")
 {
     cLevel_Entry::Init();
 }
 
 cLevel_Entry::cLevel_Entry(XmlAttributes& attributes, cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "level_entry")
+    : cMovingSprite(sprite_manager, "level_entry")
 {
     cLevel_Entry::Init();
 
@@ -105,7 +105,7 @@ std::string cLevel_Entry::Get_XML_Type_Name()
 
 xmlpp::Element* cLevel_Entry::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cAnimated_Sprite::Save_To_XML_Node(p_element);
+    xmlpp::Element* p_node = cMovingSprite::Save_To_XML_Node(p_element);
 
     // direction
     if (m_entry_type == LEVEL_ENTRY_WARP)
@@ -124,7 +124,7 @@ void cLevel_Entry::Set_Direction(const ObjectDirection dir)
         return;
     }
 
-    cAnimated_Sprite::Set_Direction(dir, 1);
+    cMovingSprite::Set_Direction(dir, 1);
 }
 
 std::string cLevel_Entry::Create_Name(void) const

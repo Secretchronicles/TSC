@@ -37,13 +37,13 @@ namespace TSC {
 /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
 cLevel_Exit::cLevel_Exit(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "levelexit")
+    : cMovingSprite(sprite_manager, "levelexit")
 {
     cLevel_Exit::Init();
 }
 
 cLevel_Exit::cLevel_Exit(XmlAttributes& attributes, cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "levelexit")
+    : cMovingSprite(sprite_manager, "levelexit")
 {
     cLevel_Exit::Init();
 
@@ -147,7 +147,7 @@ std::string cLevel_Exit::Get_XML_Type_Name()
 
 xmlpp::Element* cLevel_Exit::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cAnimated_Sprite::Save_To_XML_Node(p_element);
+    xmlpp::Element* p_node = cMovingSprite::Save_To_XML_Node(p_element);
 
     // camera motion
     Add_Property(p_node, "camera_motion", m_exit_motion);
@@ -188,7 +188,7 @@ void cLevel_Exit::Set_Direction(const ObjectDirection dir, bool initial /* = tru
         return;
     }
 
-    cAnimated_Sprite::Set_Direction(dir, initial);
+    cMovingSprite::Set_Direction(dir, initial);
 }
 
 std::string cLevel_Exit::Create_Name(void) const

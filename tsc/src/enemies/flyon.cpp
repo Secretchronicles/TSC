@@ -150,7 +150,7 @@ void cFlyon::Set_Image_Dir(fs::path dir)
     }
 
     // if not image directory
-    if (!File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/closed_1.settings", true)) && !File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/closed_1.png"))) {
+    if (!File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/still.imgset"))) {
         cerr    << "Warning: Flyon image files not found; does the flyon directory "
                 << path_to_utf8(dir) << " exist?" << endl;
         return;
@@ -161,17 +161,9 @@ void cFlyon::Set_Image_Dir(fs::path dir)
     // clear images
     Clear_Images();
     // set images
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("closed_1.png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("closed_2.png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("open_1.png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("open_2.png")));
-    // set start image
-    Set_Image_Num(0, 1);
-
-    Set_Animation(1);
-    Set_Animation_Image_Range(0, 3);
-    Set_Time_All(130, 1);
-    Reset_Animation();
+    Add_Image_Set("still", m_img_dir / utf8_to_path("still.imgset"));
+    Add_Image_Set("fly", m_img_dir / utf8_to_path("fly.imgset"));
+    Set_Image_Set("fly", true);
 }
 
 void cFlyon::Set_Direction(const ObjectDirection dir)
@@ -269,15 +261,14 @@ void cFlyon::Set_Moving_State(Moving_state new_state)
 
         m_move_back = 0;
 
-        Set_Image_Num(0);
-        Reset_Animation();
-        Set_Animation(0);
+        Set_Image_Set("still");
     }
     else if (new_state == STA_FLY) {
         m_velx = m_dest_velx;
         m_vely = m_dest_vely;
         m_move_back = 0;
-        Set_Animation(1);
+
+        Set_Image_Set("fly");
     }
 
     m_state = new_state;

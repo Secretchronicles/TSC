@@ -67,12 +67,13 @@ void cArmy::Init(void)
     m_pos_z = 0.091f;
     m_gravity_max = 24.0f;
 
+    m_color_type = COL_DEFAULT;
+    Set_Color(COL_RED);
+
     m_player_counter = 0.0f;
     m_army_state = ARMY_DEAD;
     Set_Army_Moving_State(ARMY_WALK);
 
-    m_color_type = COL_DEFAULT;
-    Set_Color(COL_RED);
     Set_Direction(DIR_RIGHT, 1);
 
     m_kill_sound = "stomp_4.ogg";
@@ -117,7 +118,8 @@ void cArmy::Load_From_Savegame(cSave_Level_Object* save_object)
         if (m_state != STA_OBJ_LINKED && (mov_state == ARMY_SHELL_STAND || mov_state == ARMY_SHELL_RUN)) {
             Set_Army_Moving_State(mov_state);
             // set shell image without position changes
-            cSprite::Set_Image(m_images[5 + 5].m_image);
+            if(m_shell_start >= 0)
+                cSprite::Set_Image(m_images[m_shell_start].m_image);
         }
     }
 
@@ -182,26 +184,14 @@ void cArmy::Set_Color(DefaultColor col)
 
     // FIXME: Red armadillo currently has not enough images!
     // Hence many images are duplicate for the red armadillo.
-    // Walk
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_1.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_2.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_3.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_4.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_5.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_6.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_7.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_8.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/walk_9.png"));
-    // Walk Turn
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/turn.png"));
-    // Shell
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/shell.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/shell_look_1.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/shell_look_2.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/shell_look_3.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/army/" + filename_dir + "/roll.png"));
 
-    Set_Image_Num(0, 1);
+    Add_Image_Set("walk", "enemy/army/" + filename_dir + "/walk.imgset", 0, &m_walk_start);
+    Add_Image_Set("turn", "enemy/army/" + filename_dir + "/turn.imgset", 0, &m_turn_start, &m_turn_end);
+    Add_Image_Set("shell", "enemy/army/" + filename_dir + "/shell.imgset", 0, &m_shell_start);
+    Add_Image_Set("shell_look", "enemy/army/" + filename_dir + "/shell_look.imgset");
+    Add_Image_Set("roll", "enemy/army/" + filename_dir + "/roll.imgset");
+
+    Set_Image_Set("walk", true);
 }
 
 void cArmy::Turn_Around(ObjectDirection col_dir /* = DIR_UNDEFINED */)
@@ -211,9 +201,7 @@ void cArmy::Turn_Around(ObjectDirection col_dir /* = DIR_UNDEFINED */)
     if (m_army_state == ARMY_WALK) {
         m_velx *= 0.5f;
         // hack : disable turn image
-        Set_Image_Num(4 + 5);
-        Set_Animation(0);
-        Reset_Animation();
+        Set_Image_Set("turn");
     }
 
     if (m_army_state != ARMY_SHELL_RUN) {
@@ -227,7 +215,8 @@ void cArmy::DownGrade(bool force /* = 0 */)
         // normal walking
         if (m_army_state == ARMY_WALK) {
             Set_Army_Moving_State(ARMY_SHELL_STAND);
-            Col_Move(0, m_images[0].m_image->m_col_h - m_images[5].m_image->m_col_h, 1, 1);
+            if(m_walk_start >= 0 && m_shell_start >= 0)
+                Col_Move(0, m_images[m_walk_start].m_image->m_col_h - m_images[m_shell_start].m_image->m_col_h, 1, 1);
             m_counter = 0.0f;
         }
         // staying
@@ -249,10 +238,11 @@ void cArmy::DownGrade(bool force /* = 0 */)
         m_vely = 0.0f;
 
         if (m_army_state == ARMY_WALK) {
-            Move(0.0f, m_images[0].m_image->m_h - m_images[5].m_image->m_h, 1);
+            if(m_walk_start >= 0 && m_shell_start >= 0)
+                Move(0.0f, m_images[m_walk_start].m_image->m_h - m_images[m_shell_start].m_image->m_h, 1);
         }
 
-        Set_Image_Num(5 + 5);
+        Set_Image_Set("shell");
     }
 }
 
@@ -305,30 +295,21 @@ void cArmy::Set_Army_Moving_State(Army_state new_state)
         m_camera_range = 1500;
         Set_Rotation_Z(0.0f);
 
-        Set_Animation(1);
-        Set_Animation_Image_Range(0, 3 + 5);
-        Set_Time_All(80, 1);
-        Reset_Animation();
-        Set_Image_Num(m_anim_img_start);
+        Set_Image_Set("walk");
     }
     else if (new_state == ARMY_SHELL_STAND) {
         m_state = STA_STAY;
         m_camera_range = 2000;
         Set_Rotation_Z(0.0f);
 
-        Set_Animation(0);
-        // set stay image
-        Set_Animation_Image_Range(5 + 5, 5 + 5);
-        Set_Image_Num(m_anim_img_start);
+        Set_Image_Set("shell");
     }
     else if (new_state == ARMY_SHELL_RUN) {
         m_state = STA_RUN;
         m_camera_range = 5000;
         Set_Rotation_Z(0.0f);
 
-        Set_Animation(0);
-        Set_Animation_Image_Range(6 - 1 + 5, 6 - 1 + 5);
-        Set_Image_Num(m_anim_img_start);
+        Set_Image_Set("shell");
     }
 
     m_army_state = new_state;
@@ -350,14 +331,12 @@ void cArmy::Update(void)
     // walking
     if (m_army_state == ARMY_WALK) {
         // if turn around image
-        if (m_curr_img == 4 + 5) {
+        if (m_curr_img >= m_turn_start && m_curr_img <= m_turn_end) {
             m_anim_counter += pFramerate->m_elapsed_ticks;
 
             // set normal image back
             if (m_anim_counter >= 200) {
-                Set_Animation(1);
-                Reset_Animation();
-                Set_Image_Num(m_anim_img_start);
+                Set_Image_Set("walk");
                 Update_Rotation_Hor();
             }
             // rotate the turn image
@@ -378,10 +357,10 @@ void cArmy::Update(void)
             // animation
             if (m_counter < 192.0f) {
                 if (static_cast<int>(m_counter) % 5 == 1) {
-                    Set_Image_Num(9 - 3 + 5);   // active
+                    Set_Image_Set("shell_look");
                 }
                 else {
-                    Set_Image_Num(5 + 5);   // front
+                    Set_Image_Set("shell");
                 }
             }
             // activate
@@ -435,7 +414,7 @@ void cArmy::Stand_Up(void)
     }
 
     // get space needed to stand up
-    float move_y = m_image->m_col_h - m_images[0].m_image->m_col_h;
+    float move_y = m_image->m_col_h - (m_walk_start >= 0 ? m_images[m_walk_start].m_image->m_col_h : 0);
 
     cObjectCollisionType* col_list = Collision_Check_Relative(0.0f, move_y, 0.0f, 0.0f, COLLIDE_ONLY_BLOCKING);
 

@@ -74,9 +74,6 @@ void cBeetle::Init()
     // TODO: Own die sound
     m_kill_sound = "enemy/gee/die.ogg";
     m_kill_points = 100;
-
-    Set_Animation(true);
-    Set_Time_All(140, true);
 }
 
 cBeetle* cBeetle::Copy() const
@@ -230,13 +227,8 @@ void cBeetle::Set_Rest_Living_Time(float time)
 void cBeetle::Set_Color(DefaultColor color)
 {
     Clear_Images();
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_1.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_2.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/left_3.png")));
-
-    Set_Animation_Image_Range(0, 2);
-    Reset_Animation();
-    Set_Image_Num(0, true);
+    Add_Image_Set("fly", utf8_to_path("enemy/beetle/" + Get_Color_Name(color) + "/fly.imgset"));
+    Set_Image_Set("fly", true);
 
     m_color = color;
 }

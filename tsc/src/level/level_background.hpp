@@ -19,6 +19,7 @@
 
 #include "../core/global_basic.hpp"
 #include "../video/video.hpp"
+#include "../video/img_set.hpp"
 #include "../core/obj_manager.hpp"
 
 namespace TSC {
@@ -36,7 +37,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** Background class *** *** *** *** *** *** *** *** *** *** */
 
-    class cBackground {
+    class cBackground : public cImageSet{
     public:
         // default constructor
         cBackground(cSprite_Manager* sprite_manager);
@@ -70,6 +71,9 @@ namespace TSC {
         void Set_Pos_Z(const float val);
         // Set the Background image
         void Set_Image(const boost::filesystem::path& img_file_1);
+        virtual void Set_Image_Set_Image(cGL_Surface* new_image, bool new_imagestart = 0) {
+            m_image_1 = new_image;
+        }
         // Set the Background Image scrolling speed
         void Set_Scroll_Speed(const float x = 1.0f, const float y = 1.0f);
 

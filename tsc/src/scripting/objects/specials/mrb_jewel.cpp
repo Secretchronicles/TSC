@@ -16,13 +16,13 @@
 #include "../../../core/sprite_manager.hpp"
 #include "../../../level/level.hpp"
 #include "mrb_jewel.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 #include "../../events/event.hpp"
 
 /**
  * Class: Jewel
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * _Jewels_.
@@ -139,7 +139,7 @@ static mrb_value Activate(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Jewel(mrb_state* p_state)
 {
-    struct RClass* p_rcJewel = mrb_define_class(p_state, "Jewel", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcJewel = mrb_define_class(p_state, "Jewel", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcJewel, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcJewel, "initialize", Initialize, MRB_ARGS_NONE());

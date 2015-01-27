@@ -18,7 +18,7 @@
 #define TSC_LEVEL_EXIT_HPP
 
 #include "../core/global_basic.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../core/camera.hpp"
 #include "../scripting/objects/specials/mrb_level_exit.hpp"
 
@@ -36,7 +36,7 @@ namespace TSC {
     /* Level exit
      * or if a destination or entry is given it gets you there
     */
-    class cLevel_Exit : public cAnimated_Sprite {
+    class cLevel_Exit : public cMovingSprite {
     public:
         // constructor
         cLevel_Exit(cSprite_Manager* sprite_manager);

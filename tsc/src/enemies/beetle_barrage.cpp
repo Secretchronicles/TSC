@@ -65,17 +65,9 @@ void cBeetleBarrage::Init()
     m_beetle_fly_distance = 35.0f;
     m_beetle_spit_count = 5;
 
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/beetle_barrage/1.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/beetle_barrage/2.png")));
-    Add_Image(pVideo->Get_Package_Surface(utf8_to_path("enemy/beetle_barrage/3.png")));
-
-    // Add an animation, but don’t yet play it. We will only
-    // play the animation when spitting out the beetles.
-    Set_Animation_Image_Range(0, 2);
-    Set_Time_All(180, true);
-    Reset_Animation();
-    Set_Image_Num(0);
-    Set_Animation(false);
+    Add_Image_Set("still", utf8_to_path("enemy/beetle_barrage/still.imgset"));
+    Add_Image_Set("active", utf8_to_path("enemy/beetle_barrage/active.imgset"));
+    Set_Image_Set("still");
 
     Set_Active_Range(200);
     Set_Moving_State(STA_STAY);
@@ -142,16 +134,14 @@ void cBeetleBarrage::Update()
             m_spitting_beetles_counter = 20.0f;
 
             m_is_spitting_out_beetles = true;
-            Set_Animation(true);
+            Set_Image_Set("active");
         }
     }
 
     if (m_is_spitting_out_beetles) {
         if (m_spitting_beetles_counter <= 0.0f) {
             m_spitting_beetles_counter = 0.0f;
-            Set_Animation(false);
-            Set_Image_Num(0);
-            Reset_Animation();
+            Set_Image_Set("still");
 
             Generate_Beetles();
 

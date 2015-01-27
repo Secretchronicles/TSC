@@ -221,23 +221,8 @@ void cGee::Set_Color(DefaultColor col)
         m_fire_resistant = 0;
     }
 
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/1.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/2.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/3.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/4.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/5.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/6.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/7.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/8.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/9.png"));
-    Add_Image(pVideo->Get_Package_Surface("enemy/gee/" + filename_dir + "/10.png"));
-
-    Set_Image_Num(0, 1);
-
-    Set_Animation(1);
-    Set_Animation_Image_Range(0, 9);
-    Set_Time_All(140, 1);
-    Reset_Animation();
+    Add_Image_Set("main", "enemy/gee/" + filename_dir + "/main.imgset");
+    Set_Image_Set("main", true);
 }
 
 void cGee::Turn_Around(ObjectDirection col_dir /* = DIR_UNDEFINED */)

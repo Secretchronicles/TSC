@@ -18,7 +18,7 @@
 #define TSC_LEVEL_ENTRY_HPP
 
 #include "../core/global_basic.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../scripting/objects/specials/mrb_level_entry.hpp"
 
 namespace TSC {
@@ -35,7 +35,7 @@ namespace TSC {
     /* Level Entry
      *
     */
-    class cLevel_Entry : public cAnimated_Sprite {
+    class cLevel_Entry : public cMovingSprite {
     public:
         // constructor
         cLevel_Entry(cSprite_Manager* sprite_manager);

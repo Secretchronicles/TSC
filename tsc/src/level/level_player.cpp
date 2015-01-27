@@ -53,7 +53,7 @@ const float cLevel_Player::m_default_pos_y = -300.0f;
 /* *** *** *** *** *** *** *** *** cLevel_Player *** *** *** *** *** *** *** *** *** */
 
 cLevel_Player::cLevel_Player(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager)
+    : cMovingSprite(sprite_manager)
 {
     m_sprite_array = ARRAY_PLAYER;
     m_type = TYPE_PLAYER;
@@ -155,7 +155,7 @@ void cLevel_Player::Set_Direction(const ObjectDirection dir, bool new_start_dire
         Set_Image_Num(Get_Image() + m_direction);
     }
 
-    cAnimated_Sprite::Set_Direction(dir, new_start_direction);
+    cMovingSprite::Set_Direction(dir, new_start_direction);
 }
 
 bool cLevel_Player::Set_On_Ground(cSprite* obj, bool set_on_top /* = 1 */)

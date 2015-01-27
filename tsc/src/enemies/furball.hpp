@@ -149,6 +149,10 @@ namespace TSC {
         int m_max_downgrade_count;
         // if the level ends when killed (only used if boss)
         bool m_level_ends_if_killed;
+
+        // images offsets
+        int m_turn_start;
+        int m_turn_end;
     };
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

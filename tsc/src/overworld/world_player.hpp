@@ -27,7 +27,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** cOverworld_Player *** *** *** *** *** *** *** *** *** *** */
 
-    class cOverworld_Player : public cAnimated_Sprite {
+    class cOverworld_Player : public cMovingSprite {
     public:
         cOverworld_Player(cSprite_Manager* sprite_manager, cOverworld* overworld);
         virtual ~cOverworld_Player(void);

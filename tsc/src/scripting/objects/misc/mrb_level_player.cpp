@@ -13,7 +13,7 @@
  */
 
 #include "mrb_level_player.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 #include "../../../level/level_player.hpp"
 #include "../../../gui/hud.hpp"
 #include "../../events/event.hpp"
@@ -25,7 +25,7 @@ using namespace std;
 
 /**
  * Class: LevelPlayer
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * The sole instance of this class, the singleton `Player`, represents
@@ -484,7 +484,7 @@ static mrb_value Release_Item(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Level_Player(mrb_state* p_state)
 {
-    struct RClass* p_rcLevel_Player = mrb_define_class(p_state, "LevelPlayer", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcLevel_Player = mrb_define_class(p_state, "LevelPlayer", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcLevel_Player, MRB_TT_DATA);
 
     // Make the Player global the only instance of LevelPlayer

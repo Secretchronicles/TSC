@@ -15,12 +15,12 @@
 #include "mrb_box.hpp"
 #include "../../../objects/box.hpp"
 #include "../../events/event.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 
 /**
  * Class: Box
  *
- * Parent [AnimatedSprite](animatedsprite.html)
+ * Parent [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * _Box_ is the superclass for all boxes accessible
@@ -257,7 +257,7 @@ static mrb_value Activate(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Box(mrb_state* p_state)
 {
-    struct RClass* p_rcBox = mrb_define_class(p_state, "Box", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcBox = mrb_define_class(p_state, "Box", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcBox, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcBox, "initialize", Initialize, MRB_ARGS_NONE());

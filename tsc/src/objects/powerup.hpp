@@ -19,7 +19,7 @@
 
 #include "../core/global_basic.hpp"
 #include "../core/xml_attributes.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../scripting/objects/powerups/mrb_powerup.hpp"
 #include "../scripting/objects/powerups/mrb_berry.hpp"
 #include "../scripting/objects/powerups/mrb_fireberry.hpp"
@@ -29,7 +29,7 @@ namespace TSC {
 
     /* *** *** *** *** *** cPowerUp *** *** *** *** *** *** *** *** *** *** *** *** */
 
-    class cPowerUp : public cAnimated_Sprite {
+    class cPowerUp : public cMovingSprite {
     public:
         // constructor
         cPowerUp(cSprite_Manager* sprite_manager);

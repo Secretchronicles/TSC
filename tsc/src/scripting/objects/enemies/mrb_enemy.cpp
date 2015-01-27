@@ -13,7 +13,7 @@
  */
 
 #include "mrb_enemy.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 #include "../../../enemies/enemy.hpp"
 #include "../../../gui/hud.hpp"
 #include "../../events/event.hpp"
@@ -21,7 +21,7 @@
 /**
  * Class: Enemy
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * _Enemies_ are the little guys that hang around all over the world of
@@ -211,7 +211,7 @@ static mrb_value Is_Fire_Resistant(mrb_state* p_state,  mrb_value self)
 
 void TSC::Scripting::Init_Enemy(mrb_state* p_state)
 {
-    struct RClass* p_rcEnemy = mrb_define_class(p_state, "Enemy", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcEnemy = mrb_define_class(p_state, "Enemy", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcEnemy, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcEnemy, "initialize", Initialize, MRB_ARGS_NONE());

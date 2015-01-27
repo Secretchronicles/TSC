@@ -21,7 +21,7 @@
 /**
  * Class: MovingPlatform
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * TODO: Docs.
@@ -205,7 +205,7 @@ static mrb_value Get_Middle_Count(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Moving_Platform(mrb_state* p_state)
 {
-    struct RClass* p_rcMovingPlatform = mrb_define_class(p_state, "MovingPlatform", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcMovingPlatform = mrb_define_class(p_state, "MovingPlatform", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcMovingPlatform, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcMovingPlatform, "initialize", Initialize, MRB_ARGS_NONE());

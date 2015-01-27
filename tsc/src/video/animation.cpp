@@ -38,7 +38,7 @@ namespace TSC {
 /* *** *** *** *** *** *** *** Base Animation class *** *** *** *** *** *** *** *** *** *** */
 
 cAnimation::cAnimation(cSprite_Manager* sprite_manager, std::string type_name /* = "sprite" */)
-    : cAnimated_Sprite(sprite_manager, type_name)
+    : cMovingSprite(sprite_manager, type_name)
 {
     m_sprite_array = ARRAY_ANIM;
     m_type = TYPE_ACTIVE_SPRITE;

@@ -32,13 +32,13 @@ namespace TSC {
 /* *** *** *** *** *** *** cGoldpiece *** *** *** *** *** *** *** *** *** *** *** */
 
 cGoldpiece::cGoldpiece(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "item")
+    : cMovingSprite(sprite_manager, "item")
 {
     cGoldpiece::Init();
 }
 
 cGoldpiece::cGoldpiece(XmlAttributes& attributes, cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "item")
+    : cMovingSprite(sprite_manager, "item")
 {
     cGoldpiece::Init();
 
@@ -79,7 +79,7 @@ std::string cGoldpiece::Get_XML_Type_Name()
 
 xmlpp::Element* cGoldpiece::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cAnimated_Sprite::Save_To_XML_Node(p_element);
+    xmlpp::Element* p_node = cMovingSprite::Save_To_XML_Node(p_element);
 
     // color
     Add_Property(p_node, "color", Get_Color_Name(m_color_type));
@@ -285,7 +285,7 @@ void cGoldpiece::Draw(cSurface_Request* request /* = NULL */)
         return;
     }
 
-    cAnimated_Sprite::Draw(request);
+    cMovingSprite::Draw(request);
 }
 
 bool cGoldpiece::Is_Update_Valid()

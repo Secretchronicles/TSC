@@ -27,7 +27,6 @@
 #include "objects/mrb_uids.hpp"
 #include "objects/sprites/mrb_sprite.hpp"
 #include "objects/sprites/mrb_moving_sprite.hpp"
-#include "objects/sprites/mrb_animated_sprite.hpp"
 #include "objects/sprites/mrb_particle_emitter.hpp"
 #include "objects/misc/mrb_level.hpp"
 #include "objects/misc/mrb_level_player.hpp"
@@ -302,7 +301,6 @@ void cMRuby_Interpreter::Load_Wrappers()
     // prior to their mruby subclasses!
     Init_Sprite(mp_mruby);
     Init_Moving_Sprite(mp_mruby);
-    Init_Animated_Sprite(mp_mruby);
     Init_Level(mp_mruby);
     Init_Level_Player(mp_mruby);
     Init_Input(mp_mruby);

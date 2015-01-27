@@ -109,7 +109,7 @@ void cEato::Set_Image_Dir(fs::path dir)
     }
 
     // if not image directory
-    if (!File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/1.settings", true)) && !File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/1.png"))) {
+    if (!File_Exists(pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(dir) + "/main.imgset"))) {
         cerr    << "Warning: Eato image files not found; does the eato directory "
                 << path_to_utf8(dir) << " exist?" << endl;
         return;
@@ -120,17 +120,8 @@ void cEato::Set_Image_Dir(fs::path dir)
     // clear images
     Clear_Images();
     // set images
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("1.png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("2.png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("3.png")));
-    Add_Image(pVideo->Get_Package_Surface(m_img_dir / utf8_to_path("2.png")));
-    // set start image
-    Set_Image_Num(0, 1);
-
-    Set_Animation(1);
-    Set_Animation_Image_Range(0, 3);
-    Set_Time_All(180, 1);
-    Reset_Animation();
+    Add_Image_Set("main", m_img_dir / utf8_to_path("main.imgset"));
+    Set_Image_Set("main");
 }
 
 void cEato::Set_Direction(const ObjectDirection dir)

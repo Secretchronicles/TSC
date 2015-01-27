@@ -16,13 +16,13 @@
 #include "../../../core/sprite_manager.hpp"
 #include "../../../level/level.hpp"
 #include "mrb_level_exit.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 #include "../../events/event.hpp"
 
 /**
  * Class: LevelExit
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * A level exit is usually a location where Alex can regularily
@@ -432,7 +432,7 @@ static mrb_value Activate(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_LevelExit(mrb_state* p_state)
 {
-    struct RClass* p_rcLevel_Exit = mrb_define_class(p_state, "LevelExit", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcLevel_Exit = mrb_define_class(p_state, "LevelExit", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcLevel_Exit, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcLevel_Exit, "initialize", Initialize, MRB_ARGS_NONE());

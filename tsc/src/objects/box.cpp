@@ -40,7 +40,7 @@ namespace TSC {
 /* *** *** *** *** *** *** *** *** cBaseBox *** *** *** *** *** *** *** *** *** */
 
 cBaseBox::cBaseBox(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "box")
+    : cMovingSprite(sprite_manager, "box")
 {
     m_type = TYPE_ACTIVE_SPRITE;
     m_sprite_array = ARRAY_ACTIVE;
@@ -102,7 +102,7 @@ std::string cBaseBox::Get_XML_Type_Name()
 
 xmlpp::Element* cBaseBox::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    xmlpp::Element* p_node = cAnimated_Sprite::Save_To_XML_Node(p_element);
+    xmlpp::Element* p_node = cMovingSprite::Save_To_XML_Node(p_element);
 
     if (box_type != TYPE_SPIN_BOX && box_type != TYPE_TEXT_BOX) {
         // animation type
@@ -215,7 +215,7 @@ void cBaseBox::Set_Animation_Type(const std::string& new_anim_type)
 
     Reset_Animation();
     // set start image
-    Set_Image_Num(m_anim_img_start, 1, 0);
+    Set_Image_Num(m_anim_img_start, 1);
 }
 
 void cBaseBox::Set_Useable_Count(int count, bool new_startcount /* = 0 */)
@@ -447,7 +447,7 @@ void cBaseBox::Draw(cSurface_Request* request /* = NULL */)
     if (!editor_level_enabled) {
         // visible box or activated invisible box
         if (m_box_invisible == BOX_VISIBLE || (m_box_invisible == BOX_GHOST && pLevel_Player->m_alex_type == ALEX_GHOST) || m_useable_count != m_start_useable_count) {
-            cAnimated_Sprite::Draw(request);
+            cMovingSprite::Draw(request);
         }
     }
     // editor enabled
@@ -473,7 +473,7 @@ void cBaseBox::Draw(cSurface_Request* request /* = NULL */)
         }
         // visible box
         else {
-            cAnimated_Sprite::Draw(request);
+            cMovingSprite::Draw(request);
         }
 
         // draw item image

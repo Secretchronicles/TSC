@@ -19,7 +19,7 @@
 
 #include "../core/global_basic.hpp"
 #include "../core/xml_attributes.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../scripting/objects/boxes/mrb_box.hpp"
 
 namespace TSC {
@@ -39,7 +39,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** *** cBaseBox *** *** *** *** *** *** *** *** *** */
 
-    class cBaseBox : public cAnimated_Sprite {
+    class cBaseBox : public cMovingSprite {
     public:
         cBaseBox(cSprite_Manager* sprite_manager);
         virtual ~cBaseBox(void);

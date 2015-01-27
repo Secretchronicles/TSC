@@ -86,7 +86,7 @@ static void calculate_rand_values(mrb_state* p_state, mrb_value obj, mrb_float& 
 /**
  * Class: Animation
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * TODO: Docs.
@@ -643,7 +643,7 @@ static mrb_value Emit(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_ParticleEmitter(mrb_state* p_state)
 {
-    struct RClass* p_rcAnimation = mrb_define_class(p_state, "Animation", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcAnimation = mrb_define_class(p_state, "Animation", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcAnimation, MRB_TT_DATA);
 
     // Methods

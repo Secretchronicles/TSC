@@ -19,7 +19,7 @@
 
 #include "../core/global_basic.hpp"
 #include "../objects/ball.hpp"
-#include "../objects/animated_sprite.hpp"
+#include "../objects/movingsprite.hpp"
 #include "../scripting/scripting.hpp"
 #include "../scripting/objects/misc/mrb_level_player.hpp"
 
@@ -63,7 +63,7 @@ namespace TSC {
 
     /* *** *** *** *** *** *** *** Level player *** *** *** *** *** *** *** *** *** *** */
 
-    class cLevel_Player : public cAnimated_Sprite {
+    class cLevel_Player : public cMovingSprite {
     public:
         // constructor
         cLevel_Player(cSprite_Manager* sprite_manager);

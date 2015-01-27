@@ -165,6 +165,11 @@ namespace TSC {
         float m_run_time_counter;
         // if the level ends when killed
         bool m_level_ends_if_killed;
+        // image positions
+        int m_turn_start;
+        int m_turn_end;
+        int m_walk_start;
+        int m_shell_stand_start;
 
         // Save to XML node
         virtual xmlpp::Element* Save_To_XML_Node(xmlpp::Element* p_element);

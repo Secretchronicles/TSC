@@ -21,7 +21,7 @@
 /**
  * Class: Ball
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * This class represents the fire and ice _balls_ Alex is able
@@ -121,7 +121,7 @@ static mrb_value Destroy_With_Sound(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Ball(mrb_state* p_state)
 {
-    struct RClass* p_rcBall = mrb_define_class(p_state, "Ball", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcBall = mrb_define_class(p_state, "Ball", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcBall, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcBall, "initialize", Initialize, MRB_ARGS_REQ(1));

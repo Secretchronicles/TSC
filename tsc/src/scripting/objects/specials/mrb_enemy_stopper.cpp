@@ -16,12 +16,12 @@
 #include "../../../core/sprite_manager.hpp"
 #include "../../../level/level.hpp"
 #include "mrb_enemy_stopper.hpp"
-#include "../sprites/mrb_animated_sprite.hpp"
+#include "../sprites/mrb_moving_sprite.hpp"
 
 /**
  * Class: EnemyStopper
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * An _enemy stopper_ acts as a barrier for most enemies
@@ -60,7 +60,7 @@ static mrb_value Initialize(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_EnemyStopper(mrb_state* p_state)
 {
-    struct RClass* p_rcEnemy_Stopper = mrb_define_class(p_state, "EnemyStopper", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcEnemy_Stopper = mrb_define_class(p_state, "EnemyStopper", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcEnemy_Stopper, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcEnemy_Stopper, "initialize", Initialize, MRB_ARGS_NONE());

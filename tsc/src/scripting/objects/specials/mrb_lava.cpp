@@ -20,7 +20,7 @@
 /**
  * Class: Lava
  *
- * Parent: [AnimatedSprite](animatedsprite.html)
+ * Parent: [MovingSprite](movingsprite.html)
  * {: .superclass}
  *
  * _Lava_ makes any enemy and Alex immediately and instantly die.
@@ -57,7 +57,7 @@ static mrb_value Initialize(mrb_state* p_state, mrb_value self)
 
 void TSC::Scripting::Init_Lava(mrb_state* p_state)
 {
-    struct RClass* p_rcLava = mrb_define_class(p_state, "Lava", mrb_class_get(p_state, "AnimatedSprite"));
+    struct RClass* p_rcLava = mrb_define_class(p_state, "Lava", mrb_class_get(p_state, "MovingSprite"));
     MRB_SET_INSTANCE_TT(p_rcLava, MRB_TT_DATA);
 
     mrb_define_method(p_state, p_rcLava, "initialize", Initialize, MRB_ARGS_NONE());

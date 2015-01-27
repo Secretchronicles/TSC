@@ -194,6 +194,7 @@ void cBackground::Set_Image(const fs::path& img_file_1)
 
     // empty
     if (m_image_1_filename.empty()) {
+        Clear_Images();
         m_image_1 = NULL;
         return;
     }
@@ -202,7 +203,9 @@ void cBackground::Set_Image(const fs::path& img_file_1)
     if (m_image_1_filename.is_absolute())
         m_image_1_filename = pPackage_Manager->Get_Relative_Pixmap_Path(m_image_1_filename);
 
-    m_image_1 = pVideo->Get_Package_Surface(m_image_1_filename);
+    Clear_Images();
+    Add_Image_Set("main", m_image_1_filename);
+    Set_Image_Set("main", true);
 }
 
 void cBackground::Set_Scroll_Speed(const float x /* = 1.0f */, const float y /* = 1.0f */)
@@ -241,6 +244,8 @@ void cBackground::Set_Const_Velocity_Y(const float vel)
 
 void cBackground::Update(void)
 {
+    Update_Animation();
+
     if (!Is_Float_Equal(m_const_vel_x, 0.0f)) {
         m_pos_x += (m_const_vel_x * 2) * pFramerate->m_speed_factor;
     }

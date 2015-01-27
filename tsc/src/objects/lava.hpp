@@ -15,11 +15,11 @@
 
 #ifndef TSC_LAVA_HPP
 #define TSC_LAVA_HPP
-#include "animated_sprite.hpp"
+#include "movingsprite.hpp"
 
 namespace TSC {
 
-    class cLava: public cAnimated_Sprite {
+    class cLava: public cMovingSprite {
     public:
         cLava(cSprite_Manager* p_sprite_manager);
         cLava(XmlAttributes& attributes, cSprite_Manager* p_sprite_manager);

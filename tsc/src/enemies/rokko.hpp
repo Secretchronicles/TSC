@@ -130,6 +130,9 @@ namespace TSC {
         // If this is set, Rokko won’t go off if Alex comes.
         // You have to call Activate() manually.
         bool m_manual;
+
+        // image indexes
+        int m_break_end;
     };
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

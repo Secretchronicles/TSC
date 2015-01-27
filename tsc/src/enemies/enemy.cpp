@@ -32,7 +32,7 @@ namespace TSC {
 /* *** *** *** *** *** *** cEnemy *** *** *** *** *** *** *** *** *** *** *** */
 
 cEnemy::cEnemy(cSprite_Manager* sprite_manager)
-    : cAnimated_Sprite(sprite_manager, "enemy")
+    : cMovingSprite(sprite_manager, "enemy")
 {
     m_sprite_array = ARRAY_ENEMY;
     m_type = TYPE_ENEMY;
@@ -161,7 +161,7 @@ void cEnemy::Set_Dead(bool enable /* = 1 */)
 
 void cEnemy::Update(void)
 {
-    cAnimated_Sprite::Update();
+    cMovingSprite::Update();
 
     // dying animation
     if (m_dead && m_active) {
@@ -312,7 +312,7 @@ void cEnemy::Handle_Collision(cObjectCollision* collision)
         return;
     }
 
-    cAnimated_Sprite::Handle_Collision(collision);
+    cMovingSprite::Handle_Collision(collision);
 }
 
 void cEnemy::Handle_Collision_Lava(cObjectCollision* p_collision)
@@ -329,7 +329,7 @@ void cEnemy::Handle_Collision_Massive(cObjectCollision* p_collision)
     if (p_collision->m_obj->m_type == TYPE_CRATE)
         Send_Collision(p_collision);
     else
-        cAnimated_Sprite::Handle_Collision_Massive(p_collision);
+        cMovingSprite::Handle_Collision_Massive(p_collision);
 }
 
 void cEnemy::Handle_out_of_Level(ObjectDirection dir)
@@ -379,7 +379,7 @@ void cEnemy::Handle_Ball_Hit(const cBall& ball, const cObjectCollision* p_collis
 
 xmlpp::Element* cEnemy::Save_To_XML_Node(xmlpp::Element* p_element)
 {
-    return cAnimated_Sprite::Save_To_XML_Node(p_element);
+    return cMovingSprite::Save_To_XML_Node(p_element);
 }
 
 std::string cEnemy::Create_Name() const

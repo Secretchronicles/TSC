@@ -61,6 +61,14 @@ namespace TSC {
         bool On_Editor_Direction_Select(const CEGUI::EventArgs& event);
 
         float m_explosion_counter;
+
+        // image positions
+        int m_walk_turn_start;
+        int m_walk_turn_end;
+        int m_run_turn_start;
+        int m_run_turn_end;
+        int m_action_start;
+        int m_action_end;
     };
 
 }
