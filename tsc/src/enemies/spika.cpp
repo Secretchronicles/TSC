@@ -101,7 +101,7 @@ void cSpika::Set_Color(DefaultColor col)
     }
 
     // clear old images
-    Clear_Images();
+    Clear_Images(true);
 
     m_color_type = col;
 

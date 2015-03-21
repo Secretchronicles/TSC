@@ -378,6 +378,7 @@ void cMoving_Platform::Set_Image_Top_Left(const fs::path& path)
     m_left_image.Clear_Images();
     m_left_image.Add_Image_Set("main", path);
     m_left_image.Set_Image_Set("main");
+    Clear_Images(true);
     Set_Image(m_left_image.m_image, 1);
 
     Update_Rect();

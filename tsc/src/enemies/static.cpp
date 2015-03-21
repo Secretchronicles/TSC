@@ -55,7 +55,7 @@ cStaticEnemy::cStaticEnemy(XmlAttributes& attributes, cSprite_Manager* sprite_ma
 
     // image
     m_image_filename = attributes.fetch("image", m_image_filename); // Init sets m_image_filename default
-    Clear_Images();
+    Clear_Images(true);
     Add_Image_Set("main", utf8_to_path(m_image_filename));
     Set_Image_Set("main", true);
 
@@ -89,7 +89,7 @@ void cStaticEnemy::Init(void)
     Set_Speed(0.0f);
 
     m_image_filename = "enemy/static/blocks/spike_1/2_grey.png";
-    Clear_Images();
+    Clear_Images(true);
     Add_Image_Set("main", utf8_to_path(m_image_filename));
     Set_Image_Set("main", true);
 }
@@ -104,7 +104,7 @@ cStaticEnemy* cStaticEnemy::Copy(void) const
 {
     cStaticEnemy* static_enemy = new cStaticEnemy(m_sprite_manager);
     static_enemy->Set_Pos(m_start_pos_x, m_start_pos_y, 1);
-    static_enemy->Clear_Images();
+    static_enemy->Clear_Images(true);
     static_enemy->m_image_filename = m_image_filename;
     static_enemy->Add_Image_Set("main", utf8_to_path(m_image_filename));
     static_enemy->Set_Image_Set("main", true);
@@ -366,7 +366,7 @@ bool cStaticEnemy::Editor_Image_Text_Changed(const CEGUI::EventArgs& event)
     const CEGUI::WindowEventArgs& windowEventArgs = static_cast<const CEGUI::WindowEventArgs&>(event);
     std::string str_text = static_cast<CEGUI::Editbox*>(windowEventArgs.window)->getText().c_str();
 
-    Clear_Images();
+    Clear_Images(true);
     m_image_filename = str_text;
     Add_Image_Set("main", utf8_to_path(m_image_filename));
     Set_Image_Set("main", true);

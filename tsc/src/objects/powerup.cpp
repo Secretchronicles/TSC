@@ -217,7 +217,7 @@ void cMushroom::Set_Type(SpriteType new_type)
     }
 
     Set_Color_Combine(0, 0, 0, 0);
-    Clear_Images();
+    Clear_Images(true);
 
     if (new_type == TYPE_MUSHROOM_DEFAULT) {
         Add_Image_Set("main", "game/items/berry_big.imgset");
@@ -442,7 +442,7 @@ void cFirePlant::Init(void)
     m_can_be_on_ground = 0;
     m_pos_z = 0.051f;
 
-    Clear_Images();
+    Clear_Images(true);
     Add_Image_Set("main", "game/items/berry_fire.imgset");
     Set_Image_Set("main", 1);
 
@@ -546,7 +546,7 @@ void cMoon::Init(void)
     m_can_be_on_ground = 0;
     m_pos_z = 0.052f;
 
-    Clear_Images();
+    Clear_Images(true);
     Add_Image_Set("main", "game/items/moon.imgset");
     Set_Image_Set("main", 1);
 
