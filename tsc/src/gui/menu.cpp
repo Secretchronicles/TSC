@@ -599,9 +599,9 @@ void cMenuCore::Enter(const GameMode old_mode /* = MODE_NOTHING */)
     // an overworld.
     if (!pActive_Level->Is_Loaded()) {
         if (m_menu_id == MENU_CREDITS)
-            pAudio->Play_Music("game/credits.ogg", -1, 0, 1500);
+            pAudio->Play_Music("game/credits.ogg", true, 0, 1500);
         else
-            pAudio->Play_Music("game/menu.ogg", -1, 0, 1500);
+            pAudio->Play_Music("game/menu.ogg", true, 0, 1500);
     }
 }
 

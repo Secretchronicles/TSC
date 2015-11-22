@@ -23,10 +23,7 @@ namespace TSC {
 
 /* *** *** *** *** *** *** *** *** Sound *** *** *** *** *** *** *** *** *** */
 
-cSound::cSound(void)
-{
-    m_chunk = NULL;
-}
+cSound::cSound(void) {}
 
 cSound::~cSound(void)
 {
@@ -37,9 +34,7 @@ bool cSound::Load(const fs::path& filename)
 {
     Free();
 
-    m_chunk = Mix_LoadWAV(path_to_utf8(filename).c_str());
-
-    if (m_chunk) {
+    if (m_buffer.loadFromFile(path_to_utf8(filename))) {
         m_filename = filename;
         return 1;
     }
@@ -49,11 +44,6 @@ bool cSound::Load(const fs::path& filename)
 
 void cSound::Free(void)
 {
-    if (m_chunk) {
-        Mix_FreeChunk(m_chunk);
-        m_chunk = NULL;
-    }
-
     m_filename.clear();
 }
 

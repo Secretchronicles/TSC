@@ -357,7 +357,7 @@ void cOverworld::Enter(const GameMode old_mode /* = MODE_NOTHING */)
     Update_Camera();
 
     // play music
-    pAudio->Play_Music(m_musicfile, -1, 0, 3000);
+    pAudio->Play_Music(m_musicfile, true, 0, 3000);
 
     // reset custom level mode type
     if (Game_Mode_Type == MODE_TYPE_LEVEL_CUSTOM) {

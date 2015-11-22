@@ -213,6 +213,7 @@ pkg_check_modules(SDL_MIXER REQUIRED SDL_mixer)
 pkg_check_modules(SDL_TTF REQUIRED SDL_ttf)
 pkg_check_modules(PCRE REQUIRED libpcre)
 pkg_check_modules(LibXmlPP REQUIRED libxml++-2.6)
+pkg_check_modules(SFML_AUDIO REQUIRED sfml-audio)
 
 ###############################################
 # Definitions etc.
@@ -235,6 +236,7 @@ include_directories(
   ${SDL_IMAGE_INCLUDE_DIRS}
   ${SDL_MIXER_INCLUDE_DIRS}
   ${SDL_TTF_INCLUDE_DIRS}
+  ${SFML_AUDIO_INCLUDE_DIRS}
 #  ${IL_INCLUDE_DIR}
   ${PCRE_INCLUDE_DIRS}
   ${LibXmlPP_INCLUDE_DIRS}
@@ -325,6 +327,7 @@ if (WIN32)
     ${SDL_IMAGE_STATIC_LIBRARIES}
     ${SDL_MIXER_STATIC_LIBRARIES}
     ${SDL_TTF_STATIC_LIBRARIES}
+    ${SFML_AUDIO_STATIC_LIBRARIES}
     ${Boost_LIBRARIES}
     ${MRuby_LIBRARIES}
     ${PCRE_STATIC_LIBRARIES}
@@ -350,6 +353,7 @@ else()
     ${SDL_IMAGE_LIBRARIES}
     ${SDL_MIXER_LIBRARIES}
     ${SDL_TTF_LIBRARIES}
+    ${SFML_AUDIO_STATIC_LIBRARIES}
     ${Boost_LIBRARIES}
     ${MRuby_LIBRARIES}
     ${PCRE_LIBRARIES}

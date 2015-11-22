@@ -157,9 +157,9 @@ int cSavegame::Load_Game(unsigned int save_slot)
 
                 // time
                 pHud_Time->Set_Time(savegame->m_level_time);
-                
+
                 // position
-                pLevel_Player->Set_Pos(save_level->m_level_pos_x, save_level->m_level_pos_y);           
+                pLevel_Player->Set_Pos(save_level->m_level_pos_x, save_level->m_level_pos_y);
 
                 // level savegame
                 save_type = 1;
@@ -249,14 +249,14 @@ int cSavegame::Load_Game(unsigned int save_slot)
 
     //Play the appropriate music
     if (!Is_Float_Equal(pLevel_Player -> m_invincible_star, 0.0f)) { //Player Invincible - Invincibility music
-        pAudio->Play_Music("game/star.ogg", 0, 1, 500);
-        pAudio->Play_Music(pActive_Level->m_musicfile, -1, 0);
+        pAudio->Play_Music("game/star.ogg", false, 1, 500);
+        pAudio->Play_Music(pActive_Level->m_musicfile, true, 0);
     }
     else if (save_type == 1) { //Level loaded - level music
-        pAudio->Play_Music(pActive_Level->m_musicfile, -1, 1, 1000);
+        pAudio->Play_Music(pActive_Level->m_musicfile, true, 1, 1000);
     }
     else { //World map loaded -- world map music
-        pAudio->Play_Music(pActive_Overworld->m_musicfile, -1, 1, 1000);
+        pAudio->Play_Music(pActive_Overworld->m_musicfile, true, 1, 1000);
     }
 
     pHud_Points->Set_Points(savegame->m_points);

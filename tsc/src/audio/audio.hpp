@@ -17,6 +17,8 @@
 #ifndef TSC_AUDIO_HPP
 #define TSC_AUDIO_HPP
 
+#define MAX_VOLUME 100
+
 #include "../core/global_basic.hpp"
 #include "../audio/sound_manager.hpp"
 #include "../scripting/scriptable_object.hpp"
@@ -48,7 +50,7 @@ namespace TSC {
     /* *** *** *** *** *** *** *** Audio Sound object *** *** *** *** *** *** *** *** *** *** */
 
 // Callback for a sound finished playing
-    void Finished_Sound(const int channel);
+    /* void Finished_Sound(const int channel); */
 
     class cAudio_Sound {
     public:
@@ -64,17 +66,17 @@ namespace TSC {
 
         /* Play the Sound
          * use_res_id: if set stops all sounds using the same resource id.
-         * loops : if set to -1 loops indefinitely or if greater than zero, loop the sound that many times.
+         * loops : if set to true, loops indefinitely.
         */
-        int Play(int use_res_id = -1, int loops = 0);
+        bool Play(int use_res_id = -1, bool loops = false);
         // Stop the Sound if playing
         void Stop(void);
 
         // sound object
         cSound* m_data;
 
-        // channel if playing else -1
-        int m_channel;
+        // the current sound
+        sf::Sound m_sound;
         // the last used resource id
         int m_resource_id;
     };
@@ -101,18 +103,15 @@ namespace TSC {
             return mrb_obj_value(Data_Wrap_Struct(p_state, mrb_class_get(p_state, "AudioClass"), &Scripting::rtTSC_Scriptable, this));
         }
 
-        // Set the maximum number of sounds playable at once
-        void Set_Max_Sounds(unsigned int limit = 10);
-
         /* Check if the sound was already loaded and returns a pointer to it else it will be loaded.
          * The returned sound should not be deleted or modified.
          */
         cSound* Get_Sound_File(boost::filesystem::path filename) const;
 
         // Play the given sound. `filename' should be relative to the sounds/ directory.
-        bool Play_Sound(boost::filesystem::path filename, int res_id = -1, int volume = -1, int loops = 0);
+        bool Play_Sound(boost::filesystem::path filename, int res_id = -1, int volume = -1, bool loops = false);
         // If no forcing it will be played after the current music
-        bool Play_Music(boost::filesystem::path filename, int loops = 0, bool force = 1, unsigned int fadein_ms = 0);
+        bool Play_Music(boost::filesystem::path filename, bool loops = false, bool force = 1, unsigned int fadein_ms = 0);
 
         /* Returns a pointer to the sound if it is active.
          * The returned sound should not be deleted or modified.
@@ -129,66 +128,45 @@ namespace TSC {
         void Toggle_Sounds(void);
 
         // Pause Music
-        void Pause_Music(void) const;
-
-        /* Resume halted sound
-         * if channel is -1 all halted sounds will be resumed
-        */
-        void Resume_Sound(int channel = -1) const;
+        void Pause_Music(void);
         // Resume Music
-        void Resume_Music(void) const;
+        void Resume_Music(void);
 
+        // Fade out the sound source
+        void Fadeout_Source(sf::SoundSource& source, unsigned int ms);
         /* Fade out Sound(s)
          * ms : the time to fade out
-         * channel : if set only fade this channel out or if -1 all channels
          * overwrite_fading : overwrite an already existing fade out
         */
-        void Fadeout_Sounds(unsigned int ms = 200, int channel = -1, bool overwrite_fading = 0) const;
+        void Fadeout_Sounds(unsigned int ms = 200);
         /* Fade out Sound(s)
          * ms : the time to fade out
          * filename : fade all sounds with this filename out
-         * overwrite_fading : overwrite an already existing fade out
         */
-        void Fadeout_Sounds(unsigned int ms, boost::filesystem::path filename, bool overwrite_fading = 0);
+        void Fadeout_Sounds(unsigned int ms, boost::filesystem::path filename);
         /* Fade out Music
          * ms : the time to fade out
-         * overwrite_fading : overwrite an already existing fade out
         */
-        void Fadeout_Music(unsigned int ms = 500, bool overwrite_fading = 0) const;
+        void Fadeout_Music(unsigned int ms = 500);
 
         // Set the Music position ( if .ogg in seconds )
-        void Set_Music_Position(float position) const;
-
-        /* Returns
-        * 0 if not fading
-        * 1 if fading out
-        * 2 if fading in
-        */
-        Mix_Fading Is_Music_Fading(void) const;
-        /* Returns
-        * 0 if not fading
-        * 1 if fading out
-        * 2 if fading in
-        */
-        Mix_Fading Is_Sound_Fading(int sound_channel) const;
+        void Set_Music_Position(float position);
 
         // Returns true if the Music is paused
         bool Is_Music_Paused(void) const;
         // Returns true if the Music is playing
         bool Is_Music_Playing(void) const;
 
-        // Halt the given sounds
-        void Halt_Sounds(int channel = -1) const;
         // Halt the Music
-        void Halt_Music(void) const;
+        void Halt_Music(void);
 
         // Stop all sounds
         void Stop_Sounds(void) const;
 
         // Set the Sound Volume
-        void Set_Sound_Volume(Uint8 volume, int channel = -1) const;
+        void Set_Sound_Volume(Uint8 volume);
         // Set the Music Volume
-        void Set_Music_Volume(Uint8 volume) const;
+        void Set_Music_Volume(Uint8 volume);
 
         // Update
         void Update(void);
@@ -208,9 +186,9 @@ namespace TSC {
         // current playing music filename
         boost::filesystem::path m_music_filename;
         // current playing music pointer
-        Mix_Music* m_music;
+        sf::Music* m_music;
         // if new music should play after the current this is the old data
-        Mix_Music* m_music_old;
+        sf::Music* m_music_old;
 
         // The current sounds pointer array
         AudioSoundList m_active_sounds;
@@ -219,7 +197,7 @@ namespace TSC {
         unsigned int m_max_sounds;
 
         // initialization information
-        int m_audio_buffer, m_audio_channels;
+        /* int m_audio_buffer, m_audio_channels; */
     };
 
     /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */

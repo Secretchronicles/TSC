@@ -118,9 +118,9 @@ static mrb_value Play_Sound(mrb_state* p_state,  mrb_value self)
 {
     char* filename = NULL;
     mrb_int volume = -1;
-    mrb_int loops = 0;
+    mrb_bool loops = false;
     mrb_int resid = -1;
-    mrb_get_args(p_state,"z|iii", &filename, &volume, &loops, &resid);
+    mrb_get_args(p_state,"z|ibi", &filename, &volume, &loops, &resid);
 
     if (pAudio->Play_Sound(filename, resid, volume, loops))
         return mrb_true_value();

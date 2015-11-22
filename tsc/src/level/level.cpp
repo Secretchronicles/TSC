@@ -524,7 +524,7 @@ void cLevel::Enter(const GameMode old_mode /* = MODE_NOTHING */)
     // play music
     if (m_valid_music) {
         if (pAudio->m_music_filename.compare(m_musicfile) != 0) {
-            pAudio->Play_Music(m_musicfile, -1, 0, 1000);
+            pAudio->Play_Music(m_musicfile, true, 0, 1000);
         }
     }
     else if (pAudio->m_music_enabled) {
