@@ -15,6 +15,7 @@
 
 #include "preferences_loader.hpp"
 #include "../core/global_basic.hpp"
+#include "../audio/audio.hpp"
 
 namespace fs = boost::filesystem;
 using namespace TSC;
@@ -175,12 +176,12 @@ void cPreferencesLoader::handle_property(const std::string& name, const std::str
         mp_preferences->m_audio_sound = string_to_bool(value);
     else if (name == "audio_music_volume") {
         val = string_to_int(value);
-        if (val >= 0 && val <= MIX_MAX_VOLUME)
+        if (val >= 0 && val <= MAX_VOLUME)
             m_audio_music_volume = val;
     }
     else if (name == "audio_sound_volume") {
         val = string_to_int(value);
-        if (val >= 0 && val <= MIX_MAX_VOLUME)
+        if (val >= 0 && val <= MAX_VOLUME)
             m_audio_sound_volume = val;
     }
     else if (name == "audio_hz") {

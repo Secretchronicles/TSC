@@ -2822,8 +2822,8 @@ void cLevel_Player::Get_Item(SpriteType item_type, bool force /* = 0 */, cMoving
     // Star
     else if (item_type == TYPE_STAR) {
         // todo : check if music is already playing
-        pAudio->Play_Music("game/star.ogg", 0, 1, 500);
-        pAudio->Play_Music(pActive_Level->m_musicfile, -1, 0);
+        pAudio->Play_Music("game/star.ogg", false, 1, 500);
+        pAudio->Play_Music(pActive_Level->m_musicfile, true, 0);
         pHud_Points->Add_Points(1000, m_pos_x + (m_col_rect.m_w / 2), m_pos_y + 2);
         m_invincible = speedfactor_fps * 16.0f;
         m_invincible_star = speedfactor_fps * 15.0f;

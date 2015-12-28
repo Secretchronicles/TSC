@@ -313,9 +313,9 @@ void cRandom_Sound::Update(void)
             // apply distance modifier
             sound_volume *= Get_Distance_Volume_Mod();
             // set to mixer volume
-            sound_volume *= static_cast<float>(MIX_MAX_VOLUME);
+            sound_volume *= static_cast<float>(MAX_VOLUME);
             // set volume
-            pAudio->Set_Sound_Volume(static_cast<Uint8>(sound_volume), sound->m_channel);
+            sound->m_sound.setVolume(static_cast<Uint8>(sound_volume));
 
             // update volume every 100 ms
             m_volume_update_counter = 100.0f;
@@ -362,17 +362,10 @@ void cRandom_Sound::Update(void)
         // adjust volume based on distance
         sound_volume *= Get_Distance_Volume_Mod();
 
-        int loops = 0;
-
-        if (m_continuous) {
-            // unlimited
-            loops = -1;
-        }
-
-        sound_volume *= static_cast<float>(MIX_MAX_VOLUME);
+        sound_volume *= static_cast<float>(MAX_VOLUME);
 
         // play sound
-        pAudio->Play_Sound(m_filename, -1, static_cast<int>(sound_volume), loops);
+        pAudio->Play_Sound(m_filename, -1, static_cast<int>(sound_volume), m_continuous);
     }
 }
 

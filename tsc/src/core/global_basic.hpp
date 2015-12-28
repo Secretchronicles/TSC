@@ -91,6 +91,11 @@
 #include <CEGUI/RendererModules/OpenGL/CEGUIOpenGLRenderer.h>
 #include <CEGUI/RendererModules/OpenGL/CEGUIOpenGLTexture.h>
 
+// SFML
+// Must also be included before X11, which has a #define Status int that messes
+// with SFML's Status enum.
+#include <SFML/Audio.hpp>
+
 // SDL
 #ifdef __unix__
 #define NO_SDL_GLEXT
@@ -98,7 +103,6 @@
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include <SDL_image.h>
-#include <SDL_mixer.h>
 #include <SDL_ttf.h>
 #include <SDL_syswm.h>
 

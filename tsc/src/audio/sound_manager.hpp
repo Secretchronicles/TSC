@@ -37,7 +37,7 @@ namespace TSC {
         // filename
         boost::filesystem::path m_filename;
         // data if loaded else null
-        Mix_Chunk* m_chunk;
+        sf::SoundBuffer m_buffer;
     };
 
     typedef vector<cSound*> SoundList;

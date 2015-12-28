@@ -30,27 +30,11 @@ using namespace std;
 namespace fs = boost::filesystem;
 
 namespace TSC {
-
-/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
-
-void Finished_Sound(const int channel)
-{
-    // find the finished sound and free the data
-    for (AudioSoundList::iterator itr = pAudio->m_active_sounds.begin(); itr != pAudio->m_active_sounds.end(); ++itr) {
-        cAudio_Sound* obj = (*itr);
-
-        if (obj->m_channel == channel) {
-            obj->Finished();
-        }
-    }
-}
-
 /* *** *** *** *** *** *** *** *** Audio Sound *** *** *** *** *** *** *** *** *** */
 
 cAudio_Sound::cAudio_Sound(void)
 {
     m_data = NULL;
-    m_channel = -1;
     m_resource_id = -1;
 }
 
@@ -75,18 +59,12 @@ void cAudio_Sound::Free(void)
         m_data = NULL;
     }
 
-    m_channel = -1;
     m_resource_id = -1;
 }
 
-void cAudio_Sound::Finished(void)
+bool cAudio_Sound::Play(int use_res_id /* = -1 */, bool loops /* = false */)
 {
-    m_channel = -1;
-}
-
-int cAudio_Sound::Play(int use_res_id /* = -1 */, int loops /* = 0 */)
-{
-    if (!m_data || !m_data->m_chunk) {
+    if (!m_data) {
         return 0;
     }
 
@@ -96,7 +74,7 @@ int cAudio_Sound::Play(int use_res_id /* = -1 */, int loops /* = 0 */)
             cAudio_Sound* obj = (*itr);
 
             // skip self
-            if (!obj || obj->m_channel == m_channel) {
+            if (obj == this) {
                 continue;
             }
 
@@ -109,22 +87,20 @@ int cAudio_Sound::Play(int use_res_id /* = -1 */, int loops /* = 0 */)
 
     m_resource_id = use_res_id;
     // play sound
-    m_channel = Mix_PlayChannel(-1, m_data->m_chunk, loops);
-    // add callback if sound finished playing
-    Mix_ChannelFinished(&Finished_Sound);
+    m_sound.setBuffer(m_data->m_buffer);
+    m_sound.play();
 
-    return m_channel;
+    return 1;
 }
 
 void cAudio_Sound::Stop(void)
 {
-    // if not loaded or not playing
-    if (!m_data || m_channel < 0) {
+    // if not loaded
+    if (!m_data) {
         return;
     }
 
-    Mix_HaltChannel(m_channel);
-    m_channel = -1;
+    m_sound.stop();
 }
 
 /* *** *** *** *** *** *** *** *** Audio *** *** *** *** *** *** *** *** *** */
@@ -140,13 +116,10 @@ cAudio::cAudio(void)
     m_sound_volume = cPreferences::m_sound_volume_default;
     m_music_volume = cPreferences::m_music_volume_default;
 
-    m_music = NULL;
+    m_music = new sf::Music;
     m_music_old = NULL;
 
-    m_max_sounds = 0;
-
-    m_audio_buffer = 4096; // below 2048 can be choppy
-    m_audio_channels = MIX_DEFAULT_CHANNELS; // 1 = Mono, 2 = Stereo
+    m_max_sounds = 100; // XXX: what???
 }
 
 cAudio::~cAudio(void)
@@ -160,7 +133,8 @@ bool cAudio::Init(void)
     int dev_frequency = 0;
     Uint16 dev_format = 0;
     int dev_channels = 0;
-    int numtimesopened = Mix_QuerySpec(&dev_frequency, &dev_format, &dev_channels);
+    /* int numtimesopened = Mix_QuerySpec(&dev_frequency, &dev_format, &dev_channels); XXX: SFML doesn't seem to have the ability to set audio frequencies... */
+    int numtimesopened = 0;
 
     bool sound = pPreferences->m_audio_sound;
     bool music = pPreferences->m_audio_music;
@@ -177,80 +151,7 @@ bool cAudio::Init(void)
         return 1;
     }
 
-    // if audio system is not initialized
-    if (!m_initialised) {
-        if (m_debug) {
-            cout << "Initializing Audio System - Buffer " << m_audio_buffer << ", Frequency " << pPreferences->m_audio_hz << ", Speaker Channels " << m_audio_channels << endl;
-        }
-
-        /*  Initializing preferred Audio System specs with Mixer Standard format (Stereo)
-        *
-        *   frequency   : Output sampling frequency in samples per second (Hz).
-        *   format      : Output sample format.
-        *   channels    : Number of sound channels in output. 2 for stereo and 1 for mono.
-        *   chunk size  : Bytes used per output sample.
-        */
-
-        if (Mix_OpenAudio(pPreferences->m_audio_hz, MIX_DEFAULT_FORMAT, m_audio_channels, m_audio_buffer) < 0) {
-            cerr << "Warning : Could not init 16-bit Audio" << endl << "- Reason : " << SDL_GetError() << endl;
-            return 0;
-        }
-
-        numtimesopened = Mix_QuerySpec(&dev_frequency, &dev_format, &dev_channels);
-
-        if (!numtimesopened) {
-            cerr << "Mix_QuerySpec failed: " << Mix_GetError() << endl;
-        }
-        else {
-            // different frequency
-            if (pPreferences->m_audio_hz != dev_frequency) {
-                cerr << "Warning : different frequency got " << dev_frequency << " but requested " << pPreferences->m_audio_hz << endl;
-            }
-
-            // different format
-            if (dev_format != MIX_DEFAULT_FORMAT) {
-                const char* format_str;
-
-                switch (dev_format) {
-                case AUDIO_U8:
-                    format_str = "U8";
-                    break;
-                case AUDIO_S8:
-                    format_str = "S8";
-                    break;
-                case AUDIO_U16LSB:
-                    format_str = "U16LSB";
-                    break;
-                case AUDIO_S16LSB:
-                    format_str = "S16LSB";
-                    break;
-                case AUDIO_U16MSB:
-                    format_str = "U16MSB";
-                    break;
-                case AUDIO_S16MSB:
-                    format_str = "S16MSB";
-                    break;
-                default:
-                    format_str = "Unknown";
-                    break;
-                }
-
-                cerr << "Warning : got different format " << format_str << endl;
-            }
-
-            // different amount of channels
-            if (m_audio_channels != dev_channels) {
-                cerr << "Warning : different channels got " << dev_channels << " but requested " << m_audio_channels << endl;
-            }
-        }
-
-        m_initialised = 1;
-    }
-
-
-    if (m_debug) {
-        cout << "Audio Sound Channels available : " << Mix_AllocateChannels(-1) << endl;
-    }
+    m_initialised = 1;
 
     // music initialization
     if (music && !m_music_enabled) {
@@ -270,8 +171,6 @@ bool cAudio::Init(void)
     if (sound && !m_sound_enabled) {
         m_sound_enabled = 1;
 
-        // create sound array
-        Set_Max_Sounds();
         // set sound volume
         Set_Sound_Volume(m_sound_volume);
     }
@@ -302,7 +201,6 @@ void cAudio::Close(void)
 
             m_active_sounds.clear();
 
-            Mix_AllocateChannels(0);
             m_max_sounds = 0;
             m_sound_enabled = 0;
         }
@@ -310,55 +208,14 @@ void cAudio::Close(void)
         if (m_music_enabled) {
             Halt_Music();
 
-            if (m_music) {
-                Mix_FreeMusic(m_music);
-                m_music = NULL;
-            }
-
-            if (m_music_old) {
-                Mix_FreeMusic(m_music_old);
-                m_music_old = NULL;
-            }
+            delete m_music;
+            delete m_music_old;
+            m_music = m_music_old = NULL;
 
             m_music_enabled = 0;
         }
 
-        Mix_CloseAudio();
-
         m_initialised = 0;
-    }
-}
-
-void cAudio::Set_Max_Sounds(unsigned int limit /* = 10 */)
-{
-    if (!m_initialised || !m_sound_enabled) {
-        return;
-    }
-
-    // if limit is too small set it to the minimum
-    if (limit < 5) {
-        limit = 5;
-    }
-
-    m_max_sounds = limit;
-
-    // remove exceeding sounds
-    AudioSoundList::iterator last_itr;
-
-    while (m_active_sounds.size() > m_max_sounds) {
-        last_itr = (m_active_sounds.end() - 1);
-
-        // delete data
-        delete *(last_itr);
-        // erase from list
-        m_active_sounds.erase(last_itr);
-    }
-
-    // change channels managed by the mixer
-    Mix_AllocateChannels(m_max_sounds);
-
-    if (m_debug) {
-        cout << "Audio Sound Channels changed : " << Mix_AllocateChannels(-1) << endl;
     }
 }
 
@@ -391,8 +248,6 @@ cSound* cAudio::Get_Sound_File(fs::path filename) const
         }
         // failed loading
         else {
-            cerr << "Could not load sound file : " << filename.c_str() << "\nReason : " << SDL_GetError() << "\n";
-
             delete sound;
             return NULL;
         }
@@ -401,7 +256,7 @@ cSound* cAudio::Get_Sound_File(fs::path filename) const
     return sound;
 }
 
-bool cAudio::Play_Sound(fs::path filename, int res_id /* = -1 */, int volume /* = -1 */, int loops /* = 0 */)
+bool cAudio::Play_Sound(fs::path filename, int res_id /* = -1 */, int volume /* = -1 */, bool loops /* = false */)
 {
     if (!m_initialised || !m_sound_enabled) {
         return 0;
@@ -438,18 +293,16 @@ bool cAudio::Play_Sound(fs::path filename, int res_id /* = -1 */, int volume /* 
 
     // load data
     sound->Load(sound_data);
-    // play
-    sound->Play(res_id, loops);
 
     // failed to play
-    if (sound->m_channel < 0) {
+    if (!sound->Play(res_id, loops)) {
         debug_print("Could not play sound file : %s\n", path_to_utf8(filename).c_str());
         return 0;
     }
     // playing successfully
     else {
         // volume is out of range
-        if (volume > MIX_MAX_VOLUME) {
+        if (volume > MAX_VOLUME) {
             cerr << "PlaySound Volume is out of range : " << volume << endl;
             volume = m_sound_volume;
         }
@@ -459,13 +312,13 @@ bool cAudio::Play_Sound(fs::path filename, int res_id /* = -1 */, int volume /* 
         }
 
         // set volume
-        Mix_Volume(sound->m_channel, volume);
+        sound->m_sound.setVolume(volume);
     }
 
     return 1;
 }
 
-bool cAudio::Play_Music(fs::path filename, int loops /* = 0 */, bool force /* = 1 */, unsigned int fadein_ms /* = 0 */)
+bool cAudio::Play_Music(fs::path filename, bool loops /* = false */, bool force /* = 1 */, unsigned int fadein_ms /* = 0 */)
 {
     if (!filename.is_absolute())
         filename = pPackage_Manager->Get_Music_Reading_Path(path_to_utf8(filename));
@@ -488,57 +341,58 @@ bool cAudio::Play_Music(fs::path filename, int loops /* = 0 */, bool force /* = 
 
     // if no music is playing or force to play the given music
     if (!Is_Music_Playing() || force) {
-        // stop and free current music
-        if (m_music) {
-            Halt_Music();
-            Mix_FreeMusic(m_music);
-        }
+        // stop current music
+        Halt_Music();
+
         // free old music
         if (m_music_old) {
-            Mix_FreeMusic(m_music_old);
+            delete m_music_old;
             m_music_old = NULL;
         }
 
         // load the given music
-        m_music = Mix_LoadMUS(path_to_utf8(filename).c_str());
-
-        // loaded
-        if (m_music) {
-            // no fade in
-            if (!fadein_ms) {
-                Mix_PlayMusic(m_music, loops);
-            }
-            // fade in
-            else {
-                Mix_FadeInMusic(m_music, loops, fadein_ms);
-            }
-        }
-        // not loaded
-        else {
+        if (!m_music->openFromFile(path_to_utf8(filename).c_str())) {
             debug_print("Couldn't load music file : %s\n", path_to_utf8(filename).c_str());
 
             // failed to play
             return false;
         }
+
+        m_music->setLoop(loops);
+        // no fade in
+        if (!fadein_ms) {
+            m_music->play();
+        }
+        // fade in
+        else {
+            float current = m_music->getVolume();
+            float count = fadein_ms / m_music->getVolume();
+            m_music->setVolume(count);
+            m_music->play();
+            while (m_music->getVolume() < current) {
+                // sleep for several milliseconds
+                boost::this_thread::sleep_for(boost::chrono::milliseconds(int(fadein_ms / count)));
+                // raise the volume
+                m_music->setVolume(int(m_music->getVolume()+count));
+            }
+            m_music->setVolume(current);
+        }
     }
     // music is playing and is not forced
     else {
-        // if music is loaded
-        if (m_music) {
-            // if old music is loaded free the wanted next playing music data
-            if (m_music_old) {
-                Mix_FreeMusic(m_music);
-                m_music = NULL;
-            }
-            // if no old music move current to old music
-            else {
-                m_music_old = m_music;
-                m_music = NULL;
-            }
+        // if no old music move current to old music
+        if (!m_music_old) {
+            m_music_old = m_music;
+            m_music = new sf::Music;
         }
 
         // load the wanted next playing music
-        m_music = Mix_LoadMUS(path_to_utf8(filename).c_str());
+        if (!m_music->openFromFile(path_to_utf8(filename).c_str())) {
+            debug_print("Couldn't load music file : %s\n", path_to_utf8(filename).c_str());
+
+            // failed to play
+            return false;
+        }
     }
 
     return true;
@@ -560,7 +414,7 @@ cAudio_Sound* cAudio::Get_Playing_Sound(fs::path filename)
         cAudio_Sound* obj = (*itr);
 
         // if not playing
-        if (obj->m_channel < 0) {
+        if (obj->m_sound.getStatus() != sf::SoundSource::Playing) {
             continue;
         }
 
@@ -583,7 +437,7 @@ cAudio_Sound* cAudio::Create_Sound_Channel(void)
         cAudio_Sound* obj = (*itr);
 
         // if not playing
-        if (obj->m_channel < 0) {
+        if (obj->m_sound.getStatus() != sf::SoundSource::Playing) {
             // found a free channel
             obj->Free();
             return obj;
@@ -608,7 +462,7 @@ void cAudio::Toggle_Music(void)
 
     // play music
     if (m_music_enabled && !m_music_filename.empty()) {
-        Play_Music(m_music_filename, -1, 1, 2000);
+        Play_Music(m_music_filename, true, true, 2000);
     }
 }
 
@@ -623,60 +477,61 @@ void cAudio::Toggle_Sounds(void)
     }
 }
 
-void cAudio::Pause_Music(void) const
+void cAudio::Pause_Music(void)
 {
     if (!m_music_enabled || !m_initialised) {
         return;
     }
 
     // if music is playing
-    if (Mix_PlayingMusic()) {
-        Mix_PauseMusic();
-    }
+    m_music->pause();
 }
 
-void cAudio::Resume_Sound(int channel /* = -1 */) const
-{
-    if (!m_sound_enabled || !m_initialised) {
-        return;
-    }
-
-    // resume playback on all previously active channels
-    Mix_Resume(channel);
-}
-
-void cAudio::Resume_Music(void) const
+void cAudio::Resume_Music(void)
 {
     if (!m_music_enabled || !m_initialised) {
         return;
     }
 
-    // if music is paused
-    if (Mix_PausedMusic()) {
-        Mix_ResumeMusic();
+    if (Is_Music_Paused()) {
+        m_music->play();
     }
 }
 
-void cAudio::Fadeout_Sounds(unsigned int ms /* = 200 */, int channel /* = -1 */, bool overwrite_fading /* = 0 */) const
+void cAudio::Fadeout_Source(sf::SoundSource& source, unsigned int ms) {
+    // count is the amount to decrease the sound by
+    float count = ms / source.getVolume();
+    while (source.getVolume() > count) {
+        // sleep for several milliseconds
+        boost::this_thread::sleep_for(boost::chrono::milliseconds(int(ms / count)));
+        // lower the volume
+        source.setVolume(int(source.getVolume()-count));
+    }
+    source.setVolume(0);
+}
+
+void cAudio::Fadeout_Sounds(unsigned int ms /* = 200 */)
 {
     if (!m_sound_enabled || !m_initialised) {
         return;
     }
 
     // if not playing
-    if (Mix_Playing(channel) <= 0) {
+    if (!Is_Music_Playing()) {
         return;
     }
 
-    // Do not fade-out the sound again
-    if (channel >= 0 && !overwrite_fading && Is_Sound_Fading(channel) == MIX_FADING_OUT) {
-        return;
-    }
+    // get all sounds
+    for (AudioSoundList::iterator itr = m_active_sounds.begin(); itr != m_active_sounds.end(); ++itr) {
+        // get object pointer
+        cAudio_Sound* obj = (*itr);
 
-    Mix_FadeOutChannel(channel, ms);
+        // fade the sound
+        Fadeout_Source(obj->m_sound, ms);
+    }
 }
 
-void cAudio::Fadeout_Sounds(unsigned int ms, fs::path filename, bool overwrite_fading /* = 0 */)
+void cAudio::Fadeout_Sounds(unsigned int ms, fs::path filename)
 {
     if (!m_sound_enabled || !m_initialised) {
         return;
@@ -687,82 +542,46 @@ void cAudio::Fadeout_Sounds(unsigned int ms, fs::path filename, bool overwrite_f
         filename = pPackage_Manager->Get_Sound_Reading_Path(path_to_utf8(filename));
 
     // get all sounds
-    for (AudioSoundList::const_iterator itr = m_active_sounds.begin(); itr != m_active_sounds.end(); ++itr) {
+    for (AudioSoundList::iterator itr = m_active_sounds.begin(); itr != m_active_sounds.end(); ++itr) {
         // get object pointer
-        const cAudio_Sound* obj = (*itr);
+        cAudio_Sound* obj = (*itr);
 
         // filename does not match
         if (obj->m_data->m_filename.compare(filename) != 0) {
             continue;
         }
 
-        // Do not fade out the sound again
-        if (!overwrite_fading && Is_Sound_Fading(obj->m_channel) == MIX_FADING_OUT) {
-            continue;
-        }
-
-        Mix_FadeOutChannel(obj->m_channel, ms);
+        // fade the sound
+        Fadeout_Source(obj->m_sound, ms);
     }
 }
 
-void cAudio::Fadeout_Music(unsigned int ms /* = 500 */, bool overwrite_fading /* = 0 */) const
+void cAudio::Fadeout_Music(unsigned int ms /* = 500 */)
 {
     if (!m_music_enabled || !m_initialised) {
         return;
     }
 
     // if music is currently not playing
-    if (!Mix_PlayingMusic()) {
+    if (!Is_Music_Playing()) {
         return;
     }
 
-    Mix_Fading status = Is_Music_Fading();
-
-    // if already fading out
-    if (status == MIX_FADING_OUT) {
-        // don't fade the music out again
-        if (!overwrite_fading) {
-            return;
-        }
-    }
-    // if fading in
-    else if (status == MIX_FADING_IN) {
-        // Can't stop fade-in with SDL_Mixer and fade-out is ignored when fading in
-        Halt_Music();
-        return;
-    }
-
-    if (!Mix_FadeOutMusic(ms)) {
-        // if it failed stop the music
-        Halt_Music();
-    }
+    float orig = m_music->getVolume();
+    Fadeout_Source(*m_music, ms);
+    Halt_Music();
+    // reset volume after the sound stops
+    m_music->setVolume(orig);
 }
 
-void cAudio::Set_Music_Position(float position) const
-{
-    if (!m_music_enabled || !m_initialised || Is_Music_Fading() == MIX_FADING_OUT) {
-        return;
-    }
-
-    Mix_SetMusicPosition(position);
-}
-
-Mix_Fading cAudio::Is_Music_Fading(void) const
+void cAudio::Set_Music_Position(float position)
 {
     if (!m_music_enabled || !m_initialised) {
-        return MIX_NO_FADING;
+        return;
     }
 
-    return Mix_FadingMusic();
-}
-
-Mix_Fading cAudio::Is_Sound_Fading(int sound_channel) const
-{
-    if (!m_sound_enabled || !m_initialised || sound_channel < 0) {
-        return MIX_NO_FADING;
-    }
-
-    return Mix_FadingChannel(sound_channel);
+    /* Mix_SetMusicPosition(position); */
+    m_music->setPlayingOffset(sf::seconds(position));
 }
 
 bool cAudio::Is_Music_Paused(void) const
@@ -771,11 +590,7 @@ bool cAudio::Is_Music_Paused(void) const
         return 0;
     }
 
-    if (Mix_PausedMusic()) {
-        return 1;
-    }
-
-    return 0;
+    return m_music->getStatus() == sf::SoundSource::Paused;
 }
 
 bool cAudio::Is_Music_Playing(void) const
@@ -784,34 +599,19 @@ bool cAudio::Is_Music_Playing(void) const
         return 0;
     }
 
-    if (Mix_PlayingMusic()) {
-        return 1;
-    }
-
-    return 0;
+    return m_music->getStatus() == sf::SoundSource::Playing ||
+           (m_music_old && m_music_old->getStatus() == sf::SoundSource::Playing);
 }
 
-void cAudio::Halt_Sounds(int channel /* = -1 */) const
-{
-    if (!m_sound_enabled || !m_initialised) {
-        return;
-    }
-
-    // Check all Channels
-    if (Mix_Playing(channel)) {
-        Mix_HaltChannel(channel);
-    }
-}
-
-void cAudio::Halt_Music(void) const
+void cAudio::Halt_Music(void)
 {
     if (!m_initialised) {
         return;
     }
 
-    // Checks if music is playing
-    if (Mix_PlayingMusic()) {
-        Mix_HaltMusic();
+    m_music->stop();
+    if (m_music_old) {
+        m_music_old->stop();
     }
 }
 
@@ -821,13 +621,16 @@ void cAudio::Stop_Sounds(void) const
         return;
     }
 
-    // Stop all channels
-    if (Mix_Playing(-1)) {
-        Mix_HaltChannel(-1);
+    for (AudioSoundList::iterator itr = pAudio->m_active_sounds.begin(); itr != pAudio->m_active_sounds.end(); ++itr) {
+        // get object pointer
+        cAudio_Sound* obj = (*itr);
+
+        // stop sound
+        obj->Stop();
     }
 }
 
-void cAudio::Set_Sound_Volume(Uint8 volume, int channel /* = -1 */) const
+void cAudio::Set_Sound_Volume(Uint8 volume)
 {
     // not active
     if (!m_initialised) {
@@ -835,14 +638,20 @@ void cAudio::Set_Sound_Volume(Uint8 volume, int channel /* = -1 */) const
     }
 
     // out of range
-    if (volume > MIX_MAX_VOLUME) {
-        volume = MIX_MAX_VOLUME;
+    if (volume > MAX_VOLUME) {
+        volume = MAX_VOLUME;
     }
 
-    Mix_Volume(channel, volume);
+    for (AudioSoundList::iterator itr = pAudio->m_active_sounds.begin(); itr != pAudio->m_active_sounds.end(); ++itr) {
+        // get object pointer
+        cAudio_Sound* obj = (*itr);
+
+        // set volume
+        obj->m_sound.setVolume(volume);
+    }
 }
 
-void cAudio::Set_Music_Volume(Uint8 volume) const
+void cAudio::Set_Music_Volume(Uint8 volume)
 {
     // not active
     if (!m_initialised) {
@@ -850,11 +659,11 @@ void cAudio::Set_Music_Volume(Uint8 volume) const
     }
 
     // out of range
-    if (volume > MIX_MAX_VOLUME) {
-        volume = MIX_MAX_VOLUME;
+    if (volume > MAX_VOLUME) {
+        volume = MAX_VOLUME;
     }
 
-    Mix_VolumeMusic(volume);
+    m_music->setVolume(volume);
 }
 
 void cAudio::Update(void)
@@ -866,12 +675,11 @@ void cAudio::Update(void)
     // if music is enabled
     if (m_music_enabled) {
         // if no music is playing
-        if (!Mix_PlayingMusic() && m_music) {
-            Mix_PlayMusic(m_music, 0);
-
-            // delete old music if available
+        if (!Is_Music_Playing()) {
+            m_music->play();
             if (m_music_old) {
-                Mix_FreeMusic(m_music_old);
+                m_music_old->stop();
+                delete m_music_old;
                 m_music_old = NULL;
             }
         }

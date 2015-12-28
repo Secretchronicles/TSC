@@ -97,10 +97,10 @@ void cTurtleBoss::Init(void)
 
     m_color_type = COL_DEFAULT;
     Set_Color(COL_RED); // Load images before calling set moving state
-    
+
     m_turtle_state = TURTLEBOSS_DEAD;
     Set_Turtle_Moving_State(TURTLEBOSS_WALK);
-    
+
     Set_Direction(DIR_RIGHT, 1);
 }
 
@@ -270,7 +270,7 @@ void cTurtleBoss::DownGrade(bool force /* = 0 */)
             // fade out music
             pAudio->Fadeout_Music(500);
             // play finish music
-            pAudio->Play_Music("game/courseclear_A.ogg", 0, 0);
+            pAudio->Play_Music("game/courseclear_A.ogg", false, 0);
         }
 
         // set shell image
