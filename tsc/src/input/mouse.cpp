@@ -1414,6 +1414,9 @@ void cMouseCursor::Toggle_Mover_Mode(void)
 {
     m_mover_mode = !m_mover_mode;
 
+    m_mover_center_x = m_x * global_upscalex;
+    m_mover_center_y = m_y * global_upscaley;
+
     if (m_mover_mode) {
         CEGUI::MouseCursor::getSingleton().setImage("TaharezLook", "MouseMoveCursor");
     }
@@ -1422,16 +1425,16 @@ void cMouseCursor::Toggle_Mover_Mode(void)
     }
 }
 
-void cMouseCursor::Mover_Update(Sint16 move_x, Sint16 move_y)
+void cMouseCursor::Mover_Update(int move_x, int move_y)
 {
     if (!m_mover_mode) {
         return;
     }
 
     // mouse moves the camera
-    pActive_Camera->Move(move_x, move_y);
+    pActive_Camera->Move(move_x - m_mover_center_x, move_y - m_mover_center_y);
     // keep mouse at it's position
-    sf::Mouse::setPosition(sf::Vector2i(m_x * global_upscalex, m_y * global_upscaley));
+    sf::Mouse::setPosition(sf::Vector2i(m_mover_center_x, m_mover_center_y));
 
     sf::Event inEvent;
 

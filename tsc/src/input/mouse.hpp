@@ -220,7 +220,7 @@ namespace TSC {
         // Toggle Mover mode
         void Toggle_Mover_Mode(void);
         // Updates the Mover Mode
-        void Mover_Update(Sint16 move_x, Sint16 move_y);
+        void Mover_Update(int move_x, int move_y);
         // Updates the editor Mouse
         void Editor_Update(void);
 
@@ -235,6 +235,9 @@ namespace TSC {
 
         // if activated the mouse cursor movement moves the screen
         bool m_mover_mode;
+        // The position of the cursor when it entered mover mode
+        int m_mover_center_x;
+        int m_mover_center_y;
         // fast copy mode
         bool m_fastcopy_mode;
 

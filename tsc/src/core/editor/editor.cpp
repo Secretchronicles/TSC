@@ -533,11 +533,9 @@ bool cEditor::Handle_Event(const sf::Event& evt)
     switch (evt.type) {
     case sf::Event::MouseMoved: {
         if (pMouseCursor->m_mover_mode) {
-            /* FIXME: SFML does not have relative mouse motion coordinates, we'd need
-             * to store them ourselves to use them here. Ignore this for now. */
-            std::cerr << "FIXME: No relative mouse move coordinates in SFML, can't use mover mode yet!" << std::endl;
-            // Old SDL-based code was:
-            // pMouseCursor->Mover_Update(ev->motion.xrel, ev->motion.yrel);
+            sf::Vector2i pos = sf::Mouse::getPosition();
+
+            pMouseCursor->Mover_Update(pos.x, pos.y);
         }
 
         break;
