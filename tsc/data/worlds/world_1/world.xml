@@ -63,7 +63,7 @@
     <property name="posx" value="800"/>
     <property name="posy" value="-423"/>
     <property name="uid" value="7"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
@@ -417,21 +417,21 @@
     <property name="posx" value="416"/>
     <property name="posy" value="-400"/>
     <property name="uid" value="49"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="363"/>
     <property name="posy" value="-193"/>
     <property name="uid" value="50"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="195"/>
     <property name="posy" value="-300"/>
     <property name="uid" value="51"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
@@ -501,42 +501,42 @@
     <property name="posx" value="437"/>
     <property name="posy" value="-461"/>
     <property name="uid" value="61"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="710"/>
     <property name="posy" value="-113"/>
     <property name="uid" value="62"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="657"/>
     <property name="posy" value="-304"/>
     <property name="uid" value="63"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="897"/>
     <property name="posy" value="-317"/>
     <property name="uid" value="64"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="788"/>
     <property name="posy" value="-124"/>
     <property name="uid" value="65"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="858"/>
     <property name="posy" value="-349"/>
     <property name="uid" value="66"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
@@ -550,14 +550,14 @@
     <property name="posx" value="164"/>
     <property name="posy" value="-328"/>
     <property name="uid" value="68"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="186"/>
     <property name="posy" value="-213"/>
     <property name="uid" value="69"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
@@ -662,35 +662,35 @@
     <property name="posx" value="724"/>
     <property name="posy" value="-308"/>
     <property name="uid" value="84"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="833"/>
     <property name="posy" value="-481"/>
     <property name="uid" value="85"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="654"/>
     <property name="posy" value="-487"/>
     <property name="uid" value="86"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="420"/>
     <property name="posy" value="-506"/>
     <property name="uid" value="87"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="342"/>
     <property name="posy" value="-121"/>
     <property name="uid" value="88"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <waypoint>
@@ -734,7 +734,7 @@
     <property name="posx" value="354"/>
     <property name="posy" value="-257"/>
     <property name="uid" value="92"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
@@ -818,14 +818,14 @@
     <property name="posx" value="309"/>
     <property name="posy" value="-489"/>
     <property name="uid" value="104"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="323"/>
     <property name="posy" value="-533"/>
     <property name="uid" value="105"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
@@ -895,21 +895,21 @@
     <property name="posx" value="446"/>
     <property name="posy" value="-694"/>
     <property name="uid" value="115"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="597"/>
     <property name="posy" value="-666"/>
     <property name="uid" value="116"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
     <property name="posx" value="266"/>
     <property name="posy" value="-624"/>
     <property name="uid" value="117"/>
-    <property name="image" value="world/objects/hedge/green_1.png"/>
+    <property name="image" value="enemy/larry/grey/walk.imgset"/>
     <property name="type" value="passive"/>
   </sprite>
   <sprite>
