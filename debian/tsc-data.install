@@ -1,0 +1,10 @@
+usr/share/games/tsc/editor/*         usr/share/games/tsc/editor
+usr/share/games/tsc/gui/*            usr/share/games/tsc/gui
+usr/share/games/tsc/icon/*           usr/share/games/tsc/icon
+usr/share/games/tsc/levels/*         usr/share/games/tsc/levels
+usr/share/games/tsc/pixmaps/*        usr/share/games/tsc/pixmaps
+usr/share/games/tsc/schema/*         usr/share/games/tsc/schema
+usr/share/games/tsc/sounds/*         usr/share/games/tsc/sounds
+usr/share/games/tsc/worlds/*         usr/share/games/tsc/worlds
+usr/share/games/tsc/translations/*   usr/share/games/tsc/translations
+usr/share/games/tsc/campaigns/*      usr/share/games/tsc/campaigns

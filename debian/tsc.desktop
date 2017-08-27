@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=The Secret Chronicles of Dr. M.
+GenericName=Platform Game
+Comment=A 2D platform game with style similar to classic sidescroller games
+Comment[de]=Ein 2D-Plattformspiel, vom Stil her ähnlich klassischen seitlaufenden Spielen
+Exec=tsc
+Icon=tsc
+Categories=Game;ArcadeGame;
+Keywords=platform;jump;run;arcade;joystick;

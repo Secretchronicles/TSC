@@ -1,0 +1,64 @@
+Source: tsc
+Section: games
+Priority: optional
+Maintainer: Muammar El Khatib <muammar@debian.org>
+Build-Depends: debhelper (>= 9),
+               libcegui-mk2-dev (>= 0.8.5),
+               libboost-filesystem-dev,
+               libboost-thread-dev,
+               libboost1.61-all-dev,
+               pkg-config,
+               ttf-dejavu,
+               po4a,
+               gperf,
+               bison,
+               libxml++2.6-dev,
+               cmake,
+               libglew-dev,
+               ruby,
+               freeglut3-dev,
+               gettext,
+               libpng-dev,
+               libpcre3-dev,
+               libfreetype6-dev,
+               libdevil-dev,
+               libsfml-dev
+Standards-Version: 3.9.8.0
+Homepage: http://www.secretchronicles.de/en/
+
+Package: tsc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, tsc-data (= ${source:Version})
+Suggests: tsc-music (= ${source:Version})
+Description: Jump and Run game like Super Mario World
+ The Secret Chronicles of Dr. M. (TSC) is an Open Source two-dimensional
+ platform game with a style designed similar to classic sidescroller games.
+ .
+ The game features a rich set of levels plus an advanced level editor that
+ allows you to create your own levels. It is accompanied by a powerful
+ scripting engine that utilises mruby, a minimal implementation of the Ruby
+ programming language.
+ .
+ TSC is a fork of the SMC project, whose development has stalled. Note however
+ that our goals are different from those of the original SMC project, most
+ notably we are working towards our own type of game rather than being solely
+ inspired by one specific existing game.
+
+Package: tsc-data
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, fonts-dejavu-core
+Description: Levels and game data for TSC
+ The Secret Chronicles of Dr. M. is an Open Source two-dimensional platform
+ game with a style designed similar to classic sidescroller games.
+ .
+ It provides levels, sounds and other files which are needed for playing this
+ game properly.
+
+Package: tsc-music
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, tsc (>=${source:Version}), tsc-data (=${source:Version})
+Description: Music files for TSC
+ The Secret Chronicles of Dr. M. is an Open Source two-dimensional platform
+ game with a style designed similar to classic sidescroller games.
+ .
+ It provides music for playing this game properly.

@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-08-04 15:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: TH
+#: debian/tsc.6:1
+#, no-wrap
+msgid "TSC"
+msgstr ""
+
+#. type: TH
+#: debian/tsc.6:1
+#, no-wrap
+msgid "August 9, 2015"
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:2
+#, no-wrap
+msgid "NAME"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:4
+msgid "tsc - a Jump and Run game like Super Mario World"
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:4
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:7
+msgid "B<tsc> [I<options>]"
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:8
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:12
+msgid "This manual page documents briefly the B<tsc> command."
+msgstr ""
+
+#.  TeX users may be more comfortable with the \fB<whatever>\fP and
+#.  \fI<whatever>\fP escape sequences to invode bold face and italics,
+#.  respectively.
+#. type: Plain text
+#: debian/tsc.6:20
+msgid ""
+"B<tsc> is a 2D sidecrolling platform game, with a rich set of graphics, "
+"music, and an advanced level editor that allows you to create your own "
+"levels.  The level editor allows for in-game scripting so there are no "
+"borders apart from your imagination."
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:24
+msgid ""
+"The project is a fork of SMC, which is not developed actively anymore. Note "
+"this is not merely a continuation of SMC, but we have our own goals and "
+"design principles we are slowly integrating into both the codebase and the "
+"artwork."
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:25
+#, no-wrap
+msgid "OPTIONS"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:29
+msgid ""
+"This program follows the usual GNU command line syntax, with long options "
+"starting with two dashes (`-').  A summary of options is included below."
+msgstr ""
+
+#. type: TP
+#: debian/tsc.6:29
+#, no-wrap
+msgid "B<-h, --help>"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:32
+msgid "Show summary of options."
+msgstr ""
+
+#. type: TP
+#: debian/tsc.6:32
+#, no-wrap
+msgid "B<-v, --version>"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:35
+msgid "Show version of program."
+msgstr ""
+
+#. type: TP
+#: debian/tsc.6:35
+#, no-wrap
+msgid "B<-d, --debug>"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:38
+msgid "Enable debug modes with the options : game performance."
+msgstr ""
+
+#. type: TP
+#: debian/tsc.6:38
+#, no-wrap
+msgid "B<-l, --level>"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:41
+msgid "Load the given level."
+msgstr ""
+
+#. type: TP
+#: debian/tsc.6:41
+#, no-wrap
+msgid "B<-w, --world>"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:44
+msgid "Load the given world."
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:44
+#, no-wrap
+msgid "AUTHOR"
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:46
+msgid "tsc was written by FluXy, Boder and now forked by The TSC Contributors."
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:48
+msgid ""
+"This manual page was written by Muammar El Khatib "
+"E<lt>muammar@debian.orgE<gt>, for the Debian project (but may be used by "
+"others)."
+msgstr ""

@@ -1,0 +1,56 @@
+#!/usr/bin/make -f
+
+GIT='https://github.com/Secretchronicles/TSC'
+# The full changelog version number, used for the orig.tar.gz
+VER=$(shell dpkg-parsechangelog -ldebian/changelog -SVersion | cut -d- -f1)
+
+# Hardening options.
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+%:
+	dh $@ --buildsystem=cmake --parallel
+
+override_dh_auto_configure:
+	mkdir obj-$(DEB_BUILD_GNU_TYPE); \
+	cd obj-$(DEB_BUILD_GNU_TYPE); \
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_DATADIR=/usr/share/games -DCMAKE_INSTALL_BINDIR=/usr/games ../tsc
+
+override_dh_auto_build:
+	cd obj-$(DEB_BUILD_GNU_TYPE); \
+	make; \
+	cd obj-$(DEB_BUILD_GNU_TYPE); \
+	make DESTDIR=$(CURDIR)/debian/tmp/ install
+
+override_dh_install:
+	dh_install
+	po4a -v -f debian/po4a.cfg
+	install -D -m 0644 debian/tsc.override \
+	    $(CURDIR)/debian/tsc/usr/share/lintian/overrides/tsc
+	cp -f debian/tsc.xpm debian/tsc/usr/share/pixmaps/tsc
+	ln -s tsc/tsc.xpm debian/tsc/usr/share/pixmaps/tsc.xpm
+	cp -f debian/tsc.desktop debian/tsc/usr/share/applications
+	cp -f debian/menu debian/tsc/usr/share/menu/tsc
+
+override_dh_auto_clean:
+	if [ -d "obj-$(DEB_BUILD_GNU_TYPE)" ]; then \
+	    rm -rf obj-$(DEB_BUILD_GNU_TYPE) ; \
+	fi
+	rm -rf mruby/mruby/build mruby/mruby/bin/mirb mruby/mruby/bin/mrbc mruby/mruby/bin/mruby
+
+get-orig-source:
+	rm -rf tsc-$(VER)
+	rm -f git_archive_all.py
+	wget https://raw.githubusercontent.com/Kentzo/git-archive-all/master/git_archive_all.py
+	git clone $(GIT) tsc-$(VER)
+	cd tsc-$(VER)
+	git submodule init
+	git submodule update
+	python git_archive_all.py tsc-$(VER).tar
+	mv tsc-$(VER).tar tsc_$(VER).orig.tar
+	gzip --best tsc_$(VER).orig.tar
+	cd ..
+	mv tsc_$(VER).orig.tar.gz ../
+	rm -rf tsc-$(VER)
+	rm -f git_archive_all.py

@@ -1,0 +1,9 @@
+tsc (2.1.0+git20160822-1) unstable; urgency=medium
+
+  * Initial release (Closes: #832287)
+  * debian/tsc.override added to override lintian warning `E: tsc:
+    binary-or-shlib-defines-rpath usr/games/tsc /usr/lib/cegui-0.8`. CEGUI
+    operates placing some *.so files in /usr/lib/cegui-0.8 and this is the
+    rationale behind this override.
+
+ -- Muammar El Khatib <muammar@debian.org>  Fri, 09 Sep 2016 00:03:58 +0200

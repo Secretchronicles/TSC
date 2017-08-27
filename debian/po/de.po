@@ -1,0 +1,208 @@
+# Translation of SMC manual page to German
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2013.
+# This file is distributed under the same license as the smc package
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: smc manual page\n"
+"POT-Creation-Date: 2015-08-09 13:20+0200\n"
+"PO-Revision-Date: 2013-06-16 15:28+0200\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: TH
+#: debian/tsc.6:1
+#, fuzzy, no-wrap
+#| msgid "SMC"
+msgid "TSC"
+msgstr "SMC"
+
+#. type: TH
+#: debian/tsc.6:1
+#, no-wrap
+msgid "August 9, 2015"
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:2
+#, no-wrap
+msgid "NAME"
+msgstr "NAME"
+
+#. type: Plain text
+#: debian/tsc.6:4
+#, fuzzy
+#| msgid "smc - a Jump and Run game like Super Mario World"
+msgid "tsc - a Jump and Run game like Super Mario World"
+msgstr "smc - ein »Jump- and Run«-Spiel wie Super Mario World"
+
+#. type: SH
+#: debian/tsc.6:4
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "ÜBERSICHT"
+
+#. type: Plain text
+#: debian/tsc.6:7
+#, fuzzy
+#| msgid "B<smc> [I<options>]I< >"
+msgid "B<tsc> [I<options>]"
+msgstr "B<smc> [I<Optionen>]I< >"
+
+#. type: SH
+#: debian/tsc.6:8
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "BESCHREIBUNG"
+
+#. type: Plain text
+#: debian/tsc.6:12
+#, fuzzy
+#| msgid "This manual page documents briefly the B<smc> command."
+msgid "This manual page documents briefly the B<tsc> command."
+msgstr "Diese Handbuchseite beschreibt kurz den Befehl B<smc>."
+
+#.  TeX users may be more comfortable with the \fB<whatever>\fP and
+#.  \fI<whatever>\fP escape sequences to invode bold face and italics,
+#.  respectively.
+#. type: Plain text
+#: debian/tsc.6:20
+msgid ""
+"B<tsc> is a 2D sidecrolling platform game, with a rich set of graphics, "
+"music, and an advanced level editor that allows you to create your own "
+"levels.  The level editor allows for in-game scripting so there are no "
+"borders apart from your imagination."
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:24
+msgid ""
+"The project is a fork of SMC, which is not developed actively anymore. Note "
+"this is not merely a continuation of SMC, but we have our own goals and "
+"design principles we are slowly integrating into both the codebase and the "
+"artwork."
+msgstr ""
+
+#. type: SH
+#: debian/tsc.6:25
+#, no-wrap
+msgid "OPTIONS"
+msgstr "OPTIONEN"
+
+#. type: Plain text
+#: debian/tsc.6:29
+msgid ""
+"This program follows the usual GNU command line syntax, with long options "
+"starting with two dashes (`-').  A summary of options is included below."
+msgstr ""
+"Dieses Programm folgt der normalen GNU-Befehlszeilensyntax, mit langen "
+"Optionen, die mit zwei Bindestrichen starten. Nachfolgend ist eine "
+"Zusammenfassung der Optionen aufgeführt."
+
+#. type: TP
+#: debian/tsc.6:29
+#, no-wrap
+msgid "B<-h, --help>"
+msgstr "B<-h, --help>"
+
+#. type: Plain text
+#: debian/tsc.6:32
+msgid "Show summary of options."
+msgstr "zeigt eine Zusammenfassung der Optionen."
+
+#. type: TP
+#: debian/tsc.6:32
+#, no-wrap
+msgid "B<-v, --version>"
+msgstr "B<-v, --version>"
+
+#. type: Plain text
+#: debian/tsc.6:35
+msgid "Show version of program."
+msgstr "zeigt die Version des Programms."
+
+#. type: TP
+#: debian/tsc.6:35
+#, no-wrap
+msgid "B<-d, --debug>"
+msgstr "B<-d, --debug>"
+
+#. type: Plain text
+#: debian/tsc.6:38
+msgid "Enable debug modes with the options : game performance."
+msgstr "aktiviert Fehlersuchmodi mit den Optionen: Spielleistung."
+
+#. type: TP
+#: debian/tsc.6:38
+#, no-wrap
+msgid "B<-l, --level>"
+msgstr "B<-l, --level>"
+
+#. type: Plain text
+#: debian/tsc.6:41
+msgid "Load the given level."
+msgstr "lädt den angegebenen Level."
+
+#. type: TP
+#: debian/tsc.6:41
+#, no-wrap
+msgid "B<-w, --world>"
+msgstr "B<-w, --world>"
+
+#. type: Plain text
+#: debian/tsc.6:44
+msgid "Load the given world."
+msgstr "lädt die angegebene Welt."
+
+#. type: SH
+#: debian/tsc.6:44
+#, no-wrap
+msgid "AUTHOR"
+msgstr "AUTOR"
+
+#. type: Plain text
+#: debian/tsc.6:46
+msgid "tsc was written by FluXy, Boder and now forked by The TSC Contributors."
+msgstr ""
+
+#. type: Plain text
+#: debian/tsc.6:48
+#, fuzzy
+#| msgid ""
+#| "This manual page was written by Muammar El Khatib "
+#| "E<lt>muammarelkhatib@gmail.comE<gt>, for the Debian project (but may be "
+#| "used by others)."
+msgid ""
+"This manual page was written by Muammar El Khatib E<lt>muammar@debian."
+"orgE<gt>, for the Debian project (but may be used by others)."
+msgstr ""
+"Diese Handbuchseite wurde von Muammar El Khatib E<lt>muammarelkhatib@gmail."
+"comE<gt> für das Debian-Projekt geschrieben (kann aber auch von anderen "
+"benutzt werden). Sie wurde von Helge Kreutzmann E<lt>debian@helgefjell."
+"deE<gt> ins Deutsche übersetzt."
+
+#~ msgid "April 20, 2007"
+#~ msgstr "20. April 2007"
+
+#~ msgid ""
+#~ "B<smc> is Secret Maryo Chronicles. It is an Open Source two-dimensional "
+#~ "platform game with a style designed similar to classic sidescroller "
+#~ "games. It utilizes the platform independent library SDL and since Version "
+#~ "0.98 with the OpenGLi accelerated Graphics Renderer developed in C++."
+#~ msgstr ""
+#~ "B<smc> ist Secret Maryo Chronicles. Es ist ein zweidimensionales Open-"
+#~ "Source-Spiel mit einem Design, das klassischen seitenlaufenden Spielen "
+#~ "ähnelt. Es verwendet die Plattform-unabhängige Bibliothek SDL und seit "
+#~ "Version 0.98 den in C++ entwickelten OpenGLi-beschleunigten Graphik-"
+#~ "Renderer."
+
+#~ msgid ""
+#~ "smc was written by FluXy, Boder and SMC Team E<lt>fluxey@gmail.comE<gt>"
+#~ msgstr ""
+#~ "Smc wurde von FluXy, Boder und dem SMC-Team E<lt>fluxey@gmail.comE<gt> "
+#~ "geschrieben."

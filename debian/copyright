@@ -1,0 +1,91 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: TSC
+Upstream-Contact: Boder and The TSC Team
+Source: http://www.secretchronicles.de/en/
+
+Files: *
+Copyright: © 2003-2011 Florian Richter and © 2013-2015 The TSC Contributors
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ .
+ Graphics, music, and any other artistic content in the game is not licensed
+ under the GPL. These assets undergo different terms as outlined as follows:
+ any asset is accompanied by a .txt or a .settings file that specifies both the
+ author(s) and the license of the asset in question. Those assets whose
+ accompanying .txt or .settings file does not specify a license are licensed
+ under the old SMC Contribution license, which is included as the file
+ tsc/docs/pages/old_smc_contribution_license.md. Assets that are licensed as
+ "special" have been granted to the TSC team under special licensing conditions
+ that will not allow the asset to be used outside of the game.
+ .
+ The Debian packaging is © 2016, Muammar El Khatib <muammar@debian.org>
+ and is licensed under the GPL Version 3, see `/usr/share/common-licenses/GPL-3'.
+
+Files: tsc/data/sounds/enemy/larry/red/die.ogg
+Copyright: Stephen M Cameron
+License: CC-BY-SA
+
+Files: tsc/data/music/land/reunion_1.ogg
+Copyright: Naerbu
+License: CC-BY-SA
+
+Files: tsc/extras/icons/tsc_icon_48.png
+       tsc/extras/icons/tsc_icon_16.png
+       tsc/extras/icons/tsc_icon_128.png
+       tsc/extras/icons/tsc_icon_32.png
+       tsc/extras/icons/tsc_icon_64.png
+       tsc/data/icon/window_icon.png
+Copyright: sydneyjd
+License: CC-BY-SA
+
+Files: tsc/data/sounds/enemy/krush/die.ogg
+Copyright: Supertux
+License: CC-BY-SA
+
+Files: tsc/data/music/land/land_5.ogg
+       tsc/data/music/land/land_2.ogg
+Copyright: atrick Friel
+License: CC-BY-SA
+
+Files: tsc/data/music/land/ragtime_1.ogg
+Copyright: Johan Brodd
+License: CC-BY-SA
+
+Files: tsc/data/music/land/castle_2.ogg
+       tsc/data/music/land/ghost_2.ogg
+       tsc/data/music/land/lost.ogg
+Copyright: Aakburns
+License: CC-BY-SA
+
+Files: tsc/data/music/game/battle.ogg
+Copyright: Ryan Gonzalez (kirbyfan64sos)
+License: CC-BY-SA
+
+License: CC-BY-SA
+ THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+ COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+ COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+ AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+ .
+ BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE
+ BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY BE
+ CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE
+ IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+ .
+ tsc/data/sounds/enemy/larry/red/die.ogg and tsc/data/music/land/reunion_1.ogg
+ are under CC-BY-SA 3.0 and the rest of CC-BY-SA files listed in this copyright
+ are under the CC-BY-SA 4.0.
+ .
+ You should have received a copy of the license along with this
+ work. If not, see either <http://creativecommons.org/licenses/by-sa/3.0/> or
+ <http://creativecommons.org/licenses/by-sa/4.0/>.

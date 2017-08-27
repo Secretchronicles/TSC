@@ -1,0 +1,3 @@
+?package(tsc):needs="X11" section="Games/Action"\
+title="The Secret Chronicles of Dr. M." command="/usr/games/tsc"\
+icon="/usr/share/pixmaps/tsc/tsc.xpm"
