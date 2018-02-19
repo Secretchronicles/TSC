@@ -953,16 +953,13 @@ cGL_Surface* cVideo :: Load_GL_Surface_Helper(boost::filesystem::path filename, 
 
     // pixmaps dir must be given
     if (!filename.is_absolute()) {
-        std::cout << filename << ": not absolute\n";
         if (package) {
             filename = pPackage_Manager->Get_Pixmap_Reading_Path(path_to_utf8(filename), use_settings);
-            std::cout << "if (package): filename = " << filename << '\n';
             if (filename.extension() == fs::path(".settings"))
                 filename.replace_extension(".png");
         }
         else {
             filename = fs::absolute(filename, pResource_Manager->Get_Game_Pixmaps_Directory());
-            std::cout << "else: filename = " << filename << ": " <<  pResource_Manager->Get_Game_Pixmaps_Directory() << '\n';
         }
     }
 
