@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 set -xe
+COMMIT=`git rev-parse --short HEAD`
+CMAKE_LOG=$PWD/cmake-log
 
 mkdir install
 export ROOT=$PWD
@@ -10,7 +12,9 @@ hg clone -b v0-8 https://bitbucket.org/cegui/cegui
 cd cegui
 mkdir build
 cd build
-cmake -G Ninja .. -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+cmake -G Ninja .. -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX | tee $LOG
+
+TSC_VER=`grep 'TSC version' $log | grep -o '[0-9].*'`
 
 cat cegui/include/CEGUI/Config.h
 sed -i "s:$INSTALL_PREFIX:././:" cegui/include/CEGUI/Config.h
@@ -25,7 +29,7 @@ cp -r SFML-2.4.2/* $INSTALL_PREFIX
 
 mkdir build
 cd build
-cmake -G Ninja ../tsc -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+cmake -G Ninja ../tsc -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX | tee log
 
 sed -i "s:$INSTALL_PREFIX:././:" config.hpp
 ninja install -j3
@@ -47,7 +51,7 @@ if [ "$TRAVIS_SUDO" == "true" ]; then
     delete_blacklisted
 
     export APP=TSC
-    export VERSION=2.1.0-dev-$TRAVIS_COMMIT
+    export VERSION=$TSC_VER-$COMMIT
     mkdir TSC.AppDir
     mv usr TSC.AppDir
     cp ../tsc/extras/tsc.desktop TSC.AppDir/TSC.desktop
