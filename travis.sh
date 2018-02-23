@@ -12,9 +12,9 @@ hg clone -b v0-8 https://bitbucket.org/cegui/cegui
 cd cegui
 mkdir build
 cd build
-cmake -G Ninja .. -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX | tee $LOG
+cmake -G Ninja .. -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX | tee $CMAKE_LOG
 
-TSC_VER=`grep 'TSC version' $log | grep -o '[0-9].*'`
+TSC_VER=`grep 'TSC version' $CMAKE_LOG | grep -o '[0-9].*'`
 
 cat cegui/include/CEGUI/Config.h
 sed -i "s:$INSTALL_PREFIX:././:" cegui/include/CEGUI/Config.h
