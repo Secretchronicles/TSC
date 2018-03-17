@@ -2,6 +2,7 @@
 
 set -xe
 COMMIT=`git rev-parse --short HEAD`
+DATE=`date -u +'%Y-%m-%d-%H:%M'`
 CMAKE_LOG=$PWD/cmake-log
 
 mkdir install
@@ -14,9 +15,7 @@ mkdir build
 cd build
 cmake -G Ninja .. -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
 
-cat cegui/include/CEGUI/Config.h
 sed -i "s:$INSTALL_PREFIX:././:" cegui/include/CEGUI/Config.h
-cat cegui/include/CEGUI/Config.h
 ninja install
 rm $INSTALL_PREFIX/bin/CEGUI*
 cd ../..
@@ -60,8 +59,10 @@ if [ "$TRAVIS_SUDO" == "true" ]; then
     get_apprun
     cd ..
 
-    generate_appimage
-    cd $ROOT/out
-    set -- *.AppImage
-    curl -F "file=@$1" https://file.io
+    APPIMAGE=TSC-$DATE-$COMMIT-x86_64.AppImage
+    curl -LO https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+    chmod +x appimagetool-x86_64.AppImage
+    ./appimagetool-x86_64.AppImage TSC.AppDir $APPIMAGE
+
+    curl -F "file=@$APPIMAGE" https://file.io
 fi
