@@ -14,6 +14,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <locale>
+#include <codecvt>
 #include "../core/global_basic.hpp"
 #include "../gui/menu_data.hpp"
 #include "../audio/audio.hpp"
@@ -192,6 +194,14 @@ cMenu_Main::cMenu_Main(void)
     mp_current_inactive_item = NULL;
     mp_current_active_item   = NULL;
 
+    mp_start_item = NULL;
+    mp_options_item = NULL;
+    mp_save_item = NULL;
+    mp_load_item = NULL;
+    mp_quit_item = NULL;
+
+    mp_start_shadow = NULL;
+
     mp_credits_item = CEGUI::WindowManager::getSingleton().createWindow("TSCLook256/StaticText");
     mp_credits_item->subscribeEvent(CEGUI::Window::EventMouseClick, CEGUI::Event::Subscriber(&cMenu_Main::credits_item_clicked, this));
     mp_credits_item->subscribeEvent(CEGUI::Window::EventMouseEntersArea, CEGUI::Event::Subscriber(&cMenu_Main::credits_item_entered, this));
@@ -353,7 +363,43 @@ void cMenu_Main::Init_GUI(void)
 {
     cMenu_Base::Init_GUI();
 
-    CEGUI::Window* text_version = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow()->getChild("menu_main/text_version");
+    CEGUI::Window* p_rootwin = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
+    mp_start_item   = p_rootwin->getChild("menu_main/start");
+    mp_options_item = p_rootwin->getChild("menu_main/options");
+    mp_load_item    = p_rootwin->getChild("menu_main/load");
+    mp_save_item    = p_rootwin->getChild("menu_main/save");
+    mp_quit_item    = p_rootwin->getChild("menu_main/quit");
+
+    mp_start_shadow = p_rootwin->getChild("menu_main/start_shadow");
+    mp_options_shadow = p_rootwin->getChild("menu_main/options_shadow");
+    mp_load_shadow    = p_rootwin->getChild("menu_main/load_shadow");
+    mp_save_shadow    = p_rootwin->getChild("menu_main/save_shadow");
+    mp_quit_shadow    = p_rootwin->getChild("menu_main/quit_shadow");
+
+    // TRANS: Main menu items follow.
+    mp_start_item->setText(colorize(_("Start")));
+    mp_options_item->setText(colorize(_("Options")));
+    mp_load_item->setText(colorize(_("Load")));
+    mp_save_item->setText(colorize(_("Save")));
+    mp_quit_item->setText(colorize(_("Quit")));
+
+    /* Text shadow for each menu item follows. Ensure that the
+     * gettext macro is called with the same value as above for each
+     * menu entry so the translators do not get two strings to
+     * translate per menu item. */
+    mp_start_shadow->setText(UTF8_("Start"));
+    mp_options_shadow->setText(UTF8_("Options"));
+    mp_load_shadow->setText(UTF8_("Load"));
+    mp_save_shadow->setText(UTF8_("Save"));
+    mp_quit_shadow->setText(UTF8_("Quit"));
+
+    mp_start_shadow->setProperty("TextColours", "tl:FF000000 tr:FF000000 bl:FF000000 br:FF000000");
+    mp_options_shadow->setProperty("TextColours", "tl:FF000000 tr:FF000000 bl:FF000000 br:FF000000");
+    mp_load_shadow->setProperty("TextColours", "tl:FF000000 tr:FF000000 bl:FF000000 br:FF000000");
+    mp_save_shadow->setProperty("TextColours", "tl:FF000000 tr:FF000000 bl:FF000000 br:FF000000");
+    mp_quit_shadow->setProperty("TextColours", "tl:FF000000 tr:FF000000 bl:FF000000 br:FF000000");
+
+    CEGUI::Window* text_version = p_rootwin->getChild("menu_main/text_version");
 
 #ifdef TSC_VERSION_POSTFIX
     text_version->setProperty("Text", int_to_string(TSC_VERSION_MAJOR) + "." + int_to_string(TSC_VERSION_MINOR) + "." + int_to_string(TSC_VERSION_PATCH) + "-" + TSC_VERSION_POSTFIX);
@@ -531,6 +577,42 @@ void cMenu_Main::Draw(void)
     }
 
     Draw_End();
+}
+
+CEGUI::String cMenu_Main::colorize(std::string utf8)
+{
+    const std::vector<std::u32string> colors = {U"[colour='FF00FF00']",
+                                                U"[colour='FF0000FF']",
+                                                U"[colour='FFFF0000']",
+                                                U"[colour='FFFFFF00']"};
+
+    /* Inserting the colour sequences requires unicode-aware
+     * by-character iteration of `str', which is not possible
+     * before C++11, which TSC has moved to already. `str' is
+     * guaranteed to contain UTF-8-encoded text, because it
+     * comes ultimately from the gettext() routine (the caller
+     * has to ensure this). The solution is to convert `str'
+     * into a format one can iterate by-character over, which
+     * is UTF-32. The `convert' instanciated below works by
+     * always having one side of the conversion being UTF-8
+     * and the other side being UTF-32 (indicated by `char32_t'
+     * types). Thus, from_bytes() creates UTF-32 from UTF-8,
+     * to_bytes() UTF-8 from UTF-32.
+     *
+     * When the replacement is done, the entire string is converted to
+     * a type CEGUI understands as input. */
+    std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> converter;
+    std::u32string utf32 = converter.from_bytes(utf8);
+    for(size_t pos=0, i=0; pos <= utf32.length();) {
+        utf32.insert(pos, colors[i]);
+        pos += 1 + colors[i].size();
+
+        if (++i >= colors.size())
+            i = 0;
+    }
+
+    utf8 = converter.to_bytes(utf32);
+    return reinterpret_cast<const CEGUI::utf8*>(utf8.c_str());
 }
 
 /* *** *** *** *** *** *** *** *** cMenu_Start *** *** *** *** *** *** *** *** *** */

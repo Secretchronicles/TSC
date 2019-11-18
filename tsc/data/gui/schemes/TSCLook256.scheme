@@ -11,6 +11,8 @@
     <Font filename="DejaVuSerif-Italic.font"/>
     <Font filename="DejaVuSerif-Bold.font"/>
     <Font filename="DejaVuSerif-BoldItalic.font"/>
+    <Font filename="DejaVuSerif-Regular.huge.font"/>
+    <Font filename="DejaVuSerif-Regular.huge.outline.font"/>
 
 	<LookNFeel filename="TSCLook256.looknfeel" />
 	<WindowRendererSet filename="CEGUICoreWindowRendererSet" />

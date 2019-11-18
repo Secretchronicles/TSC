@@ -94,6 +94,7 @@ namespace TSC {
     private:
         bool credits_item_clicked(const CEGUI::EventArgs& event);
         bool credits_item_entered(const CEGUI::EventArgs& event);
+        CEGUI::String colorize(std::string str);
 
         cHudSprite* mp_start_active;
         cHudSprite* mp_start_inactive;
@@ -109,7 +110,19 @@ namespace TSC {
         cHudSprite* mp_current_inactive_item;
         cHudSprite* mp_current_active_item;
 
+        CEGUI::Window* mp_start_item;
+        CEGUI::Window* mp_options_item;
+        CEGUI::Window* mp_load_item;
+        CEGUI::Window* mp_save_item;
+        CEGUI::Window* mp_quit_item;
         CEGUI::Window* mp_credits_item;
+
+        CEGUI::Window* mp_start_shadow;
+        CEGUI::Window* mp_options_shadow;
+        CEGUI::Window* mp_load_shadow;
+        CEGUI::Window* mp_save_shadow;
+        CEGUI::Window* mp_quit_shadow;
+        CEGUI::Window* mp_credits_shadow;
 
         int m_start_index;
         int m_options_index;

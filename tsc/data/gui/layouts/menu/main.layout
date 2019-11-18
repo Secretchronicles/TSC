@@ -6,6 +6,92 @@
         <Property name="MaxSize" value="{{1,0},{1,0}}"/>
         <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}"/>
         <Property name="MousePassThroughEnabled" value="True"/>
+        <!-- Menu items follow. The actual text is set in-code to have
+             it translatable, i.e. the "text" property set here is
+             ignored and is only informational. Each menu item
+             is preceeded by a "shadow" label, which is used to
+             create the text shadow around the actual menu item
+             and which has a slight (1px) Y offset. -->
+        <Window type="TSCLook256/StaticText" name="start_shadow">
+            <Property name="Area" value="{{0,0},{0.2,1},{1,0},{0.3,0}}"/>
+            <Property name="Text" value="Start"/>
+            <Property name="Font" value="DejaVuSerif-Huge-Outline"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="start">
+            <Property name="Area" value="{{0,0},{0.2,0},{1,0},{0.3,0}}"/>
+            <Property name="Text" value="Start"/>
+            <Property name="Font" value="DejaVuSerif-Huge"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="options_shadow">
+            <Property name="Area" value="{{0,0},{0.3,1},{1,0},{0.4,0}}"/>
+            <Property name="Text" value="Options"/>
+            <Property name="Font" value="DejaVuSerif-Huge-Outline"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="options">
+            <Property name="Area" value="{{0,0},{0.3,0},{1,0},{0.4,0}}"/>
+            <Property name="Text" value="Options"/>
+            <Property name="Font" value="DejaVuSerif-Huge"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="load_shadow">
+            <Property name="Area" value="{{0,0},{0.4,1},{1,0},{0.5,0}}"/>
+            <Property name="Text" value="Load"/>
+            <Property name="Font" value="DejaVuSerif-Huge-Outline"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="load">
+            <Property name="Area" value="{{0,0},{0.4,0},{1,0},{0.5,0}}"/>
+            <Property name="Text" value="Load"/>
+            <Property name="Font" value="DejaVuSerif-Huge"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="save_shadow">
+            <Property name="Area" value="{{0,0},{0.5,1},{1,0},{0.6,0}}"/>
+            <Property name="Text" value="Save"/>
+            <Property name="Font" value="DejaVuSerif-Huge-Outline"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="save">
+            <Property name="Area" value="{{0,0},{0.5,0},{1,0},{0.6,0}}"/>
+            <Property name="Text" value="Save"/>
+            <Property name="Font" value="DejaVuSerif-Huge"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="quit_shadow">
+            <Property name="Area" value="{{0,0},{0.6,1},{1,0},{0.7,0}}"/>
+            <Property name="Text" value="Quit"/>
+            <Property name="Font" value="DejaVuSerif-Huge-Outline"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
+        <Window type="TSCLook256/StaticText" name="quit">
+            <Property name="Area" value="{{0,0},{0.6,0},{1,0},{0.7,0}}"/>
+            <Property name="Text" value="Quit"/>
+            <Property name="Font" value="DejaVuSerif-Huge"/>
+            <Property name="HorzFormatting" value="CentreAligned"/>
+            <Property name="FrameEnabled" value="False"/>
+            <Property name="BackgroundEnabled" value="False"/>
+        </Window>
         <Window type="TSCLook256/StaticText" name="text_version">
             <Property name="Text" value="Version"/>
             <Property name="TooltipText" value="Current Game Version."/>
