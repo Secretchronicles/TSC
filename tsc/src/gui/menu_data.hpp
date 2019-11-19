@@ -110,6 +110,8 @@ namespace TSC {
         cHudSprite* mp_current_inactive_item;
         cHudSprite* mp_current_active_item;
 
+        CEGUI::Window* mp_current_selected_item;
+
         CEGUI::Window* mp_start_item;
         CEGUI::Window* mp_options_item;
         CEGUI::Window* mp_load_item;

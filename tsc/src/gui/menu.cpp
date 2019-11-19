@@ -78,8 +78,9 @@ cMenuHandler::~cMenuHandler(void)
 }
 
 /**
- * Adds a new text item to the menu. If the item is the first item added,
- * it is automatically set active.
+ * Adds a new text item to the menu. Don't forget to set the menu
+ * item you want to set active with Set_Active() when you're done
+ * with adding menu items.
  *
  * \param rect
  * Screen area the item occupies. This is used for testing whether the mouse
@@ -98,10 +99,6 @@ int cMenuHandler::Add_Menu_Item(sf::FloatRect rect, void* p_item)
     m_items.resize(m_items.size() + 1);
     m_items.back().m_rect = rect;
     m_items.back().mp_item = p_item;
-
-    if (m_active == -1 && Get_Size() == 1) {
-        Set_Active(0);
-    }
 
     return m_items.size() - 1;
 }

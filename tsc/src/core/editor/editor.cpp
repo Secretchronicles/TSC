@@ -1155,7 +1155,7 @@ std::string cEditor::load_cegui_image(boost::filesystem::path path)
     /* CEGUI only knows about image sets, not about single images.
      * Thus we effectively add one-image imagesets here to have CEGUI
      * display our image. Note CEGUI also caches these images and will
-     * throw a CEGUI::AlreadyExsitsException in addFromImageFile() if
+     * throw a CEGUI::AlreadyExistsException in addFromImageFile() if
      * an image is added multiple times (like multiple loads of the
      * editor or just the same item being added to multiple menus).
      * Thus we have to check if the item graphic has been cached before,

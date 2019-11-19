@@ -193,6 +193,7 @@ cMenu_Main::cMenu_Main(void)
 
     mp_current_inactive_item = NULL;
     mp_current_active_item   = NULL;
+    mp_current_selected_item = NULL;
 
     mp_start_item = NULL;
     mp_options_item = NULL;
@@ -357,11 +358,22 @@ void cMenu_Main::Init(void)
     }
 
     Init_GUI();
+    pMenuCore->m_handler->Set_Active(0);
 }
 
 void cMenu_Main::Init_GUI(void)
 {
     cMenu_Base::Init_GUI();
+
+    // Add one-file imagesets for the menu item images
+    // (see cEditor::load_cegui_image() for the rationale
+    // and cHud::load_hud_image_into_cegui() for another example).
+    CEGUI::ImageManager& imgmanager = CEGUI::ImageManager::getSingleton();
+    imgmanager.addFromImageFile("menu_start_icon", "menu/items/start.png", "ingame-images");
+    imgmanager.addFromImageFile("menu_options_icon", "menu/items/options.png", "ingame-images");
+    imgmanager.addFromImageFile("menu_load_icon", "menu/items/load.png", "ingame-images");
+    imgmanager.addFromImageFile("menu_save_icon", "menu/items/save.png", "ingame-images");
+    // imgmanager.addFromImageFile("menu_save_quit", "menu/items/quit.png", "ingame-images"); Quit icon has not been created yet
 
     CEGUI::Window* p_rootwin = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
     mp_start_item   = p_rootwin->getChild("menu_main/start");
@@ -437,6 +449,12 @@ void cMenu_Main::Selected_Item_Changed(int new_active_item)
         mp_current_inactive_item->Set_Color_Combine(0, 0, 0, 0);
     }
 
+    mp_start_item->setText(colorize(_("Start")));
+    mp_options_item->setText(colorize(_("Options")));
+    mp_load_item->setText(colorize(_("Load")));
+    mp_save_item->setText(colorize(_("Save")));
+    mp_quit_item->setText(colorize(_("Quit")));
+
     mp_current_active_item   = NULL;
     mp_current_inactive_item = NULL;
 
@@ -447,23 +465,33 @@ void cMenu_Main::Selected_Item_Changed(int new_active_item)
     case 0:
         mp_current_active_item   = mp_start_active;
         mp_current_inactive_item = mp_start_inactive;
+        mp_current_selected_item = mp_start_item;
+        mp_start_item->setText(UTF8_("Start")); // Remove inline colors
         break;
     case 1:
         mp_current_active_item   = mp_options_active;
         mp_current_inactive_item = mp_options_inactive;
+        mp_current_selected_item = mp_options_item;
+        mp_options_item->setText(UTF8_("Options")); // Remove inline colors
         break;
     case 2:
         mp_current_active_item   = mp_load_active;
         mp_current_inactive_item = mp_load_inactive;
+        mp_current_selected_item = mp_load_item;
+        mp_load_item->setText(UTF8_("Load")); // Remove inline colors
         break;
     case 3:
         mp_current_active_item   = mp_save_active;
         mp_current_inactive_item = mp_save_inactive;
+        mp_current_selected_item = mp_save_item;
+        mp_save_item->setText(UTF8_("Save")); // Remove inline colors
         break;
     case 4:
         // TODO: No quit active icon yet
         mp_current_active_item   = NULL; //mp_quit_active;
         mp_current_inactive_item = mp_quit_inactive;
+        mp_current_selected_item = mp_quit_item;
+        mp_quit_item->setText(UTF8_("Quit")); // Remove inline colors
         break;
     case 5:
         // credits item has no icon
@@ -476,6 +504,9 @@ void cMenu_Main::Selected_Item_Changed(int new_active_item)
         mp_current_inactive_item = NULL;
         break;
     }
+
+    if (mp_current_selected_item)
+        mp_current_selected_item->setProperty("TextColours", "tl:FFFFFF00 tr:FFFFFF00 bl:FFFFFF00 br:FFFFFF00");
 }
 
 // Translate the CEGUI event into something the menu handler understands
