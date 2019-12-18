@@ -1,5 +1,0 @@
-Change it later somehow.
-Ideas :
-- make it a normal box but with glimmer (particles)
-- change the animation to be a wide/small triangle arrow showing and moving upwards (maybe multiple. too technical looking ?)
-- glowing but only on the lower and upper sides

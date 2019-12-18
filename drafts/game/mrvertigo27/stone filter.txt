@@ -1,4 +1,0 @@
-- Open stone_filter.svg.
-- Import the image that should become a stone. You can just drag it into Inkscape.
-- Enable the filter effect "stone" or "stone darker" on the image.
-- Export the stonified image.
