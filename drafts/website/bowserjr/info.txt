@@ -1,1 +1,0 @@
-For editing put star.png and walk_right_2.png (from maryo big) from the pixmaps folder into this folder.
