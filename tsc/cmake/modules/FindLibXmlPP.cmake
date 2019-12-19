@@ -79,3 +79,35 @@ find_package_handle_standard_args(LibXmlPP
   VERSION_VAR PKG_LibXmlPP_VERSION)
 
 mark_as_advanced(LibXmlPP_LIBRARIES LibXmlPP_INCLUDE_DIRS LibXmlPP_DEFINITIONS)
+
+if(LibXmlPP_FOUND)
+  if(NOT TARGET LibXmlPP::Glib)
+    add_library(LibXmlPP::Glib UNKNOWN IMPORTED)
+    set_target_properties(LibXmlPP::Glib PROPERTIES
+                          INTERFACE_INCLUDE_DIRECTORIES
+                            "${LibXmlPP_Glib_INCLUDE_DIR};${LibXmlPP_Glib_Config_INCLUDE_DIR}"
+                          IMPORTED_LOCATION "${LibXmlPP_Glib_LIBRARY}"
+                          IMPORTED_LINK_INTERFACE_LANGUAGES "C")
+  endif()
+
+  if(NOT TARGET LibXmlPP::GlibMM)
+    add_library(LibXmlPP::GlibMM UNKNOWN IMPORTED)
+    set_target_properties(LibXmlPP::GlibMM PROPERTIES
+                          INTERFACE_INCLUDE_DIRECTORIES
+                            "${LibXmlPP_GlibMM_INCLUDE_DIR};${LibXmlPP_GlibMM_Config_INCLUDE_DIR}"
+                          INTERFACE_LINK_LIBRARIES LibXmlPP::Glib
+                          IMPORTED_LOCATION "${LibXmlPP_GlibMM_LIBRARY}"
+                          IMPORTED_LINK_INTERFACE_LANGUAGES "C++")
+  endif()
+
+  if(NOT TARGET LibXmlPP::LibXmlPP)
+    add_library(LibXmlPP::LibXmlPP UNKNOWN IMPORTED)
+    set_target_properties(LibXmlPP::LibXmlPP PROPERTIES
+                          INTERFACE_INCLUDE_DIRECTORIES
+                            "${LibXmlPP_INCLUDE_DIR};${LibXmlPP_Config_INCLUDE_DIR}"
+                          INTERFACE_COMPILE_OPTIONS "${LibXmlPP_DEFINITIONS}"
+                          INTERFACE_LINK_LIBRARIES LibXmlPP::GlibMM
+                          IMPORTED_LOCATION "${LibXmlPP_LIBRARY}"
+                          IMPORTED_LINK_INTERFACE_LANGUAGES "C++")
+  endif()
+endif()

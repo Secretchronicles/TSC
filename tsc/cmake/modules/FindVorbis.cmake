@@ -30,3 +30,12 @@ if (PKG_Vorbis_CFLAGS)
 endif()
 
 mark_as_advanced(Vorbis_LIBRARIES Vorbis_INCLUDE_DIRS Vorbis_DEFINITIONS)
+
+if(Vorbis_FOUND AND NOT TARGET Vorbis::Vorbis)
+  add_library(Vorbis::Vorbis UNKNOWN IMPORTED)
+  set_target_properties(Vorbis::Vorbis PROPERTIES
+                        INTERFACE_COMPILE_OPTIONS "${Vorbis_DEFINITIONS}"
+                        INTERFACE_INCLUDE_DIRECTORIES "${Vorbis_INCLUDE_DIRS}"
+                        IMPORTED_LOCATION "${Vorbis_LIBRARY}"
+                        IMPORTED_LINK_INTERFACE_LANGUAGES "C")
+endif()

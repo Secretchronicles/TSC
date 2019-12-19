@@ -1,1 +1,1 @@
-flatpak-builder --install --force-clean build org.secretchronicles.TSC.json
+flatpak-builder --install --force-clean build org.secretchronicles.TSC.json "$@"

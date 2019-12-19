@@ -34,6 +34,15 @@ find_package(PkgConfig)
 pkg_search_module(PKG_CEGUI QUIET CEGUI CEGUI-0)
 
 ########################################
+# Flags
+
+# This sets -DCEGUI_STATIC! If you forget including
+# that into your compilation commands, you will get
+# wealths of "undefined references to _imp__*" errors
+# on crosscompilation!
+set(CEGUI_DEFINITIONS ${PKG_CEGUI_CFLAGS})
+
+########################################
 # Include dir
 
 # CEGUI’s pkg-config file is broken -- it says /usr/include/cegui-0/cegui,
@@ -64,6 +73,12 @@ macro(find_cegui_library LIBNAME)
   # Error message if not found
   if(CEGUI_${LIBNAME}_LIBRARY)
     message("--   found: ${CEGUI_${LIBNAME}_LIBRARY}")
+
+    add_library(CEGUI::${LIBNAME} UNKNOWN IMPORTED)
+    set_target_properties(CEGUI::${LIBNAME} PROPERTIES
+                          INTERFACE_COMPILE_OPTIONS "${CEGUI_DEFINITIONS}"
+                          INTERFACE_INCLUDE_DIRECTORIES "${CEGUI_INCLUDE_DIR}"
+                          IMPORTED_LOCATION "${CEGUI_${LIBNAME}_LIBRARY}")
   else()
     message(SEND_ERROR "CEGUI${LIBNAME} library not found!")
   endif()
@@ -111,15 +126,6 @@ else()
 endif()
 
 ########################################
-# Flags
-
-# This sets -DCEGUI_STATIC! If you forget including
-# that into your compilation commands, you will get
-# wealths of "undefined references to _imp__*" errors
-# on crosscompilation!
-set(CEGUI_DEFINITIONS ${PKG_CEGUI_CFLAGS})
-
-########################################
 # Package boilerplate
 
 # Register as a CMake module. This sets CEGUI_FIND_COMPONENTS
@@ -139,3 +145,20 @@ mark_as_advanced(CEGUI_INCLUDE_DIR
   CEGUI_EXPAT_PARSER_LIBRARY
   CEGUI_RENDERER_LIBRARIES
   CEGUI_LIBRARIES)
+
+if(CEGUI_FOUND)
+  add_library(CEGUI::CEGUI INTERFACE IMPORTED)
+  target_link_libraries(CEGUI::CEGUI INTERFACE
+                        CEGUI::Base CEGUI::CoreWindowRendererSet
+                        CEGUI::DevILImageCodec)
+
+  foreach(COMPONENT ${CEGUI_FIND_COMPONENTS})
+    target_link_libraries(CEGUI::CEGUI INTERFACE CEGUI::${COMPONENT}Renderer)
+  endforeach()
+
+  if(CEGUI_USE_EXPAT)
+    target_link_libraries(CEGUI::CEGUI INTERFACE CEGUI::ExpatParser)
+  else()
+    target_link_libraries(CEGUI::CEGUI INTERFACE CEGUI::LibXMLParser)
+  endif()
+endif()

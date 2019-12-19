@@ -65,3 +65,12 @@ mark_as_advanced(SFML_LIBRARIES SFML_INCLUDE_DIRS)
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(SFML DEFAULT_MSG SFML_INCLUDE_DIRS SFML_LIBRARIES)
 
+if(SFML_FOUND)
+  foreach(component ${SFML_FIND_COMPONENTS})
+    add_library(SFML::${component} UNKNOWN IMPORTED)
+    set_target_properties(SFML::${component} PROPERTIES
+                          INTERFACE_INCLUDE_DIRECTORIES "${SFML_INCLUDE_DIRS}"
+                          IMPORTED_LOCATION "${SFML_${component}_LIBRARY}"
+                          IMPORTED_LINK_INTERFACE_LANGUAGES "C++")
+  endforeach()
+endif()

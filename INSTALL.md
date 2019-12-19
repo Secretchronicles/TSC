@@ -162,22 +162,6 @@ ENABLE_NLS [ON]
 : Enables or disables use of translations. If disabled, TSC will use
   English only.
 
-USE_SYSTEM_MRUBY [OFF]
-: TSC embeds mruby for level scripting. If this option is turned
-  off (default), then the mruby included in TSC's source tree is
-  used for that. Turning this option on advises the build system
-  to link against a system-provided mruby instead. This is useful
-  for packaging and on odd systems on which TSC's included mruby does
-  not build. However, keep in mind that TSC is developed only against
-  the included mruby library. There's one major caveat you should
-  make users aware of if enabling this option: if your mruby's
-  version does not match the one included in TSC's sources, level
-  scripts can fail due to version incompatibilities, especially
-  if the version of mruby you provide is older than the one included
-  in TSC's source tree. Check the version in the TSC source tree
-  by executing $ git status in the mruby/mruby directory after
-  updating the Git submodules.
-
 USE_SYSTEM_TINYCLIPBOARD [OFF]
 : For clipboard access, TSC uses the `tinyclipboard` library written
   by Marvin Gülker (Quintus). The library is not part of many Linux

@@ -142,3 +142,13 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS(Freetype
                                   VERSION_VAR FREETYPE_VERSION_STRING)
 
 mark_as_advanced(FREETYPE_LIBRARY FREETYPE_INCLUDE_DIR_freetype2 FREETYPE_INCLUDE_DIR_ft2build)
+
+if(Freetype_FOUND)
+  if(NOT TARGET Freetype::Freetype)
+    add_library(Freetype::Freetype UNKNOWN IMPORTED)
+    set_target_properties(Freetype::Freetype PROPERTIES
+      INTERFACE_INCLUDE_DIRECTORIES "${FREETYPE_INCLUDE_DIRS}"
+      IMPORTED_LOCATION "${FREETYPE_LIBRARY}"
+      IMPORTED_LINK_INTERFACE_LANGUAGES "C")
+  endif()
+endif()

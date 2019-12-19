@@ -19,3 +19,11 @@ include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(FreeImage DEFAULT_MSG FreeImage_INCLUDE_DIR FreeImage_LIBRARY)
 set(FreeImage_LIBRARIES ${FreeImage_LIBRARY})
 set(FreeImage_INCLUDE_DIRS ${FreeImage_INCLUDE_DIR})
+
+if(FreeImage_FOUND AND NOT FreeImage::FreeImage)
+  add_library(FreeImage::FreeImage UNKNOWN IMPORTED)
+  set_target_properties(FreeImage::FreeImage PROPERTIES
+                        INTERFACE_INCLUDE_DIRECTORIES "${FreeImage_INCLUDE_DIRS}"
+                        IMPORTED_LOCATION "${FreeImage_LIBRARY}"
+                        IMPORTED_LINK_INTERFACE_LANGUAGES "C")
+endif()

@@ -32,3 +32,12 @@ if (PKG_OGG_CFLAGS)
 endif()
 
 mark_as_advanced(OGG_LIBRARIES OGG_INCLUDE_DIRS OGG_DEFINITIONS)
+
+if(OGG_FOUND AND NOT TARGET OGG::OGG)
+  add_library(OGG::OGG UNKNOWN IMPORTED)
+  set_target_properties(OGG::OGG PROPERTIES
+                        INTERFACE_COMPILE_OPTIONS "${OGG_DEFINITIONS}"
+                        INTERFACE_INCLUDE_DIRECTORIES "${OGG_INCLUDE_DIRS}"
+                        IMPORTED_LOCATION "${OGG_LIBRARY}"
+                        IMPORTED_LINK_INTERFACE_LANGUAGES "C")
+endif()

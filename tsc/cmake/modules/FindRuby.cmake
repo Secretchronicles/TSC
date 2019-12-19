@@ -1,5 +1,5 @@
 #############################################################################
-# FindLibIntl.cmake - CMake module for finding Ruby
+# FindRuby.cmake - CMake module for finding Ruby
 #
 # Copyright © 2012-2017 The TSC Contributors
 #############################################################################
