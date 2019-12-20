@@ -44,7 +44,11 @@ end
 
 MRuby::Build.new do |conf|
   toolchain :gcc
-  enable_debug
+
+  ## TSC_BUILD_TYPE comes from ProvideMRuby.cmake
+  if ENV["TSC_BUILD_TYPE"] =~ /Debug/i
+    enable_debug
+  end
 
   # Define MRB_UTF8_STRING to make mruby's String class able
   # to handle non-ascii characters properly.

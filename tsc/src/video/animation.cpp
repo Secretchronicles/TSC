@@ -75,7 +75,6 @@ void cAnimation::Update(void)
 
 void cAnimation::Draw(cSurface_Request* request /* = NULL */)
 {
-
 }
 
 void cAnimation::Set_Time_to_Live(float time, float time_rand /* = 0.0f */)

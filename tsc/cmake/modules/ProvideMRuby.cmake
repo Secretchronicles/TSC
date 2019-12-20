@@ -19,7 +19,7 @@ else()
     SOURCE_DIR "${TSC_BINARY_DIR}/mruby"
     CONFIGURE_COMMAND ""
     BUILD_IN_SOURCE 1
-    BUILD_COMMAND ./minirake MRUBY_CONFIG=${TSC_SOURCE_DIR}/mruby_tsc_build_config.rb
+    BUILD_COMMAND ./minirake MRUBY_CONFIG=${TSC_SOURCE_DIR}/mruby_tsc_build_config.rb TSC_BUILD_TYPE="${CMAKE_BUILD_TYPE}"
     BUILD_BYPRODUCTS ${MRuby_LIBRARIES}
     INSTALL_COMMAND "")
 
