@@ -256,7 +256,7 @@ void cLevel_Player::DownGrade_Player(bool delayed /* = true */, bool force /* = 
     gp_hud->Reset_Points();
     Ball_Clear();
     gp_hud->Add_Lives(-1);
-    pAudio->Fadeout_Music(1700);
+    pAudio->Halt_Music();
 
     // lost a live
     if (gp_hud->Get_Lives() >= 0) {
