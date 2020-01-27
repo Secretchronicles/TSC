@@ -180,6 +180,7 @@ namespace TSC {
 #define USER_WORLD_DIR "worlds"
 #define USER_CAMPAIGN_DIR "campaigns"
 #define USER_IMGCACHE_DIR "images"
+#define USER_SCRIPTING_DIR "scripting"
 
     /* *** *** *** *** *** *** *** forward declarations *** *** *** *** *** *** *** *** *** *** */
 

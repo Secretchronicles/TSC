@@ -15,6 +15,8 @@
 	* Feature: Added music "lost" by Arik Burns
 	* Feature: Added music "battle" by Ryan Gonzalez (#449 by Chris Jacobsen)
 	* Feature: Added music "theme_1" ("Blinded by Desire") by Ryan Gonzalez
+	* Feature: Added music "theme_2" ("Journey of the Chronicles") by Ryan Gonzalez.
+		This music is the new title theme.
 	* Feature: Added level graphic "Rainbows" by Marvin Gülker
 	* Feature: Added world graphic "volcano" by David F. Fernández
 	* Feature: Added world graphic "swamp" by David F. Fernández
@@ -68,6 +70,8 @@
 	* Dependencies: New dependency on the `tinyclipboard' library
 	* Dependencies: Dropped dependency on Ruby for building TSC itself
 		(now only required for mruby)
+	* Dependencies: The included mruby is now built in release mode if
+		TSC is compiled in release mode.
 	* Misc: C++11 compilation support
 	* Misc: Renamed "1-UP berry" to "Life berry" (#365 by Chris Jacobsen)
 	* Misc: Added Travis CI config (PR #453 by Lauri Ojansivu)
@@ -81,6 +85,7 @@
 	* Misc: Removed compilation option ENABLE_MRUBY. Scripting is an
 		integral part of TSC that can't be disabled anymore.
 	* Misc: New compilation option USE_SYSTEM_PODPARSER.
+	* Misc: Scripting expansion packs are now loaded from $TSC_USER_DIR/scripting.
 
 2015-08-17  Marvin Gülker  <quintus@quintilianus.eu>
 

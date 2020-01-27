@@ -32,7 +32,7 @@
 #include "../core/global_basic.hpp"
 
 // Music files to play on the title and credits screens.
-#define GAME_TITLE_MUSIC "land/hyper_1.ogg"
+#define GAME_TITLE_MUSIC "story/theme_2.ogg"
 #define GAME_CREDITS_MUSIC "land/hyper_1.ogg"
 
 using namespace std;

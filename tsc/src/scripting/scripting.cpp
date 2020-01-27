@@ -231,6 +231,7 @@ bool cMRuby_Interpreter::Run_File(const boost::filesystem::path& filepath)
 
 void cMRuby_Interpreter::Load_Scripts()
 {
+    // Load the SSL (Standard Scripting Library)
     std::vector<boost::filesystem::path> scriptfiles;
 
     for (boost::filesystem::directory_iterator diter(pResource_Manager->Get_Game_Scripting_Directory()); diter != boost::filesystem::directory_iterator(); diter++) {
@@ -250,6 +251,38 @@ void cMRuby_Interpreter::Load_Scripts()
                       << "'!" << std::endl;
         }
     }
+
+    // Load user's scripting expansion packs
+    std::vector<boost::filesystem::path> user_script_dirs;
+    for (boost::filesystem::directory_iterator diter(pResource_Manager->Get_User_Scripting_Directory()); diter != boost::filesystem::directory_iterator(); diter++) {
+        if (boost::filesystem::is_directory(diter->path())) {
+            user_script_dirs.push_back(diter->path());
+        }
+    }
+    std::sort(user_script_dirs.begin(), user_script_dirs.end());
+    debug_print("Scripting engine: loading %ld user script expansion packs\n", user_script_dirs.size());
+
+    for (const boost::filesystem::path& scriptdir: user_script_dirs) {
+        scriptfiles.clear();
+        for (boost::filesystem::directory_iterator diter(scriptdir); diter != boost::filesystem::directory_iterator(); diter++) {
+            if (diter->path().extension() == utf8_to_path(".rb")) {
+                scriptfiles.push_back(diter->path());
+            }
+
+            debug_print("Scripting engine: loading %ld script files from user script expansion pack %s\n", scriptfiles.size(), path_to_utf8(scriptdir.filename()).c_str());
+            std::sort(scriptfiles.begin(), scriptfiles.end());
+
+            for (boost::filesystem::path scriptfile: scriptfiles) {
+                debug_print("Scripting engine: loading script file '%s'\n", path_to_utf8(scriptfile).c_str());
+                if (!Run_File(scriptfile)) {
+                    std::cerr << "Scripting engine: warning: error loading mruby script file '"
+                              << path_to_utf8(scriptfile)
+                              << "'!" << std::endl;
+                }
+            }
+        }
+    }
+
 }
 
 void cMRuby_Interpreter::Register_Callback(mrb_value callback)

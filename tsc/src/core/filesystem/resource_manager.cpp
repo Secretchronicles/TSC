@@ -80,6 +80,10 @@ void cResource_Manager::Init_User_Directory(void)
     if (!Dir_Exists(Get_User_Campaign_Directory())) {
         fs::create_directories(Get_User_Campaign_Directory());
     }
+    // Create scripting directory
+    if (!Dir_Exists(Get_User_Scripting_Directory())) {
+        fs::create_directories(Get_User_Scripting_Directory());
+    }
     // Create cache directory
     if (!Dir_Exists(Get_User_Imgcache_Directory())) {
         fs::create_directories(Get_User_Imgcache_Directory());
@@ -133,6 +137,11 @@ fs::path cResource_Manager::Get_User_Savegame_Directory()
 fs::path cResource_Manager::Get_User_Screenshot_Directory()
 {
     return m_paths.user_data_dir / utf8_to_path(USER_SCREENSHOT_DIR);
+}
+
+fs::path cResource_Manager::Get_User_Scripting_Directory()
+{
+    return m_paths.user_data_dir / utf8_to_path(USER_SCRIPTING_DIR);
 }
 
 fs::path cResource_Manager::Get_User_World_Directory()

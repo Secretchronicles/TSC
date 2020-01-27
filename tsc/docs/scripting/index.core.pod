@@ -119,12 +119,12 @@ always the same.
 
 =item 1.
 
-You want to listen for a specific event, e.g. the <code>touch</code> event.
+You want to listen for a specific event, e.g. the C<touch> event.
 
 =item 2.
 
 You write an event handler accepting the parameters the event will
-hand to you (e.g. the other sprite in case of the <code>touch</code>
+hand to you (e.g. the other sprite in case of the C<touch>
 event).
 
 =item 3.
@@ -235,33 +235,11 @@ folder of your TSC data path.
 
 The SSL is documented in a separate set of documents.
 
-In order to use these standard extensions, you have to C<require>
-them. You can choose between loading the entire standard library at
-once, which can slow down level startup and will likely pull in many
-things you don’t even use, and loading specific helpers directly, thus
-resulting in probably many C<require> statements on the top of your
-level code. Due to the performance gain however, the latter choice is
-preferred.
+It used to be necessary to C<require> the SSL's extensions, but
+starting with version 2.1.0 of TSC this was removed. The C<Std>
+namespace is now by default available to all level scripts.
 
-To load the entire SSL, simply place this at the top of your scripting
-code:
-
-    TSC.require "std/all"
-
-If you want to load specific helpers like the C<ImmediateSprite> class
-that allows you to create static sprites quickly, do it like this
-instead:
-
-    TSC.require "std/immediate_sprite"
-
-In either case, you could then use C<ImmediateSprite> like this:
-
-    Std::ImmediateSprite.new("blocks/extra/corded.png", x: 300, y: -300)
-
-which will create, place, and show a corded block at the given
-coordinates.
-
-Note that all standard library stuff is defined under the C<Std>
+Note that all standard library code is defined under the C<Std>
 namespace. Do B<not> use that namespace for your own scripting
 expansion packs (see below).
 
@@ -281,14 +259,15 @@ C<Freaky> for instance, and then place your own code below that.
     end
 
 Each class should have its own file, and all files related to the
-"freaky" expansion-pack should reside in a folder F<freaky/>. That
-folder should also contain a file F<all.rb> that pulls in all classes
-under the C<Freaky> namespace so a user can require them all at once
-the same way as the SSL shown above. When you’re done, place the
-F<freaky/> folder next to the F<std/> folder in your TSC’s F<scripting/>
-directory. You will then be able to L<TSC::require> files from below
-that folder. To get an impression of how all that works, you can
-always look on the SSL’s code itself.
+"freaky" expansion-pack should reside in a folder F<freaky/>. When
+you’re done, place the F<freaky/> folder below the F<scripting/>
+directory in your TSC user data directory (under Linux, this is
+F<~/.local/share/tsc/scripting>). Each time TSC loads a level, all
+these files are loaded in alphabetical order automatically and their
+content becomes accessible via the scripting engine.
+
+To get an impression of what to write in a scripting expansion pack,
+you can always look on the SSL’s code itself.
 
 You can also create a ZIP file or Tarball from your F<freaky/> folder
 and upload it to the Internet, so everybody can download it an add it
