@@ -759,12 +759,12 @@ void cSprite::Set_Color_Combine(const float red, const float green, const float 
 
 void cSprite::Update_Rect_Rotation_Z(void)
 {
-    // rotate 270°
+    // rotate 270° - Corresponds to downwards Rokko in hack
     if (m_rot_z >= 270.0f) {
         // rotate collision position
         float orig_x = m_col_pos.m_x;
-        m_col_pos.m_x = m_col_pos.m_y;
-        m_col_pos.m_y = orig_x;
+        m_col_pos.m_x = m_col_pos.m_y - m_col_rect.m_h / 1.5;
+        m_col_pos.m_y = orig_x - m_col_rect.m_w / 10;
 
         // switch width and height
         float orig_w = m_rect.m_w;
@@ -780,12 +780,12 @@ void cSprite::Update_Rect_Rotation_Z(void)
         m_col_pos.m_x = m_rect.m_w - (m_col_rect.m_w + m_col_pos.m_x);
         m_col_pos.m_y = m_rect.m_h - (m_col_rect.m_h + m_col_pos.m_y);
     }
-    // rotate 90°
+    // rotate 90° - Corresponds to upwards Rokko in hack
     else if (m_rot_z >= 0.00001f) {
         // rotate collision position
         float orig_x = m_col_pos.m_x;
-        m_col_pos.m_x = m_rect.m_h - (m_col_rect.m_h + m_col_pos.m_y);
-        m_col_pos.m_y = orig_x;
+        m_col_pos.m_x = m_rect.m_h - (m_col_rect.m_h + m_col_pos.m_y) + m_col_rect.m_h / 1.5;
+        m_col_pos.m_y = orig_x - m_col_rect.m_w / 4;
 
         // switch width and height
         float orig_w = m_rect.m_w;
