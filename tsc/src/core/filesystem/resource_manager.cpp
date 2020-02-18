@@ -16,7 +16,7 @@
 
 #if defined(_WIN32)
 #include <windows.h>
-#elif defined(__linux)
+#elif defined(__unix__)
 #include <limits.h>
 #endif
 

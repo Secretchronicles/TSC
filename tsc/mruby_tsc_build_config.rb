@@ -43,7 +43,11 @@ config = lambda do |conf, root|
 end
 
 MRuby::Build.new do |conf|
-  toolchain :gcc
+  if RUBY_PLATFORM !~ /freebsd/
+    toolchain :gcc
+  else
+    toolchain :clang
+  end
 
   ## TSC_BUILD_TYPE comes from ProvideMRuby.cmake
   if ENV["TSC_BUILD_TYPE"] =~ /Debug/i

@@ -44,10 +44,12 @@ static mrb_value Platform(mrb_state* p_state, mrb_value self)
 {
 #ifdef _WIN32
     return TSC::Scripting::str2sym(p_state, "win32");
-#elif __linux
+#elif __linux__
     return TSC::Scripting::str2sym(p_state, "linux");
 #elif __APPLE__
     return TSC::Scripting::str2sym(p_state, "apple");
+#elif __FreeBSD__
+    return TSC::Scripting::str2sym(p_state, "freebsd");
 #else
     return TSC::Scripting::str2sym(p_state, "other");
 #endif
