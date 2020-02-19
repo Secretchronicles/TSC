@@ -43,7 +43,7 @@ config = lambda do |conf, root|
 end
 
 MRuby::Build.new do |conf|
-  if RUBY_PLATFORM !~ /freebsd/
+  if RUBY_PLATFORM !~ /freebsd/ and RUBY_PLATFORM !~ /openbsd/
     toolchain :gcc
   else
     toolchain :clang

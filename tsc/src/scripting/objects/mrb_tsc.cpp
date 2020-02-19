@@ -50,6 +50,8 @@ static mrb_value Platform(mrb_state* p_state, mrb_value self)
     return TSC::Scripting::str2sym(p_state, "apple");
 #elif __FreeBSD__
     return TSC::Scripting::str2sym(p_state, "freebsd");
+#elif __OpenBSD__
+    return TSC::Scripting::str2sym(p_state, "openbsd");
 #else
     return TSC::Scripting::str2sym(p_state, "other");
 #endif
