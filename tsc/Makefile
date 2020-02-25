@@ -38,7 +38,7 @@ $(TSC_TARFILE):
 	git submodule init
 	git submodule update
 	rm -f ../../TSC-$(TSC_VERSION)
-	ln -s TSC ../../TSC-$(TSC_VERSION)
+	ln -s $(shell basename $(dir $(shell pwd))) ../../TSC-$(TSC_VERSION)
 	rm -f $@
 	tar -f $@ -C ../.. --exclude=.git --exclude=.gitignore --exclude=.gitmodules --exclude=tsc/build --exclude=org.secretchronicles.TSC.json --exclude=flatpak --exclude=.travis.yml --exclude='*.sh' --exclude drafts --exclude-backups --exclude-vcs-ignores -cvzh TSC-$(TSC_VERSION)
 	rm ../../TSC-$(TSC_VERSION)
