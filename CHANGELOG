@@ -13,7 +13,6 @@
 	* Feature: Added music "castle_1" ("Morning in a castle") by Naerbu
 	* Feature: Added music "blossem" by Arik Burns
 	* Feature: Added music "lost" by Arik Burns
-	* Feature: Added music "battle" by Ryan Gonzalez (#449 by Chris Jacobsen)
 	* Feature: Added music "theme_1" ("Blinded by Desire") by Ryan Gonzalez
 	* Feature: Added music "theme_2" ("Journey of the Chronicles") by Ryan Gonzalez.
 		This music is the new title theme.
@@ -86,6 +85,7 @@
 		integral part of TSC that can't be disabled anymore.
 	* Misc: New compilation option USE_SYSTEM_PODPARSER.
 	* Misc: Scripting expansion packs are now loaded from $TSC_USER_DIR/scripting.
+	* Misc: Added experimental BSD build support (PR #678 by David Carlier)
 
 2015-08-17  Marvin Gülker  <quintus@quintilianus.eu>
 
