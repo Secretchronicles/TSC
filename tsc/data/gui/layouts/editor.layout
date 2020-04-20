@@ -6,7 +6,6 @@
     <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}"/>
     <!-- Following is the editor's left panel (editor menu) -->
     <Window type="TSCLook256/TabControl" name="editor_tabpane">
-      <Property name="TabHeight" value="{0,24}"/>
       <Property name="TabPanePosition" value="Top"/>
       <!-- 0.94 height to leave space at the bottom for the status bar -->
       <Property name="Area" value="{{0,0},{0,0},{0.2,0},{0.94,0}}"/>

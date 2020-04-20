@@ -7,7 +7,6 @@
     <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}"/>
     <Property name="MousePassThroughEnabled" value="True"/>
     <Window type="TSCLook256/TabControl" name="tabcontrol_main">
-      <Property name="TabHeight" value="{0,22.4934}"/>
       <Property name="MaxSize" value="{{1,0},{1,0}}"/>
       <Property name="TabPanePosition" value="Top"/>
       <Property name="Area" value="{{0.182812,0},{0.241666,0},{0.840625,0},{0.793749,0}}"/>
