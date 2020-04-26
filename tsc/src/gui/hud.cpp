@@ -399,7 +399,7 @@ void cHud::Set_World_Name(std::string name)
 
 void cHud::Set_Text(std::string message)
 {
-    mp_message_text->setText(message);
+    mp_message_text->setText(reinterpret_cast<const CEGUI::utf8*>(message.c_str())); // Caller has to translate it
     mp_message_text->show();
     m_text_counter = TEXT_DISPLAY_TIME;
 }
