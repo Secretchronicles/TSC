@@ -2,8 +2,8 @@
 <level>
   <information>
     <property name="game_version" value="2.1.0"/>
-    <property name="engine_version" value="47"/>
-    <property name="save_time" value="1478661237"/>
+    <property name="engine_version" value="48"/>
+    <property name="save_time" value="1587908897"/>
   </information>
   <settings>
     <property name="lvl_author" value="datahead"/>
@@ -26172,7 +26172,7 @@
     <property name="posx" value="14807"/>
     <property name="posy" value="-68"/>
     <property name="uid" value="3586"/>
-    <property name="image" value="ground/green_1/slider/1/brown/left.png"/>
+    <property name="image" value="ground/green_1/slider/1/brown/right.png"/>
     <property name="type" value="0"/>
     <property name="massive_type" value="halfmassive"/>
     <property name="move_type" value="0"/>
@@ -26191,7 +26191,7 @@
     <property name="posx" value="15008"/>
     <property name="posy" value="-40"/>
     <property name="uid" value="3587"/>
-    <property name="image" value="ground/green_1/slider/1/brown/left.png"/>
+    <property name="image" value="ground/green_1/slider/1/brown/right.png"/>
     <property name="type" value="0"/>
     <property name="massive_type" value="halfmassive"/>
     <property name="move_type" value="0"/>
@@ -26210,7 +26210,7 @@
     <property name="posx" value="15201"/>
     <property name="posy" value="-68"/>
     <property name="uid" value="3588"/>
-    <property name="image" value="ground/green_1/slider/1/brown/left.png"/>
+    <property name="image" value="ground/green_1/slider/1/brown/right.png"/>
     <property name="type" value="0"/>
     <property name="massive_type" value="halfmassive"/>
     <property name="move_type" value="0"/>
@@ -26257,7 +26257,7 @@
     <property name="posx" value="15605"/>
     <property name="posy" value="-40"/>
     <property name="uid" value="3593"/>
-    <property name="image" value="ground/green_1/slider/1/brown/left.png"/>
+    <property name="image" value="ground/green_1/slider/1/brown/right.png"/>
     <property name="type" value="0"/>
     <property name="massive_type" value="halfmassive"/>
     <property name="move_type" value="0"/>
@@ -26276,7 +26276,7 @@
     <property name="posx" value="15788"/>
     <property name="posy" value="-68"/>
     <property name="uid" value="3594"/>
-    <property name="image" value="ground/green_1/slider/1/brown/left.png"/>
+    <property name="image" value="ground/green_1/slider/1/brown/right.png"/>
     <property name="type" value="0"/>
     <property name="massive_type" value="halfmassive"/>
     <property name="move_type" value="0"/>
@@ -27865,6 +27865,7 @@
     <property name="image" value=""/>
     <property name="type" value="0"/>
     <property name="camera_motion" value="1"/>
+    <property name="exit_name" value="exit"/>
   </levelexit>
   <sprite>
     <property name="posx" value="16871"/>

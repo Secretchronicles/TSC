@@ -3,7 +3,7 @@
   <information>
     <property name="game_version" value="2.1.0"/>
     <property name="engine_version" value="48"/>
-    <property name="save_time" value="1587851329"/>
+    <property name="save_time" value="1587908944"/>
   </information>
   <settings>
     <property name="lvl_author" value="datahead"/>
@@ -7804,6 +7804,7 @@
     <property name="image" value=""/>
     <property name="type" value="0"/>
     <property name="camera_motion" value="1"/>
+    <property name="exit_name" value="exit"/>
   </levelexit>
   <sprite>
     <property name="posx" value="1148"/>

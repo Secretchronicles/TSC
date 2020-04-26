@@ -23,9 +23,9 @@
   </line>
   <line>
     <property name="X1" value="713"/>
-    <property name="Y1" value="-92"/>
-    <property name="X2" value="715"/>
-    <property name="Y2" value="-241"/>
+    <property name="Y1" value="-89"/>
+    <property name="X2" value="891"/>
+    <property name="Y2" value="-89"/>
     <property name="origin" value="3"/>
   </line>
   <line>
@@ -55,5 +55,26 @@
     <property name="X2" value="271"/>
     <property name="Y2" value="-461"/>
     <property name="origin" value="7"/>
+  </line>
+  <line>
+    <property name="X1" value="903"/>
+    <property name="Y1" value="-89"/>
+    <property name="X2" value="1022"/>
+    <property name="Y2" value="-89"/>
+    <property name="origin" value="0"/>
+  </line>
+  <line>
+    <property name="X1" value="1028"/>
+    <property name="Y1" value="-89"/>
+    <property name="X2" value="1028"/>
+    <property name="Y2" value="-241"/>
+    <property name="origin" value="0"/>
+  </line>
+  <line>
+    <property name="X1" value="1023"/>
+    <property name="Y1" value="-244"/>
+    <property name="X2" value="719"/>
+    <property name="Y2" value="-244"/>
+    <property name="origin" value="0"/>
   </line>
 </layer>
