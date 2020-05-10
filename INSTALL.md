@@ -382,14 +382,12 @@ repository of prebuilt packages.
 
 To begin, download and install msys2 from the [official website][3].
 
-After it's installed run any of the shells and execute:
+After it's installed, using `MSYS2 MinGW 64-bit`, execute:
 
     $ pacman -Syuu
 
 If the base system components are updated, you will be prompted to close the bash windows manually, go ahead and do so.
 
-Now, run either the `MSYS2 MinGW 32-bit` or the `MSYS2 MinGW 64-bit`, depending on which version you are going to build. Note that you
-can download libraries from one shell for the other, but you cannot build for the other architecture.
 
 Now run update again:
 
@@ -398,59 +396,37 @@ Now run update again:
 
 ### 2. Installing the dependencies ###
 
-Once it's finished, install the dependencies:
+Once it's finished, using `MSYS2 MinGW 64-bit`, install the dependencies for 64bit and 32bit builds. This downloads about 1 GB of files.
 
-    $ pacman -S --needed git base-devel bison ruby mingw-w64-x86_64-{toolchain,extra-cmake-modules,ruby,cegui,sfml,libxml++2.6,gperf}
+    $ pacman -S --needed git base-devel bison ruby mingw-w64-x86_64-{toolchain,extra-cmake-modules,ruby,cegui,sfml,libxml++2.6,gperf,doxygen,graphviz,nsis,qt5} mingw-w64-i686-{toolchain,extra-cmake-modules,ruby,cegui,sfml,libxml++2.6,gperf,doxygen,graphviz,nsis,minizip-git}
 
-Or, for 32-bit:
-
-    $ pacman -S --needed git base-devel bison ruby mingw-w64-i686-{toolchain,extra-cmake-modules,ruby,cegui,sfml,libxml++2.6,gperf}
-
-#### 3. Optional dependencies ###
-
-The following packages are optional, you don't have to install these if you don't plan to generate installers or documentation:
-
-    $ pacman -S --needed mingw-w64-x86_64-{doxygen,graphviz,nsis}
-
-For 32-bit:
-
-    $ pacman -S --needed mingw-w64-i686-{doxygen,graphviz,nsis,minizip-git}
+Press Enter about 3 times to accept and start installing dependencies.
 
 
-### 3.1 CMake GUI Qt requirement workaround ###
-
-If you plan to use the CMake GUI, there's a few more steps required.
-The CMake GUI in msys2 is dynamically linked against Qt5 libraries. To use it, you need to have the Qt5 package installed:
-
-    $ pacman -S mingw-w64-x86_64-qt5
-
-But it's huge, it's going to take very long time to install and is really an overkill to install just to use CMake GUI. Instead, just use the command line CMake (as shown in the example below), or, if you still want to use the GUI, here's a little cheat:
-
-Check which version of CMake is currently installed (`pacman -Qs cmake`), go to [Cmake website][1] and download the same version for the appropriate architecture, and extract **ONLY** the executables (in the "bin" folder) to C:\msys64\mingw64\bin (or wherever you have installed msys2) and run the following command:
-
-    $ cp /mingw64/bin/mingw32-make.exe /mingw64/bin/make.exe
-
-
-### 4. Building TSC ###
+### 3. Building TSC ###
 
 From the same shell, that you installed packages for, run:
 
     $ git clone --recursive git://github.com/Secretchronicles/TSC.git
-    $ mkdir TSC/tsc/build && cd TSC/tsc/build
-    $ cmake -G "MSYS Makefiles" ..
-    $ make -j$(nproc)
 
-Feel free to edit the CMake command line to your taste or use the GUI.
-After that you can run one of the following commands.
-To install:
 
-    $ make install
+Now, run either the `MSYS2 MinGW 64-bit` or the `MSYS2 MinGW 32-bit`, depending on which version you are going to build.
 
-To pack the game:
+Debug build:
 
-    $ make package
+    $ rm -rf TSC/tsc/build && mkdir TSC/tsc/build && cd TSC/tsc/build && cmake -DCMAKE_BUILD_TYPE=Debug -G "MSYS Makefiles" .. && make -j$(nproc) && make package
+
+Release build:
+
+    $ rm -rf TSC/tsc/build && mkdir TSC/tsc/build && cd TSC/tsc/build && cmake -DCMAKE_BUILD_TYPE=Release -G "MSYS Makefiles" .. && make -j$(nproc) && make package
 
 This will pack the game with the CPack generators that you chose in the CMake command line.
+
+After building, installer .exe package is at TSC/tsc/build directory.
+
+Optionally, at build directory you can install directly:
+
+    $ make install
 
 [1]: http://cmake.org
 [2]: http://mxe.cc
