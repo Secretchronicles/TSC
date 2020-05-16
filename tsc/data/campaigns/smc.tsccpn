@@ -4,7 +4,7 @@
     <information >
         <property name="save_time" value="1284366984" />
 	<property name="name" value="Original SMC/TSC campaign" />
-        <property name="description" value="This is the original campaign as it was shipped with SMC and TSC 2.0. There's no connecting story element between the levels." />
+        <property name="description" value="This is the original campaign as it was shipped with SMC and TSC 2.0. There's no connecting story element between the levels yet." />
     </information>
     <target >
         <property name="name" value="World 1" />
