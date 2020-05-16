@@ -19,6 +19,7 @@
 #include "../core/framerate.hpp"
 #include "../input/mouse.hpp"
 #include "../input/keyboard.hpp"
+#include "../input/joystick.hpp"
 #include "../video/renderer.hpp"
 #include "../user/preferences.hpp"
 #include "../gui/generic.hpp"
@@ -265,6 +266,24 @@ int cDialogBox_Question::Enter(std::string text, bool with_cancel /* = 0 */)
             }
             else if (input_event.type == sf::Event::KeyReleased) {
                 pKeyboard->CEGUI_Handle_Key_Up(input_event.key.code);
+            }
+            else if (input_event.type == sf::Event::JoystickButtonPressed) {
+                if (input_event.joystickButton.button == pPreferences->m_joy_button_action ||
+                    input_event.joystickButton.button == pPreferences->m_joy_button_jump  ||
+                    input_event.joystickButton.button == pPreferences->m_joy_button_shoot) {
+                    return_value = 1;
+                    finished = 1;
+                }
+                else if (input_event.joystickButton.button == pPreferences->m_joy_button_exit) {
+                    return_value = with_cancel ? -1 : 0;
+                    finished = 1;
+                }
+                else {
+                    pJoystick->Handle_Button_Down_Event(input_event);
+                }
+            }
+            else if (input_event.type == sf::Event::JoystickButtonReleased) {
+                pJoystick->Handle_Button_Up_Event(input_event);
             }
             else {
                 pMouseCursor->Handle_Event(input_event);
