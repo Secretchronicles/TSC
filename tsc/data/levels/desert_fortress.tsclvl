@@ -3,7 +3,7 @@
   <information>
     <property name="game_version" value="2.1.0"/>
     <property name="engine_version" value="48"/>
-    <property name="save_time" value="1589259809"/>
+    <property name="save_time" value="1589658950"/>
   </information>
   <settings>
     <property name="lvl_author" value="datahead"/>
@@ -15033,6 +15033,29 @@
     <property name="image" value="ground/sand_1/ground/middle.png"/>
     <property name="type" value="passive"/>
   </sprite>
+  <enemystopper>
+    <property name="posx" value="1134"/>
+    <property name="posy" value="-270"/>
+    <property name="uid" value="2024"/>
+    <property name="image" value=""/>
+    <property name="type" value="passive"/>
+  </enemystopper>
+  <sprite>
+    <property name="posx" value="1302"/>
+    <property name="posy" value="-319"/>
+    <property name="uid" value="52"/>
+    <property name="image" value="signs/default_1/1_ending.png"/>
+    <property name="type" value="passive"/>
+  </sprite>
+  <secretarea>
+    <property name="posx" value="397"/>
+    <property name="posy" value="-1974"/>
+    <property name="uid" value="2027"/>
+    <property name="image" value=""/>
+    <property name="type" value="secretarea"/>
+    <property name="width" value="133.000015"/>
+    <property name="height" value="132.000000"/>
+  </secretarea>
   <sprite>
     <property name="posx" value="4426"/>
     <property name="posy" value="-701"/>
@@ -15054,20 +15077,15 @@
     <property name="image" value="game/box/brown1_1.png"/>
     <property name="type" value="passive"/>
   </sprite>
-  <enemystopper>
-    <property name="posx" value="1134"/>
-    <property name="posy" value="-270"/>
-    <property name="uid" value="2024"/>
+  <secretarea>
+    <property name="posx" value="551"/>
+    <property name="posy" value="-3846"/>
+    <property name="uid" value="2026"/>
     <property name="image" value=""/>
-    <property name="type" value="passive"/>
-  </enemystopper>
-  <sprite>
-    <property name="posx" value="1302"/>
-    <property name="posy" value="-319"/>
-    <property name="uid" value="52"/>
-    <property name="image" value="signs/default_1/1_ending.png"/>
-    <property name="type" value="passive"/>
-  </sprite>
+    <property name="type" value="secretarea"/>
+    <property name="width" value="115.000000"/>
+    <property name="height" value="119.999756"/>
+  </secretarea>
   <script>#Reference to the switch object
 
 #Objects for all draw bridge blocks
