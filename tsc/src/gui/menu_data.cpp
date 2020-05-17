@@ -2,7 +2,7 @@
  * menu_data.cpp  -  menu data and handling classes
  *
  * Copyright © 2004 - 2011 Florian Richter
- * Copyright © 2012-2017 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify
@@ -359,7 +359,7 @@ void cMenu_Main::Init_GUI(void)
     text_version->setProperty("Text", int_to_string(TSC_VERSION_MAJOR) + "." + int_to_string(TSC_VERSION_MINOR) + "." + int_to_string(TSC_VERSION_PATCH) + "-" + TSC_VERSION_POSTFIX);
     text_version->setProperty("TextColours", "tl:FFFF0000 tr:FFFF0000 bl:FFFF0000 br:FFFF0000");
 #else
-    text_version->setProperty("Text", UTF8_("Version ") + int_to_string(TSC_VERSION_MAJOR) + "." + int_to_string(TSC_VERSION_MINOR) + "." + int_to_string(TSC_VERSION_PATCH));
+    text_version->setProperty("Text", int_to_string(TSC_VERSION_MAJOR) + "." + int_to_string(TSC_VERSION_MINOR) + "." + int_to_string(TSC_VERSION_PATCH));
 #endif
 
     // if in a level/world
@@ -3188,11 +3188,17 @@ bool cMenu_Savegames::Button_Save_Clicked(const CEGUI::EventArgs& event)
         return true;
     }
 
+    CEGUI::Window* p_tab = m_gui_window->getChild("savegame_tabcontrol");
     CEGUI::Listbox* p_listbox = static_cast<CEGUI::Listbox*>(m_gui_window->getChild("savegame_tabcontrol/tab_savegame/savegame_listbox"));
     CEGUI::ListboxItem* p_item = p_listbox->getFirstSelectedItem();
     int slot = p_listbox->getItemIndex(p_item) + 1;
 
+    // Ask the user for the savegame description while preventing him
+    // from interacting with the save menu again (would cause severe
+    // confusion).
+    p_tab->disable();
     std::string description = Set_Save_Description(slot);
+    p_tab->enable();
 
     pFramerate->Reset();
 

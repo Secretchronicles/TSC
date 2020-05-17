@@ -2,7 +2,7 @@
  * scrdg.hpp - Scripting API Documentation Generator (header)
  *
  * Copyright © 2005 - 2011 Florian Richter
- * Copyright © 2012-2019 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify

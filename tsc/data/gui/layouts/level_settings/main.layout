@@ -6,7 +6,6 @@
         <Property name="MaxSize" value="{{1,0},{1,0}}"/>
         <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}"/>
         <Window type="TSCLook256/TabControl" name="tabcontrol_main">
-            <Property name="TabHeight" value="{0,-1}"/>
             <Property name="MaxSize" value="{{1,0},{1,0}}"/>
             <Property name="TabPanePosition" value="Top"/>
             <Property name="Area" value="{{0.0,0},{0.039,0},{1.0,0},{0.93,0}}"/>

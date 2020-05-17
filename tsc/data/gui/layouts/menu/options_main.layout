@@ -17,7 +17,6 @@
       <Property name="CloseButtonEnabled" value="False"/>
       <Window type="TSCLook256/TabControl" name="tabcontrol_main">
         <Property name="Alpha" value="0.7"/>
-        <Property name="TabHeight" value="{0,25}"/>
         <Property name="InheritsAlpha" value="False"/>
         <Property name="MaxSize" value="{{1,0},{1,0}}"/>
         <Property name="TabPanePosition" value="Top"/>

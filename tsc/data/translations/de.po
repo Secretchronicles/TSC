@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Secretchronicles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-09 13:14+0200\n"
-"PO-Revision-Date: 2019-12-09 11:45+0100\n"
+"POT-Creation-Date: 2020-05-17 12:36+0200\n"
+"PO-Revision-Date: 2020-05-17 12:40+0200\n"
 "Last-Translator: Marvin Gülker <post+git@guelker.eu>\n"
 "Language-Team: TSC German translation team\n"
 "Language: de\n"
@@ -16,530 +16,742 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../../src/overworld/world_layer.cpp:50
-msgid "Line Start Point"
-msgstr "Linie Startpunkt"
-
-#: ../../src/overworld/world_layer.cpp:54
-msgid "Line End Point"
-msgstr "Linie Endpunkt"
-
-#: ../../src/overworld/world_layer.cpp:289
-msgid "Waypoint origin"
-msgstr "Wegpunkt Herkunft "
-
-#: ../../src/overworld/overworld.cpp:50
-msgid "Unnamed"
-msgstr "Unbenannt"
-
-#: ../../src/overworld/overworld.cpp:54 ../../src/objects/bonusbox.cpp:458
-#: ../../src/objects/bonusbox.cpp:497
-msgid "Empty"
-msgstr "Leer"
-
-#: ../../src/overworld/overworld.cpp:71
-msgid "Couldn't save world description "
-msgstr "Konnte Welt Beschreibung nicht speichern "
-
-#: ../../src/overworld/overworld.cpp:245
-msgid "Couldn't save world "
-msgstr "Konnte die Welt nicht speichern : "
-
-#: ../../src/overworld/overworld.cpp:250
-#: ../../src/overworld/world_editor.cpp:86
-msgid "World "
-msgstr "Welt "
-
-#: ../../src/overworld/overworld.cpp:250 ../../src/level/level.cpp:418
-#: ../../src/video/video.cpp:1436
-msgid " saved"
-msgstr " gespeichert"
-
-#: ../../src/overworld/overworld.cpp:466
-msgid "Omega Mode unlocks all waypoints"
-msgstr "Omega-Modus öffnet alle Wegpunkte"
-
-#: ../../src/overworld/world_editor.cpp:67
-msgid "Create a new World"
-msgstr "Erstelle eine neue Welt"
-
-#: ../../src/overworld/world_editor.cpp:67
-#: ../../src/overworld/world_editor.cpp:94
-#: ../../src/overworld/world_editor.cpp:98
-msgctxt "world"
-msgid "Name"
-msgstr "Name"
-
-#: ../../src/overworld/world_editor.cpp:82 ../../src/level/level_editor.cpp:208
-msgid "Created "
-msgstr "Erstellte "
-
-#: ../../src/overworld/world_editor.cpp:86 ../../src/level/level_editor.cpp:196
-msgid " already exists"
-msgstr " existiert bereits"
-
-#: ../../src/overworld/world_editor.cpp:98
-msgid "Load an Overworld"
-msgstr "Lade eine Welt"
-
-#: ../../src/overworld/world_editor.cpp:114
-#: ../../src/level/level_editor.cpp:237
-msgid "Loaded "
-msgstr "Geladen "
-
-#: ../../src/overworld/world_editor.cpp:127
-#: ../../src/level/level_settings.cpp:276 ../../src/level/level_editor.cpp:256
-msgid "Save "
-msgstr "Speichere "
-
-#. TRANS: World editor left menu's entries follow
-#. TRANS: Level editor left menu's entries follow
-#: ../../src/overworld/world_editor.cpp:165
-#: ../../src/level/level_editor.cpp:369
-msgid "---Sprites---"
-msgstr "---Grafiken---"
-
-#: ../../src/overworld/world_editor.cpp:166
-msgid "Way"
-msgstr "Weg"
-
-#: ../../src/overworld/world_editor.cpp:167
-msgid "Castle"
-msgstr "Burg"
-
-#: ../../src/overworld/world_editor.cpp:168
-#: ../../src/level/level_editor.cpp:380
-msgid "Clouds"
-msgstr "Wolken"
-
-#: ../../src/overworld/world_editor.cpp:169
-#: ../../src/level/level_editor.cpp:381
-msgid "Hedges"
-msgstr "Büsche"
-
-#: ../../src/overworld/world_editor.cpp:170
-#: ../../src/level/level_editor.cpp:383
-msgid "Plants"
-msgstr "Pflanzen"
-
-#: ../../src/overworld/world_editor.cpp:171
-#: ../../src/level/level_editor.cpp:384
-msgid "Cactus"
-msgstr "Kakteen"
-
-#: ../../src/overworld/world_editor.cpp:172
-#: ../../src/level/level_editor.cpp:389
-msgid "Hills"
-msgstr "Hügel"
-
-#: ../../src/overworld/world_editor.cpp:173
-msgid "Mountains"
-msgstr "Berge"
-
-#: ../../src/overworld/world_editor.cpp:174
-#: ../../src/level/level_editor.cpp:386
-msgid "Pipes"
-msgstr "Rohre"
-
-#: ../../src/overworld/world_editor.cpp:175
-msgid "Lakes"
-msgstr "Seen"
-
-#: ../../src/overworld/world_editor.cpp:176
-msgid "Bridges"
-msgstr "Brücken"
-
-#: ../../src/overworld/world_editor.cpp:177
-#: ../../src/level/level_editor.cpp:379
-msgid "Blocks"
-msgstr "Blöcke"
-
-#: ../../src/overworld/world_editor.cpp:178
-#: ../../src/level/level_editor.cpp:393
-msgid "Bones"
-msgstr "Knochen"
-
-#: ../../src/overworld/world_editor.cpp:179
-#: ../../src/level/level_editor.cpp:400
-msgid "Special"
-msgstr "Spezial"
-
-#: ../../src/overworld/world_editor.cpp:180
-#: ../../src/level/level_editor.cpp:397
-msgid "---Objects---"
-msgstr "---Objekte---"
-
-#: ../../src/overworld/world_editor.cpp:181
-msgid "Generic"
-msgstr "Generisch"
-
-#: ../../src/overworld/world_editor.cpp:182
-#: ../../src/level/level_editor.cpp:401
-msgid "---Functions---"
-msgstr "---Funktionen---"
-
-#: ../../src/overworld/world_editor.cpp:183
-#: ../../src/level/level_editor.cpp:402 ../../src/gui/menu_data.cpp:630
-msgid "New"
-msgstr "Neu"
-
-#: ../../src/overworld/world_editor.cpp:184
-#: ../../src/level/level_editor.cpp:403 ../../src/gui/menu_data.cpp:3101
-#: ../../src/gui/menu_data.cpp:3103
-msgid "Load"
-msgstr "Laden"
-
-#: ../../src/overworld/world_editor.cpp:185
-#: ../../src/level/level_editor.cpp:404 ../../src/gui/menu_data.cpp:3094
-#: ../../src/gui/menu_data.cpp:3096
-msgid "Save"
-msgstr "Speichern"
-
-#: ../../src/overworld/world_waypoint.cpp:126
-msgid "Waypoint"
-msgstr "Wegpunkt"
-
-#: ../../src/overworld/world_waypoint.cpp:487
-#: ../../src/overworld/world_waypoint.cpp:491
-#: ../../src/overworld/world_waypoint.cpp:617
-msgid "Level"
-msgstr "Level"
-
-#: ../../src/overworld/world_waypoint.cpp:488
-#: ../../src/overworld/world_waypoint.cpp:494
-msgid "World"
-msgstr "Welt"
-
-#: ../../src/overworld/world_waypoint.cpp:498
-msgid "Type"
-msgstr "Typ"
-
-#: ../../src/overworld/world_waypoint.cpp:498
-msgid "Destination type"
-msgstr "Ziel typ"
-
-#: ../../src/overworld/world_waypoint.cpp:502
-msgid "Destination"
-msgstr "Ziel"
-
-#: ../../src/overworld/world_waypoint.cpp:502
-msgid "Destination level or world"
-msgstr "Ziel Level oder Welt"
-
-#: ../../src/overworld/world_waypoint.cpp:519
-msgid "Backward Direction"
-msgstr "Richtung Rückwärts"
-
-#: ../../src/overworld/world_waypoint.cpp:534
-msgid "Forward Direction"
-msgstr "Richtung Vorwärts"
-
-#: ../../src/overworld/world_waypoint.cpp:540
-#: ../../src/overworld/world_waypoint.cpp:544
-#: ../../src/overworld/world_waypoint.cpp:662
-#: ../../src/objects/bonusbox.cpp:506 ../../src/objects/bonusbox.cpp:510
-#: ../../src/objects/bonusbox.cpp:618 ../../src/enemies/furball.cpp:762
-#: ../../src/enemies/furball.cpp:767 ../../src/enemies/furball.cpp:784
-#: ../../src/enemies/static.cpp:346 ../../src/enemies/static.cpp:350
-#: ../../src/enemies/static.cpp:419
-#: ../../src/enemies/bosses/turtle_boss.cpp:1035
-#: ../../src/enemies/bosses/turtle_boss.cpp:1039
-#: ../../src/enemies/bosses/turtle_boss.cpp:1096 ../../src/enemies/gee.cpp:586
-#: ../../src/enemies/gee.cpp:591 ../../src/enemies/gee.cpp:644
-msgid "Enabled"
-msgstr "Aktiviert"
-
-#: ../../src/overworld/world_waypoint.cpp:541
-#: ../../src/overworld/world_waypoint.cpp:547 ../../src/objects/box.cpp:690
-#: ../../src/objects/box.cpp:705 ../../src/objects/bonusbox.cpp:507
-#: ../../src/objects/bonusbox.cpp:513 ../../src/enemies/furball.cpp:763
-#: ../../src/enemies/furball.cpp:770 ../../src/enemies/static.cpp:347
-#: ../../src/enemies/static.cpp:353
-#: ../../src/enemies/bosses/turtle_boss.cpp:1036
-#: ../../src/enemies/bosses/turtle_boss.cpp:1042 ../../src/enemies/gee.cpp:587
-#: ../../src/enemies/gee.cpp:594
-msgid "Disabled"
-msgstr "Deaktiviert"
-
-#: ../../src/overworld/world_waypoint.cpp:551
-msgid "Default Access"
-msgstr "Standard Zugriff"
-
-#: ../../src/overworld/world_waypoint.cpp:551
-msgid "Enable if the Waypoint should be always accessible."
-msgstr "Aktiviere damit der Wegpunkt immer begehbar ist."
-
-#: ../../src/overworld/world_waypoint.cpp:558
-msgid "Waypoint Exit"
-msgstr "Wegpunkt-Abgang"
-
-#: ../../src/overworld/world_waypoint.cpp:558
-msgid "Select the waypoint exit to edit."
-msgstr "Wähle den zu bearbeitenden Wegpunkt-Abgang."
-
-#: ../../src/overworld/world_waypoint.cpp:562
-#: ../../src/overworld/world_waypoint.cpp:564
-msgid "New Exit"
-msgstr "Neuer Abgang"
-
-#: ../../src/overworld/world_waypoint.cpp:564
-msgid "Create a new exit by clicking."
-msgstr "Erstellt einen neuen Abgang."
-
-#: ../../src/overworld/world_waypoint.cpp:568
-#: ../../src/overworld/world_waypoint.cpp:570
-msgid "Delete Exit"
-msgstr "Lösche Abgang"
-
-#: ../../src/overworld/world_waypoint.cpp:570
-msgid "Delete the currently selected exit by clicking."
-msgstr "Löscht den ausgewählten Abgang."
-
-#: ../../src/overworld/world_waypoint.cpp:584
-msgid "Leave direction"
-msgstr "Abgangsrichtung"
-
-#: ../../src/overworld/world_waypoint.cpp:584
-msgid "Direction key to press for leaving the waypoint for this exit"
-msgstr ""
-"Richtungstaste, die zum Verlassen des Wegpunkts über diesen Ausgang gedrückt "
-"werden muss"
-
-#: ../../src/overworld/world_waypoint.cpp:589
-msgid "Level Exit"
-msgstr "Level Ausgang"
-
-#: ../../src/overworld/world_waypoint.cpp:589
-msgid "Name of the level exit in the level that activates this waypoint exit."
-msgstr "Name des Ausgangs im Level, der diesen Wegpunkt-Abgang aktiviert."
-
-#: ../../src/overworld/world_waypoint.cpp:594
-msgid "Line start UID"
-msgstr "UID Linienstartpunkt"
-
-#: ../../src/overworld/world_waypoint.cpp:594
-msgid "UID of the line start point to set Alex onto when taking this exit."
-msgstr ""
-"UID des Linienstartpunkts, auf den Alex bei Nutzung dieses Abgangs gesetzt "
-"werden soll."
-
-#: ../../src/overworld/world_waypoint.cpp:599
-#: ../../src/overworld/world_waypoint.cpp:601
-#: ../../src/overworld/world_waypoint.cpp:769
-#: ../../src/overworld/world_waypoint.cpp:783
-msgid "Locked"
-msgstr "Nicht freigeschaltet"
-
-#: ../../src/overworld/world_waypoint.cpp:600
-#: ../../src/overworld/world_waypoint.cpp:771
-msgid "Unlocked"
-msgstr "Freigeschaltet"
-
-#: ../../src/overworld/world_waypoint.cpp:604
-msgid "Lock state"
-msgstr "Freischaltstatus"
-
-#: ../../src/overworld/world_waypoint.cpp:604
-msgid ""
-"Is this exit locked by default? PLEASE also set access to enabled on the "
-"target waypoint if you unlock by default!"
-msgstr ""
-"Ist dieser Abgang standardmäßig nicht freigeschaltet? BITTE auch den "
-"Freischaltstatus am Zielwegpunkt setzen, wenn du einen Abgang standardmäßig "
-"freischaltest!"
-
-#: ../../src/overworld/world_waypoint.cpp:755
-#: ../../src/overworld/world_waypoint.cpp:758
-#: ../../src/level/level_settings.cpp:192
-#: ../../src/level/level_settings.cpp:446
-#: ../../src/level/level_settings.cpp:649
-msgid "(None)"
-msgstr "(Leer)"
-
-#. TRANS: Prompt issued in the game console
-#: ../../src/scripting/scripting.cpp:104
-msgid "(console)"
-msgstr "(Konsole)"
-
-#: ../../src/level/level.cpp:220
-msgid "Unsupported Level format : "
-msgstr "Nicht unterstütztes Levelformat :"
-
-#: ../../src/level/level.cpp:402
-msgid "Couldn't save level "
-msgstr "Konnte Level nicht speichern "
-
-#: ../../src/level/level.cpp:418 ../../src/level/level_editor.cpp:196
-msgid "Level "
-msgstr "Level "
-
-#: ../../src/level/level.cpp:716
-msgid "Omega Mode disabled"
-msgstr "Omega-Modus ausgeschaltet"
-
-#: ../../src/level/level.cpp:720
-msgid "Omega Mode enabled"
-msgstr "Omega-Modus eingeschaltet"
-
-#: ../../src/level/level.cpp:731
-msgid "Kid cheat activated"
-msgstr "Kind-Cheat aktiviert"
-
-#: ../../src/level/level_manager.cpp:472
-msgid "Invalid target level."
-msgstr "Ungültiger Ziellevel."
-
-#: ../../src/level/level_settings.cpp:193 ../../src/gui/menu_data.cpp:1851
-#: ../../src/gui/menu_data.cpp:2898
-msgid "None"
-msgstr "Keinen"
-
-#: ../../src/level/level_player.cpp:3976 ../../src/video/animation.cpp:1575
-#: ../../src/objects/level_exit.cpp:485
-#: ../../src/objects/moving_platform.cpp:958
-#: ../../src/objects/level_entry.cpp:369 ../../src/enemies/pip.cpp:369
-#: ../../src/enemies/beetle.cpp:270 ../../src/enemies/eato.cpp:284
-#: ../../src/enemies/furball.cpp:746 ../../src/enemies/krush.cpp:385
-#: ../../src/enemies/spikeball.cpp:515 ../../src/enemies/larry.cpp:422
-#: ../../src/enemies/rokko.cpp:581
+#: ../../src/enemies/thromp.cpp:686 ../../src/enemies/furball.cpp:746
 #: ../../src/enemies/bosses/turtle_boss.cpp:1006
-#: ../../src/enemies/thromp.cpp:686 ../../src/enemies/gee.cpp:573
-#: ../../src/enemies/army.cpp:927 ../../src/enemies/flyon.cpp:567
+#: ../../src/enemies/rokko.cpp:581 ../../src/enemies/army.cpp:927
+#: ../../src/enemies/spikeball.cpp:515 ../../src/enemies/eato.cpp:284
+#: ../../src/enemies/flyon.cpp:567 ../../src/enemies/beetle.cpp:270
+#: ../../src/enemies/krush.cpp:385 ../../src/enemies/pip.cpp:369
+#: ../../src/enemies/gee.cpp:573 ../../src/enemies/larry.cpp:422
+#: ../../src/objects/moving_platform.cpp:958
+#: ../../src/objects/level_entry.cpp:369 ../../src/objects/level_exit.cpp:485
+#: ../../src/video/animation.cpp:1574 ../../src/level/level_player.cpp:3976
 msgid "Direction"
 msgstr "Richtung"
 
-#: ../../src/level/level_player.cpp:3976
-msgid "Initial direction"
-msgstr "Anfangs Richtung"
+#: ../../src/enemies/thromp.cpp:686 ../../src/enemies/rokko.cpp:581
+#: ../../src/enemies/flyon.cpp:567
+msgid "Direction it moves into."
+msgstr "Richtung in die es sich bewegt."
 
-#: ../../src/level/level_editor.cpp:187
-msgid "Create a new Level"
-msgstr "Erstelle ein neues Level"
+#: ../../src/enemies/thromp.cpp:690 ../../src/enemies/eato.cpp:288
+#: ../../src/enemies/flyon.cpp:571
+msgid "Image directory"
+msgstr "Bilder Verzeichnis"
 
-#: ../../src/level/level_editor.cpp:187 ../../src/level/level_editor.cpp:214
-#: ../../src/level/level_editor.cpp:218 ../../src/objects/level_entry.cpp:374
+#: ../../src/enemies/thromp.cpp:690 ../../src/enemies/eato.cpp:288
+#: ../../src/enemies/flyon.cpp:571
+msgid "Directory containing the images"
+msgstr "Verzeichnis welches die Bilder enthält"
+
+#: ../../src/enemies/thromp.cpp:697 ../../src/enemies/flyon.cpp:578
+#: ../../src/enemies/gee.cpp:577 ../../src/objects/moving_platform.cpp:962
+msgid "Distance"
+msgstr "Distanz"
+
+#: ../../src/enemies/thromp.cpp:697
+msgid "Detection distance into its direction"
+msgstr "Erkennungs Distanz in seine Richtung"
+
+#: ../../src/enemies/thromp.cpp:705 ../../src/enemies/rokko.cpp:585
+#: ../../src/enemies/static.cpp:337 ../../src/enemies/flyon.cpp:586
+#: ../../src/objects/moving_platform.cpp:970
+msgid "Speed"
+msgstr "Geschwindigkeit"
+
+#: ../../src/enemies/thromp.cpp:705 ../../src/enemies/rokko.cpp:585
+msgid "Speed when activated"
+msgstr "Geschwindigkeit wenn aktiviert"
+
+#: ../../src/enemies/furball.cpp:746
+#: ../../src/enemies/bosses/turtle_boss.cpp:1006 ../../src/enemies/army.cpp:927
+#: ../../src/enemies/spikeball.cpp:515 ../../src/enemies/beetle.cpp:270
+#: ../../src/enemies/krush.cpp:385 ../../src/enemies/gee.cpp:573
+#: ../../src/enemies/larry.cpp:422 ../../src/objects/moving_platform.cpp:958
+msgid "Starting direction."
+msgstr "Anfangs Richtung."
+
+#: ../../src/enemies/furball.cpp:754
+#: ../../src/enemies/bosses/turtle_boss.cpp:1018
+msgid "Downgrades"
+msgstr "Herunterstufungen"
+
+#: ../../src/enemies/furball.cpp:754
+#: ../../src/enemies/bosses/turtle_boss.cpp:1018
+msgid "Downgrades until death"
+msgstr "Herunterstufungen vor dem Niedergang"
+
+#: ../../src/enemies/furball.cpp:762 ../../src/enemies/furball.cpp:767
+#: ../../src/enemies/furball.cpp:784
+#: ../../src/enemies/bosses/turtle_boss.cpp:1035
+#: ../../src/enemies/bosses/turtle_boss.cpp:1039
+#: ../../src/enemies/bosses/turtle_boss.cpp:1096
+#: ../../src/enemies/static.cpp:346 ../../src/enemies/static.cpp:350
+#: ../../src/enemies/static.cpp:419 ../../src/enemies/gee.cpp:586
+#: ../../src/enemies/gee.cpp:591 ../../src/enemies/gee.cpp:644
+#: ../../src/objects/bonusbox.cpp:506 ../../src/objects/bonusbox.cpp:510
+#: ../../src/objects/bonusbox.cpp:618
+#: ../../src/overworld/world_waypoint.cpp:540
+#: ../../src/overworld/world_waypoint.cpp:544
+#: ../../src/overworld/world_waypoint.cpp:662
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: ../../src/enemies/furball.cpp:763 ../../src/enemies/furball.cpp:770
+#: ../../src/enemies/bosses/turtle_boss.cpp:1036
+#: ../../src/enemies/bosses/turtle_boss.cpp:1042
+#: ../../src/enemies/static.cpp:347 ../../src/enemies/static.cpp:353
+#: ../../src/enemies/gee.cpp:587 ../../src/enemies/gee.cpp:594
+#: ../../src/objects/bonusbox.cpp:507 ../../src/objects/bonusbox.cpp:513
+#: ../../src/objects/box.cpp:690 ../../src/objects/box.cpp:705
+#: ../../src/overworld/world_waypoint.cpp:541
+#: ../../src/overworld/world_waypoint.cpp:547
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: ../../src/enemies/furball.cpp:764
+#: ../../src/enemies/bosses/turtle_boss.cpp:1045
+msgid "End Level"
+msgstr "Level beenden"
+
+#: ../../src/enemies/furball.cpp:764
+#: ../../src/enemies/bosses/turtle_boss.cpp:1045
+msgid "End the level if it is killed."
+msgstr "Der Level wird beendet, wenn dieser Gegner besiegt wird."
+
+#: ../../src/enemies/furball.cpp:820
+msgid "Boss"
+msgstr "Endgegner"
+
+#: ../../src/enemies/bosses/turtle_boss.cpp:1010
+msgid "Hits"
+msgstr "Treffer"
+
+#: ../../src/enemies/bosses/turtle_boss.cpp:1010
+msgid "Hits until a downgrade"
+msgstr "Treffer vor einem herunterstufen"
+
+#: ../../src/enemies/bosses/turtle_boss.cpp:1026
+msgid "Shell Time"
+msgstr "Panzer Zeit"
+
+#: ../../src/enemies/bosses/turtle_boss.cpp:1026
+msgid "Time running as shell to rise again"
+msgstr "Zeit als fahrender Panzer vor dem aufstehen"
+
+#: ../../src/enemies/static.cpp:315 ../../src/objects/sprite.cpp:1454
+msgid "Image"
+msgstr "Bild"
+
+#: ../../src/enemies/static.cpp:315 ../../src/objects/sprite.cpp:1454
+#: ../../src/video/animation.cpp:1400
+msgid "Image filename"
+msgstr "Bild Dateiname"
+
+#: ../../src/enemies/static.cpp:322
+msgid "Rotation Speed"
+msgstr "Rotations Geschwindigkeit"
+
+#: ../../src/enemies/static.cpp:330 ../../src/objects/moving_platform.cpp:943
+#: ../../src/objects/level_exit.cpp:549
+msgid "Path Identifier"
+msgstr "Pfad Identifizierer"
+
+#: ../../src/enemies/static.cpp:330 ../../src/objects/moving_platform.cpp:943
+msgid "Name of the Path to move along."
+msgstr "Name des Pfades zum entlang bewegen."
+
+#: ../../src/enemies/static.cpp:337 ../../src/objects/moving_platform.cpp:970
+msgid "Maximum speed"
+msgstr "Maximale Geschwindigkeit"
+
+#: ../../src/enemies/static.cpp:357
+msgid "Fire Resistant"
+msgstr "Feuer Resistenz"
+
+#: ../../src/enemies/static.cpp:357
+msgid "If it is resistant against fire"
+msgstr "Ob es gegen Feuer resistent ist"
+
+#: ../../src/enemies/static.cpp:361
+msgid "Ice Resistance"
+msgstr "Eis Resistenz"
+
+#: ../../src/enemies/static.cpp:361
+msgid "Resistance against Ice (0.0-1.0)"
+msgstr "Resistenz gegen Eis (0.0-1.0)"
+
+#: ../../src/enemies/flyon.cpp:578
+msgid "Movable Distance into its direction"
+msgstr "Bewegbare Distanz in seine Richtung"
+
+#: ../../src/enemies/flyon.cpp:586
+msgid "Initial speed when jumping out"
+msgstr "Anfangsgeschwindigkeit beim herausspringen"
+
+#: ../../src/enemies/beetle.cpp:281
+msgid "Color"
+msgstr "Farbe"
+
+#: ../../src/enemies/beetle.cpp:281
+msgid "Color."
+msgstr "Farbe."
+
+#: ../../src/enemies/pip.cpp:369
+msgid "Starting direction"
+msgstr "Startrichtung"
+
+#: ../../src/enemies/gee.cpp:577
+msgid "Movable distance"
+msgstr "Maximale bewegbare Distanz"
+
+#: ../../src/enemies/gee.cpp:588
+msgid "Always fly"
+msgstr "Fliege immer"
+
+#: ../../src/enemies/gee.cpp:588
+msgid "Move without stopping at the fly distance"
+msgstr "Bewege ohne zu halten in der Flug Distanz"
+
+#: ../../src/enemies/gee.cpp:601
+msgid "Wait time"
+msgstr "Wartezeit"
+
+#: ../../src/enemies/gee.cpp:601
+msgid "Time to wait until moving again after a stop"
+msgstr "Wartezeit bis zur Bewegung bei jedem halt"
+
+#: ../../src/enemies/gee.cpp:609 ../../src/enemies/beetle_barrage.cpp:356
+msgid "Fly distance"
+msgstr "Flug Distanz"
+
+#: ../../src/enemies/gee.cpp:609
+msgid "The distance to move each time"
+msgstr "Die sich jedes mal zu bewegende Distanz"
+
+#: ../../src/enemies/gee.cpp:681
+msgid "Electro"
+msgstr "Elektro"
+
+#: ../../src/enemies/gee.cpp:684 ../../src/objects/lava.cpp:55
+msgid "Lava"
+msgstr "Lava"
+
+#: ../../src/enemies/gee.cpp:687
+msgid "Venom"
+msgstr "Gift"
+
+#: ../../src/enemies/beetle_barrage.cpp:356
+msgid "Initial beetle flying distance"
+msgstr "Entfernung, die die Käfer zurücklegen"
+
+#: ../../src/enemies/beetle_barrage.cpp:363
+msgid "Action range"
+msgstr "Aktionsbereich"
+
+#: ../../src/enemies/beetle_barrage.cpp:363
+msgid "Radius in which it reacts on Alex"
+msgstr "Radius, in dem es auf Alex reagiert"
+
+#: ../../src/enemies/beetle_barrage.cpp:369
+msgid "Count"
+msgstr "Anzahl"
+
+#: ../../src/enemies/beetle_barrage.cpp:369
+msgid "Number of beetles spit out at a time"
+msgstr "Anzahl an Käfern, die gleichzeitig ausgestoßen werden"
+
+#: ../../src/objects/bonusbox.cpp:79 ../../src/objects/bonusbox.cpp:152
+msgid "Bonusbox Empty"
+msgstr "Bonusbox Leer"
+
+#: ../../src/objects/bonusbox.cpp:161
+msgid "Bonusbox Berry"
+msgstr "Bonusbox Beere"
+
+#: ../../src/objects/bonusbox.cpp:165
+msgid "Bonusbox Fire berry"
+msgstr "Bonusbox Feuerbeere"
+
+#: ../../src/objects/bonusbox.cpp:169
+msgid "Bonusbox Ice berry"
+msgstr "Bonusbox Eisbeere"
+
+#: ../../src/objects/bonusbox.cpp:173
+msgid "Bonusbox Ghost berry"
+msgstr "Bonusbox Geistbeere"
+
+#: ../../src/objects/bonusbox.cpp:177
+msgid "Bonusbox 1-Up berry"
+msgstr "Bonusbox +1-Beere"
+
+#: ../../src/objects/bonusbox.cpp:181
+msgid "Bonusbox Lemon"
+msgstr "Bonusbox Zitrone"
+
+#: ../../src/objects/bonusbox.cpp:193
+msgid "Bonusbox Poisonous berry"
+msgstr "Bonusbox Giftige Beere"
+
+#: ../../src/objects/bonusbox.cpp:241
+msgid "Bonusbox Jewel"
+msgstr "Bonusbox Juwel"
+
+#: ../../src/objects/bonusbox.cpp:245
+msgid "Bonusbox Red Jewel"
+msgstr "Bonusbox Rotes Juwel"
+
+#: ../../src/objects/bonusbox.cpp:453
+msgid "Animation"
+msgstr "Animation"
+
+#: ../../src/objects/bonusbox.cpp:453
+msgid ""
+"Use the Power animation if the box has a good or needed item for this level"
+msgstr ""
+"Benutze die Power Animation falls die box ein gutes oder benötigten "
+"Gegenstand enthält"
+
+#: ../../src/objects/bonusbox.cpp:458 ../../src/objects/bonusbox.cpp:497
+#: ../../src/overworld/overworld.cpp:54
+msgid "Empty"
+msgstr "Leer"
+
+#: ../../src/objects/bonusbox.cpp:459 ../../src/objects/bonusbox.cpp:494
+#: ../../src/objects/bonusbox.cpp:601 ../../src/video/animation.cpp:1392
+#: ../../src/video/animation.cpp:1470 ../../src/video/animation.cpp:1486
+#: ../../src/video/animation.cpp:1566 ../../src/video/animation.cpp:1582
+#: ../../src/video/animation.cpp:1598 ../../src/video/animation.cpp:1614
+#: ../../src/video/animation.cpp:1630
+msgid "Random"
+msgstr "Zufällig"
+
+#: ../../src/objects/bonusbox.cpp:460 ../../src/objects/bonusbox.cpp:470
+#: ../../src/objects/bonusbox.cpp:577 ../../src/objects/powerup.cpp:224
+msgid "Berry"
+msgstr "Beere"
+
+#: ../../src/objects/bonusbox.cpp:461 ../../src/objects/bonusbox.cpp:473
+#: ../../src/objects/bonusbox.cpp:580
+msgid "Fire berry"
+msgstr "Feuerbeere"
+
+#: ../../src/objects/bonusbox.cpp:462 ../../src/objects/bonusbox.cpp:476
+#: ../../src/objects/bonusbox.cpp:583 ../../src/objects/powerup.cpp:236
+msgid "Ice berry"
+msgstr "Eisbeere"
+
+#: ../../src/objects/bonusbox.cpp:463 ../../src/objects/bonusbox.cpp:479
+#: ../../src/objects/bonusbox.cpp:586 ../../src/objects/powerup.cpp:240
+msgid "Ghost berry"
+msgstr "Geistbeere"
+
+#: ../../src/objects/bonusbox.cpp:464 ../../src/objects/bonusbox.cpp:482
+#: ../../src/objects/bonusbox.cpp:589
+msgid "1-UP berry"
+msgstr "+1-Beere"
+
+#: ../../src/objects/bonusbox.cpp:465 ../../src/objects/bonusbox.cpp:485
+#: ../../src/objects/bonusbox.cpp:592 ../../src/objects/star.cpp:64
+msgid "Lemon"
+msgstr "Zitrone"
+
+#: ../../src/objects/bonusbox.cpp:466 ../../src/objects/bonusbox.cpp:488
+#: ../../src/objects/bonusbox.cpp:595 ../../src/objects/goldpiece.cpp:125
+msgid "Jewel"
+msgstr "Juwel"
+
+#: ../../src/objects/bonusbox.cpp:467 ../../src/objects/bonusbox.cpp:491
+#: ../../src/objects/bonusbox.cpp:598 ../../src/objects/powerup.cpp:232
+msgid "Poisonous berry"
+msgstr "Giftige Beere"
+
+#: ../../src/objects/bonusbox.cpp:501 ../../src/gui/menu_data.cpp:2273
+#: ../../src/gui/menu_data.cpp:2290
+msgid "Item"
+msgstr "Gegenstand"
+
+#: ../../src/objects/bonusbox.cpp:501
+msgid "The item that gets spawned"
+msgstr "Der Gegenstand welcher erschaffen wird"
+
+#: ../../src/objects/bonusbox.cpp:517
+msgid "Force item"
+msgstr "Erzwinge Gegenstand"
+
+#: ../../src/objects/bonusbox.cpp:517
+msgid "Force best available item when activated"
+msgstr "Erzwinge den bestmöglichen Gegenstand wenn aktiviert"
+
+#: ../../src/objects/bonusbox.cpp:527
+msgid "Jewel color"
+msgstr "Juwelfarbe"
+
+#: ../../src/objects/bonusbox.cpp:527
+msgid "Jewel color if the item is a jewel"
+msgstr "Juwelfarbe falls der Gegenstand ein Juwel ist"
+
+#: ../../src/objects/enemystopper.cpp:61
+msgid "Enemystopper"
+msgstr "Gegner stopper"
+
+#: ../../src/objects/box.cpp:53
+msgid "Box"
+msgstr "Box"
+
+#: ../../src/objects/box.cpp:681
+msgid "Useable Count"
+msgstr "Verwendbar"
+
+#: ../../src/objects/box.cpp:691 ../../src/objects/box.cpp:696
+#: ../../src/objects/box.cpp:732 ../../src/core/editor/editor.cpp:1605
+msgid "Massive"
+msgstr "Massiv"
+
+#: ../../src/objects/box.cpp:692 ../../src/objects/box.cpp:699
+#: ../../src/objects/box.cpp:735
+msgid "Ghost"
+msgstr "Geist"
+
+#: ../../src/objects/box.cpp:693 ../../src/objects/box.cpp:702
+#: ../../src/objects/box.cpp:738
+msgid "Semi Massive"
+msgstr "Teil Massiv"
+
+#: ../../src/objects/box.cpp:709
+msgid "Invisible"
+msgstr "Unsichtbar"
+
+#: ../../src/objects/box.cpp:709
+msgid ""
+"Massive is invisible until activated.\n"
+"Ghost is only visible and activateable if in ghost mode.\n"
+"Semi Massive is like Massive but only touchable in the activation direction."
+msgstr ""
+"Massiv ist unsichtbar bis aktiviert.\n"
+"Geist ist nur sichtbar im Geist Modus.\n"
+"Teil Massiv ist wie Massiv aber nur berührbar in die Aktivierungsrichtung."
+
+#: ../../src/objects/box.cpp:753
+msgid "(Invisible)"
+msgstr "(Unsichtbar)"
+
+#: ../../src/objects/box.cpp:756
+msgid "(Ghost block)"
+msgstr "(Geistblock)"
+
+#: ../../src/objects/box.cpp:759
+msgid "(Invisible Semi Massive)"
+msgstr "(Unsichtbar Teilmassiv) "
+
+#: ../../src/objects/secret_area.cpp:67 ../../src/core/editor/editor.cpp:100
+msgid "Secret Area"
+msgstr "Versteck"
+
+#: ../../src/objects/secret_area.cpp:176
+msgid "You found a secret area!"
+msgstr "Du hast ein Versteck gefunden!"
+
+#: ../../src/objects/powerup.cpp:228
+msgid "Life berry"
+msgstr "Lebensbeere"
+
+#: ../../src/objects/powerup.cpp:449
+msgid "Fireberry"
+msgstr "Feuerbeere"
+
+#: ../../src/objects/powerup.cpp:553
+msgid "Cookie (3-UP)"
+msgstr "Keks (+3)"
+
+#: ../../src/objects/crate.cpp:59
+msgid "Crate"
+msgstr "Kiste"
+
+#: ../../src/objects/text_box.cpp:64
+msgid "Text Box"
+msgstr "Textbox"
+
+#: ../../src/objects/text_box.cpp:239
+msgid "Text"
+msgstr "Text"
+
+#: ../../src/objects/text_box.cpp:239
+msgid "Text to display when activated"
+msgstr "Text zum anzeigen wenn aktiviert"
+
+#: ../../src/objects/goldpiece.cpp:106
+msgid "Red Falling Jewel"
+msgstr "Rotes Fallendes Juwel"
+
+#: ../../src/objects/goldpiece.cpp:112
+msgid "Falling Jewel"
+msgstr "Fallendes Juwel"
+
+#: ../../src/objects/goldpiece.cpp:119
+msgid "Red Jewel"
+msgstr "Rotes Juwel"
+
+#: ../../src/objects/moving_platform.cpp:939 ../../src/objects/path.cpp:745
+msgid "Move Type"
+msgstr "Bewegungs Typ"
+
+#: ../../src/objects/moving_platform.cpp:939
+msgid "Movement type."
+msgstr "Bewegungs Typ."
+
+#: ../../src/objects/moving_platform.cpp:962
+msgid ""
+"Movable distance into its direction if type is line or radius if circle."
+msgstr ""
+"Bewegbare Distanz in seine Richtung wenn der typ linie ist oder radius wenn "
+"kreis."
+
+#: ../../src/objects/moving_platform.cpp:978
+msgid "Touch time"
+msgstr "Kontakt Zeit"
+
+#: ../../src/objects/moving_platform.cpp:978
+msgid "Time when touched until shaking starts"
+msgstr "Zeit wenn berührt bis das rütteln anfängt"
+
+#: ../../src/objects/moving_platform.cpp:986
+msgid "Shake time"
+msgstr "Rüttel Zeit"
+
+#: ../../src/objects/moving_platform.cpp:986
+msgid "Time it's shaking until falling"
+msgstr "Rüttel Zeit bis es fällt"
+
+#: ../../src/objects/moving_platform.cpp:994
+msgid "Touch move time"
+msgstr "Kontakt Bewegungs Zeit"
+
+#: ../../src/objects/moving_platform.cpp:994
+msgid "If set does not move until this time has elapsed after touched"
+msgstr ""
+"Falls gesetzt bewegt es sich nicht sondern erst nach dieser zeit bei einer "
+"Berührung"
+
+#: ../../src/objects/moving_platform.cpp:1002
+msgid "Hor image count"
+msgstr "Hor Bilder Anzahl "
+
+#: ../../src/objects/moving_platform.cpp:1002
+msgid "Horizontal middle image count"
+msgstr "Horizontal mittlere Bilder Anzahl"
+
+#: ../../src/objects/moving_platform.cpp:1012
+msgid "Image top left"
+msgstr "Bild oben Links"
+
+#: ../../src/objects/moving_platform.cpp:1019
+msgid "Image top middle"
+msgstr "Bild oben Mitte"
+
+#: ../../src/objects/moving_platform.cpp:1026
+msgid "Image top right"
+msgstr "Bild oben Rechts"
+
+#: ../../src/objects/moving_platform.cpp:1229
+msgid "Falling "
+msgstr "Fallende "
+
+#: ../../src/objects/moving_platform.cpp:1232
+msgid "Delayed "
+msgstr "Verzögerte "
+
+#: ../../src/objects/moving_platform.cpp:1235
+msgid "Moving "
+msgstr "Bewegende "
+
+#: ../../src/objects/moving_platform.cpp:1238
+msgid "Platform - "
+msgstr "Plattform - "
+
+#: ../../src/objects/level_entry.cpp:133 ../../src/objects/level_exit.cpp:208
+msgid " Beam"
+msgstr " Beam"
+
+#: ../../src/objects/level_entry.cpp:136 ../../src/objects/level_exit.cpp:211
+msgid " Warp"
+msgstr " Warp"
+
+#: ../../src/objects/level_entry.cpp:369
+msgid "The direction to come out"
+msgstr "Die Richtung zum herauskommen"
+
+#: ../../src/objects/level_entry.cpp:374 ../../src/level/level_editor.cpp:187
+#: ../../src/level/level_editor.cpp:214 ../../src/level/level_editor.cpp:218
 msgctxt "level"
 msgid "Name"
 msgstr "Name"
 
-#: ../../src/level/level_editor.cpp:218
-msgid "Load a Level"
-msgstr "Lade ein Level"
+#: ../../src/objects/level_entry.cpp:374
+msgid "Name for identification"
+msgstr "Name zur Identifizierung"
 
-#: ../../src/level/level_editor.cpp:265
-msgid "Save Level as"
-msgstr "Speichere als"
+#: ../../src/objects/spinbox.cpp:49
+msgid "Spinbox"
+msgstr "Drehbox"
 
-#: ../../src/level/level_editor.cpp:265
-msgid "New name"
-msgstr "Neuer Name"
+#: ../../src/objects/level_exit.cpp:485
+msgid "Direction to move in"
+msgstr "Die Richtung zum hereingehen"
 
-#: ../../src/level/level_editor.cpp:280
-msgid "Level was not yet saved"
-msgstr "Level wurde noch nicht gespeichert"
+#: ../../src/objects/level_exit.cpp:510
+msgid "Motion"
+msgstr "Bewegung"
 
-#: ../../src/level/level_editor.cpp:285
-msgid "Delete and Unload "
-msgstr "Lösche und Entlade "
+#: ../../src/objects/level_exit.cpp:510
+msgid "Camera Motion"
+msgstr "Kamera Bewegung"
 
-#: ../../src/level/level_editor.cpp:370
-msgid "Green Ground"
-msgstr "Grasboden"
+#: ../../src/objects/level_exit.cpp:514
+msgid "Destination Level"
+msgstr "Ziel Level"
 
-#: ../../src/level/level_editor.cpp:371
-msgid "Desert Ground"
-msgstr "Wüstenboden"
+#: ../../src/objects/level_exit.cpp:514
+msgid ""
+"Name of the level that should be entered. If empty uses the current level."
+msgstr ""
+"Name des Levels welches betreten werden soll. Falls leer wird das aktuelle "
+"Level benutzt."
 
-#: ../../src/level/level_editor.cpp:372
-msgid "Sand Ground"
-msgstr "Sandboden"
+#: ../../src/objects/level_exit.cpp:521
+msgid "Destination Entry"
+msgstr "Ziel Eingang"
 
-#: ../../src/level/level_editor.cpp:373
-msgid "Castle Ground"
-msgstr "Burgboden"
+#: ../../src/objects/level_exit.cpp:521
+msgid ""
+"Name of the Entry in the destination level. If empty the entry point is the "
+"player start position."
+msgstr ""
+"Name des Eingangs im Ziel Level. Falls leer ist der Eingangspunkt die "
+"Spieler Position."
 
-#: ../../src/level/level_editor.cpp:374
-msgid "Cave Ground"
-msgstr "Höhlenboden"
+#: ../../src/objects/level_exit.cpp:528
+msgid "Return Level"
+msgstr "Rückkehr-Level"
 
-#: ../../src/level/level_editor.cpp:375
-msgid "Underground"
-msgstr "Untergrund"
+#: ../../src/objects/level_exit.cpp:528
+msgid "Name of the level that should be pushed onto return stack."
+msgstr "Name des Levels, welches auf den Rückkehr-Stack gelegt werden soll."
 
-#: ../../src/level/level_editor.cpp:376
-msgid "Plastic Ground"
-msgstr "Plastikboden"
+#: ../../src/objects/level_exit.cpp:535
+msgid "Return Entry"
+msgstr "Rückkehr-Eingang"
 
-#: ../../src/level/level_editor.cpp:377
-msgid "Jungle Ground"
-msgstr "Jungelboden"
+#: ../../src/objects/level_exit.cpp:535
+msgid "Name of the Entry in the return level."
+msgstr "Name des Eingangs im Level für die Rückkehr."
 
-#: ../../src/level/level_editor.cpp:378
-msgid "Snow Ground"
-msgstr "Schneeboden"
+#: ../../src/objects/level_exit.cpp:542
+msgid "Exit Name"
+msgstr "Name des Ausgangs"
 
-#: ../../src/level/level_editor.cpp:382
-msgid "Trees"
-msgstr "Bäume"
+#: ../../src/objects/level_exit.cpp:542
+msgid ""
+"Name of the Exit (use this in the overworld editor to set the path selected "
+"by this exit)."
+msgstr ""
+"Name des Ausgangs (wird vom Welt-Editor benutzt, um den abgehenden Pfad zu "
+"ermitteln)"
 
-#: ../../src/level/level_editor.cpp:385
-msgid "Platforms"
-msgstr "Plattformen"
+#: ../../src/objects/level_exit.cpp:549
+msgid "Name of the Path to use for the camera movement."
+msgstr "Name des Pfades welcher für die Kamera Bewegung benutzt wird."
 
-#: ../../src/level/level_editor.cpp:387
-msgid "Pipe Connectors"
-msgstr "Rohrverbinder"
+#: ../../src/objects/path.cpp:482
+msgid "Path"
+msgstr "Pfad"
 
-#: ../../src/level/level_editor.cpp:388
-msgid "Library"
-msgstr "Bibliothek"
+#: ../../src/objects/path.cpp:712
+msgid "Identifier"
+msgstr "Identifizierer"
 
-#: ../../src/level/level_editor.cpp:390
-msgid "Signs"
-msgstr "Schilder"
+#: ../../src/objects/path.cpp:712
+msgid ""
+"Identifier name of the Path. This is needed for objects that can link to "
+"this."
+msgstr ""
+"Identifizierender Name des Pfades. Das ist erforderlich damit Objekte sich "
+"hierhin verlinken können."
 
-#: ../../src/level/level_editor.cpp:391
-msgid "Ropes"
-msgstr "Seile"
+#: ../../src/objects/path.cpp:729
+msgid "Show Line"
+msgstr "Zeige Linie"
 
-#: ../../src/level/level_editor.cpp:392
-msgid "Doors"
-msgstr "Türen"
+#: ../../src/objects/path.cpp:729
+msgid "Wether or not to show the path's moving line ingame."
+msgstr "Soll die Linie des Pfad im Spiel angezeigt werden?"
 
-#: ../../src/level/level_editor.cpp:394
-msgid "Windows"
-msgstr "Fenster"
+#: ../../src/objects/path.cpp:745
+msgid ""
+"Movement type. Mirror moves forth and back and rewind starts from the "
+"beginning again."
+msgstr ""
+"Bewegungs Typ. Mirror bewegt sich bis zum ende und dreht um, rewind fängt "
+"vom anfang wieder an."
 
-#: ../../src/level/level_editor.cpp:395
-msgid "Candy"
-msgstr "Süßigkeiten"
+#: ../../src/objects/path.cpp:757
+msgid "Segment"
+msgstr "Segment"
 
-#: ../../src/level/level_editor.cpp:396
-msgid "Stuff"
-msgstr "Verschiedenes"
+#: ../../src/objects/path.cpp:757
+msgid "Select the Segment to edit."
+msgstr "Wähle das Segment zum editieren."
 
-#: ../../src/level/level_editor.cpp:398
-msgid "Boxes"
-msgstr "Boxen"
+#: ../../src/objects/path.cpp:761
+msgid "Add a Segment after the selected one."
+msgstr "Füge ein Segment nach dem ausgewählten hinzu."
 
-#: ../../src/level/level_editor.cpp:399
-msgid "Enemies"
-msgstr "Gegner"
+#: ../../src/objects/path.cpp:763
+msgid "Add"
+msgstr "Erstellen"
 
-#: ../../src/level/level_editor.cpp:405
-msgid "Save as"
-msgstr "Speichern unter"
+#: ../../src/objects/path.cpp:768
+msgid "Delete the selected Segment."
+msgstr "Lösche das ausgewählte Segment."
 
-#: ../../src/level/level_editor.cpp:406 ../../src/gui/menu_data.cpp:632
-#: ../../src/objects/path.cpp:770
+#: ../../src/objects/path.cpp:770 ../../src/gui/menu_data.cpp:632
+#: ../../src/level/level_editor.cpp:406
 msgid "Delete"
 msgstr "Löschen"
 
-#: ../../src/level/level_editor.cpp:407
-msgid "Settings"
-msgstr "Einstellungen"
+#: ../../src/objects/path.cpp:775
+msgid "Pos X1"
+msgstr "Pos X1"
 
-#: ../../src/audio/random_sound.cpp:451 ../../src/video/animation.cpp:1401
+#: ../../src/objects/path.cpp:775
+msgid "Line position X1"
+msgstr "Linie Position X1"
+
+#: ../../src/objects/path.cpp:783
+msgid "Y1"
+msgstr "Y1"
+
+#: ../../src/objects/path.cpp:783
+msgid "Line position Y1"
+msgstr "Linie Position Y1"
+
+#: ../../src/objects/path.cpp:791
+msgid "Pos X2"
+msgstr "Pos X2"
+
+#: ../../src/objects/path.cpp:791
+msgid "Line position X2"
+msgstr "Linie Position X2"
+
+#: ../../src/objects/path.cpp:799
+msgid "Y2"
+msgstr "Y2"
+
+#: ../../src/objects/path.cpp:799
+msgid "Line position Y2"
+msgstr "Linie Position Y2"
+
+#: ../../src/audio/random_sound.cpp:451 ../../src/video/animation.cpp:1400
 msgid "Filename"
 msgstr "Dateiname"
 
@@ -603,51 +815,13 @@ msgstr ""
 "Verringerung der Lautstärke endet bei dieser Distanz. Sound wird darüber "
 "hinaus nicht mehr abgespielt."
 
-#: ../../src/user/savegame/savegame.cpp:271
-msgid "Savegame "
-msgstr "Spielstand "
+#: ../../src/video/img_manager.cpp:121
+msgid "Saving Textures"
+msgstr "Speichere Texturen"
 
-#: ../../src/user/savegame/savegame.cpp:271
-msgid " loaded"
-msgstr " Geladen"
-
-#: ../../src/user/savegame/savegame.cpp:436
-msgid "Couldn't save savegame "
-msgstr "Konnte Spielstand nicht speichern "
-
-#: ../../src/user/savegame/savegame.cpp:439
-msgid "Saved to Slot "
-msgstr "Gespeichert in Slot "
-
-#. TRANS: %u is replaced by the number of the save slot, starting with 1.
-#: ../../src/user/savegame/savegame.cpp:505
-#, c-format
-msgid "%u. Free Save"
-msgstr "%u. Freier Speicherplatz"
-
-#: ../../src/user/savegame/savegame.cpp:527
-msgid " -  Level "
-msgstr " -  Level "
-
-#: ../../src/user/savegame/savegame.cpp:534
-msgid " -  Unknown"
-msgstr " - Unbekannt"
-
-#: ../../src/user/savegame/savegame.cpp:538
-msgid " - Date "
-msgstr " - Datum "
-
-#: ../../src/user/savegame/savegame_loader.cpp:75
-msgid "No description"
-msgstr "Keine Beschreibung"
-
-#: ../../src/video/video.cpp:470
-msgid "Caching Images failed : Could not remove old images"
-msgstr "Speichern fehlgeschlagen : Konnte alte Grafiken nicht entfernen"
-
-#: ../../src/video/video.cpp:493
-msgid "Caching Images"
-msgstr "Speichere Grafiken im Cache"
+#: ../../src/video/img_manager.cpp:167
+msgid "Restoring Textures"
+msgstr "Wiederherstellen der Texturen"
 
 #. TRANS: Be careful with the length of this line, if
 #. TRANS: it is much longer than the English version,
@@ -661,317 +835,258 @@ msgstr "Dieses Programm unterliegt der GPLv3"
 msgid "Loading"
 msgstr "Ladevorgang"
 
-#: ../../src/video/img_manager.cpp:121
-msgid "Saving Textures"
-msgstr "Speichere Texturen"
+#: ../../src/video/video.cpp:470
+msgid "Caching Images failed : Could not remove old images"
+msgstr "Speichern fehlgeschlagen : Konnte alte Grafiken nicht entfernen"
 
-#: ../../src/video/img_manager.cpp:167
-msgid "Restoring Textures"
-msgstr "Wiederherstellen der Texturen"
+#: ../../src/video/video.cpp:493
+msgid "Caching Images"
+msgstr "Speichere Grafiken im Cache"
 
-#: ../../src/video/animation.cpp:1385
+#: ../../src/video/video.cpp:1436 ../../src/level/level.cpp:418
+#: ../../src/overworld/overworld.cpp:250
+msgid " saved"
+msgstr " gespeichert"
+
+#: ../../src/video/animation.cpp:1384
 msgid "Position z"
 msgstr "Position z"
 
-#: ../../src/video/animation.cpp:1385
+#: ../../src/video/animation.cpp:1384
 msgid "Initial depth position. Use values from 0.00011 to 0.12."
 msgstr "Startposition der Tiefe. Werte von einschließlich 0.00011 bis 0.12."
 
-#: ../../src/video/animation.cpp:1393 ../../src/video/animation.cpp:1471
-#: ../../src/video/animation.cpp:1487 ../../src/video/animation.cpp:1567
-#: ../../src/video/animation.cpp:1583 ../../src/video/animation.cpp:1599
-#: ../../src/video/animation.cpp:1615 ../../src/video/animation.cpp:1631
-#: ../../src/objects/bonusbox.cpp:459 ../../src/objects/bonusbox.cpp:494
-#: ../../src/objects/bonusbox.cpp:601
-msgid "Random"
-msgstr "Zufällig"
-
-#: ../../src/video/animation.cpp:1393 ../../src/video/animation.cpp:1471
-#: ../../src/video/animation.cpp:1487 ../../src/video/animation.cpp:1567
-#: ../../src/video/animation.cpp:1583 ../../src/video/animation.cpp:1599
-#: ../../src/video/animation.cpp:1615 ../../src/video/animation.cpp:1631
+#: ../../src/video/animation.cpp:1392 ../../src/video/animation.cpp:1470
+#: ../../src/video/animation.cpp:1486 ../../src/video/animation.cpp:1566
+#: ../../src/video/animation.cpp:1582 ../../src/video/animation.cpp:1598
+#: ../../src/video/animation.cpp:1614 ../../src/video/animation.cpp:1630
 msgid "Additional random value"
 msgstr "Extra Zufallswert"
 
-#: ../../src/video/animation.cpp:1401 ../../src/objects/sprite.cpp:1454
-#: ../../src/enemies/static.cpp:315
-msgid "Image filename"
-msgstr "Bild Dateiname"
-
-#: ../../src/video/animation.cpp:1408
+#: ../../src/video/animation.cpp:1407
 msgid "Based on camera pos."
 msgstr "Abhängig von Kamera."
 
-#: ../../src/video/animation.cpp:1408
+#: ../../src/video/animation.cpp:1407
 msgid "The emitter position is based on the camera position"
 msgstr "Die Emitter-Position ist abhängig von der Kameraposition."
 
-#: ../../src/video/animation.cpp:1415
+#: ../../src/video/animation.cpp:1414
 msgid "Particles Based on Emitter pos."
 msgstr "Partikel abhängig von Emitterposition."
 
-#: ../../src/video/animation.cpp:1415
+#: ../../src/video/animation.cpp:1414
 msgid "The particle position is based on the emitter position"
 msgstr "Die Positionen der Partikel hängen von der Position des Emitters ab."
 
-#: ../../src/video/animation.cpp:1423
+#: ../../src/video/animation.cpp:1422
 msgid "Emitter width"
 msgstr "Emitter Breite"
 
-#: ../../src/video/animation.cpp:1423
+#: ../../src/video/animation.cpp:1422
 msgid "Emitter width in which the particles spawn"
 msgstr "Emitter Breite in welchem die Partikel erschaffen werden"
 
-#: ../../src/video/animation.cpp:1431 ../../src/video/animation.cpp:1663
+#: ../../src/video/animation.cpp:1430 ../../src/video/animation.cpp:1662
 msgid "Height"
 msgstr "Höhe"
 
-#: ../../src/video/animation.cpp:1431
+#: ../../src/video/animation.cpp:1430
 msgid "Emitter height in which the particles spawn"
 msgstr "Emitter Höhe in welchem die Partikel erschaffen werden"
 
-#: ../../src/video/animation.cpp:1439
+#: ../../src/video/animation.cpp:1438
 msgid "Emitter TTL"
 msgstr "Emitter TTL"
 
-#: ../../src/video/animation.cpp:1439
+#: ../../src/video/animation.cpp:1438
 msgid "Emitter time to live. Set -1 for infinite."
 msgstr ""
 "Emitter Zeit der Existenz (TTL = Time to live). Setze -1 für unbegrenzt."
 
-#: ../../src/video/animation.cpp:1447
+#: ../../src/video/animation.cpp:1446
 msgid "Emitter interval"
 msgstr "Emitter Intervall"
 
-#: ../../src/video/animation.cpp:1447
+#: ../../src/video/animation.cpp:1446
 msgid "Time between spawning particles. Amount is the quota."
 msgstr ""
 "Die Zeit, die gewartet wird, bevor erneut jene durch die Quote\n"
 "angegebene Anzahl Partikel ausgestoßen wird."
 
-#: ../../src/video/animation.cpp:1455
+#: ../../src/video/animation.cpp:1454
 msgid "Quota"
 msgstr "Quote"
 
-#: ../../src/video/animation.cpp:1455
+#: ../../src/video/animation.cpp:1454
 msgid "The amount of particles to spawn for an interval"
 msgstr "Die Menge der Partikel welche bei jedem Intervall erschaffen wird"
 
-#: ../../src/video/animation.cpp:1463
+#: ../../src/video/animation.cpp:1462
 msgid "TTL"
 msgstr "TTL"
 
-#: ../../src/video/animation.cpp:1463
+#: ../../src/video/animation.cpp:1462
 msgid "Particle time to live(TTL)"
 msgstr "Lebenszeit (TTL) eines Partikels"
 
-#: ../../src/video/animation.cpp:1479
+#: ../../src/video/animation.cpp:1478
 msgid "Velocity"
 msgstr "Geschwindigkeit"
 
-#: ../../src/video/animation.cpp:1479
+#: ../../src/video/animation.cpp:1478
 msgid "Initial particle velocity or speed"
 msgstr "Startgeschwindigkeit"
 
-#: ../../src/video/animation.cpp:1512
+#: ../../src/video/animation.cpp:1511
 msgid "Rotation z"
 msgstr "Rotation z"
 
-#: ../../src/video/animation.cpp:1512
+#: ../../src/video/animation.cpp:1511
 msgid "Initial rotation z"
 msgstr "Startrotation Z"
 
-#: ../../src/video/animation.cpp:1520
+#: ../../src/video/animation.cpp:1519
 msgid "Add direction"
 msgstr "Richtungs Zugabe"
 
-#: ../../src/video/animation.cpp:1520
+#: ../../src/video/animation.cpp:1519
 msgid "Start direction is added to the z rotation"
 msgstr "Die Startrichtung wird der Z-Rotation hinzugerechnet"
 
-#: ../../src/video/animation.cpp:1559
+#: ../../src/video/animation.cpp:1558
 msgid "Const. rotation z"
 msgstr "Konst. Rotation Z"
 
-#: ../../src/video/animation.cpp:1559
+#: ../../src/video/animation.cpp:1558
 msgid "Initial constant rotation z"
 msgstr "Konstante Grundrotation Z"
 
-#: ../../src/video/animation.cpp:1575
+#: ../../src/video/animation.cpp:1574
 msgid "Initial direction/angle"
 msgstr "Startrichtung/-winkel"
 
-#: ../../src/video/animation.cpp:1591
+#: ../../src/video/animation.cpp:1590
 msgid "Scale"
 msgstr "Skalierung"
 
-#: ../../src/video/animation.cpp:1591
+#: ../../src/video/animation.cpp:1590
 msgid "Initial size scale"
 msgstr "Startskalierung der Größe"
 
-#: ../../src/video/animation.cpp:1607
+#: ../../src/video/animation.cpp:1606
 msgid "Hor gravity"
 msgstr "Hor Schwerkraft"
 
-#: ../../src/video/animation.cpp:1607
+#: ../../src/video/animation.cpp:1606
 msgid "Initial horizontal gravity"
 msgstr "Horizontale Grundschwerkraft"
 
-#: ../../src/video/animation.cpp:1623
+#: ../../src/video/animation.cpp:1622
 msgid "Ver gravity"
 msgstr "Ver Schwerkraft"
 
-#: ../../src/video/animation.cpp:1623
+#: ../../src/video/animation.cpp:1622
 msgid "Initial vertical gravity"
 msgstr "Vertikale Grundschwerkraft"
 
-#: ../../src/video/animation.cpp:1639
+#: ../../src/video/animation.cpp:1638
 msgid "Clip rect x"
 msgstr "Clipping-Rechteck X"
 
-#: ../../src/video/animation.cpp:1639
+#: ../../src/video/animation.cpp:1638
 msgid "Clipping rectangle position x"
 msgstr "X-Position des Clipping-Rechtecks"
 
-#: ../../src/video/animation.cpp:1647
+#: ../../src/video/animation.cpp:1646
 msgid "Width"
 msgstr "Breite"
 
-#: ../../src/video/animation.cpp:1647
+#: ../../src/video/animation.cpp:1646
 msgid "Clipping rectangle width"
 msgstr "Breite des Clipping-Rechtecks"
 
-#: ../../src/video/animation.cpp:1655
+#: ../../src/video/animation.cpp:1654
 msgid "Clip rect y"
 msgstr "Clipping-Rechteck Y"
 
-#: ../../src/video/animation.cpp:1655
+#: ../../src/video/animation.cpp:1654
 msgid "Clipping rectangle position y"
 msgstr "Y-Position des Clipping-Rechtecks"
 
-#: ../../src/video/animation.cpp:1663
+#: ../../src/video/animation.cpp:1662
 msgid "Clipping rectangle height"
 msgstr "Höhe des Clipping-Rechtecks"
 
-#: ../../src/video/animation.cpp:1675
+#: ../../src/video/animation.cpp:1674
 msgid "Clip mode"
 msgstr "Clipping-Modus"
 
-#: ../../src/video/animation.cpp:1675
+#: ../../src/video/animation.cpp:1674
 msgid "Clipping mode if particle is out the rectangle"
 msgstr "Partikel abschneiden, wenn sie das Clipping-Rechteck verlassen"
 
-#: ../../src/scene/01_prologue.cpp:36
+#. TRANS: Prompt issued in the game console
+#: ../../src/scripting/scripting.cpp:104
+msgid "(console)"
+msgstr "(Konsole)"
+
+#. TRANS: The text is copied from the end of the GPLv3. If there is an
+#. TRANS: accepted translation of the GPLv3 available in your language,
+#. TRANS: then you should use its wording rather than trying to translate
+#. TRANS: it yourself.
+#: ../../src/gui/game_console.cpp:170
+#, c-format
 msgid ""
-"The sinking sun sent out its last colourful beams over the Eastern Desert "
-"when a single individual was making his way through the ups and downs of the "
-"sandy dunes."
+"TSC Scripting Console\n"
+"Copyright © 2012-%d The TSC Contributors\n"
+"\n"
+"This program comes with ABSOLUTELY NO WARRANTY; for details\n"
+"see the file COPYING. This is free software, and you are\n"
+"welcome to redistribute it under certain conditions; see the\n"
+"aforementioned file for details.\n"
 msgstr ""
-"Die sinkende Sonne sandte ihre letzten rotgoldenen Strahlen über die "
-"Östliche Wüste, während sich ein einzelnes Individuum seinem Weg durch das "
-"Auf und Ab der sandigen Dünen bahnte."
+"TSC-Skript-Konsole\n"
+"Copyright © 2012-%d Die TSC-Mitwirkenden\n"
+"\n"
+"Dieses Programm kommt OHNE JEGLICHE GARANTIE; siehe die Datei\n"
+"tsc/docs/license.txt für Einzelheiten. Dies ist freie Software, die\n"
+"du gerne unter bestimmten Bedingungen weiterverteilen darfst. Siehe\n"
+"auch dazu die erwähnte Datei.\n"
 
-#: ../../src/scene/01_prologue.cpp:37
-msgid ""
-"When he reached the top of the highest dune, he gazed around, but to only "
-"see sand followed by more sand, by even more "
-"[colour='FFFFF000']sand[colour='FFFFFFFF']."
-msgstr ""
-"Als der Mann den Gipfel der höchsten Düne erreichte, sah er sich um, doch "
-"war alles was er sah: Sand, Sand, und noch mehr "
-"[colour='FFFFF000']Sand[colour='FFFFFFFF']."
-
-#: ../../src/scene/01_prologue.cpp:38
-msgid ""
-"He took out a map, but with the stars not yet visible on the darkening sky "
-"there was no means of orientation in this infinite sea of equally hostile "
-"sand dunes."
-msgstr ""
-"Er zog eine Landkarte hervor, aber angesichts der noch nicht am dämmernden "
-"Himmel sichtbaren Sterne gab es keine Möglichkeit einer Orientierung in "
-"diesem unendlichen Meer lebensfeindlichen Sandes."
-
-#: ../../src/gui/debug_window.cpp:43
-msgid "Debugging Information"
-msgstr "Entwicklerinformationen"
-
-#. TRANS: Do not translate the part in brackets
-#: ../../src/gui/debug_window.cpp:103
+#. TRANS: %s is the version postfix, e.g. "dev" or "beta3".
+#: ../../src/gui/game_console.cpp:181
 #, c-format
-msgid "[colour='FFFFFF00']FPS: Best: %.02f Worst: %.02f Current: %0.2f"
-msgstr "[colour='FFFFFF00']FPS: B: %.02f S: %.02f A: %0.2f"
+msgid "You are running TSC version %d.%d.%d-%s.\n"
+msgstr "Du benutzt TSC in Version %d.%d.%d-%s.\n"
 
-#: ../../src/gui/debug_window.cpp:111
+#: ../../src/gui/game_console.cpp:187
 #, c-format
-msgid "Camera X: %d Y: %d"
-msgstr "Kamera X: %d Y: %d"
+msgid "You are running TSC version %d.%d.%d.\n"
+msgstr "Du benutzt TSC in Version %d.%d.%d.\n"
 
-#: ../../src/gui/debug_window.cpp:121
-#, c-format
-msgid "Level: %s (return stack size: %ld)"
-msgstr "Level: %s (Größe Rückkehrliste: %ld)"
+#: ../../src/gui/game_console.cpp:239
+msgid "(#inspect did not return a string)\n"
+msgstr "(#inspect hat keinen String zurückgegeben)\n"
 
-#: ../../src/gui/debug_window.cpp:126
+#: ../../src/gui/hud.cpp:159
 #, c-format
-msgid "Overworld: %s"
-msgstr "Welt: %s"
+msgid "Time %02d:%02d"
+msgstr "Zeit %02d:%02d"
 
-#: ../../src/gui/debug_window.cpp:130
+#: ../../src/gui/hud.cpp:193
 #, c-format
-msgid "<Menu Active>"
-msgstr "<Menü aktiv>"
-
-#: ../../src/gui/debug_window.cpp:133
-#, c-format
-msgid "Scene: %s"
-msgstr "Szene: %s"
-
-#. TRANS: Abbreviations mean:
-#. TRANS: T=Total, P=Passive, M=Massive, E=Enemy, A=Active, H=Halfmassive
-#: ../../src/gui/debug_window.cpp:164
-#, c-format
-msgid "T: %lu P: %d M: %d E: %d A: %d H: %d"
-msgstr "T: %lu P: %d M: %d G: %d A: %d H: %d"
-
-#. TRANS: Abbreviations mean:
-#. TRANS: BBox=Bonus boxes, GBox=Gold boxes, MPlat=Moving platforms
-#: ../../src/gui/debug_window.cpp:177
-#, c-format
-msgid "BBox: %d GBox: %d MPlat: %d"
-msgstr "BBox: %d GBox: %d BPlat: %d"
-
-#: ../../src/gui/debug_window.cpp:185
-#, c-format
-msgid "Player X1: %.4f X2: %.4f"
-msgstr "Spieler X1: %.4f X2: %.4f"
-
-#: ../../src/gui/debug_window.cpp:192
-#, c-format
-msgid "Player Y1: %.4f Y2: %.4f"
-msgstr "Spieler Y1: %.4f Y2: %.4f"
-
-#: ../../src/gui/debug_window.cpp:199
-#, c-format
-msgid "Player XVel: %.4f, YVel: %.4f"
-msgstr "Spieler XGeschw: %.4f YGeschw: %.4f"
-
-#: ../../src/gui/debug_window.cpp:206
-#, c-format
-msgid "Player MState: %d Ground: %d (%s)"
-msgstr "Spieler Bewstat: %d Boden: %d (%s)"
-
-#: ../../src/gui/debug_window.cpp:214
-#, c-format
-msgid "Game Mode: %d"
-msgstr "Spielmodus: %d"
+msgid "Points %08ld"
+msgstr "Punkte %08ld"
 
 #: ../../src/gui/menu_data.cpp:330
 msgid "Credits"
 msgstr "Mitwirkende"
 
-#: ../../src/gui/menu_data.cpp:362
-msgid "Version "
-msgstr "Version "
+#: ../../src/gui/menu_data.cpp:630 ../../src/level/level_editor.cpp:402
+#: ../../src/overworld/world_editor.cpp:183
+msgid "New"
+msgstr "Neu"
 
 #: ../../src/gui/menu_data.cpp:631
 msgid "Edit"
@@ -1209,6 +1324,11 @@ msgstr "Feinheit"
 msgid "Joystick"
 msgstr "Joystick"
 
+#: ../../src/gui/menu_data.cpp:1851 ../../src/gui/menu_data.cpp:2898
+#: ../../src/level/level_settings.cpp:193
+msgid "None"
+msgstr "Keinen"
+
 #: ../../src/gui/menu_data.cpp:1887
 msgid "Axis Hor"
 msgstr "Achse Hor"
@@ -1264,11 +1384,6 @@ msgstr "Springen"
 #: ../../src/gui/menu_data.cpp:2272 ../../src/gui/menu_data.cpp:2288
 msgid "Shoot"
 msgstr "Schießen"
-
-#: ../../src/gui/menu_data.cpp:2273 ../../src/gui/menu_data.cpp:2290
-#: ../../src/objects/bonusbox.cpp:501
-msgid "Item"
-msgstr "Gegenstand"
 
 #: ../../src/gui/menu_data.cpp:2274 ../../src/gui/menu_data.cpp:2289
 msgid "Action"
@@ -1342,15 +1457,27 @@ msgstr "Neu laden"
 msgid "Enabled : "
 msgstr "Aktiviert : "
 
+#: ../../src/gui/menu_data.cpp:3094 ../../src/gui/menu_data.cpp:3096
+#: ../../src/level/level_editor.cpp:404
+#: ../../src/overworld/world_editor.cpp:185
+msgid "Save"
+msgstr "Speichern"
+
 #: ../../src/gui/menu_data.cpp:3095
 msgid "Save the game"
 msgstr "Spielstand abspeichern"
+
+#: ../../src/gui/menu_data.cpp:3101 ../../src/gui/menu_data.cpp:3103
+#: ../../src/level/level_editor.cpp:403
+#: ../../src/overworld/world_editor.cpp:184
+msgid "Load"
+msgstr "Laden"
 
 #: ../../src/gui/menu_data.cpp:3102
 msgid "Load a saved game"
 msgstr "Gespeicherten Spielstand laden"
 
-#: ../../src/gui/menu_data.cpp:3260
+#: ../../src/gui/menu_data.cpp:3266
 msgid ""
 "3000 Points needed for saving in a level.\n"
 "Saving on the Overworld is free."
@@ -1358,247 +1485,611 @@ msgstr ""
 "3000 Punkte werden benötigt um in einem Level zu speichern.\n"
 "Speichern auf der Welt ist frei."
 
-#: ../../src/gui/menu_data.cpp:3281 ../../src/gui/menu_data.cpp:3285
-#: ../../src/gui/menu_data.cpp:3290
+#: ../../src/gui/menu_data.cpp:3287 ../../src/gui/menu_data.cpp:3291
+#: ../../src/gui/menu_data.cpp:3296
 msgid "No Description"
 msgstr "Keine Beschreibung"
 
-#: ../../src/gui/menu_data.cpp:3294
+#: ../../src/gui/menu_data.cpp:3300
 msgid "Enter Description"
 msgstr "Beschreibung eingeben"
 
-#: ../../src/gui/menu_data.cpp:3312 ../../src/gui/menu_data.cpp:3317
-#: ../../src/gui/menu_data.cpp:3322
+#: ../../src/gui/menu_data.cpp:3318 ../../src/gui/menu_data.cpp:3323
+#: ../../src/gui/menu_data.cpp:3328
 msgid "Savegame loading failed"
 msgstr "Laden des Spielstandes fehlgeschlagen"
 
-#: ../../src/gui/hud.cpp:159
-#, c-format
-msgid "Time %02d:%02d"
-msgstr "Zeit %02d:%02d"
+#: ../../src/gui/debug_window.cpp:43
+msgid "Debugging Information"
+msgstr "Entwicklerinformationen"
 
-#: ../../src/gui/hud.cpp:193
+#. TRANS: Do not translate the part in brackets
+#: ../../src/gui/debug_window.cpp:103
 #, c-format
-msgid "Points %08ld"
-msgstr "Punkte %08ld"
+msgid "[colour='FFFFFF00']FPS: Best: %.02f Worst: %.02f Current: %0.2f"
+msgstr "[colour='FFFFFF00']FPS: B: %.02f S: %.02f A: %0.2f"
 
-#. TRANS: The text is copied from the end of the GPLv3. If there is an
-#. TRANS: accepted translation of the GPLv3 available in your language,
-#. TRANS: then you should use its wording rather than trying to translate
-#. TRANS: it yourself.
-#: ../../src/gui/game_console.cpp:170
+#: ../../src/gui/debug_window.cpp:111
 #, c-format
-msgid ""
-"TSC Scripting Console\n"
-"Copyright © 2012-%d The TSC Contributors\n"
-"\n"
-"This program comes with ABSOLUTELY NO WARRANTY; for details\n"
-"see the file COPYING. This is free software, and you are\n"
-"welcome to redistribute it under certain conditions; see the\n"
-"aforementioned file for details.\n"
+msgid "Camera X: %d Y: %d"
+msgstr "Kamera X: %d Y: %d"
+
+#: ../../src/gui/debug_window.cpp:121
+#, c-format
+msgid "Level: %s (return stack size: %ld)"
+msgstr "Level: %s (Größe Rückkehrliste: %ld)"
+
+#: ../../src/gui/debug_window.cpp:126
+#, c-format
+msgid "Overworld: %s"
+msgstr "Welt: %s"
+
+#: ../../src/gui/debug_window.cpp:130
+#, c-format
+msgid "<Menu Active>"
+msgstr "<Menü aktiv>"
+
+#: ../../src/gui/debug_window.cpp:133
+#, c-format
+msgid "Scene: %s"
+msgstr "Szene: %s"
+
+#. TRANS: Abbreviations mean:
+#. TRANS: T=Total, P=Passive, M=Massive, E=Enemy, A=Active, H=Halfmassive
+#: ../../src/gui/debug_window.cpp:164
+#, c-format
+msgid "T: %lu P: %d M: %d E: %d A: %d H: %d"
+msgstr "T: %lu P: %d M: %d G: %d A: %d H: %d"
+
+#. TRANS: Abbreviations mean:
+#. TRANS: BBox=Bonus boxes, GBox=Gold boxes, MPlat=Moving platforms
+#: ../../src/gui/debug_window.cpp:177
+#, c-format
+msgid "BBox: %d GBox: %d MPlat: %d"
+msgstr "BBox: %d GBox: %d BPlat: %d"
+
+#: ../../src/gui/debug_window.cpp:185
+#, c-format
+msgid "Player X1: %.4f X2: %.4f"
+msgstr "Spieler X1: %.4f X2: %.4f"
+
+#: ../../src/gui/debug_window.cpp:192
+#, c-format
+msgid "Player Y1: %.4f Y2: %.4f"
+msgstr "Spieler Y1: %.4f Y2: %.4f"
+
+#: ../../src/gui/debug_window.cpp:199
+#, c-format
+msgid "Player XVel: %.4f, YVel: %.4f"
+msgstr "Spieler XGeschw: %.4f YGeschw: %.4f"
+
+#: ../../src/gui/debug_window.cpp:206
+#, c-format
+msgid "Player MState: %d Ground: %d (%s)"
+msgstr "Spieler Bewstat: %d Boden: %d (%s)"
+
+#: ../../src/gui/debug_window.cpp:214
+#, c-format
+msgid "Game Mode: %d"
+msgstr "Spielmodus: %d"
+
+#: ../../src/level/level_settings.cpp:192
+#: ../../src/level/level_settings.cpp:446
+#: ../../src/level/level_settings.cpp:649
+#: ../../src/overworld/world_waypoint.cpp:755
+#: ../../src/overworld/world_waypoint.cpp:758
+msgid "(None)"
+msgstr "(Leer)"
+
+#: ../../src/level/level_settings.cpp:276 ../../src/level/level_editor.cpp:256
+#: ../../src/overworld/world_editor.cpp:127
+msgid "Save "
+msgstr "Speichere "
+
+#: ../../src/level/level.cpp:220
+msgid "Unsupported Level format : "
+msgstr "Nicht unterstütztes Levelformat :"
+
+#: ../../src/level/level.cpp:402
+msgid "Couldn't save level "
+msgstr "Konnte Level nicht speichern "
+
+#: ../../src/level/level.cpp:418 ../../src/level/level_editor.cpp:196
+msgid "Level "
+msgstr "Level "
+
+#: ../../src/level/level.cpp:716
+msgid "Omega Mode disabled"
+msgstr "Omega-Modus ausgeschaltet"
+
+#: ../../src/level/level.cpp:720
+msgid "Omega Mode enabled"
+msgstr "Omega-Modus eingeschaltet"
+
+#: ../../src/level/level.cpp:731
+msgid "Kid cheat activated"
+msgstr "Kind-Cheat aktiviert"
+
+#: ../../src/level/level_manager.cpp:472
+msgid "Invalid target level."
+msgstr "Ungültiger Ziellevel."
+
+#: ../../src/level/level_player.cpp:3976
+msgid "Initial direction"
+msgstr "Anfangs Richtung"
+
+#: ../../src/level/level_editor.cpp:187
+msgid "Create a new Level"
+msgstr "Erstelle ein neues Level"
+
+#: ../../src/level/level_editor.cpp:196 ../../src/overworld/world_editor.cpp:86
+msgid " already exists"
+msgstr " existiert bereits"
+
+#: ../../src/level/level_editor.cpp:208 ../../src/overworld/world_editor.cpp:82
+msgid "Created "
+msgstr "Erstellte "
+
+#: ../../src/level/level_editor.cpp:218
+msgid "Load a Level"
+msgstr "Lade ein Level"
+
+#: ../../src/level/level_editor.cpp:237
+#: ../../src/overworld/world_editor.cpp:114
+msgid "Loaded "
+msgstr "Geladen "
+
+#: ../../src/level/level_editor.cpp:265
+msgid "Save Level as"
+msgstr "Speichere als"
+
+#: ../../src/level/level_editor.cpp:265
+msgid "New name"
+msgstr "Neuer Name"
+
+#: ../../src/level/level_editor.cpp:280
+msgid "Level was not yet saved"
+msgstr "Level wurde noch nicht gespeichert"
+
+#: ../../src/level/level_editor.cpp:285
+msgid "Delete and Unload "
+msgstr "Lösche und Entlade "
+
+#. TRANS: Level editor left menu's entries follow
+#. TRANS: World editor left menu's entries follow
+#: ../../src/level/level_editor.cpp:369
+#: ../../src/overworld/world_editor.cpp:165
+msgid "---Sprites---"
+msgstr "---Grafiken---"
+
+#: ../../src/level/level_editor.cpp:370
+msgid "Green Ground"
+msgstr "Grasboden"
+
+#: ../../src/level/level_editor.cpp:371
+msgid "Desert Ground"
+msgstr "Wüstenboden"
+
+#: ../../src/level/level_editor.cpp:372
+msgid "Sand Ground"
+msgstr "Sandboden"
+
+#: ../../src/level/level_editor.cpp:373
+msgid "Castle Ground"
+msgstr "Burgboden"
+
+#: ../../src/level/level_editor.cpp:374
+msgid "Cave Ground"
+msgstr "Höhlenboden"
+
+#: ../../src/level/level_editor.cpp:375
+msgid "Underground"
+msgstr "Untergrund"
+
+#: ../../src/level/level_editor.cpp:376
+msgid "Plastic Ground"
+msgstr "Plastikboden"
+
+#: ../../src/level/level_editor.cpp:377
+msgid "Jungle Ground"
+msgstr "Jungelboden"
+
+#: ../../src/level/level_editor.cpp:378
+msgid "Snow Ground"
+msgstr "Schneeboden"
+
+#: ../../src/level/level_editor.cpp:379
+#: ../../src/overworld/world_editor.cpp:177
+msgid "Blocks"
+msgstr "Blöcke"
+
+#: ../../src/level/level_editor.cpp:380
+#: ../../src/overworld/world_editor.cpp:168
+msgid "Clouds"
+msgstr "Wolken"
+
+#: ../../src/level/level_editor.cpp:381
+#: ../../src/overworld/world_editor.cpp:169
+msgid "Hedges"
+msgstr "Büsche"
+
+#: ../../src/level/level_editor.cpp:382
+msgid "Trees"
+msgstr "Bäume"
+
+#: ../../src/level/level_editor.cpp:383
+#: ../../src/overworld/world_editor.cpp:170
+msgid "Plants"
+msgstr "Pflanzen"
+
+#: ../../src/level/level_editor.cpp:384
+#: ../../src/overworld/world_editor.cpp:171
+msgid "Cactus"
+msgstr "Kakteen"
+
+#: ../../src/level/level_editor.cpp:385
+msgid "Platforms"
+msgstr "Plattformen"
+
+#: ../../src/level/level_editor.cpp:386
+#: ../../src/overworld/world_editor.cpp:174
+msgid "Pipes"
+msgstr "Rohre"
+
+#: ../../src/level/level_editor.cpp:387
+msgid "Pipe Connectors"
+msgstr "Rohrverbinder"
+
+#: ../../src/level/level_editor.cpp:388
+msgid "Library"
+msgstr "Bibliothek"
+
+#: ../../src/level/level_editor.cpp:389
+#: ../../src/overworld/world_editor.cpp:172
+msgid "Hills"
+msgstr "Hügel"
+
+#: ../../src/level/level_editor.cpp:390
+msgid "Signs"
+msgstr "Schilder"
+
+#: ../../src/level/level_editor.cpp:391
+msgid "Ropes"
+msgstr "Seile"
+
+#: ../../src/level/level_editor.cpp:392
+msgid "Doors"
+msgstr "Türen"
+
+#: ../../src/level/level_editor.cpp:393
+#: ../../src/overworld/world_editor.cpp:178
+msgid "Bones"
+msgstr "Knochen"
+
+#: ../../src/level/level_editor.cpp:394
+msgid "Windows"
+msgstr "Fenster"
+
+#: ../../src/level/level_editor.cpp:395
+msgid "Candy"
+msgstr "Süßigkeiten"
+
+#: ../../src/level/level_editor.cpp:396
+msgid "Stuff"
+msgstr "Verschiedenes"
+
+#: ../../src/level/level_editor.cpp:397
+#: ../../src/overworld/world_editor.cpp:180
+msgid "---Objects---"
+msgstr "---Objekte---"
+
+#: ../../src/level/level_editor.cpp:398
+msgid "Boxes"
+msgstr "Boxen"
+
+#: ../../src/level/level_editor.cpp:399
+msgid "Enemies"
+msgstr "Gegner"
+
+#: ../../src/level/level_editor.cpp:400
+#: ../../src/overworld/world_editor.cpp:179
+msgid "Special"
+msgstr "Spezial"
+
+#: ../../src/level/level_editor.cpp:401
+#: ../../src/overworld/world_editor.cpp:182
+msgid "---Functions---"
+msgstr "---Funktionen---"
+
+#: ../../src/level/level_editor.cpp:405
+msgid "Save as"
+msgstr "Speichern unter"
+
+#: ../../src/level/level_editor.cpp:407
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: ../../src/input/keyboard.cpp:256
+msgid "Debug mode disabled"
+msgstr "Debug-Modus deaktiviert"
+
+#: ../../src/input/keyboard.cpp:262
+msgid "Debug mode enabled"
+msgstr "Debug-Modus aktiviert"
+
+#: ../../src/input/mouse.cpp:1149
+msgid "Snap to object mode enabled"
+msgstr "Einrastmodus aktiviert"
+
+#: ../../src/input/mouse.cpp:1152
+msgid "Snap to object mode disabled"
+msgstr "Einrastmodus deaktiviert"
+
+#: ../../src/overworld/world_waypoint.cpp:126
+msgid "Waypoint"
+msgstr "Wegpunkt"
+
+#: ../../src/overworld/world_waypoint.cpp:487
+#: ../../src/overworld/world_waypoint.cpp:491
+#: ../../src/overworld/world_waypoint.cpp:617
+msgid "Level"
+msgstr "Level"
+
+#: ../../src/overworld/world_waypoint.cpp:488
+#: ../../src/overworld/world_waypoint.cpp:494
+msgid "World"
+msgstr "Welt"
+
+#: ../../src/overworld/world_waypoint.cpp:498
+msgid "Type"
+msgstr "Typ"
+
+#: ../../src/overworld/world_waypoint.cpp:498
+msgid "Destination type"
+msgstr "Ziel typ"
+
+#: ../../src/overworld/world_waypoint.cpp:502
+msgid "Destination"
+msgstr "Ziel"
+
+#: ../../src/overworld/world_waypoint.cpp:502
+msgid "Destination level or world"
+msgstr "Ziel Level oder Welt"
+
+#: ../../src/overworld/world_waypoint.cpp:519
+msgid "Backward Direction"
+msgstr "Richtung Rückwärts"
+
+#: ../../src/overworld/world_waypoint.cpp:534
+msgid "Forward Direction"
+msgstr "Richtung Vorwärts"
+
+#: ../../src/overworld/world_waypoint.cpp:551
+msgid "Default Access"
+msgstr "Standard Zugriff"
+
+#: ../../src/overworld/world_waypoint.cpp:551
+msgid "Enable if the Waypoint should be always accessible."
+msgstr "Aktiviere damit der Wegpunkt immer begehbar ist."
+
+#: ../../src/overworld/world_waypoint.cpp:558
+msgid "Waypoint Exit"
+msgstr "Wegpunkt-Abgang"
+
+#: ../../src/overworld/world_waypoint.cpp:558
+msgid "Select the waypoint exit to edit."
+msgstr "Wähle den zu bearbeitenden Wegpunkt-Abgang."
+
+#: ../../src/overworld/world_waypoint.cpp:562
+#: ../../src/overworld/world_waypoint.cpp:564
+msgid "New Exit"
+msgstr "Neuer Abgang"
+
+#: ../../src/overworld/world_waypoint.cpp:564
+msgid "Create a new exit by clicking."
+msgstr "Erstellt einen neuen Abgang."
+
+#: ../../src/overworld/world_waypoint.cpp:568
+#: ../../src/overworld/world_waypoint.cpp:570
+msgid "Delete Exit"
+msgstr "Lösche Abgang"
+
+#: ../../src/overworld/world_waypoint.cpp:570
+msgid "Delete the currently selected exit by clicking."
+msgstr "Löscht den ausgewählten Abgang."
+
+#: ../../src/overworld/world_waypoint.cpp:584
+msgid "Leave direction"
+msgstr "Abgangsrichtung"
+
+#: ../../src/overworld/world_waypoint.cpp:584
+msgid "Direction key to press for leaving the waypoint for this exit"
 msgstr ""
-"TSC-Skript-Konsole\n"
-"Copyright © 2012-%d Die TSC-Mitwirkenden\n"
-"\n"
-"Dieses Programm kommt OHNE JEGLICHE GARANTIE; siehe die Datei\n"
-"tsc/docs/license.txt für Einzelheiten. Dies ist freie Software, die\n"
-"du gerne unter bestimmten Bedingungen weiterverteilen darfst. Siehe\n"
-"auch dazu die erwähnte Datei.\n"
+"Richtungstaste, die zum Verlassen des Wegpunkts über diesen Ausgang gedrückt "
+"werden muss"
 
-#. TRANS: %s is the version postfix, e.g. "dev" or "beta3".
-#: ../../src/gui/game_console.cpp:181
-#, c-format
-msgid "You are running TSC version %d.%d.%d-%s.\n"
-msgstr "Du benutzt TSC in Version %d.%d.%d-%s.\n"
+#: ../../src/overworld/world_waypoint.cpp:589
+msgid "Level Exit"
+msgstr "Level Ausgang"
 
-#: ../../src/gui/game_console.cpp:187
-#, c-format
-msgid "You are running TSC version %d.%d.%d.\n"
-msgstr "Du benutzt TSC in Version %d.%d.%d.\n"
+#: ../../src/overworld/world_waypoint.cpp:589
+msgid "Name of the level exit in the level that activates this waypoint exit."
+msgstr "Name des Ausgangs im Level, der diesen Wegpunkt-Abgang aktiviert."
 
-#: ../../src/gui/game_console.cpp:239
-msgid "(#inspect did not return a string)\n"
-msgstr "(#inspect hat keinen String zurückgegeben)\n"
+#: ../../src/overworld/world_waypoint.cpp:594
+msgid "Line start UID"
+msgstr "UID Linienstartpunkt"
 
-#. TRANS: Editor left menu 1st tab heading. Keep this short.
-#: ../../src/core/editor/editor.cpp:71
-msgid "Menu"
-msgstr "Menü"
-
-#. TRANS: Editor left menu 2nd tab heading. Keep this short.
-#: ../../src/core/editor/editor.cpp:73
-msgid "Items"
-msgstr "Ggst"
-
-#. TRANS: Editor left menu 3rd tab heading. Keep this short.
-#: ../../src/core/editor/editor.cpp:75
-msgid "Selector"
-msgstr "Auswahl"
-
-#: ../../src/core/editor/editor.cpp:99
-msgid "Selection"
-msgstr "Auswahl"
-
-#: ../../src/core/editor/editor.cpp:100 ../../src/objects/secret_area.cpp:67
-msgid "Secret Area"
-msgstr "Versteck"
-
-#. TRANS: Title of the editor help window
-#: ../../src/core/editor/editor.cpp:437
-msgid "Editor Help"
-msgstr "Hilfe zum Editor"
-
-#. TRANS: This is the help window in the editor. Do not translate
-#. TRANS: the color codes in the string.
-#: ../../src/core/editor/editor.cpp:451
-#, fuzzy
-msgid ""
-" \n"
-"----- [colour='FFFFCF5F']General[colour='FFFFFFFF'] -----\n"
-" \n"
-"F1 - Toggle this Help Window\n"
-"F8 - Open/Close the Editor\n"
-"F10 - Toggle sound effects\n"
-"F11 - Toggle music play\n"
-"Home - Focus Alex' start position\n"
-"End - Cycle camera focus through level exits\n"
-"PageUp - Move camera to left level edge\n"
-"PageDown - Move camera to right level edge\n"
-"Shift + PageUp - Move camera to top level edge\n"
-"Shift + PageDown - Move camera to bottom level edge\n"
-"Ctrl + G - Goto Camera position\n"
-"L - In world editor: toggle walk line visibility\n"
-"N - Step one screen to the right ( Next Screen )\n"
-"P - Step one screen to the left ( Previous Screen )\n"
-"Ctrl + N - Create a new Level\n"
-"Ctrl + L - Load a Level\n"
-"Ctrl + W - Load an Overworld\n"
-"Ctrl + S - Save the current Level/World\n"
-"Ctrl + Shift + S - Save the current Level/World under a new name\n"
-" \n"
-"----- [colour='FFFFCF5F']Objects[colour='FFFFFFFF'] -----\n"
-" \n"
-"M - Cycle selected object(s) through massive types\n"
-"Massive types with their color:\n"
-"   [colour='FFFF2F0F']Massive[colour='FFFFFFFF']-"
-">[colour='FFFFAF2F']Halfmassive[colour='FFFFFFFF']-"
-">[colour='FFDF00FF']Climbable[colour='FFFFFFFF']-"
-">[colour='FF1FFF1F']Passive[colour='FFFFFFFF']->[colour='FF1FFF1F']Front "
-"Passive[colour='FFFFFFFF']\n"
-"O - Enable snap to object mode\n"
-"Ctrl + A - Select all objects\n"
-"Ctrl + X - Cut currently selected objects\n"
-"Ctrl + C - Copy currently selected objects\n"
-"Ctrl + V or Insert - Paste current copied / cutted objects\n"
-"Ctrl + R - Replace the selected basic sprite(s) image with another one\n"
-"Del - If Mouse is over an object: Delete current object\n"
-"Del - If Mouse has nothing selected: Delete selected objects\n"
-"Numpad:\n"
-" + - Bring object to front\n"
-" - - Send object to back\n"
-" 2/4/6/8 - Move selected object 1 pixel into the direction\n"
-"Mouse:\n"
-" Left (Hold) - Drag objects\n"
-" Left (Click) - With shift to select / deselect single objects\n"
-" Right - Delete intersecting Object\n"
-" Middle - Toggle Mover Mode\n"
-" Ctrl + Shift + Left (Click) - Select objects with the same type\n"
-"Arrow keys:\n"
-" Use arrow keys to move around. Press shift for faster movement\n"
-" \n"
+#: ../../src/overworld/world_waypoint.cpp:594
+msgid "UID of the line start point to set Alex onto when taking this exit."
 msgstr ""
-" \n"
-"----- [colour='FFFFCF5F']Allgemein[colour='FFFFFFFF'] -----\n"
-" \n"
-"F1 - Dieses Hilfefenster umschalten\n"
-"F8 - Editor öffnen/schließen\n"
-"F10 - Soundeffekte umschalten\n"
-"F11 - Hintergrundmusik umschalten\n"
-"Pos1 - Alex' Startposition anfliegen\n"
-"Ende - Nacheinander alle Levelausgänge anfliegen\n"
-"BildHoch - Linke Levelkante anfliegen\n"
-"BildAb - Rechte Levelkante anfliegen\n"
-"Shift + BildHoch - Obere Levelkante anfliegen\n"
-"Shift + BildAb - Untere Levelkante anfliegen\n"
-"Strg + G - Kameraposition anfliegen\n"
-"L - Im Welteditor: Liniensichtbarkeit umschalten\n"
-"N - Einen Bildschrim nach rechts (next)\n"
-"P - Einen Bildschirm nach links (previous)\n"
-"Strg + N - Neues Level erstellen\n"
-"Strg + L - Level laden\n"
-"Strg + W - Welt laden\n"
-"Strg + S - Aktuelle/s Level/Welt speichern\n"
-"Strg + Umschalt + S - Aktuelle/s Level/Welt unter neuen Namen speichern\n"
-" \n"
-"----- [colour='FFFFCF5F']Objekte[colour='FFFFFFFF'] -----\n"
-" \n"
-"M - Massivitäten für ausgewählte Objekte durchgehen\n"
-"Massivitäten mit Farbe und Name:\n"
-"   [colour='FFFF2F0F']Massiv[colour='FFFFFFFF']-\n"
-">[colour='FFFFAF2F']Halbmassiv[colour='FFFFFFFF']-\n"
-">[colour='FFDF00FF']Bekletterbar[colour='FFFFFFFF']-\n"
-">[colour='FF1FFF1F']Passiv[colour='FFFFFFFF']->[colour='FF1FFF1F']Front-"
-"Passiv[colour='FFFFFFFF']\n"
-"O - Einrastmodus umschalten\n"
-"Strg + A - Alle objekte auswählen\n"
-"Strg + X - Ausgewählte Objekte ausschneiden\n"
-"Strg + C - Ausgewählte Objekte kopieren\n"
-"Strg + V oder Einfg - Ausgeschnittene/kopierte Objekte einfügen\n"
-"Strg + R - Ausgewählten Basic Sprite mit einem anderen ersetzen\n"
-"Entf - Wenn Maus über Objekt: Dieses Objekt löschen\n"
-"Entf - Wenn Maus nicht über Objekt: Ausgewählte Objekte löschen\n"
-"Ziffernblock:\n"
-" + - Objekte nach vorn\n"
-" - - Objekte nach hinten\n"
-" 2/4/6/8 - Ausgewähltes Objekt 1 Pixel in die angegebene Richtung bewegen\n"
-"Maus:\n"
-" Links (Halten) - Objekte ziehen\n"
-" Links (Klick) - Mit Umschalt um einzelne Objekte an- und abzuwählen\n"
-" Rechts - Überschneidende Objekte löschen\n"
-" Mitte - Bewegungsmodus umschalten\n"
-" Strg + Umschalt + Links (Klick) - Objekte gleichen Typs auswählen\n"
-"Pfeiltasten:\n"
-" Pfeiltasten zum Bewegen der Kamera. Umschalt für schnellere Bewegung.\n"
-" \n"
+"UID des Linienstartpunkts, auf den Alex bei Nutzung dieses Abgangs gesetzt "
+"werden soll."
 
-#: ../../src/core/editor/editor.cpp:1511
+#: ../../src/overworld/world_waypoint.cpp:599
+#: ../../src/overworld/world_waypoint.cpp:601
+#: ../../src/overworld/world_waypoint.cpp:769
+#: ../../src/overworld/world_waypoint.cpp:783
+msgid "Locked"
+msgstr "Nicht freigeschaltet"
+
+#: ../../src/overworld/world_waypoint.cpp:600
+#: ../../src/overworld/world_waypoint.cpp:771
+msgid "Unlocked"
+msgstr "Freigeschaltet"
+
+#: ../../src/overworld/world_waypoint.cpp:604
+msgid "Lock state"
+msgstr "Freischaltstatus"
+
+#: ../../src/overworld/world_waypoint.cpp:604
+msgid ""
+"Is this exit locked by default? PLEASE also set access to enabled on the "
+"target waypoint if you unlock by default!"
+msgstr ""
+"Ist dieser Abgang standardmäßig nicht freigeschaltet? BITTE auch den "
+"Freischaltstatus am Zielwegpunkt setzen, wenn du einen Abgang standardmäßig "
+"freischaltest!"
+
+#: ../../src/overworld/overworld.cpp:50
+msgid "Unnamed"
+msgstr "Unbenannt"
+
+#: ../../src/overworld/overworld.cpp:71
+msgid "Couldn't save world description "
+msgstr "Konnte Welt Beschreibung nicht speichern "
+
+#: ../../src/overworld/overworld.cpp:245
+msgid "Couldn't save world "
+msgstr "Konnte die Welt nicht speichern : "
+
+#: ../../src/overworld/overworld.cpp:250
+#: ../../src/overworld/world_editor.cpp:86
+msgid "World "
+msgstr "Welt "
+
+#: ../../src/overworld/overworld.cpp:466
+msgid "Omega Mode unlocks all waypoints"
+msgstr "Omega-Modus öffnet alle Wegpunkte"
+
+#: ../../src/overworld/world_layer.cpp:50
+msgid "Line Start Point"
+msgstr "Linie Startpunkt"
+
+#: ../../src/overworld/world_layer.cpp:54
+msgid "Line End Point"
+msgstr "Linie Endpunkt"
+
+#: ../../src/overworld/world_layer.cpp:289
+msgid "Waypoint origin"
+msgstr "Wegpunkt Herkunft "
+
+#: ../../src/overworld/world_editor.cpp:67
+msgid "Create a new World"
+msgstr "Erstelle eine neue Welt"
+
+#: ../../src/overworld/world_editor.cpp:67
+#: ../../src/overworld/world_editor.cpp:94
+#: ../../src/overworld/world_editor.cpp:98
+msgctxt "world"
+msgid "Name"
+msgstr "Name"
+
+#: ../../src/overworld/world_editor.cpp:98
+msgid "Load an Overworld"
+msgstr "Lade eine Welt"
+
+#: ../../src/overworld/world_editor.cpp:166
+msgid "Way"
+msgstr "Weg"
+
+#: ../../src/overworld/world_editor.cpp:167
+msgid "Castle"
+msgstr "Burg"
+
+#: ../../src/overworld/world_editor.cpp:173
+msgid "Mountains"
+msgstr "Berge"
+
+#: ../../src/overworld/world_editor.cpp:175
+msgid "Lakes"
+msgstr "Seen"
+
+#: ../../src/overworld/world_editor.cpp:176
+msgid "Bridges"
+msgstr "Brücken"
+
+#: ../../src/overworld/world_editor.cpp:181
+msgid "Generic"
+msgstr "Generisch"
+
+#: ../../src/user/savegame/savegame.cpp:271
+msgid "Savegame "
+msgstr "Spielstand "
+
+#: ../../src/user/savegame/savegame.cpp:271
+msgid " loaded"
+msgstr " Geladen"
+
+#: ../../src/user/savegame/savegame.cpp:436
+msgid "Couldn't save savegame "
+msgstr "Konnte Spielstand nicht speichern "
+
+#: ../../src/user/savegame/savegame.cpp:439
+msgid "Saved to Slot "
+msgstr "Gespeichert in Slot "
+
+#. TRANS: %u is replaced by the number of the save slot, starting with 1.
+#: ../../src/user/savegame/savegame.cpp:505
 #, c-format
-msgid "Change selected sprite's image"
-msgid_plural "Change selected %d sprites' images"
-msgstr[0] "Ändere Bild des ausgewählten Elements"
-msgstr[1] "Ändere Bilder der ausgewählten %d Elemente"
+msgid "%u. Free Save"
+msgstr "%u. Freier Speicherplatz"
 
-#. TRANS: Displayed when hovering over the level finish object in the editor.
-#: ../../src/core/editor/editor.cpp:1575
-msgid "FINISH"
-msgstr "ZIEL"
+#: ../../src/user/savegame/savegame.cpp:527
+msgid " -  Level "
+msgstr " -  Level "
 
-#. TRANS: Displayed when hovering over a level exit without a target level name.
-#. TRANS: Do not translate the "<" and ">".
-#: ../../src/core/editor/editor.cpp:1584
-msgid "<This level>"
-msgstr "<Dieser Level>"
+#: ../../src/user/savegame/savegame.cpp:534
+msgid " -  Unknown"
+msgstr " - Unbekannt"
 
-#: ../../src/core/editor/editor.cpp:1602
-msgid "Passive"
-msgstr "Passiv"
+#: ../../src/user/savegame/savegame.cpp:538
+msgid " - Date "
+msgstr " - Datum "
 
-#: ../../src/core/editor/editor.cpp:1605 ../../src/objects/box.cpp:691
-#: ../../src/objects/box.cpp:696 ../../src/objects/box.cpp:732
-msgid "Massive"
-msgstr "Massiv"
+#: ../../src/user/savegame/savegame_loader.cpp:75
+msgid "No description"
+msgstr "Keine Beschreibung"
 
-#: ../../src/core/editor/editor.cpp:1608
-msgid "Halfmassive"
-msgstr "Halbmassiv"
+#: ../../src/scene/01_prologue.cpp:36
+msgid ""
+"The sinking sun sent out its last colourful beams over the Eastern Desert "
+"when a single individual was making his way through the ups and downs of the "
+"sandy dunes."
+msgstr ""
+"Die sinkende Sonne sandte ihre letzten rotgoldenen Strahlen über die "
+"Östliche Wüste, während sich ein einzelnes Individuum seinem Weg durch das "
+"Auf und Ab der sandigen Dünen bahnte."
 
-#: ../../src/core/editor/editor.cpp:1611
-msgid "Climbable"
-msgstr "Bekletterbar"
+#: ../../src/scene/01_prologue.cpp:37
+msgid ""
+"When he reached the top of the highest dune, he gazed around, but to only "
+"see sand followed by more sand, by even more "
+"[colour='FFFFF000']sand[colour='FFFFFFFF']."
+msgstr ""
+"Als der Mann den Gipfel der höchsten Düne erreichte, sah er sich um, doch "
+"war alles was er sah: Sand, Sand, und noch mehr "
+"[colour='FFFFF000']Sand[colour='FFFFFFFF']."
 
-#: ../../src/core/editor/editor.cpp:1614
-msgid "Front Passive"
-msgstr "Front-Passiv"
+#: ../../src/scene/01_prologue.cpp:38
+msgid ""
+"He took out a map, but with the stars not yet visible on the darkening sky "
+"there was no means of orientation in this infinite sea of equally hostile "
+"sand dunes."
+msgstr ""
+"Er zog eine Landkarte hervor, aber angesichts der noch nicht am dämmernden "
+"Himmel sichtbaren Sterne gab es keine Möglichkeit einer Orientierung in "
+"diesem unendlichen Meer lebensfeindlichen Sandes."
 
 #: ../../src/core/game_core.cpp:251
 msgid "Loading Level failed : "
@@ -1782,671 +2273,177 @@ msgstr "grau"
 msgid "violet"
 msgstr "violett"
 
-#: ../../src/objects/level_exit.cpp:208 ../../src/objects/level_entry.cpp:133
-msgid " Beam"
-msgstr " Beam"
+#. TRANS: Editor left menu 1st tab heading. Keep this short.
+#: ../../src/core/editor/editor.cpp:71
+msgid "Menu"
+msgstr "Menü"
 
-#: ../../src/objects/level_exit.cpp:211 ../../src/objects/level_entry.cpp:136
-msgid " Warp"
-msgstr " Warp"
+#. TRANS: Editor left menu 2nd tab heading. Keep this short.
+#: ../../src/core/editor/editor.cpp:73
+msgid "Items"
+msgstr "Ggst"
 
-#: ../../src/objects/level_exit.cpp:485
-msgid "Direction to move in"
-msgstr "Die Richtung zum hereingehen"
+#. TRANS: Editor left menu 3rd tab heading. Keep this short.
+#: ../../src/core/editor/editor.cpp:75
+msgid "Selector"
+msgstr "Auswahl"
 
-#: ../../src/objects/level_exit.cpp:510
-msgid "Motion"
-msgstr "Bewegung"
+#: ../../src/core/editor/editor.cpp:99
+msgid "Selection"
+msgstr "Auswahl"
 
-#: ../../src/objects/level_exit.cpp:510
-msgid "Camera Motion"
-msgstr "Kamera Bewegung"
+#. TRANS: Title of the editor help window
+#: ../../src/core/editor/editor.cpp:437
+msgid "Editor Help"
+msgstr "Hilfe zum Editor"
 
-#: ../../src/objects/level_exit.cpp:514
-msgid "Destination Level"
-msgstr "Ziel Level"
-
-#: ../../src/objects/level_exit.cpp:514
+#. TRANS: This is the help window in the editor. Do not translate
+#. TRANS: the color codes in the string.
+#: ../../src/core/editor/editor.cpp:451
 msgid ""
-"Name of the level that should be entered. If empty uses the current level."
+" \n"
+"----- [colour='FFFFCF5F']General[colour='FFFFFFFF'] -----\n"
+" \n"
+"F1 - Toggle this Help Window\n"
+"F8 - Open/Close the Editor\n"
+"F10 - Toggle sound effects\n"
+"F11 - Toggle music play\n"
+"Home - Focus Alex' start position\n"
+"End - Cycle camera focus through level exits\n"
+"PageUp - Move camera to left level edge\n"
+"PageDown - Move camera to right level edge\n"
+"Shift + PageUp - Move camera to top level edge\n"
+"Shift + PageDown - Move camera to bottom level edge\n"
+"Ctrl + G - Goto Camera position\n"
+"L - In world editor: toggle walk line visibility\n"
+"N - Step one screen to the right ( Next Screen )\n"
+"P - Step one screen to the left ( Previous Screen )\n"
+"Ctrl + N - Create a new Level\n"
+"Ctrl + L - Load a Level\n"
+"Ctrl + W - Load an Overworld\n"
+"Ctrl + S - Save the current Level/World\n"
+"Ctrl + Shift + S - Save the current Level/World under a new name\n"
+" \n"
+"----- [colour='FFFFCF5F']Objects[colour='FFFFFFFF'] -----\n"
+" \n"
+"M - Cycle selected object(s) through massive types\n"
+"Massive types with their color:\n"
+"   [colour='FFFF2F0F']Massive[colour='FFFFFFFF']-"
+">[colour='FFFFAF2F']Halfmassive[colour='FFFFFFFF']-"
+">[colour='FFDF00FF']Climbable[colour='FFFFFFFF']-"
+">[colour='FF1FFF1F']Passive[colour='FFFFFFFF']->[colour='FF1FFF1F']Front "
+"Passive[colour='FFFFFFFF']\n"
+"O - Enable snap to object mode\n"
+"Ctrl + A - Select all objects\n"
+"Ctrl + X - Cut currently selected objects\n"
+"Ctrl + C - Copy currently selected objects\n"
+"Ctrl + V or Insert - Paste current copied / cutted objects\n"
+"Ctrl + R - Replace the selected basic sprite(s) image with another one\n"
+"Del - If Mouse is over an object: Delete current object\n"
+"Del - If Mouse has nothing selected: Delete selected objects\n"
+"Numpad:\n"
+" + - Bring object to front\n"
+" - - Send object to back\n"
+" 2/4/6/8 - Move selected object 1 pixel into the direction\n"
+"Mouse:\n"
+" Left (Hold) - Drag objects\n"
+" Left (Click) - With shift to select / deselect single objects\n"
+" Right - Delete intersecting Object\n"
+" Middle - Toggle Mover Mode\n"
+" Ctrl + Shift + Left (Click) - Select objects with the same type\n"
+"Arrow keys:\n"
+" Use arrow keys to move around. Press shift for faster movement\n"
+" \n"
 msgstr ""
-"Name des Levels welches betreten werden soll. Falls leer wird das aktuelle "
-"Level benutzt."
-
-#: ../../src/objects/level_exit.cpp:521
-msgid "Destination Entry"
-msgstr "Ziel Eingang"
-
-#: ../../src/objects/level_exit.cpp:521
-msgid ""
-"Name of the Entry in the destination level. If empty the entry point is the "
-"player start position."
-msgstr ""
-"Name des Eingangs im Ziel Level. Falls leer ist der Eingangspunkt die "
-"Spieler Position."
-
-#: ../../src/objects/level_exit.cpp:528
-msgid "Return Level"
-msgstr "Rückkehr-Level"
-
-#: ../../src/objects/level_exit.cpp:528
-msgid "Name of the level that should be pushed onto return stack."
-msgstr "Name des Levels, welches auf den Rückkehr-Stack gelegt werden soll."
-
-#: ../../src/objects/level_exit.cpp:535
-msgid "Return Entry"
-msgstr "Rückkehr-Eingang"
-
-#: ../../src/objects/level_exit.cpp:535
-msgid "Name of the Entry in the return level."
-msgstr "Name des Eingangs im Level für die Rückkehr."
-
-#: ../../src/objects/level_exit.cpp:542
-msgid "Exit Name"
-msgstr "Name des Ausgangs"
-
-#: ../../src/objects/level_exit.cpp:542
-msgid ""
-"Name of the Exit (use this in the overworld editor to set the path selected "
-"by this exit)."
-msgstr ""
-"Name des Ausgangs (wird vom Welt-Editor benutzt, um den abgehenden Pfad zu "
-"ermitteln)"
-
-#: ../../src/objects/level_exit.cpp:549
-#: ../../src/objects/moving_platform.cpp:943 ../../src/enemies/static.cpp:330
-msgid "Path Identifier"
-msgstr "Pfad Identifizierer"
-
-#: ../../src/objects/level_exit.cpp:549
-msgid "Name of the Path to use for the camera movement."
-msgstr "Name des Pfades welcher für die Kamera Bewegung benutzt wird."
-
-#: ../../src/objects/sprite.cpp:1454 ../../src/enemies/static.cpp:315
-msgid "Image"
-msgstr "Bild"
-
-#: ../../src/objects/enemystopper.cpp:61
-msgid "Enemystopper"
-msgstr "Gegner stopper"
-
-#: ../../src/objects/spinbox.cpp:49
-msgid "Spinbox"
-msgstr "Drehbox"
-
-#: ../../src/objects/text_box.cpp:64
-msgid "Text Box"
-msgstr "Textbox"
-
-#: ../../src/objects/text_box.cpp:239
-msgid "Text"
-msgstr "Text"
-
-#: ../../src/objects/text_box.cpp:239
-msgid "Text to display when activated"
-msgstr "Text zum anzeigen wenn aktiviert"
-
-#: ../../src/objects/moving_platform.cpp:939 ../../src/objects/path.cpp:745
-msgid "Move Type"
-msgstr "Bewegungs Typ"
-
-#: ../../src/objects/moving_platform.cpp:939
-msgid "Movement type."
-msgstr "Bewegungs Typ."
-
-#: ../../src/objects/moving_platform.cpp:943 ../../src/enemies/static.cpp:330
-msgid "Name of the Path to move along."
-msgstr "Name des Pfades zum entlang bewegen."
-
-#: ../../src/objects/moving_platform.cpp:958 ../../src/enemies/beetle.cpp:270
-#: ../../src/enemies/furball.cpp:746 ../../src/enemies/krush.cpp:385
-#: ../../src/enemies/spikeball.cpp:515 ../../src/enemies/larry.cpp:422
-#: ../../src/enemies/bosses/turtle_boss.cpp:1006 ../../src/enemies/gee.cpp:573
-#: ../../src/enemies/army.cpp:927
-msgid "Starting direction."
-msgstr "Anfangs Richtung."
-
-#: ../../src/objects/moving_platform.cpp:962 ../../src/enemies/thromp.cpp:697
-#: ../../src/enemies/gee.cpp:577 ../../src/enemies/flyon.cpp:578
-msgid "Distance"
-msgstr "Distanz"
-
-#: ../../src/objects/moving_platform.cpp:962
-msgid ""
-"Movable distance into its direction if type is line or radius if circle."
-msgstr ""
-"Bewegbare Distanz in seine Richtung wenn der typ linie ist oder radius wenn "
-"kreis."
-
-#: ../../src/objects/moving_platform.cpp:970 ../../src/enemies/static.cpp:337
-#: ../../src/enemies/rokko.cpp:585 ../../src/enemies/thromp.cpp:705
-#: ../../src/enemies/flyon.cpp:586
-msgid "Speed"
-msgstr "Geschwindigkeit"
-
-#: ../../src/objects/moving_platform.cpp:970 ../../src/enemies/static.cpp:337
-msgid "Maximum speed"
-msgstr "Maximale Geschwindigkeit"
-
-#: ../../src/objects/moving_platform.cpp:978
-msgid "Touch time"
-msgstr "Kontakt Zeit"
-
-#: ../../src/objects/moving_platform.cpp:978
-msgid "Time when touched until shaking starts"
-msgstr "Zeit wenn berührt bis das rütteln anfängt"
-
-#: ../../src/objects/moving_platform.cpp:986
-msgid "Shake time"
-msgstr "Rüttel Zeit"
-
-#: ../../src/objects/moving_platform.cpp:986
-msgid "Time it's shaking until falling"
-msgstr "Rüttel Zeit bis es fällt"
-
-#: ../../src/objects/moving_platform.cpp:994
-msgid "Touch move time"
-msgstr "Kontakt Bewegungs Zeit"
-
-#: ../../src/objects/moving_platform.cpp:994
-msgid "If set does not move until this time has elapsed after touched"
-msgstr ""
-"Falls gesetzt bewegt es sich nicht sondern erst nach dieser zeit bei einer "
-"Berührung"
-
-#: ../../src/objects/moving_platform.cpp:1002
-msgid "Hor image count"
-msgstr "Hor Bilder Anzahl "
-
-#: ../../src/objects/moving_platform.cpp:1002
-msgid "Horizontal middle image count"
-msgstr "Horizontal mittlere Bilder Anzahl"
-
-#: ../../src/objects/moving_platform.cpp:1012
-msgid "Image top left"
-msgstr "Bild oben Links"
-
-#: ../../src/objects/moving_platform.cpp:1019
-msgid "Image top middle"
-msgstr "Bild oben Mitte"
-
-#: ../../src/objects/moving_platform.cpp:1026
-msgid "Image top right"
-msgstr "Bild oben Rechts"
-
-#: ../../src/objects/moving_platform.cpp:1229
-msgid "Falling "
-msgstr "Fallende "
-
-#: ../../src/objects/moving_platform.cpp:1232
-msgid "Delayed "
-msgstr "Verzögerte "
-
-#: ../../src/objects/moving_platform.cpp:1235
-msgid "Moving "
-msgstr "Bewegende "
-
-#: ../../src/objects/moving_platform.cpp:1238
-msgid "Platform - "
-msgstr "Plattform - "
-
-#: ../../src/objects/secret_area.cpp:176
-msgid "You found a secret area!"
-msgstr "Du hast ein Versteck gefunden!"
-
-#: ../../src/objects/level_entry.cpp:369
-msgid "The direction to come out"
-msgstr "Die Richtung zum herauskommen"
-
-#: ../../src/objects/level_entry.cpp:374
-msgid "Name for identification"
-msgstr "Name zur Identifizierung"
-
-#: ../../src/objects/box.cpp:53
-msgid "Box"
-msgstr "Box"
-
-#: ../../src/objects/box.cpp:681
-msgid "Useable Count"
-msgstr "Verwendbar"
-
-#: ../../src/objects/box.cpp:692 ../../src/objects/box.cpp:699
-#: ../../src/objects/box.cpp:735
-msgid "Ghost"
-msgstr "Geist"
-
-#: ../../src/objects/box.cpp:693 ../../src/objects/box.cpp:702
-#: ../../src/objects/box.cpp:738
-msgid "Semi Massive"
-msgstr "Teil Massiv"
-
-#: ../../src/objects/box.cpp:709
-msgid "Invisible"
-msgstr "Unsichtbar"
-
-#: ../../src/objects/box.cpp:709
-msgid ""
-"Massive is invisible until activated.\n"
-"Ghost is only visible and activateable if in ghost mode.\n"
-"Semi Massive is like Massive but only touchable in the activation direction."
-msgstr ""
-"Massiv ist unsichtbar bis aktiviert.\n"
-"Geist ist nur sichtbar im Geist Modus.\n"
-"Teil Massiv ist wie Massiv aber nur berührbar in die Aktivierungsrichtung."
-
-#: ../../src/objects/box.cpp:753
-msgid "(Invisible)"
-msgstr "(Unsichtbar)"
-
-#: ../../src/objects/box.cpp:756
-msgid "(Ghost block)"
-msgstr "(Geistblock)"
-
-#: ../../src/objects/box.cpp:759
-msgid "(Invisible Semi Massive)"
-msgstr "(Unsichtbar Teilmassiv) "
-
-#: ../../src/objects/goldpiece.cpp:106
-msgid "Red Falling Jewel"
-msgstr "Rotes Fallendes Juwel"
-
-#: ../../src/objects/goldpiece.cpp:112
-msgid "Falling Jewel"
-msgstr "Fallendes Juwel"
-
-#: ../../src/objects/goldpiece.cpp:119
-msgid "Red Jewel"
-msgstr "Rotes Juwel"
-
-#: ../../src/objects/goldpiece.cpp:125 ../../src/objects/bonusbox.cpp:466
-#: ../../src/objects/bonusbox.cpp:488 ../../src/objects/bonusbox.cpp:595
-msgid "Jewel"
-msgstr "Juwel"
-
-#: ../../src/objects/path.cpp:482
-msgid "Path"
-msgstr "Pfad"
-
-#: ../../src/objects/path.cpp:712
-msgid "Identifier"
-msgstr "Identifizierer"
-
-#: ../../src/objects/path.cpp:712
-msgid ""
-"Identifier name of the Path. This is needed for objects that can link to "
-"this."
-msgstr ""
-"Identifizierender Name des Pfades. Das ist erforderlich damit Objekte sich "
-"hierhin verlinken können."
-
-#: ../../src/objects/path.cpp:729
-msgid "Show Line"
-msgstr "Zeige Linie"
-
-#: ../../src/objects/path.cpp:729
-msgid "Wether or not to show the path's moving line ingame."
-msgstr "Soll die Linie des Pfad im Spiel angezeigt werden?"
-
-#: ../../src/objects/path.cpp:745
-msgid ""
-"Movement type. Mirror moves forth and back and rewind starts from the "
-"beginning again."
-msgstr ""
-"Bewegungs Typ. Mirror bewegt sich bis zum ende und dreht um, rewind fängt "
-"vom anfang wieder an."
-
-#: ../../src/objects/path.cpp:757
-msgid "Segment"
-msgstr "Segment"
-
-#: ../../src/objects/path.cpp:757
-msgid "Select the Segment to edit."
-msgstr "Wähle das Segment zum editieren."
-
-#: ../../src/objects/path.cpp:761
-msgid "Add a Segment after the selected one."
-msgstr "Füge ein Segment nach dem ausgewählten hinzu."
-
-#: ../../src/objects/path.cpp:763
-msgid "Add"
-msgstr "Erstellen"
-
-#: ../../src/objects/path.cpp:768
-msgid "Delete the selected Segment."
-msgstr "Lösche das ausgewählte Segment."
-
-#: ../../src/objects/path.cpp:775
-msgid "Pos X1"
-msgstr "Pos X1"
-
-#: ../../src/objects/path.cpp:775
-msgid "Line position X1"
-msgstr "Linie Position X1"
-
-#: ../../src/objects/path.cpp:783
-msgid "Y1"
-msgstr "Y1"
-
-#: ../../src/objects/path.cpp:783
-msgid "Line position Y1"
-msgstr "Linie Position Y1"
-
-#: ../../src/objects/path.cpp:791
-msgid "Pos X2"
-msgstr "Pos X2"
-
-#: ../../src/objects/path.cpp:791
-msgid "Line position X2"
-msgstr "Linie Position X2"
-
-#: ../../src/objects/path.cpp:799
-msgid "Y2"
-msgstr "Y2"
-
-#: ../../src/objects/path.cpp:799
-msgid "Line position Y2"
-msgstr "Linie Position Y2"
-
-#: ../../src/objects/crate.cpp:59
-msgid "Crate"
-msgstr "Kiste"
-
-#: ../../src/objects/star.cpp:64 ../../src/objects/bonusbox.cpp:465
-#: ../../src/objects/bonusbox.cpp:485 ../../src/objects/bonusbox.cpp:592
-msgid "Lemon"
-msgstr "Zitrone"
-
-#: ../../src/objects/powerup.cpp:224 ../../src/objects/bonusbox.cpp:460
-#: ../../src/objects/bonusbox.cpp:470 ../../src/objects/bonusbox.cpp:577
-msgid "Berry"
-msgstr "Beere"
-
-#: ../../src/objects/powerup.cpp:228
-msgid "Life berry"
-msgstr "Lebensbeere"
-
-#: ../../src/objects/powerup.cpp:232 ../../src/objects/bonusbox.cpp:467
-#: ../../src/objects/bonusbox.cpp:491 ../../src/objects/bonusbox.cpp:598
-msgid "Poisonous berry"
-msgstr "Giftige Beere"
-
-#: ../../src/objects/powerup.cpp:236 ../../src/objects/bonusbox.cpp:462
-#: ../../src/objects/bonusbox.cpp:476 ../../src/objects/bonusbox.cpp:583
-msgid "Ice berry"
-msgstr "Eisbeere"
-
-#: ../../src/objects/powerup.cpp:240 ../../src/objects/bonusbox.cpp:463
-#: ../../src/objects/bonusbox.cpp:479 ../../src/objects/bonusbox.cpp:586
-msgid "Ghost berry"
-msgstr "Geistbeere"
-
-#: ../../src/objects/powerup.cpp:449
-msgid "Fireberry"
-msgstr "Feuerbeere"
-
-#: ../../src/objects/powerup.cpp:553
-msgid "Cookie (3-UP)"
-msgstr "Keks (+3)"
-
-#: ../../src/objects/lava.cpp:55 ../../src/enemies/gee.cpp:684
-msgid "Lava"
-msgstr "Lava"
-
-#: ../../src/objects/bonusbox.cpp:79 ../../src/objects/bonusbox.cpp:152
-msgid "Bonusbox Empty"
-msgstr "Bonusbox Leer"
-
-#: ../../src/objects/bonusbox.cpp:161
-msgid "Bonusbox Berry"
-msgstr "Bonusbox Beere"
-
-#: ../../src/objects/bonusbox.cpp:165
-msgid "Bonusbox Fire berry"
-msgstr "Bonusbox Feuerbeere"
-
-#: ../../src/objects/bonusbox.cpp:169
-msgid "Bonusbox Ice berry"
-msgstr "Bonusbox Eisbeere"
-
-#: ../../src/objects/bonusbox.cpp:173
-msgid "Bonusbox Ghost berry"
-msgstr "Bonusbox Geistbeere"
-
-#: ../../src/objects/bonusbox.cpp:177
-msgid "Bonusbox 1-Up berry"
-msgstr "Bonusbox +1-Beere"
-
-#: ../../src/objects/bonusbox.cpp:181
-msgid "Bonusbox Lemon"
-msgstr "Bonusbox Zitrone"
-
-#: ../../src/objects/bonusbox.cpp:193
-msgid "Bonusbox Poisonous berry"
-msgstr "Bonusbox Giftige Beere"
-
-#: ../../src/objects/bonusbox.cpp:241
-msgid "Bonusbox Jewel"
-msgstr "Bonusbox Juwel"
-
-#: ../../src/objects/bonusbox.cpp:245
-msgid "Bonusbox Red Jewel"
-msgstr "Bonusbox Rotes Juwel"
-
-#: ../../src/objects/bonusbox.cpp:453
-msgid "Animation"
-msgstr "Animation"
-
-#: ../../src/objects/bonusbox.cpp:453
-msgid ""
-"Use the Power animation if the box has a good or needed item for this level"
-msgstr ""
-"Benutze die Power Animation falls die box ein gutes oder benötigten "
-"Gegenstand enthält"
-
-#: ../../src/objects/bonusbox.cpp:461 ../../src/objects/bonusbox.cpp:473
-#: ../../src/objects/bonusbox.cpp:580
-msgid "Fire berry"
-msgstr "Feuerbeere"
-
-#: ../../src/objects/bonusbox.cpp:464 ../../src/objects/bonusbox.cpp:482
-#: ../../src/objects/bonusbox.cpp:589
-msgid "1-UP berry"
-msgstr "+1-Beere"
-
-#: ../../src/objects/bonusbox.cpp:501
-msgid "The item that gets spawned"
-msgstr "Der Gegenstand welcher erschaffen wird"
-
-#: ../../src/objects/bonusbox.cpp:517
-msgid "Force item"
-msgstr "Erzwinge Gegenstand"
-
-#: ../../src/objects/bonusbox.cpp:517
-msgid "Force best available item when activated"
-msgstr "Erzwinge den bestmöglichen Gegenstand wenn aktiviert"
-
-#: ../../src/objects/bonusbox.cpp:527
-msgid "Jewel color"
-msgstr "Juwelfarbe"
-
-#: ../../src/objects/bonusbox.cpp:527
-msgid "Jewel color if the item is a jewel"
-msgstr "Juwelfarbe falls der Gegenstand ein Juwel ist"
-
-#: ../../src/enemies/pip.cpp:369
-msgid "Starting direction"
-msgstr "Startrichtung"
-
-#: ../../src/enemies/beetle.cpp:281
-msgid "Color"
-msgstr "Farbe"
-
-#: ../../src/enemies/beetle.cpp:281
-msgid "Color."
-msgstr "Farbe."
-
-#: ../../src/enemies/eato.cpp:288 ../../src/enemies/thromp.cpp:690
-#: ../../src/enemies/flyon.cpp:571
-msgid "Image directory"
-msgstr "Bilder Verzeichnis"
-
-#: ../../src/enemies/eato.cpp:288 ../../src/enemies/thromp.cpp:690
-#: ../../src/enemies/flyon.cpp:571
-msgid "Directory containing the images"
-msgstr "Verzeichnis welches die Bilder enthält"
-
-#: ../../src/enemies/furball.cpp:754
-#: ../../src/enemies/bosses/turtle_boss.cpp:1018
-msgid "Downgrades"
-msgstr "Herunterstufungen"
-
-#: ../../src/enemies/furball.cpp:754
-#: ../../src/enemies/bosses/turtle_boss.cpp:1018
-msgid "Downgrades until death"
-msgstr "Herunterstufungen vor dem Niedergang"
-
-#: ../../src/enemies/furball.cpp:764
-#: ../../src/enemies/bosses/turtle_boss.cpp:1045
-msgid "End Level"
-msgstr "Level beenden"
-
-#: ../../src/enemies/furball.cpp:764
-#: ../../src/enemies/bosses/turtle_boss.cpp:1045
-msgid "End the level if it is killed."
-msgstr "Der Level wird beendet, wenn dieser Gegner besiegt wird."
-
-#: ../../src/enemies/furball.cpp:820
-msgid "Boss"
-msgstr "Endgegner"
-
-#: ../../src/enemies/static.cpp:322
-msgid "Rotation Speed"
-msgstr "Rotations Geschwindigkeit"
-
-#: ../../src/enemies/static.cpp:357
-msgid "Fire Resistant"
-msgstr "Feuer Resistenz"
-
-#: ../../src/enemies/static.cpp:357
-msgid "If it is resistant against fire"
-msgstr "Ob es gegen Feuer resistent ist"
-
-#: ../../src/enemies/static.cpp:361
-msgid "Ice Resistance"
-msgstr "Eis Resistenz"
-
-#: ../../src/enemies/static.cpp:361
-msgid "Resistance against Ice (0.0-1.0)"
-msgstr "Resistenz gegen Eis (0.0-1.0)"
-
-#: ../../src/enemies/beetle_barrage.cpp:356 ../../src/enemies/gee.cpp:609
-msgid "Fly distance"
-msgstr "Flug Distanz"
-
-#: ../../src/enemies/beetle_barrage.cpp:356
-msgid "Initial beetle flying distance"
-msgstr "Entfernung, die die Käfer zurücklegen"
-
-#: ../../src/enemies/beetle_barrage.cpp:363
-msgid "Action range"
-msgstr "Aktionsbereich"
-
-#: ../../src/enemies/beetle_barrage.cpp:363
-msgid "Radius in which it reacts on Alex"
-msgstr "Radius, in dem es auf Alex reagiert"
-
-#: ../../src/enemies/beetle_barrage.cpp:369
-msgid "Count"
-msgstr "Anzahl"
-
-#: ../../src/enemies/beetle_barrage.cpp:369
-msgid "Number of beetles spit out at a time"
-msgstr "Anzahl an Käfern, die gleichzeitig ausgestoßen werden"
-
-#: ../../src/enemies/rokko.cpp:581 ../../src/enemies/thromp.cpp:686
-#: ../../src/enemies/flyon.cpp:567
-msgid "Direction it moves into."
-msgstr "Richtung in die es sich bewegt."
-
-#: ../../src/enemies/rokko.cpp:585 ../../src/enemies/thromp.cpp:705
-msgid "Speed when activated"
-msgstr "Geschwindigkeit wenn aktiviert"
-
-#: ../../src/enemies/bosses/turtle_boss.cpp:1010
-msgid "Hits"
-msgstr "Treffer"
-
-#: ../../src/enemies/bosses/turtle_boss.cpp:1010
-msgid "Hits until a downgrade"
-msgstr "Treffer vor einem herunterstufen"
-
-#: ../../src/enemies/bosses/turtle_boss.cpp:1026
-msgid "Shell Time"
-msgstr "Panzer Zeit"
-
-#: ../../src/enemies/bosses/turtle_boss.cpp:1026
-msgid "Time running as shell to rise again"
-msgstr "Zeit als fahrender Panzer vor dem aufstehen"
-
-#: ../../src/enemies/thromp.cpp:697
-msgid "Detection distance into its direction"
-msgstr "Erkennungs Distanz in seine Richtung"
-
-#: ../../src/enemies/gee.cpp:577
-msgid "Movable distance"
-msgstr "Maximale bewegbare Distanz"
-
-#: ../../src/enemies/gee.cpp:588
-msgid "Always fly"
-msgstr "Fliege immer"
-
-#: ../../src/enemies/gee.cpp:588
-msgid "Move without stopping at the fly distance"
-msgstr "Bewege ohne zu halten in der Flug Distanz"
-
-#: ../../src/enemies/gee.cpp:601
-msgid "Wait time"
-msgstr "Wartezeit"
-
-#: ../../src/enemies/gee.cpp:601
-msgid "Time to wait until moving again after a stop"
-msgstr "Wartezeit bis zur Bewegung bei jedem halt"
-
-#: ../../src/enemies/gee.cpp:609
-msgid "The distance to move each time"
-msgstr "Die sich jedes mal zu bewegende Distanz"
-
-#: ../../src/enemies/gee.cpp:681
-msgid "Electro"
-msgstr "Elektro"
-
-#: ../../src/enemies/gee.cpp:687
-msgid "Venom"
-msgstr "Gift"
-
-#: ../../src/enemies/flyon.cpp:578
-msgid "Movable Distance into its direction"
-msgstr "Bewegbare Distanz in seine Richtung"
-
-#: ../../src/enemies/flyon.cpp:586
-msgid "Initial speed when jumping out"
-msgstr "Anfangsgeschwindigkeit beim herausspringen"
-
-#: ../../src/input/mouse.cpp:1149
-msgid "Snap to object mode enabled"
-msgstr "Einrastmodus aktiviert"
-
-#: ../../src/input/mouse.cpp:1152
-msgid "Snap to object mode disabled"
-msgstr "Einrastmodus deaktiviert"
-
-#: ../../src/input/keyboard.cpp:256
-msgid "Debug mode disabled"
-msgstr "Debug-Modus deaktiviert"
-
-#: ../../src/input/keyboard.cpp:262
-msgid "Debug mode enabled"
-msgstr "Debug-Modus aktiviert"
+" \n"
+"----- [colour='FFFFCF5F']Allgemein[colour='FFFFFFFF'] -----\n"
+" \n"
+"F1 - Dieses Hilfefenster umschalten\n"
+"F8 - Editor öffnen/schließen\n"
+"F10 - Soundeffekte umschalten\n"
+"F11 - Hintergrundmusik umschalten\n"
+"Pos1 - Alex' Startposition anfliegen\n"
+"Ende - Nacheinander alle Levelausgänge anfliegen\n"
+"BildHoch - Linke Levelkante anfliegen\n"
+"BildAb - Rechte Levelkante anfliegen\n"
+"Shift + BildHoch - Obere Levelkante anfliegen\n"
+"Shift + BildAb - Untere Levelkante anfliegen\n"
+"Strg + G - Kameraposition anfliegen\n"
+"L - Im Welteditor: Liniensichtbarkeit umschalten\n"
+"N - Einen Bildschrim nach rechts (next)\n"
+"P - Einen Bildschirm nach links (previous)\n"
+"Strg + N - Neues Level erstellen\n"
+"Strg + L - Level laden\n"
+"Strg + W - Welt laden\n"
+"Strg + S - Aktuelle/s Level/Welt speichern\n"
+"Strg + Umschalt + S - Aktuelle/s Level/Welt unter neuen Namen speichern\n"
+" \n"
+"----- [colour='FFFFCF5F']Objekte[colour='FFFFFFFF'] -----\n"
+" \n"
+"M - Massivitäten für ausgewählte Objekte durchgehen\n"
+"Massivitäten mit Farbe und Name:\n"
+"   [colour='FFFF2F0F']Massiv[colour='FFFFFFFF']-\n"
+">[colour='FFFFAF2F']Halbmassiv[colour='FFFFFFFF']-\n"
+">[colour='FFDF00FF']Bekletterbar[colour='FFFFFFFF']-\n"
+">[colour='FF1FFF1F']Passiv[colour='FFFFFFFF']->[colour='FF1FFF1F']Front-Passiv[colour='FFFFFFFF']\n"
+"O - Einrastmodus umschalten\n"
+"Strg + A - Alle objekte auswählen\n"
+"Strg + X - Ausgewählte Objekte ausschneiden\n"
+"Strg + C - Ausgewählte Objekte kopieren\n"
+"Strg + V oder Einfg - Ausgeschnittene/kopierte Objekte einfügen\n"
+"Strg + R - Ausgewählten Basic Sprite mit einem anderen ersetzen\n"
+"Entf - Wenn Maus über Objekt: Dieses Objekt löschen\n"
+"Entf - Wenn Maus nicht über Objekt: Ausgewählte Objekte löschen\n"
+"Ziffernblock:\n"
+" + - Objekte nach vorn\n"
+" - - Objekte nach hinten\n"
+" 2/4/6/8 - Ausgewähltes Objekt 1 Pixel in die angegebene Richtung bewegen\n"
+"Maus:\n"
+" Links (Halten) - Objekte ziehen\n"
+" Links (Klick) - Mit Umschalt um einzelne Objekte an- und abzuwählen\n"
+" Rechts - Überschneidende Objekte löschen\n"
+" Mitte - Bewegungsmodus umschalten\n"
+" Strg + Umschalt + Links (Klick) - Objekte gleichen Typs auswählen\n"
+"Pfeiltasten:\n"
+" Pfeiltasten zum Bewegen der Kamera. Umschalt für schnellere Bewegung.\n"
+" \n"
+
+#: ../../src/core/editor/editor.cpp:1511
+#, c-format
+msgid "Change selected sprite's image"
+msgid_plural "Change selected %d sprites' images"
+msgstr[0] "Ändere Bild des ausgewählten Elements"
+msgstr[1] "Ändere Bilder der ausgewählten %d Elemente"
+
+#. TRANS: Displayed when hovering over the level finish object in the editor.
+#: ../../src/core/editor/editor.cpp:1575
+msgid "FINISH"
+msgstr "ZIEL"
+
+#. TRANS: Displayed when hovering over a level exit without a target level name.
+#. TRANS: Do not translate the "<" and ">".
+#: ../../src/core/editor/editor.cpp:1584
+msgid "<This level>"
+msgstr "<Dieser Level>"
+
+#: ../../src/core/editor/editor.cpp:1602
+msgid "Passive"
+msgstr "Passiv"
+
+#: ../../src/core/editor/editor.cpp:1608
+msgid "Halfmassive"
+msgstr "Halbmassiv"
+
+#: ../../src/core/editor/editor.cpp:1611
+msgid "Climbable"
+msgstr "Bekletterbar"
+
+#: ../../src/core/editor/editor.cpp:1614
+msgid "Front Passive"
+msgstr "Front-Passiv"
+
+#~ msgid "Version "
+#~ msgstr "Version "
 
 #~ msgid "Massive - "
 #~ msgstr "Massiv - "

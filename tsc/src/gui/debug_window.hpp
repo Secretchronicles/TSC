@@ -1,7 +1,7 @@
 /***************************************************************************
  * debug_window.hpp
  *
- * Copyright © 2012-2019 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify

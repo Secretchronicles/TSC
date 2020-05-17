@@ -12,7 +12,7 @@ post_remove() {
     gtk-update-icon-cache -q -t -f usr/share/icons/hicolor
 }
 
-# Copyright © 2012-2017 The TSC Contributors
+# Copyright © 2012-2020 The TSC Contributors
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
