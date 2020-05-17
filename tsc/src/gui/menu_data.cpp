@@ -3188,11 +3188,17 @@ bool cMenu_Savegames::Button_Save_Clicked(const CEGUI::EventArgs& event)
         return true;
     }
 
+    CEGUI::Window* p_tab = m_gui_window->getChild("savegame_tabcontrol");
     CEGUI::Listbox* p_listbox = static_cast<CEGUI::Listbox*>(m_gui_window->getChild("savegame_tabcontrol/tab_savegame/savegame_listbox"));
     CEGUI::ListboxItem* p_item = p_listbox->getFirstSelectedItem();
     int slot = p_listbox->getItemIndex(p_item) + 1;
 
+    // Ask the user for the savegame description while preventing him
+    // from interacting with the save menu again (would cause severe
+    // confusion).
+    p_tab->disable();
     std::string description = Set_Save_Description(slot);
+    p_tab->enable();
 
     pFramerate->Reset();
 
