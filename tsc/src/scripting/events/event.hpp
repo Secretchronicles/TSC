@@ -1,7 +1,7 @@
 /***************************************************************************
  * base_class.hpp - Base class for all events
  *
- * Copyright © 2012-2017 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************
  *
  * This program is free software; you can redistribute it and/or modify

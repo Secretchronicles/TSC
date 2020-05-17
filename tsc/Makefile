@@ -2,7 +2,7 @@
 #############################################################################
 # Makefile  -  Make instruction file
 #
-# Copyright © 2012-2019 The TSC Contributors
+# Copyright © 2012-2020 The TSC Contributors
 #############################################################################
 #
 # This program is free software; you can redistribute it and/or modify
@@ -73,7 +73,7 @@ release: $(TSC_TARFILE)
 
 # Updates all copyright notices in the source tree to the current year.
 update_copyright:
-	find -type f -exec sed -i -E 's/Copyright (©|\(C\)|\(c\)) .* The TSC Contributors/Copyright © 2012-2019 The TSC Contributors/' '{}' ';'
+	find -type f -exec sed -i -E 's/Copyright (©|\(C\)|\(c\)) .* The TSC Contributors/Copyright © 2012-2020 The TSC Contributors/' '{}' ';'
 
 # Runs the "optipng" programme on all .PNG files in the data/ directory.
 # "optipng" must be installed for this. This should be done after new

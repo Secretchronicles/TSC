@@ -2,7 +2,7 @@
  * furball.cpp  -  little moving around enemy
  *
  * Copyright © 2003 - 2011 Florian Richter
- * Copyright © 2012-2017 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify

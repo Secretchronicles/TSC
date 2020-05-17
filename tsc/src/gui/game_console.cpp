@@ -1,7 +1,7 @@
 /***************************************************************************
  * game_console.cpp - The game console activated with F7
  *
- * Copyright © 2012-2017 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************/
 /*
    This program is free software; you can redistribute it and/or modify
@@ -167,7 +167,7 @@ void cGame_Console::print_preamble()
     // TRANS: accepted translation of the GPLv3 available in your language,
     // TRANS: then you should use its wording rather than trying to translate
     // TRANS: it yourself.
-    sprintf(text, _("TSC Scripting Console\nCopyright © 2012-%d The TSC Contributors\n\n"
+    sprintf(text, _("TSC Scripting Console\nCopyright © 2012-2020 The TSC Contributors\n\n"
     "This program comes with ABSOLUTELY NO WARRANTY; for details\n"
     "see the file COPYING. This is free software, and you are\n"
     "welcome to redistribute it under certain conditions; see the\n"

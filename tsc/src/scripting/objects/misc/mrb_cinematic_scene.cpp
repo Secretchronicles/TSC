@@ -1,7 +1,7 @@
 /***************************************************************************
  * mrb_cinematic_scene.cpp
  *
- * Copyright © 2012-2018 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************
  *
  * This program is free software; you can redistribute it and/or modify

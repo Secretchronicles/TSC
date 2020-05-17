@@ -2,7 +2,7 @@
  * collision.h
  *
  * Copyright © 2005 - 2011 Florian Richter
- * Copyright © 2012-2017 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  * Copyright (C) 2005 Amir Taaki ( Circle Collision tests ) - MIT License
  * Copyright (C) 2005 Magnus Norddahl ( Line Collision tests ) - BSD License
  ***************************************************************************/

@@ -1,7 +1,7 @@
 /***************************************************************************
  * mrb_timer.hpp - Timer class for scripting API.
  *
- * Copyright © 2012-2017 The TSC Contributors
+ * Copyright © 2012-2020 The TSC Contributors
  ***************************************************************************
  *
  * This program is free software; you can redistribute it and/or modify
