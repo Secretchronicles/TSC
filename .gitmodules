@@ -3,7 +3,7 @@
 	url = https://github.com/mruby/mruby.git
 [submodule "tinyclipboard"]
 	path = tinyclipboard
-	url = https://github.com/Secretchronicles/tinyclipboard.git
+	url = git://git.guelker.eu/tinyclipboard.git
 [submodule "shared-modules"]
 	path = flatpak/shared-modules
 	url = https://github.com/flathub/shared-modules
@@ -12,4 +12,4 @@
 	url = https://github.com/flathub/shared-modules
 [submodule "pod-parser"]
 	path = pod-parser
-	url = https://github.com/Secretchronicles/pod-parser.git
+	url = git://git.guelker.eu/pod-cpp.git
