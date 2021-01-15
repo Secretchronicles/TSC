@@ -84,9 +84,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Graphics, music, and any other artistic content in the game is _not_
 licensed under the GPL. These assets undergo different terms as
-outlined as follows: any asset is accompanied by a `.txt` or a
-`.settings` file that specifies both the author(s) and the license of
-the asset in question. Those assets whose accompanying `.txt` or
-`.settings` file does not specify a license are licensed under the
-old SMC Contribution license, which is included as the file
-`tsc/docs/pages/old_smc_contribution_license.md`.
+outlined as follows: they are normally licensed under some kind of CC
+license, as specified by an accompanying `.txt` or `.settings` file
+to an asset that gives both the author(s) and the license of the asset
+in question. Those assets whose accompanying `.txt` or `.settings`
+file does not specify a license are licensed under the old SMC
+Contribution license, which is included as the file
+`tsc/docs/pages/old_smc_contribution_license.md`. Those assets were
+inherited from SMC when TSC was forked off it, and we are looking for
+a graphics artist to replace them with original art.
