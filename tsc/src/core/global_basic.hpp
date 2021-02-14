@@ -141,11 +141,6 @@
 #include <mruby/proc.h>
 #include <mruby/range.h>
 
-// tinyclipboard
-extern "C" {
-#include <tinyclipboard.h>
-}
-
 #ifndef PNG_COLOR_TYPE_RGBA
 #define PNG_COLOR_TYPE_RGBA PNG_COLOR_TYPE_RGB_ALPHA
 #endif

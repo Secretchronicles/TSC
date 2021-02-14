@@ -49,7 +49,6 @@ execute_process(COMMAND git rev-parse --short HEAD
 
 option(ENABLE_NLS "Enable translations and localisations" ON)
 option(ENABLE_SCRIPT_DOCS "Build the scripting documentation" ON)
-option(USE_SYSTEM_TINYCLIPBOARD "Use the system's tinyclipboard library" OFF)
 option(USE_SYSTEM_PODPARSER "Use the system's pod-cpp library" OFF)
 option(USE_SYSTEM_MRUBY "Use the system's mruby library" OFF)
 option(USE_LIBXMLPP3 "Use libxml++3.0 instead of libxml++2.6 (experimental)" OFF)
@@ -122,7 +121,6 @@ find_package(Boost 1.50.0 COMPONENTS filesystem chrono thread REQUIRED)
 set(Boost_COMPONENTS Boost::filesystem Boost::chrono Boost::thread)
 
 # Libraries we can build ourselves under certain cirumstances if missing
-include("ProvideTinyclipboard")
 include("ProvidePodParser")
 include("ProvideMRuby")
 
@@ -148,7 +146,6 @@ include_directories(
   ${SFML_INCLUDE_DIR}
   ${Boost_INCLUDE_DIRS}
   ${LibXmlPP_INCLUDE_DIRS}
-  ${Tinyclipboard_INCLUDE_DIRS}
   ${PodParser_INCLUDE_DIRS}
   ${CEGUI_INCLUDE_DIR}
   ${OPENGL_INCLUDE_DIR}
@@ -205,7 +202,6 @@ target_link_libraries(tsc
   ${OPENGL_LIBRARIES}
   ${PNG_LIBRARIES}
   ${MRuby_LIBRARIES}
-  ${Tinyclipboard_LIBRARIES}
   ${LibXmlPP_LIBRARIES}
   ${PCRE_LIBRARIES})
 
@@ -418,7 +414,6 @@ message(STATUS "Build type:     ${CMAKE_BUILD_TYPE}")
 message(STATUS "--------------- Configuration summary -------------")
 message(STATUS "Enable native language support:    ${ENABLE_NLS}")
 message(STATUS "Enable the scripting API docs:     ${ENABLE_SCRIPT_DOCS}")
-message(STATUS "Use system-provided tinyclipboard: ${USE_SYSTEM_TINYCLIPBOARD}")
 message(STATUS "Use system-provided pod-cpp:       ${USE_SYSTEM_PODPARSER}")
 message(STATUS "Use system-provided mruby:         ${USE_SYSTEM_MRUBY}")
 

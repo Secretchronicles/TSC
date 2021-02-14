@@ -487,13 +487,9 @@ bool GUI_Copy_To_Clipboard(bool cut)
         return 0;
     }
 
-    if (tiny_clipwrite(sel_text.c_str()) < 0) {
-        perror("Failed to write to clipboard");
-        return 0;
-    }
-    else {
-        return 1;
-    }
+    sf::Clipboard::setString(sel_text.c_str());
+
+    return 1;
 }
 
 bool GUI_Paste_From_Clipboard(void)
@@ -530,14 +526,8 @@ bool GUI_Paste_From_Clipboard(void)
         new_text.erase(beg, len);
 
         // get clipboard text
-        char* cliptext = tiny_clipread(NULL);
-        if (!cliptext) {
-            perror("Failed to read from clipboard");
-            return 0;
-        }
-
-        CEGUI::String clipboard_text = reinterpret_cast<const CEGUI::utf8*>(cliptext);
-        free(cliptext);
+        const sf::String cliptext = sf::Clipboard::getString();
+        CEGUI::String clipboard_text = reinterpret_cast<const CEGUI::utf8*>(cliptext.toUtf8().c_str());
 
         // set new text
         editbox->setText(new_text.insert(beg, clipboard_text));
@@ -560,14 +550,8 @@ bool GUI_Paste_From_Clipboard(void)
         new_text.erase(beg, len);
 
         // get clipboard text
-        char* cliptext = tiny_clipread(NULL);
-        if (!cliptext) {
-            perror("Failed to read from clipboard");
-            return 0;
-        }
-
-        CEGUI::String clipboard_text = reinterpret_cast<const CEGUI::utf8*>(cliptext);
-        free(cliptext);
+        const sf::String cliptext = sf::Clipboard::getString();
+        CEGUI::String clipboard_text = reinterpret_cast<const CEGUI::utf8*>(cliptext.toUtf8().c_str());
 
         // set new text
         editbox->setText(new_text.insert(beg, clipboard_text));
