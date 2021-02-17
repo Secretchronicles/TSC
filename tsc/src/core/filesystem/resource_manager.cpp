@@ -331,13 +331,13 @@ void cResource_Manager::init_directories()
 
 #elif __APPLE__
     // TSC.app/Contents/Resources will contain all the game files
-    
+
     // Get the program's path
     uint32_t buffer_size = 2048;
     char buffer[buffer_size];
     if(_NSGetExecutablePath(buffer, &buffer_size))
         cout<<"\nError: failed retrieving program's path.\n"<<endl;
-    
+
     // Set the game data directory path
     std::string game_folder_location(buffer);
 
@@ -350,9 +350,7 @@ void cResource_Manager::init_directories()
     game_folder_location = game_folder_location.substr(0, end_of_path_index);
 
     game_folder_location += "/Resources/data";
-    debug_print("game folder path = %s\n", game_folder_location.c_str());
     m_paths.game_data_dir = utf8_to_path(game_folder_location);
-    
 #else
     // Use the path configured at build time. If it is relative, construct
     // it from the install prefix, if it is absolute, take it as is.
@@ -394,17 +392,14 @@ void cResource_Manager::init_directories()
     m_paths.user_data_dir = app_path;
     m_paths.user_cache_dir = app_path / utf8_to_path("cache");
     m_paths.user_config_dir = app_path;
-    
 #elif __APPLE__
     // ~/Library/Preferences/TSC will contain all the user data
     std::string preference_location(getenv("HOME"));
     preference_location += "/Library/Preferences/TSC";
     fs::path preferences_path(preference_location);
-    debug_print("Preferences folder path = %s\n", preference_location.c_str());
     m_paths.user_data_dir = preferences_path;
     m_paths.user_cache_dir = preferences_path;
     m_paths.user_config_dir = preferences_path;
-    
 #else
 #error Dont know how to determine the user data directories on this platform!
 #endif
