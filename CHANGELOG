@@ -1,6 +1,13 @@
-3000-01-01  Nobody  <nobody@secretchronicles.de>
+3000-01-01  Nobody  <nobody@example.com>
 
 	* Version unreleased.
+	* Dependencies: Removed dependency on tinyclipboard, use
+		sf::Clipboard instead (#690 by Marvin Gülker, PR #695 by
+		Bálint Kiss).
+
+2020-05-08  Marvin Gülker  <post+git@guelker.eu>
+
+	* Version 2.1.0.
 	* Feature: Added PageUp/PageDown key functionality to editor
 		and make End key cycle the level exits (#568 by unknown)
 	* Feature: Allow selection of music and background files in the
