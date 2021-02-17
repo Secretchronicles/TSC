@@ -174,15 +174,6 @@ USE_SYSTEM_MRUBY [OFF]
   by executing $ git status in the mruby/mruby directory after
   updating the Git submodules.
 
-USE_SYSTEM_TINYCLIPBOARD [OFF]
-: For clipboard access, TSC uses the `tinyclipboard` library written
-  by Marvin Gülker (Quintus). The library is not part of many Linux
-  distributions yet, so it is build as part of building TSC itself
-  as a static library. If you *are* on a Linux distribution where
-  this library is packaged, set this value to ON and the build
-  system will dynamically link to the tinyclipboard library of
-  the system and not build its own variant.
-
 USE_SYSTEM_PODPARSER [OFF]
 : This option only has an effect if ENABLE_SCRIPT_DOCS is set to ON.
   If ON, it configures cmake to link the scripting API generator (scrdg)

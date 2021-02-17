@@ -25,6 +25,7 @@ Marvin Gülker (Quintus)
 Chris Jacobsen (datahead)
 Luiji
 Brian Allen Vanderburg II (brianvanderburg2)
+Balint Kiss (balintkissdev)
 
 -- Graphic Artists --
 

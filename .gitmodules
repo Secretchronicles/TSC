@@ -1,9 +1,6 @@
 [submodule "mruby/mruby"]
 	path = mruby/mruby
 	url = https://github.com/mruby/mruby.git
-[submodule "tinyclipboard"]
-	path = tinyclipboard
-	url = git://git.guelker.eu/tinyclipboard.git
 [submodule "shared-modules"]
 	path = flatpak/shared-modules
 	url = https://github.com/flathub/shared-modules
