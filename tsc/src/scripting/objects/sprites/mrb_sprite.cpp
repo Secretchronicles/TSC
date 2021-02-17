@@ -480,7 +480,7 @@ static mrb_value Start_Pos(mrb_state* p_state, mrb_value self)
  *
  * The sprite’s full image rectangle. See also L<#collision_rect>.
  */
-static mrb_value mRect(mrb_state* p_state, mrb_value self)
+static mrb_value mRect(mrb_state* p_state, mrb_value self) // Note: Calling this function Rect() causes a compilation error on MacOS due to a symbol conflict, thus name it mRect()
 {
     cSprite* p_sprite = Get_Data_Ptr<cSprite>(p_state, self);
 
