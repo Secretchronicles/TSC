@@ -23,7 +23,6 @@
 #include "../video/renderer.hpp"
 #include "../user/preferences.hpp"
 #include "../gui/generic.hpp"
-#include <SFML/Audio.hpp>
 
 namespace TSC {
 
