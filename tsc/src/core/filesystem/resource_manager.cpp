@@ -20,6 +20,10 @@
 #include <limits.h>
 #endif
 
+#ifdef __APPLE__
+#include <mach-o/dyld.h>
+#endif
+
 #include "resource_manager.hpp"
 #include "filesystem.hpp"
 #include "../property_helper.hpp"
@@ -324,6 +328,29 @@ void cResource_Manager::init_directories()
     std::string utf8_path = ucs2_to_utf8(path_data);
 
     m_paths.game_data_dir = utf8_to_path(utf8_path).parent_path().parent_path() / utf8_to_path("share") / utf8_to_path("tsc");
+
+#elif __APPLE__
+    // TSC.app/Contents/Resources will contain all the game files
+
+    // Get the program's path
+    uint32_t buffer_size = 2048;
+    char buffer[buffer_size];
+    if(_NSGetExecutablePath(buffer, &buffer_size))
+        cout<<"\nError: failed retrieving program's path.\n"<<endl;
+
+    // Set the game data directory path
+    std::string game_folder_location(buffer);
+
+    // Remove tsc from the end of the string
+    int end_of_path_index = game_folder_location.rfind("/");
+    game_folder_location = game_folder_location.substr(0, end_of_path_index);
+
+    // Remove MacOS from the end of the string
+    end_of_path_index = game_folder_location.rfind("/");
+    game_folder_location = game_folder_location.substr(0, end_of_path_index);
+
+    game_folder_location += "/Resources/data";
+    m_paths.game_data_dir = utf8_to_path(game_folder_location);
 #else
     // Use the path configured at build time. If it is relative, construct
     // it from the install prefix, if it is absolute, take it as is.
@@ -365,6 +392,14 @@ void cResource_Manager::init_directories()
     m_paths.user_data_dir = app_path;
     m_paths.user_cache_dir = app_path / utf8_to_path("cache");
     m_paths.user_config_dir = app_path;
+#elif __APPLE__
+    // ~/Library/Preferences/TSC will contain all the user data
+    std::string preference_location(getenv("HOME"));
+    preference_location += "/Library/Preferences/TSC";
+    fs::path preferences_path(preference_location);
+    m_paths.user_data_dir = preferences_path;
+    m_paths.user_cache_dir = preferences_path;
+    m_paths.user_config_dir = preferences_path;
 #else
 #error Dont know how to determine the user data directories on this platform!
 #endif

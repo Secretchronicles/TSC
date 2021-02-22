@@ -38,7 +38,7 @@ cPreferencesLoader::~cPreferencesLoader()
     mp_preferences = NULL;
 }
 
-cPreferences* cPreferencesLoader::Get_Preferences()
+TSC::cPreferences* cPreferencesLoader::Get_Preferences()
 {
     return mp_preferences;
 }

@@ -480,7 +480,7 @@ static mrb_value Start_Pos(mrb_state* p_state, mrb_value self)
  *
  * The sprite’s full image rectangle. See also L<#collision_rect>.
  */
-static mrb_value Rect(mrb_state* p_state, mrb_value self)
+static mrb_value mRect(mrb_state* p_state, mrb_value self) // Note: Calling this function Rect() causes a compilation error on MacOS due to a symbol conflict, thus name it mRect()
 {
     cSprite* p_sprite = Get_Data_Ptr<cSprite>(p_state, self);
 
@@ -751,7 +751,7 @@ void TSC::Scripting::Init_Sprite(mrb_state* p_state)
     mrb_define_method(p_state, p_rcSprite, "start_y=", Set_Start_Y, MRB_ARGS_REQ(1));
     mrb_define_method(p_state, p_rcSprite, "pos", Pos, MRB_ARGS_NONE());
     mrb_define_method(p_state, p_rcSprite, "start_pos", Start_Pos, MRB_ARGS_NONE());
-    mrb_define_method(p_state, p_rcSprite, "rect", Rect, MRB_ARGS_NONE());
+    mrb_define_method(p_state, p_rcSprite, "rect", mRect, MRB_ARGS_NONE());
     mrb_define_method(p_state, p_rcSprite, "collision_rect", Collision_Rect, MRB_ARGS_NONE());
     mrb_define_method(p_state, p_rcSprite, "warp", Warp, MRB_ARGS_REQ(2));
     mrb_define_method(p_state, p_rcSprite, "start_at", Start_At, MRB_ARGS_REQ(2));
