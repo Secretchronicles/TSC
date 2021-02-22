@@ -4,6 +4,7 @@
 	* Dependencies: Removed dependency on tinyclipboard, use
 		sf::Clipboard instead (#690 by Marvin Gülker, PR #695 by
 		Bálint Kiss).
+	* Misc: Add experimental MacOS support (#691 by iMacker2020).
 
 2020-05-08  Marvin Gülker  <post+git@guelker.eu>
 
