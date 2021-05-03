@@ -303,29 +303,29 @@ if(NOT WIN32)
     COMPONENT base)
   install(FILES "${TSC_SOURCE_DIR}/extras/icons/tsc_icon_16.png"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/16x16/apps
-    RENAME tsc.png
+    RENAME org.secretchronicles.TSC.png
     COMPONENT base)
   install(FILES "${TSC_SOURCE_DIR}/extras/icons/tsc_icon_32.png"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/32x32/apps
-    RENAME tsc.png
+    RENAME org.secretchronicles.TSC.png
     COMPONENT base)
   install(FILES "${TSC_SOURCE_DIR}/extras/icons/tsc_icon_48.png"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/48x48/apps
-    RENAME tsc.png
+    RENAME org.secretchronicles.TSC.png
     COMPONENT base)
   install(FILES "${TSC_SOURCE_DIR}/extras/icons/tsc_icon_64.png"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/64x64/apps
-    RENAME tsc.png
+    RENAME org.secretchronicles.TSC.png
     COMPONENT base)
   install(FILES "${TSC_SOURCE_DIR}/extras/icons/tsc_icon_128.png"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/128x128/apps
-    RENAME tsc.png
+    RENAME org.secretchronicles.TSC.png
     COMPONENT base)
-  install(FILES "${TSC_SOURCE_DIR}/extras/tsc.desktop"
+  install(FILES "${TSC_SOURCE_DIR}/extras/org.secretchronicles.TSC.desktop"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
     COMPONENT base)
-  install(FILES "${TSC_SOURCE_DIR}/extras/tsc.appdata.xml"
-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/appdata
+  install(FILES "${TSC_SOURCE_DIR}/extras/org.secretchronicles.TSC.metainfo.xml"
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo
     COMPONENT base)
 endif()
 
