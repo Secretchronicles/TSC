@@ -1,6 +1,6 @@
 # Maintainer: Quintus <quintus@quintilianus.eu>
 pkgname=tsc
-pkgver=2.0.0
+pkgver=2.1.0
 pkgrel=1
 pkgdesc="Jump'n'run game with editor and scripting facilities, fork of SMC"
 arch=("i686" "x86_64")
@@ -11,20 +11,12 @@ makedepends=("cmake" "ruby" "gperf" "pkg-config" "bison" "boost" "gettext")
 optdepends=()
 conflicts=()
 options=()
-source=("ftp://ftp.secretchronicles.org/releases/TSC-$pkgver.tar.xz" "tsc.desktop" "fix-manpage.patch")
+source=("ftp://ftp.secretchronicles.org/releases/TSC-$pkgver.tar.gz")
 noextract=()
 install="tsc.install"
-sha256sums=("c8a9ca3975f9de16aa59fab2a7864c3c541963b46c2c40533632c4fc621b407a"
-	    "2484bbe4f94c561f27df1e155073f4166c927cd79626ed05aa42f0328e38d55f"
-	    "eb4ac81523e4367ebc9c907e1a4a1d08fec3ddcbca83febaef81eb727a2a8c1f")
+sha256sums=("6a16765b4951e3d5d1ea2b84e6da8f67b0271460f0c570b53ccdab80d7396261")
 
-prepare() {
-    cd "$srcdir"
-
-    # This patch will be included in TSC itself in the next version.
-    # It can then be removed from this PKGBUILD.
-    patch -p1 < ../fix-manpage.patch
-}
+prepare() {}
 
 build() {
     cd "$srcdir/TSC-$pkgver/tsc"
