@@ -63,8 +63,8 @@ static void calculate_rand_values(mrb_state* p_state, mrb_value obj, mrb_float& 
     switch (mrb_type(obj)) {
     case MRB_TT_RANGE:
         p_range = mrb_range_ptr(p_state, obj);
-        beg = mrbnum2float(p_state, p_range->edges->beg);
-        end = mrbnum2float(p_state, p_range->edges->end);
+        beg = mrbnum2float(p_state, RANGE_BEG(p_range));
+        end = mrbnum2float(p_state, RANGE_END(p_range));
 
         value = (end + beg) / 2.0; // mean
         rand = end - value;
