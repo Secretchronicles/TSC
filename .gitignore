@@ -39,6 +39,7 @@
 /tsc/stderr.txt
 /tsc/CMakeCache.txt
 /tsc/install_manifest.txt
+/tsc/mruby_tsc_build_config.rb.lock
 /tsc/config.hpp
 /tsc/credits.cpp
 /tsc/htmldocs
