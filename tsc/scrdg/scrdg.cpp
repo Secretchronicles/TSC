@@ -15,6 +15,7 @@
 */
 
 #include "scrdg.hpp"
+#include <algorithm>
 #include <iostream>
 #include <sstream>
 #include <cstdio>
