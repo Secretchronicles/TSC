@@ -1,0 +1,13 @@
+diff --git a/tasks/toolchains/gcc.rake b/tasks/toolchains/gcc.rake
+index 810f23b7a..3cb5bd067 100644
+--- a/tasks/toolchains/gcc.rake
++++ b/tasks/toolchains/gcc.rake
+@@ -2,7 +2,7 @@ MRuby::Toolchain.new(:gcc) do |conf, params|
+   default_command = params[:default_command] || 'gcc'
+   compiler_flags = %w(-g -O3 -Wall -Wundef)
+   c_mandatory_flags = %w(-std=gnu99)
+-  cxx_invalid_flags = %w(-Wdeclaration-after-statement -Werror-implicit-function-declaration)
++  cxx_invalid_flags = %w()
+ 
+   [conf.cc, conf.objc, conf.asm, conf.cxx].each do |compiler|
+     if compiler == conf.cxx

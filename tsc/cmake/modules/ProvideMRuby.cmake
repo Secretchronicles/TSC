@@ -16,6 +16,7 @@ else()
   ExternalProject_Add(
     mruby
     DOWNLOAD_COMMAND ${CMAKE_COMMAND} -E copy_directory "${TSC_SOURCE_DIR}/../mruby/mruby" "${TSC_BINARY_DIR}/mruby"
+    PATCH_COMMAND patch -p1 < "${TSC_SOURCE_DIR}/../mruby-werror.patch"
     SOURCE_DIR "${TSC_BINARY_DIR}/mruby"
     CONFIGURE_COMMAND ""
     BUILD_IN_SOURCE 1
