@@ -77,7 +77,6 @@
 // Boost
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
-#include <boost/filesystem/convenience.hpp>
 #include <boost/thread/thread.hpp>
 #include <boost/chrono.hpp>
 #include <boost/system/error_code.hpp>
