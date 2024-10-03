@@ -48,7 +48,7 @@ execute_process(COMMAND git rev-parse --short HEAD
 # Flags & Options
 
 option(ENABLE_NLS "Enable translations and localisations" ON)
-option(ENABLE_SCRIPT_DOCS "Build the scripting documentation" ON)
+option(ENABLE_SCRIPT_DOCS "Build the scripting documentation" OFF)
 option(USE_SYSTEM_PODPARSER "Use the system's pod-cpp library" OFF)
 option(USE_SYSTEM_MRUBY "Use the system's mruby library" OFF)
 option(USE_SYSTEM_CEGUI "Use the system's CEGUI library" OFF)
