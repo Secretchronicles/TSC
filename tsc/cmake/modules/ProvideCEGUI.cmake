@@ -10,6 +10,14 @@ find_package(Freetype REQUIRED)
 find_package(EXPAT REQUIRED)
 find_package(GLEW REQUIRED)
 
+# No cmake module for glm, do it manually. CEGUI needs glm.
+find_path(GLM_HEADER NAMES glm/glm.hpp glm.hpp)
+if (GLM_HEADER)
+  message(STATUS "Found GLM: ${GLM_HEADER}")
+else()
+  message(SEND_ERROR "GLM header not found")
+endif()
+
 ExternalProject_Add(
   cegui
   DOWNLOAD_COMMAND ${CMAKE_COMMAND} -E copy_directory "${TSC_SOURCE_DIR}/../cegui" "${TSC_BINARY_DIR}/cegui-source"
