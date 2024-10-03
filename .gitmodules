@@ -10,3 +10,6 @@
 [submodule "pod-parser"]
 	path = pod-parser
 	url = https://github.com/Secretchronicles/pod-parser.git
+[submodule "cegui"]
+	path = cegui
+	url = https://github.com/cegui/cegui
