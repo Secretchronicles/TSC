@@ -304,9 +304,12 @@ install(DIRECTORY "${TSC_SOURCE_DIR}/data/sounds/"
 install(DIRECTORY "${TSC_SOURCE_DIR}/data/worlds/"
   DESTINATION ${CMAKE_INSTALL_DATADIR}/tsc/worlds
   COMPONENT worlds)
-install(DIRECTORY "${TSC_BINARY_DIR}/scriptdocs"
-  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/tsc
-  COMPONENT base)
+
+if (ENABLE_SCRIPT_DOCS)
+  install(DIRECTORY "${TSC_BINARY_DIR}/scriptdocs"
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/tsc
+    COMPONENT base)
+endif()
 
 if(NOT WIN32)
   install(FILES "${TSC_SOURCE_DIR}/docs/man/tsc.6"
