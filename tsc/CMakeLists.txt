@@ -51,6 +51,7 @@ option(ENABLE_NLS "Enable translations and localisations" ON)
 option(ENABLE_SCRIPT_DOCS "Build the scripting documentation" ON)
 option(USE_SYSTEM_PODPARSER "Use the system's pod-cpp library" OFF)
 option(USE_SYSTEM_MRUBY "Use the system's mruby library" OFF)
+option(USE_SYSTEM_CEGUI "Use the system's CEGUI library" OFF)
 option(USE_LIBXMLPP3 "Use libxml++3.0 instead of libxml++2.6 (experimental)" OFF)
 
 ########################################
@@ -106,10 +107,16 @@ else()
 endif()
 
 find_package(SFML COMPONENTS audio graphics window system REQUIRED)
-find_package(CEGUI COMPONENTS OpenGL REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(PNG REQUIRED)
 find_package(PCRE REQUIRED)
+
+if (USE_SYSTEM_CEGUI)
+  find_package(CEGUI COMPONENTS OpenGL REQUIRED)
+else()
+  message(STATUS "Compiling CEGUI statically")
+  include("ProvideCEGUI")
+endif()
 
 if (USE_LIBXMLPP3)
   find_package(LibXmlPP 3.0 REQUIRED)
@@ -222,6 +229,10 @@ endif()
 
 if (NOT USE_SYSTEM_MRUBY)
   add_dependencies(tsc mruby)
+endif()
+
+if (NOT USE_SYSTEM_CEGUI)
+  add_dependencies(tsc cegui)
 endif()
 
 if (ENABLE_SCRIPT_DOCS)
@@ -416,6 +427,7 @@ message(STATUS "Enable native language support:    ${ENABLE_NLS}")
 message(STATUS "Enable the scripting API docs:     ${ENABLE_SCRIPT_DOCS}")
 message(STATUS "Use system-provided pod-cpp:       ${USE_SYSTEM_PODPARSER}")
 message(STATUS "Use system-provided mruby:         ${USE_SYSTEM_MRUBY}")
+message(STATUS "Use system-provided CEGUI:         ${USE_SYSTEM_CEGUI}")
 
 message(STATUS "--------------- Path configuration -----------------")
 message(STATUS "Install prefix:        ${CMAKE_INSTALL_PREFIX}")

@@ -20,7 +20,7 @@
 # so provide the possibility to use expat instead.
 # Do not apply this workaround option unless you really
 # need it.
-option(CEGUI_USE_EXPAT "Workaround option: advise CEGUI to use expat instead of libxml2 -- this option has nothing to do with TSC's own use of libxml" OFF)
+option(CEGUI_USE_EXPAT "Workaround option: advise CEGUI to use expat instead of libxml2 -- this option has nothing to do with TSC's own use of libxml. This option is ignored if USE_SYSTEM_CEGUI is set to OFF." OFF)
 
 ########################################
 # pkg-config
