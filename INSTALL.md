@@ -1,7 +1,7 @@
 Installation instructions for TSC
 =================================
 
-Time-stamp: <2016-08-03 10:13:02 quintus>
+Time-stamp: <2024-10-04 20:55:07 quintus>
 
 TSC uses [CMake][1] as the build system, so the first thing you have to
 ensure is that you have CMake installed.
@@ -73,13 +73,11 @@ install to.
 * The LibPNG library.
 * The DevIL library.
 * The libPCRE regular expression library.
+* The Expat library.
 * The libxml++ library < 3.0.0. Versions >= 3.0.0 will not be
   supported until the libxml++ developers provide a porting guide
   from version 2.8 to version 3.0.
 * The Freetype library.
-* CEGUI >= 0.8.0
-  * If you have glm 0.9.6 or newer, you need CEGUI >= 0.8.5
-    due to CEGUI bug #1063 (https://bitbucket.org/cegui/cegui/issues/1063).
 * Boost >= 1.50.0 (to be exact: boost_system, boost_filesystem, boost_thread)
 * SFML >= 2.3.0
 * X11 development headers, namely for libx11 and libxt
@@ -106,21 +104,8 @@ Install core dependencies:
 sudo apt install ruby-full rake gperf pkg-config bison libglew-dev \
   freeglut3-dev gettext libpng-dev libpcre3-dev libxml++2.6-dev \
   libfreetype6-dev libdevil-dev libboost1.58-all-dev libsfml-dev \
-  libcegui-mk2-dev libxt-dev cmake build-essential git git-core
+  libxt-dev libexpat1-dev cmake build-essential git git-core
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Note that Debian 10 does not have CEGUI in the repositories anymore,
-thus "libcegui-mk2-dev" needs to be left off from the the above list
-and instead it is required to compile CEGUI manually before compiling
-TSC. Further note that CEGUI 0.8.7 does not compile against Debian
-10's libxml2. TSC offers the special compilation option
-CEGUI_USE_EXPAT to use expat instead of libxml2 to overcome the
-problem. Pass -DCEGUI_USE_EXPAT=ON to cmake when configuring TSC
-to use it.
-
-Alternatively, you can use a precompiled CEGUI. Example instructions
-for using a precompiled CEGUI are provided in the file
-tsc/docs/pages/compile_on_debian_10.md.
 
 ### 2. Optional Windows dependencies ###
 * The FreeImage library.
@@ -151,12 +136,19 @@ e.g. `-DENABLE_SCRIPT_DOCS=OFF`. Default values are indicated in brackets.
 
 The following options are available:
 
-ENABLE_SCRIPT_DOCS [ON]
+ENABLE_SCRIPT_DOCS [OFF]
 : Build the scripting API documentation.
 
 ENABLE_NLS [ON]
 : Enables or disables use of translations. If disabled, TSC will use
   English only.
+
+CEGUI_USE_EXPAT [OFF]
+: This option is only used if USE_SYSTEM_CEGUI is set to ON.
+  It tells TSC that you compiled CEGUI with Expat as the
+  backend and will make the build system link to the Expat
+  library. For the curious: To be precise, this option
+  is forced to ON if USE_SYSTEM_CEGUI is set to OFF.
 
 USE_SYSTEM_MRUBY [OFF]
 : TSC embeds mruby for level scripting. If this option is turned
@@ -173,6 +165,15 @@ USE_SYSTEM_MRUBY [OFF]
   in TSC's source tree. Check the version in the TSC source tree
   by executing $ git status in the mruby/mruby directory after
   updating the Git submodules.
+
+USE_SYSTEM_CEGUI [OFF]
+: Due to various woes with CEGUI, we have finally decided to include
+  a complete static (and patched) version of CEGUI into TSC itself.
+  A lot of Linux distributions also have removed CEGUI from their
+  repositories by now, making it difficult to install beforehand.
+  If you still want or need to use your own copy of CEGUI, compiled
+  with your own options, set this option to ON. In that case,
+  also consider setting CEGUI_USE_EXPAT.
 
 USE_SYSTEM_PODPARSER [OFF]
 : This option only has an effect if ENABLE_SCRIPT_DOCS is set to ON.
@@ -329,7 +330,7 @@ V. Upgrade notices
 Before upgrading TSC to a newer released version or new development
 version from Git, you may want to make a backup of your locally
 created levels and worlds. You can do this by copying the directory
-`~/.locals/share/tsc` to a safe place.
+`~/.local/share/tsc` to a safe place.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ cp -r ~/.local/share/tsc ~/backup-tsc
