@@ -6,10 +6,16 @@ if (USE_SYSTEM_MRUBY)
 else()
   message("-- Scripting engine enabled: building mruby statically")
 
-  # mruby requires Bison and ruby to compile.
+  # mruby requires gperf, Bison and ruby to compile.
   find_package(BISON REQUIRED)
   find_package(Ruby REQUIRED)
 
+  find_program(GPERF gperf)
+  if (GPERF)
+    message(STATUS "Found gperf: ${GPERF}")
+  else()
+    message(SEND_ERROR "gperf not found")
+  endif()
 
   set(MRuby_LIBRARIES "${TSC_BINARY_DIR}/mruby/build/host/lib/libmruby.a" "${TSC_BINARY_DIR}/mruby/build/host/lib/libmruby_core.a")
 
