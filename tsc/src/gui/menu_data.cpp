@@ -3260,7 +3260,7 @@ std::string cMenu_Savegames::Set_Save_Description(unsigned int save_slot)
         return "";
     }
 // save always in debug builds
-//#ifndef _DEBUG
+#ifndef _DEBUG
     if (pActive_Level->Is_Loaded() && gp_hud->Get_Points() < 3000) {
         Clear_Input_Events();
         Draw_Static_Text(_("3000 Points needed for saving in a level.\nSaving on the Overworld is free."));
@@ -3269,7 +3269,7 @@ std::string cMenu_Savegames::Set_Save_Description(unsigned int save_slot)
         // This is checked against by the caller!
         return "Not enough Points";
     }
-//#endif
+#endif
     std::string save_description;
 
     bool auto_erase_description = 0;

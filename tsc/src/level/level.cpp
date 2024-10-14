@@ -711,7 +711,7 @@ void cLevel::Process_Input(void)
 {
     // Omega Mode
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::O) && sf::Keyboard::isKeyPressed(sf::Keyboard::M) && !editor_enabled) {
-        if (true) {
+        if (m_cheat_counter > 50.0f) {
             if (pLevel_Player->m_omega_mode) {
                 gp_hud->Set_Text(_("Omega Mode disabled"));
                 pLevel_Player->m_omega_mode = false;
@@ -730,18 +730,6 @@ void cLevel::Process_Input(void)
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K) && sf::Keyboard::isKeyPressed(sf::Keyboard::I) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && !editor_enabled) {
         gp_hud->Set_Text(_("Kid cheat activated"));
         pLevel_Player->Set_Type(ALEX_SMALL, 0);
-    }
-    // Set Cape state
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) && sf::Keyboard::isKeyPressed(sf::Keyboard::P) 
-    && sf::Keyboard::isKeyPressed(sf::Keyboard::E) && !editor_enabled) {
-        gp_hud->Set_Text(_("Cape cheat activated"));
-        pLevel_Player->Set_Type(ALEX_CAPE, 0);
-    }
-    // Set Star state
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::P) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) 
-    && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::I) && sf::Keyboard::isKeyPressed(sf::Keyboard::X) && !editor_enabled) {
-        gp_hud->Set_Text(_("Spadix is cool!"));
-        pLevel_Player->Get_Item(TYPE_STAR);
     }
 }
 

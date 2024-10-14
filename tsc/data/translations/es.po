@@ -8,7 +8,7 @@ msgstr ""
 "POT-Creation-Date: 2020-09-25 22:42+0300\n"
 "PO-Revision-Date: 2014-08-30 19:40+0200\n"
 "Last-Translator: LSpadix <>\n"
-"Language-Team: UNMAINTAINED\n"
+"Language-Team: TSC Spanish translation team\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr "Ninguno"
 #: ../../src/level/level_settings.cpp:276 ../../src/level/level_editor.cpp:256
 #: ../../src/overworld/world_editor.cpp:127
 msgid "Save "
-msgstr "Guardar"
+msgstr "Guardar "
 
 #: ../../src/level/level_editor.cpp:187
 msgid "Create a new Level"
@@ -50,11 +50,11 @@ msgstr "Nivel"
 
 #: ../../src/level/level_editor.cpp:196 ../../src/overworld/world_editor.cpp:86
 msgid " already exists"
-msgstr "ya existe"
+msgstr " ya existe"
 
 #: ../../src/level/level_editor.cpp:208 ../../src/overworld/world_editor.cpp:82
 msgid "Created "
-msgstr "Creado"
+msgstr "Creado "
 
 #: ../../src/level/level_editor.cpp:218
 msgid "Load a Level"
@@ -63,7 +63,7 @@ msgstr "Cargar nivel"
 #: ../../src/level/level_editor.cpp:237
 #: ../../src/overworld/world_editor.cpp:114
 msgid "Loaded "
-msgstr "Cargado"
+msgstr "Cargado "
 
 #: ../../src/level/level_editor.cpp:265
 msgid "Save Level as"
@@ -194,7 +194,7 @@ msgstr "Huesos"
 
 #: ../../src/level/level_editor.cpp:394
 msgid "Windows"
-msgstr "MICROSOFT"
+msgstr "Ventanas"
 
 #: ../../src/level/level_editor.cpp:395
 msgid "Candy"
@@ -273,11 +273,11 @@ msgstr "Dirección inicial"
 
 #: ../../src/level/level_manager.cpp:472
 msgid "Invalid target level."
-msgstr "Nivel objetivo inválido"
+msgstr "Nivel objetivo inválido."
 
 #: ../../src/level/level.cpp:220
 msgid "Unsupported Level format : "
-msgstr "Formato de nivel inválido"
+msgstr "Formato de nivel inválido : "
 
 #: ../../src/level/level.cpp:402
 msgid "Couldn't save level "
@@ -286,7 +286,7 @@ msgstr "No se pudo guardar el nivel"
 #: ../../src/level/level.cpp:418 ../../src/overworld/overworld.cpp:250
 #: ../../src/video/video.cpp:1436
 msgid " saved"
-msgstr "guardado"
+msgstr " guardado"
 
 #: ../../src/level/level.cpp:716
 msgid "Omega Mode disabled"
@@ -371,6 +371,9 @@ msgid ""
 "when a single individual was making his way through the ups and downs of the "
 "sandy dunes."
 msgstr ""
+"El sol poniente enviaba sus últimos rayos de colores sobre el Desierto "
+"Oriental mientras un solo individuo se abría paso entre las subidas "
+"y bajadas de las dunas de arena."
 
 #: ../../src/scene/01_prologue.cpp:37
 msgid ""
@@ -378,6 +381,9 @@ msgid ""
 "see sand followed by more sand, by even more "
 "[colour='FFFFF000']sand[colour='FFFFFFFF']."
 msgstr ""
+"Cuando llegó a la cima de la duna más alta, miró a su alrededor, pero lo "
+"único que vio fue arena, seguida de más arena, y aún más "
+"[colour='FFFFF000']arena[colour='FFFFFFFF']."
 
 #: ../../src/scene/01_prologue.cpp:38
 msgid ""
@@ -385,6 +391,9 @@ msgid ""
 "there was no means of orientation in this infinite sea of equally hostile "
 "sand dunes."
 msgstr ""
+"Sacó un mapa, pero como las estrellas aún no eran visibles en el cielo que "
+"oscurecía, no había forma de orientarse en ese mar infinito de dunas de "
+"arena igualmente hostiles."
 
 #: ../../src/gui/debug_window.cpp:43
 msgid "Debugging Information"
@@ -394,7 +403,7 @@ msgstr "Ventana de Depuración"
 #: ../../src/gui/debug_window.cpp:103
 #, c-format
 msgid "[colour='FFFFFF00']FPS: Best: %.02f Worst: %.02f Current: %0.2f"
-msgstr ""
+msgstr "[colour='FFFFFF00']FPS: Mejor: %.02f Peor: %.02f Actual: %0.2f"
 
 #: ../../src/gui/debug_window.cpp:111
 msgid "Camera X: %d Y: %d"
@@ -403,21 +412,21 @@ msgstr "Cámara X: %d Y: %d"
 #: ../../src/gui/debug_window.cpp:121
 #, c-format
 msgid "Level: %s (return stack size: %ld)"
-msgstr ""
+msgstr "Nivel: %s (tamaño de pila de retorno: %ld)"
 
 #: ../../src/gui/debug_window.cpp:126
 msgid "Overworld: %s"
-msgstr "Cargar mundo"
+msgstr "Cargar mundo: %s"
 
 #: ../../src/gui/debug_window.cpp:130
 #, fuzzy, c-format
 msgid "<Menu Active>"
-msgstr "Menú del Nivel"
+msgstr "<Menú del Nivel>"
 
 #: ../../src/gui/debug_window.cpp:133
 #, c-format
 msgid "Scene: %s"
-msgstr ""
+msgstr "Escena: %s"
 
 #. TRANS: Abbreviations mean:
 #. TRANS: T=Total, P=Passive, M=Massive, E=Enemy, A=Active, H=Halfmassive
@@ -560,7 +569,7 @@ msgid ""
 "This will reset your current progress.\n"
 "Continue ?"
 msgstr ""
-"Esto reiniciará tu progreso actual. \n"
+"Esto reiniciará tu progreso actual.\n"
 "¿Quieres continuar?"
 
 #: ../../src/gui/menu_data.cpp:817 ../../src/gui/menu_data.cpp:835
@@ -685,7 +694,7 @@ msgstr "Hercios (Hz)"
 
 #: ../../src/gui/menu_data.cpp:1717
 msgid "You should only change the value if the audio is scratchy."
-msgstr "Cambia este valor solo si el sonido se distorsiona. "
+msgstr "Cambia este valor solo si el sonido se distorsiona."
 
 #: ../../src/gui/menu_data.cpp:1739
 msgid "Music"
@@ -856,7 +865,7 @@ msgstr " para "
 
 #: ../../src/gui/menu_data.cpp:2356
 msgid ". Press ESC to cancel."
-msgstr ". Presiona ESC para cancelar"
+msgstr ". Presiona ESC para cancelar."
 
 #: ../../src/gui/menu_data.cpp:2661
 msgid "Reinitialization"
@@ -868,7 +877,7 @@ msgstr "Recargando"
 
 #: ../../src/gui/menu_data.cpp:2879
 msgid "Enabled : "
-msgstr "Activado :"
+msgstr "Activado : "
 
 #: ../../src/gui/menu_data.cpp:3095
 msgid "Save the game"
@@ -902,7 +911,7 @@ msgstr "Carga fallida"
 
 #: ../../src/user/savegame/savegame.cpp:271
 msgid "Savegame "
-msgstr "Partida guardada"
+msgstr "Partida guardada "
 
 #: ../../src/user/savegame/savegame.cpp:271
 msgid " loaded"
@@ -910,7 +919,7 @@ msgstr " cargado"
 
 #: ../../src/user/savegame/savegame.cpp:436
 msgid "Couldn't save savegame "
-msgstr "No se pudo guardar el nivel"
+msgstr "No se pudo guardar el nivel "
 
 #: ../../src/user/savegame/savegame.cpp:439
 msgid "Saved to Slot "
@@ -940,7 +949,7 @@ msgstr "Sin descripción"
 
 #: ../../src/core/game_core.cpp:251
 msgid "Loading Level failed : "
-msgstr "Carga de Nivel fallida :"
+msgstr "Carga de Nivel fallida : "
 
 #: ../../src/core/game_core.cpp:361
 msgid "Loading Images"
@@ -1796,7 +1805,7 @@ msgstr "Vuelo constante"
 
 #: ../../src/enemies/gee.cpp:588
 msgid "Move without stopping at the fly distance"
-msgstr "Esto hace que el gee no se detenga."
+msgstr "Esto hace que el gee no se detenga"
 
 #: ../../src/enemies/gee.cpp:601
 msgid "Wait time"
@@ -1804,7 +1813,7 @@ msgstr "Tiempo de espera"
 
 #: ../../src/enemies/gee.cpp:601
 msgid "Time to wait until moving again after a stop"
-msgstr "Tiempo que durará el gee detenido antes de moverse de nuevo."
+msgstr "Tiempo que durará el gee detenido antes de moverse de nuevo"
 
 #: ../../src/enemies/gee.cpp:609 ../../src/enemies/beetle_barrage.cpp:356
 msgid "Fly distance"
@@ -1812,7 +1821,7 @@ msgstr "Distancia de vuelo"
 
 #: ../../src/enemies/gee.cpp:609
 msgid "The distance to move each time"
-msgstr "La distancia que recorre cada vez que se mueve."
+msgstr "La distancia que recorre cada vez que se mueve"
 
 #: ../../src/enemies/gee.cpp:681
 msgid "Electro"
@@ -1828,7 +1837,7 @@ msgstr "Venenoso"
 
 #: ../../src/enemies/rokko.cpp:585 ../../src/enemies/thromp.cpp:705
 msgid "Speed when activated"
-msgstr "La velocidad con la que intenta hacerte añicos."
+msgstr "La velocidad con la que intenta hacerte añicos"
 
 #: ../../src/enemies/static.cpp:315 ../../src/objects/sprite.cpp:1454
 msgid "Image"
@@ -1857,7 +1866,7 @@ msgstr "Resistencia al fuego"
 
 #: ../../src/enemies/static.cpp:357
 msgid "If it is resistant against fire"
-msgstr "Inmunidad ante las bolas de fuego de Alex."
+msgstr "Inmunidad ante las bolas de fuego de Alex"
 
 #: ../../src/enemies/static.cpp:361
 msgid "Ice Resistance"
@@ -1865,7 +1874,7 @@ msgstr "Resistencia al hielo"
 
 #: ../../src/enemies/static.cpp:361
 msgid "Resistance against Ice (0.0-1.0)"
-msgstr "Inmunidad ante las bolas de hielo de Alex."
+msgstr "Inmunidad ante las bolas de hielo de Alex (0.0-1.0)"
 
 #: ../../src/enemies/bosses/turtle_boss.cpp:1010
 msgid "Hits"
@@ -1883,7 +1892,7 @@ msgstr "Fundazos"
 #: ../../src/enemies/bosses/turtle_boss.cpp:1018
 #: ../../src/enemies/furball.cpp:754
 msgid "Downgrades until death"
-msgstr "Cuántas veces debe entrar en modo caparazón para que muera."
+msgstr "Cuántas veces debe entrar en modo caparazón para que muera"
 
 #: ../../src/enemies/bosses/turtle_boss.cpp:1026
 msgid "Shell Time"
@@ -1983,7 +1992,7 @@ msgstr ""
 #: ../../src/objects/box.cpp:753
 #, fuzzy
 msgid "(Invisible)"
-msgstr "Invisible"
+msgstr "(Invisible)"
 
 #: ../../src/objects/box.cpp:756
 msgid "(Ghost block)"
@@ -1992,7 +2001,7 @@ msgstr "(Fantasma)"
 #: ../../src/objects/box.cpp:759
 #, fuzzy
 msgid "(Invisible Semi Massive)"
-msgstr "Invisible Medio Masivo"
+msgstr "(Invisible Medio Masivo)"
 
 #: ../../src/objects/moving_platform.cpp:939 ../../src/objects/path.cpp:745
 msgid "Move Type"
@@ -2064,11 +2073,11 @@ msgstr "Retrasado"
 
 #: ../../src/objects/moving_platform.cpp:1235
 msgid "Moving "
-msgstr "Móvil"
+msgstr "Móvil "
 
 #: ../../src/objects/moving_platform.cpp:1238
 msgid "Platform - "
-msgstr "Plataforma -"
+msgstr "Plataforma - "
 
 #: ../../src/objects/level_entry.cpp:133 ../../src/objects/level_exit.cpp:208
 msgid " Beam"
@@ -2120,7 +2129,7 @@ msgstr "Mostrar línea"
 
 #: ../../src/objects/path.cpp:729
 msgid "Wether or not to show the path's moving line ingame."
-msgstr "Muestra la línea de la ruta"
+msgstr "Muestra la línea de la ruta."
 
 #: ../../src/objects/path.cpp:745
 msgid ""
@@ -2205,46 +2214,46 @@ msgstr "Caja Vacía"
 #: ../../src/objects/bonusbox.cpp:161
 #, fuzzy
 msgid "Bonusbox Berry"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonus de bayas"
 
 #: ../../src/objects/bonusbox.cpp:165
 #, fuzzy
 msgid "Bonusbox Fire berry"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonux de bayas de fuego"
 
 #: ../../src/objects/bonusbox.cpp:169
 #, fuzzy
 msgid "Bonusbox Ice berry"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonux de bayas heladas"
 
 #: ../../src/objects/bonusbox.cpp:173
 #, fuzzy
 msgid "Bonusbox Ghost berry"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonus de bayas fantasma"
 
 #: ../../src/objects/bonusbox.cpp:177
 #, fuzzy
 msgid "Bonusbox 1-Up berry"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonus 1-Arriba baya"
 
 #: ../../src/objects/bonusbox.cpp:181
 #, fuzzy
 msgid "Bonusbox Lemon"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonus limón"
 
 #: ../../src/objects/bonusbox.cpp:193
 msgid "Bonusbox Poisonous berry"
-msgstr ""
+msgstr "Caja de bonus baya venenosa"
 
 #: ../../src/objects/bonusbox.cpp:241
 #, fuzzy
 msgid "Bonusbox Jewel"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonus joya"
 
 #: ../../src/objects/bonusbox.cpp:245
 #, fuzzy
 msgid "Bonusbox Red Jewel"
-msgstr "Caja de bonus :"
+msgstr "Caja de bonus joya roja"
 
 #: ../../src/objects/bonusbox.cpp:453
 msgid "Animation"
@@ -2294,7 +2303,7 @@ msgstr "Baya venenosa"
 
 #: ../../src/objects/bonusbox.cpp:501
 msgid "The item that gets spawned"
-msgstr "El contenido de la caja."
+msgstr "El contenido de la caja"
 
 #: ../../src/objects/bonusbox.cpp:517
 msgid "Force item"
@@ -2302,7 +2311,7 @@ msgstr "Forzar ítem"
 
 #: ../../src/objects/bonusbox.cpp:517
 msgid "Force best available item when activated"
-msgstr "Obtienes el ítem sin importar tu estado."
+msgstr "Obtienes el ítem sin importar tu estado"
 
 #: ../../src/objects/bonusbox.cpp:527
 msgid "Jewel color"
@@ -2310,7 +2319,7 @@ msgstr "Color"
 
 #: ../../src/objects/bonusbox.cpp:527
 msgid "Jewel color if the item is a jewel"
-msgstr "Si el ítem es una gema, este sería su color."
+msgstr "Si el ítem es una gema, este sería su color"
 
 #: ../../src/objects/crate.cpp:59
 msgid "Crate"
@@ -2385,16 +2394,16 @@ msgstr ""
 
 #: ../../src/objects/level_exit.cpp:535
 msgid "Return Entry"
-msgstr "ID"
+msgstr "Entrada de retorno"
 
 #: ../../src/objects/level_exit.cpp:535
 #, fuzzy
 msgid "Name of the Entry in the return level."
-msgstr "Nombre de la Ruta para recorrer"
+msgstr "Nombre de la Ruta para recorrer."
 
 #: ../../src/objects/level_exit.cpp:542
 msgid "Exit Name"
-msgstr "ID"
+msgstr "Nombre de salida"
 
 #: ../../src/objects/level_exit.cpp:542
 msgid ""
