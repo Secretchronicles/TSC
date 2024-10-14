@@ -6,22 +6,21 @@ msgstr ""
 "Project-Id-Version: Secret Maryo Chronicles\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-25 22:42+0300\n"
-"PO-Revision-Date: 2014-08-30 19:40+0200\n"
+"PO-Revision-Date: 2024-10-15 01:50+0300\n"
 "Last-Translator: LSpadix <>\n"
 "Language-Team: TSC Spanish translation team\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
-#: ../../src/level/level_settings.cpp:192
-#: ../../src/level/level_settings.cpp:446
-#: ../../src/level/level_settings.cpp:649
-#: ../../src/overworld/world_waypoint.cpp:755
+#: ../../src/level/level_settings.cpp:192 ../../src/level/level_settings.cpp:446
+#: ../../src/level/level_settings.cpp:649 ../../src/overworld/world_waypoint.cpp:755
 #: ../../src/overworld/world_waypoint.cpp:758
-#, fuzzy
 msgid "(None)"
-msgstr "Ninguno"
+msgstr "(Ninguno)"
 
 #: ../../src/level/level_settings.cpp:193 ../../src/gui/menu_data.cpp:1851
 #: ../../src/gui/menu_data.cpp:2898
@@ -46,7 +45,7 @@ msgstr "Nombre"
 
 #: ../../src/level/level_editor.cpp:196 ../../src/level/level.cpp:418
 msgid "Level "
-msgstr "Nivel"
+msgstr "Nivel "
 
 #: ../../src/level/level_editor.cpp:196 ../../src/overworld/world_editor.cpp:86
 msgid " already exists"
@@ -60,8 +59,7 @@ msgstr "Creado "
 msgid "Load a Level"
 msgstr "Cargar nivel"
 
-#: ../../src/level/level_editor.cpp:237
-#: ../../src/overworld/world_editor.cpp:114
+#: ../../src/level/level_editor.cpp:237 ../../src/overworld/world_editor.cpp:114
 msgid "Loaded "
 msgstr "Cargado "
 
@@ -79,12 +77,11 @@ msgstr "El nivel aún no ha sido guardado"
 
 #: ../../src/level/level_editor.cpp:285
 msgid "Delete and Unload "
-msgstr "Borrar y descargar"
+msgstr "Borrar y descargar "
 
 #. TRANS: Level editor left menu's entries follow
 #. TRANS: World editor left menu's entries follow
-#: ../../src/level/level_editor.cpp:369
-#: ../../src/overworld/world_editor.cpp:165
+#: ../../src/level/level_editor.cpp:369 ../../src/overworld/world_editor.cpp:165
 msgid "---Sprites---"
 msgstr "---Sprites---"
 
@@ -124,18 +121,15 @@ msgstr "Jungla"
 msgid "Snow Ground"
 msgstr "Nieve"
 
-#: ../../src/level/level_editor.cpp:379
-#: ../../src/overworld/world_editor.cpp:177
+#: ../../src/level/level_editor.cpp:379 ../../src/overworld/world_editor.cpp:177
 msgid "Blocks"
 msgstr "Bloques"
 
-#: ../../src/level/level_editor.cpp:380
-#: ../../src/overworld/world_editor.cpp:168
+#: ../../src/level/level_editor.cpp:380 ../../src/overworld/world_editor.cpp:168
 msgid "Clouds"
 msgstr "Nubes"
 
-#: ../../src/level/level_editor.cpp:381
-#: ../../src/overworld/world_editor.cpp:169
+#: ../../src/level/level_editor.cpp:381 ../../src/overworld/world_editor.cpp:169
 msgid "Hedges"
 msgstr "Arbustos"
 
@@ -143,13 +137,11 @@ msgstr "Arbustos"
 msgid "Trees"
 msgstr "Árboles"
 
-#: ../../src/level/level_editor.cpp:383
-#: ../../src/overworld/world_editor.cpp:170
+#: ../../src/level/level_editor.cpp:383 ../../src/overworld/world_editor.cpp:170
 msgid "Plants"
 msgstr "Plantas"
 
-#: ../../src/level/level_editor.cpp:384
-#: ../../src/overworld/world_editor.cpp:171
+#: ../../src/level/level_editor.cpp:384 ../../src/overworld/world_editor.cpp:171
 msgid "Cactus"
 msgstr "Cactus"
 
@@ -157,8 +149,7 @@ msgstr "Cactus"
 msgid "Platforms"
 msgstr "Plataformas"
 
-#: ../../src/level/level_editor.cpp:386
-#: ../../src/overworld/world_editor.cpp:174
+#: ../../src/level/level_editor.cpp:386 ../../src/overworld/world_editor.cpp:174
 msgid "Pipes"
 msgstr "Tuberías"
 
@@ -170,8 +161,7 @@ msgstr "Conectores para tuberías"
 msgid "Library"
 msgstr "Librerías"
 
-#: ../../src/level/level_editor.cpp:389
-#: ../../src/overworld/world_editor.cpp:172
+#: ../../src/level/level_editor.cpp:389 ../../src/overworld/world_editor.cpp:172
 msgid "Hills"
 msgstr "Relieves"
 
@@ -187,8 +177,7 @@ msgstr "Cuerdas y puentes"
 msgid "Doors"
 msgstr "Puertas"
 
-#: ../../src/level/level_editor.cpp:393
-#: ../../src/overworld/world_editor.cpp:178
+#: ../../src/level/level_editor.cpp:393 ../../src/overworld/world_editor.cpp:178
 msgid "Bones"
 msgstr "Huesos"
 
@@ -204,8 +193,7 @@ msgstr "Caramelos"
 msgid "Stuff"
 msgstr "Misceláneo"
 
-#: ../../src/level/level_editor.cpp:397
-#: ../../src/overworld/world_editor.cpp:180
+#: ../../src/level/level_editor.cpp:397 ../../src/overworld/world_editor.cpp:180
 msgid "---Objects---"
 msgstr "---Objetos---"
 
@@ -217,13 +205,11 @@ msgstr "Cajas"
 msgid "Enemies"
 msgstr "Enemigos"
 
-#: ../../src/level/level_editor.cpp:400
-#: ../../src/overworld/world_editor.cpp:179
+#: ../../src/level/level_editor.cpp:400 ../../src/overworld/world_editor.cpp:179
 msgid "Special"
 msgstr "Especial"
 
-#: ../../src/level/level_editor.cpp:401
-#: ../../src/overworld/world_editor.cpp:182
+#: ../../src/level/level_editor.cpp:401 ../../src/overworld/world_editor.cpp:182
 msgid "---Functions---"
 msgstr "---Funciones---"
 
@@ -281,7 +267,7 @@ msgstr "Formato de nivel inválido : "
 
 #: ../../src/level/level.cpp:402
 msgid "Couldn't save level "
-msgstr "No se pudo guardar el nivel"
+msgstr "No se pudo guardar el nivel "
 
 #: ../../src/level/level.cpp:418 ../../src/overworld/overworld.cpp:250
 #: ../../src/video/video.cpp:1436
@@ -314,9 +300,7 @@ msgstr "Contínuo"
 
 #: ../../src/audio/random_sound.cpp:458
 msgid "Check if the sound should be played continuously instead of randomly"
-msgstr ""
-"Comprueba si el sonido debería ser reproducido constantemente en ver de "
-"aleatoriamente"
+msgstr "Comprueba si el sonido debería ser reproducido constantemente en ver de aleatoriamente"
 
 #: ../../src/audio/random_sound.cpp:465
 msgid "Delay Minimum"
@@ -359,41 +343,34 @@ msgid "End"
 msgstr "Fin"
 
 #: ../../src/audio/random_sound.cpp:505
-msgid ""
-"Volume reduction ends at this distance. Sound is not played beyond this."
+msgid "Volume reduction ends at this distance. Sound is not played beyond this."
 msgstr ""
-"La reducción de volumen termina a esta distancia. El sonido no será "
-"reproducido a partir de aquí."
+"La reducción de volumen termina a esta distancia. El sonido no será reproducido a partir de "
+"aquí."
 
 #: ../../src/scene/01_prologue.cpp:36
 msgid ""
-"The sinking sun sent out its last colourful beams over the Eastern Desert "
-"when a single individual was making his way through the ups and downs of the "
-"sandy dunes."
+"The sinking sun sent out its last colourful beams over the Eastern Desert when a single "
+"individual was making his way through the ups and downs of the sandy dunes."
 msgstr ""
-"El sol poniente enviaba sus últimos rayos de colores sobre el Desierto "
-"Oriental mientras un solo individuo se abría paso entre las subidas "
-"y bajadas de las dunas de arena."
+"El sol poniente enviaba sus últimos rayos de colores sobre el Desierto Oriental mientras un "
+"solo individuo se abría paso entre las subidas y bajadas de las dunas de arena."
 
 #: ../../src/scene/01_prologue.cpp:37
 msgid ""
-"When he reached the top of the highest dune, he gazed around, but to only "
-"see sand followed by more sand, by even more "
-"[colour='FFFFF000']sand[colour='FFFFFFFF']."
+"When he reached the top of the highest dune, he gazed around, but to only see sand followed "
+"by more sand, by even more [colour='FFFFF000']sand[colour='FFFFFFFF']."
 msgstr ""
-"Cuando llegó a la cima de la duna más alta, miró a su alrededor, pero lo "
-"único que vio fue arena, seguida de más arena, y aún más "
-"[colour='FFFFF000']arena[colour='FFFFFFFF']."
+"Cuando llegó a la cima de la duna más alta, miró a su alrededor, pero lo único que vio fue "
+"arena, seguida de más arena, y aún más [colour='FFFFF000']arena[colour='FFFFFFFF']."
 
 #: ../../src/scene/01_prologue.cpp:38
 msgid ""
-"He took out a map, but with the stars not yet visible on the darkening sky "
-"there was no means of orientation in this infinite sea of equally hostile "
-"sand dunes."
+"He took out a map, but with the stars not yet visible on the darkening sky there was no "
+"means of orientation in this infinite sea of equally hostile sand dunes."
 msgstr ""
-"Sacó un mapa, pero como las estrellas aún no eran visibles en el cielo que "
-"oscurecía, no había forma de orientarse en ese mar infinito de dunas de "
-"arena igualmente hostiles."
+"Sacó un mapa, pero como las estrellas aún no eran visibles en el cielo que oscurecía, no "
+"había forma de orientarse en ese mar infinito de dunas de arena igualmente hostiles."
 
 #: ../../src/gui/debug_window.cpp:43
 msgid "Debugging Information"
@@ -554,7 +531,6 @@ msgid ""
 "Green: User\n"
 "Grey: Deprecated\n"
 "Mixed: See the colors"
-
 msgstr ""
 "- Color en los niveles-\n"
 "\n"
@@ -574,15 +550,15 @@ msgstr ""
 
 #: ../../src/gui/menu_data.cpp:817 ../../src/gui/menu_data.cpp:835
 msgid "Couldn't load campaign "
-msgstr "No se pudo cargar la campaña"
+msgstr "No se pudo cargar la campaña "
 
 #: ../../src/gui/menu_data.cpp:859
 msgid "Couldn't load overworld "
-msgstr "No se pudo cargar el mundo"
+msgstr "No se pudo cargar el mundo "
 
 #: ../../src/gui/menu_data.cpp:885
 msgid "Couldn't load level "
-msgstr "No se pudo cargar el nivel"
+msgstr "No se pudo cargar el nivel "
 
 #: ../../src/gui/menu_data.cpp:1350
 msgid "Delete %s?"
@@ -670,7 +646,7 @@ msgstr "VSync"
 
 #: ../../src/gui/menu_data.cpp:1671
 msgid "FPS Limit"
-msgstr "Límite de fps."
+msgstr "Límite de fps"
 
 #: ../../src/gui/menu_data.cpp:1680
 msgid "Geometry Quality"
@@ -702,9 +678,7 @@ msgstr "Música"
 
 #: ../../src/gui/menu_data.cpp:1740
 msgid "Enable to play music. You need to have the Music Addon installed."
-msgstr ""
-"Esto activa la música del juego, pero necesitas tener el Addon de "
-"Música instalado."
+msgstr "Esto activa la música del juego, pero necesitas tener el Addon de Música instalado."
 
 #: ../../src/gui/menu_data.cpp:1762
 msgid "Set the Music Volume."
@@ -720,7 +694,7 @@ msgstr "Activa el sonido."
 
 #: ../../src/gui/menu_data.cpp:1793
 msgid "Set the Sound Volume."
-msgstr "Ajusta el volumen de los sonidos"
+msgstr "Ajusta el volumen de los sonidos."
 
 #: ../../src/gui/menu_data.cpp:1810 ../../src/gui/menu_data.cpp:1919
 msgid "Shortcuts"
@@ -736,7 +710,7 @@ msgstr "Tecla"
 
 #: ../../src/gui/menu_data.cpp:1822
 msgid "Scroll Speed"
-msgstr "No toques esto. Es inútil."
+msgstr "No toques esto. Es inútil"
 
 #: ../../src/gui/menu_data.cpp:1840
 msgid "Sensitivity"
@@ -778,6 +752,7 @@ msgstr "Tamaño de las imágenes"
 #: ../../src/gui/menu_data.cpp:1972
 msgid "Auto-Hide Mouse"
 msgstr "Ocultar ratón"
+
 #: ../../src/gui/menu_data.cpp:2267
 msgid "Up"
 msgstr "Arriba"
@@ -959,8 +934,7 @@ msgstr "Cargando Imágenes"
 msgid "Loading Sounds"
 msgstr "Cargando Sonidos"
 
-#: ../../src/core/property_helper.cpp:514
-#: ../../src/core/property_helper.cpp:764
+#: ../../src/core/property_helper.cpp:514 ../../src/core/property_helper.cpp:764
 msgid "undefined"
 msgstr "indefinido"
 
@@ -1032,8 +1006,7 @@ msgstr "primero"
 msgid "last"
 msgstr "último"
 
-#: ../../src/core/property_helper.cpp:766
-#: ../../src/core/property_helper.cpp:872
+#: ../../src/core/property_helper.cpp:766 ../../src/core/property_helper.cpp:872
 msgid "green"
 msgstr "verde"
 
@@ -1330,8 +1303,7 @@ msgstr "No se pudo guardar la descripción del mundo "
 msgid "Couldn't save world "
 msgstr "No se pudo guardar el mundo "
 
-#: ../../src/overworld/overworld.cpp:250
-#: ../../src/overworld/world_editor.cpp:86
+#: ../../src/overworld/overworld.cpp:250 ../../src/overworld/world_editor.cpp:86
 msgid "World "
 msgstr "Mundo "
 
@@ -1355,8 +1327,7 @@ msgstr "Origen del punto de acceso"
 msgid "Create a new World"
 msgstr "Crear un nuevo mundo"
 
-#: ../../src/overworld/world_editor.cpp:67
-#: ../../src/overworld/world_editor.cpp:94
+#: ../../src/overworld/world_editor.cpp:67 ../../src/overworld/world_editor.cpp:94
 #: ../../src/overworld/world_editor.cpp:98
 msgctxt "world"
 msgid "Name"
@@ -1394,14 +1365,12 @@ msgstr "Genérico"
 msgid "Waypoint"
 msgstr "Punto de acceso"
 
-#: ../../src/overworld/world_waypoint.cpp:487
-#: ../../src/overworld/world_waypoint.cpp:491
+#: ../../src/overworld/world_waypoint.cpp:487 ../../src/overworld/world_waypoint.cpp:491
 #: ../../src/overworld/world_waypoint.cpp:617
 msgid "Level"
 msgstr "Nivel"
 
-#: ../../src/overworld/world_waypoint.cpp:488
-#: ../../src/overworld/world_waypoint.cpp:494
+#: ../../src/overworld/world_waypoint.cpp:488 ../../src/overworld/world_waypoint.cpp:494
 msgid "World"
 msgstr "Mundo"
 
@@ -1429,30 +1398,25 @@ msgstr "Hacia atrás"
 msgid "Forward Direction"
 msgstr "Hacia delante"
 
-#: ../../src/overworld/world_waypoint.cpp:540
-#: ../../src/overworld/world_waypoint.cpp:544
+#: ../../src/overworld/world_waypoint.cpp:540 ../../src/overworld/world_waypoint.cpp:544
 #: ../../src/overworld/world_waypoint.cpp:662 ../../src/enemies/gee.cpp:586
-#: ../../src/enemies/gee.cpp:591 ../../src/enemies/gee.cpp:644
-#: ../../src/enemies/static.cpp:346 ../../src/enemies/static.cpp:350
-#: ../../src/enemies/static.cpp:419
-#: ../../src/enemies/bosses/turtle_boss.cpp:1035
-#: ../../src/enemies/bosses/turtle_boss.cpp:1039
-#: ../../src/enemies/bosses/turtle_boss.cpp:1096
-#: ../../src/enemies/furball.cpp:762 ../../src/enemies/furball.cpp:767
-#: ../../src/enemies/furball.cpp:784 ../../src/objects/bonusbox.cpp:506
-#: ../../src/objects/bonusbox.cpp:510 ../../src/objects/bonusbox.cpp:618
+#: ../../src/enemies/gee.cpp:591 ../../src/enemies/gee.cpp:644 ../../src/enemies/static.cpp:346
+#: ../../src/enemies/static.cpp:350 ../../src/enemies/static.cpp:419
+#: ../../src/enemies/bosses/turtle_boss.cpp:1035 ../../src/enemies/bosses/turtle_boss.cpp:1039
+#: ../../src/enemies/bosses/turtle_boss.cpp:1096 ../../src/enemies/furball.cpp:762
+#: ../../src/enemies/furball.cpp:767 ../../src/enemies/furball.cpp:784
+#: ../../src/objects/bonusbox.cpp:506 ../../src/objects/bonusbox.cpp:510
+#: ../../src/objects/bonusbox.cpp:618
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../../src/overworld/world_waypoint.cpp:541
-#: ../../src/overworld/world_waypoint.cpp:547 ../../src/enemies/gee.cpp:587
-#: ../../src/enemies/gee.cpp:594 ../../src/enemies/static.cpp:347
-#: ../../src/enemies/static.cpp:353
-#: ../../src/enemies/bosses/turtle_boss.cpp:1036
-#: ../../src/enemies/bosses/turtle_boss.cpp:1042
-#: ../../src/enemies/furball.cpp:763 ../../src/enemies/furball.cpp:770
-#: ../../src/objects/box.cpp:690 ../../src/objects/box.cpp:705
-#: ../../src/objects/bonusbox.cpp:507 ../../src/objects/bonusbox.cpp:513
+#: ../../src/overworld/world_waypoint.cpp:541 ../../src/overworld/world_waypoint.cpp:547
+#: ../../src/enemies/gee.cpp:587 ../../src/enemies/gee.cpp:594 ../../src/enemies/static.cpp:347
+#: ../../src/enemies/static.cpp:353 ../../src/enemies/bosses/turtle_boss.cpp:1036
+#: ../../src/enemies/bosses/turtle_boss.cpp:1042 ../../src/enemies/furball.cpp:763
+#: ../../src/enemies/furball.cpp:770 ../../src/objects/box.cpp:690
+#: ../../src/objects/box.cpp:705 ../../src/objects/bonusbox.cpp:507
+#: ../../src/objects/bonusbox.cpp:513
 msgid "Disabled"
 msgstr "Desactivado"
 
@@ -1462,7 +1426,7 @@ msgstr "Acceso por defecto"
 
 #: ../../src/overworld/world_waypoint.cpp:551
 msgid "Enable if the Waypoint should be always accessible."
-msgstr "Activar si el punto de paso debe estar siempre accesible"
+msgstr "Activar si el punto de paso debe estar siempre accesible."
 
 #: ../../src/overworld/world_waypoint.cpp:558
 msgid "Waypoint Exit"
@@ -1472,8 +1436,7 @@ msgstr "Punto de paso"
 msgid "Select the waypoint exit to edit."
 msgstr "Selecciona el segmento a editar."
 
-#: ../../src/overworld/world_waypoint.cpp:562
-#: ../../src/overworld/world_waypoint.cpp:564
+#: ../../src/overworld/world_waypoint.cpp:562 ../../src/overworld/world_waypoint.cpp:564
 msgid "New Exit"
 msgstr "Nueva salida"
 
@@ -1481,8 +1444,7 @@ msgstr "Nueva salida"
 msgid "Create a new exit by clicking."
 msgstr "Crea una nueva salida."
 
-#: ../../src/overworld/world_waypoint.cpp:568
-#: ../../src/overworld/world_waypoint.cpp:570
+#: ../../src/overworld/world_waypoint.cpp:568 ../../src/overworld/world_waypoint.cpp:570
 msgid "Delete Exit"
 msgstr "Eliminar salida"
 
@@ -1514,15 +1476,12 @@ msgstr "Linea de punto de partida"
 msgid "UID of the line start point to set Alex onto when taking this exit."
 msgstr ""
 
-#: ../../src/overworld/world_waypoint.cpp:599
-#: ../../src/overworld/world_waypoint.cpp:601
-#: ../../src/overworld/world_waypoint.cpp:769
-#: ../../src/overworld/world_waypoint.cpp:783
+#: ../../src/overworld/world_waypoint.cpp:599 ../../src/overworld/world_waypoint.cpp:601
+#: ../../src/overworld/world_waypoint.cpp:769 ../../src/overworld/world_waypoint.cpp:783
 msgid "Locked"
 msgstr "Sí"
 
-#: ../../src/overworld/world_waypoint.cpp:600
-#: ../../src/overworld/world_waypoint.cpp:771
+#: ../../src/overworld/world_waypoint.cpp:600 ../../src/overworld/world_waypoint.cpp:771
 msgid "Unlocked"
 msgstr "No"
 
@@ -1532,8 +1491,8 @@ msgstr "Bloqueo"
 
 #: ../../src/overworld/world_waypoint.cpp:604
 msgid ""
-"Is this exit locked by default? PLEASE also set access to enabled on the "
-"target waypoint if you unlock by default!"
+"Is this exit locked by default? PLEASE also set access to enabled on the target waypoint if "
+"you unlock by default!"
 msgstr ""
 
 #. TRANS: Prompt issued in the game console
@@ -1551,7 +1510,7 @@ msgstr "Restaurando texturas"
 
 #: ../../src/video/video.cpp:470
 msgid "Caching Images failed : Could not remove old images"
-msgstr "No fue posible eliminar el caché anterior."
+msgstr "No fue posible eliminar el caché anterior"
 
 #: ../../src/video/video.cpp:493
 msgid "Caching Images"
@@ -1639,7 +1598,7 @@ msgstr "Intervalo de aparición"
 
 #: ../../src/video/animation.cpp:1446
 msgid "Time between spawning particles. Amount is the quota."
-msgstr "Cada cuánto tiempo aparecerán partículas"
+msgstr "Cada cuánto tiempo aparecerán partículas."
 
 #: ../../src/video/animation.cpp:1454
 msgid "Quota"
@@ -1755,11 +1714,11 @@ msgstr ""
 
 #: ../../src/enemies/krush.cpp:385 ../../src/enemies/gee.cpp:573
 #: ../../src/enemies/larry.cpp:422 ../../src/enemies/spikeball.cpp:515
-#: ../../src/enemies/bosses/turtle_boss.cpp:1006
-#: ../../src/enemies/beetle.cpp:270 ../../src/enemies/furball.cpp:746
-#: ../../src/enemies/army.cpp:927 ../../src/objects/moving_platform.cpp:958
+#: ../../src/enemies/bosses/turtle_boss.cpp:1006 ../../src/enemies/beetle.cpp:270
+#: ../../src/enemies/furball.cpp:746 ../../src/enemies/army.cpp:927
+#: ../../src/objects/moving_platform.cpp:958
 msgid "Starting direction."
-msgstr "Dirección inicial"
+msgstr "Dirección inicial."
 
 #: ../../src/enemies/flyon.cpp:567 ../../src/enemies/rokko.cpp:581
 #: ../../src/enemies/thromp.cpp:686
@@ -1884,13 +1843,11 @@ msgstr "Porrazos"
 msgid "Hits until a downgrade"
 msgstr "Porrazos que necesita para entrar en modo caparazón"
 
-#: ../../src/enemies/bosses/turtle_boss.cpp:1018
-#: ../../src/enemies/furball.cpp:754
+#: ../../src/enemies/bosses/turtle_boss.cpp:1018 ../../src/enemies/furball.cpp:754
 msgid "Downgrades"
 msgstr "Fundazos"
 
-#: ../../src/enemies/bosses/turtle_boss.cpp:1018
-#: ../../src/enemies/furball.cpp:754
+#: ../../src/enemies/bosses/turtle_boss.cpp:1018 ../../src/enemies/furball.cpp:754
 msgid "Downgrades until death"
 msgstr "Cuántas veces debe entrar en modo caparazón para que muera"
 
@@ -1902,13 +1859,11 @@ msgstr "Tiempo en modo caparazón"
 msgid "Time running as shell to rise again"
 msgstr "Tiempo de duración en el modo caparazón"
 
-#: ../../src/enemies/bosses/turtle_boss.cpp:1045
-#: ../../src/enemies/furball.cpp:764
+#: ../../src/enemies/bosses/turtle_boss.cpp:1045 ../../src/enemies/furball.cpp:764
 msgid "End Level"
 msgstr "Finalizar nivel"
 
-#: ../../src/enemies/bosses/turtle_boss.cpp:1045
-#: ../../src/enemies/furball.cpp:764
+#: ../../src/enemies/bosses/turtle_boss.cpp:1045 ../../src/enemies/furball.cpp:764
 msgid "End the level if it is killed."
 msgstr "Finaliza el nivel si muere como un perro."
 
@@ -1964,13 +1919,11 @@ msgstr "Caja"
 msgid "Useable Count"
 msgstr "Contador utilizable"
 
-#: ../../src/objects/box.cpp:692 ../../src/objects/box.cpp:699
-#: ../../src/objects/box.cpp:735
+#: ../../src/objects/box.cpp:692 ../../src/objects/box.cpp:699 ../../src/objects/box.cpp:735
 msgid "Ghost"
 msgstr "Fantasma"
 
-#: ../../src/objects/box.cpp:693 ../../src/objects/box.cpp:702
-#: ../../src/objects/box.cpp:738
+#: ../../src/objects/box.cpp:693 ../../src/objects/box.cpp:702 ../../src/objects/box.cpp:738
 msgid "Semi Massive"
 msgstr "Medio Masivo"
 
@@ -1986,8 +1939,7 @@ msgid ""
 msgstr ""
 "Masivo es invisible hasta activarlo. \n"
 "Fantasma sólo es visible y activable en modo fantasma. \n"
-"Medio Masivo es como Masivo pero sólo alcanzable en la dirección de "
-"activación."
+"Medio Masivo es como Masivo pero sólo alcanzable en la dirección de activación."
 
 #: ../../src/objects/box.cpp:753
 #, fuzzy
@@ -2012,11 +1964,8 @@ msgid "Movement type."
 msgstr "Tipo de movimiento."
 
 #: ../../src/objects/moving_platform.cpp:962
-msgid ""
-"Movable distance into its direction if type is line or radius if circle."
-msgstr ""
-"Distancia movible en esta dirección si el tipo es línea o radio si es un "
-"círculo."
+msgid "Movable distance into its direction if type is line or radius if circle."
+msgstr "Distancia movible en esta dirección si el tipo es línea o radio si es un círculo."
 
 #: ../../src/objects/moving_platform.cpp:978
 msgid "Touch time"
@@ -2040,8 +1989,7 @@ msgstr "Tiempo de contacto en movimiento"
 
 #: ../../src/objects/moving_platform.cpp:994
 msgid "If set does not move until this time has elapsed after touched"
-msgstr ""
-"Cuánto tiempo durará la plataforma para moverse cuando esta sea tocada."
+msgstr "Cuánto tiempo durará la plataforma para moverse cuando esta sea tocada"
 
 #: ../../src/objects/moving_platform.cpp:1002
 msgid "Hor image count"
@@ -2065,11 +2013,11 @@ msgstr "Imagen superior derecha"
 
 #: ../../src/objects/moving_platform.cpp:1229
 msgid "Falling "
-msgstr "Plata"
+msgstr "Plata "
 
 #: ../../src/objects/moving_platform.cpp:1232
 msgid "Delayed "
-msgstr "Retrasado"
+msgstr "Retrasado "
 
 #: ../../src/objects/moving_platform.cpp:1235
 msgid "Moving "
@@ -2081,11 +2029,11 @@ msgstr "Plataforma - "
 
 #: ../../src/objects/level_entry.cpp:133 ../../src/objects/level_exit.cpp:208
 msgid " Beam"
-msgstr "Rayo"
+msgstr " Rayo"
 
 #: ../../src/objects/level_entry.cpp:136 ../../src/objects/level_exit.cpp:211
 msgid " Warp"
-msgstr "Trasladar"
+msgstr " Trasladar"
 
 #: ../../src/objects/level_entry.cpp:369
 msgid "The direction to come out"
@@ -2116,12 +2064,8 @@ msgid "Identifier"
 msgstr "Identificador"
 
 #: ../../src/objects/path.cpp:712
-msgid ""
-"Identifier name of the Path. This is needed for objects that can link to "
-"this."
-msgstr ""
-"Nombre identificador de la Ruta. Es necesario para objetos que se puedan "
-"enlazar."
+msgid "Identifier name of the Path. This is needed for objects that can link to this."
+msgstr "Nombre identificador de la Ruta. Es necesario para objetos que se puedan enlazar."
 
 #: ../../src/objects/path.cpp:729
 msgid "Show Line"
@@ -2132,9 +2076,7 @@ msgid "Wether or not to show the path's moving line ingame."
 msgstr "Muestra la línea de la ruta."
 
 #: ../../src/objects/path.cpp:745
-msgid ""
-"Movement type. Mirror moves forth and back and rewind starts from the "
-"beginning again."
+msgid "Movement type. Mirror moves forth and back and rewind starts from the beginning again."
 msgstr ""
 
 #: ../../src/objects/path.cpp:757
@@ -2260,11 +2202,8 @@ msgid "Animation"
 msgstr "Animación"
 
 #: ../../src/objects/bonusbox.cpp:453
-msgid ""
-"Use the Power animation if the box has a good or needed item for this level"
-msgstr ""
-"Usa la animación Poder si el ítem de la caja es bueno o "
-"necesario para el nivel"
+msgid "Use the Power animation if the box has a good or needed item for this level"
+msgstr "Usa la animación Poder si el ítem de la caja es bueno o necesario para el nivel"
 
 #: ../../src/objects/bonusbox.cpp:460 ../../src/objects/bonusbox.cpp:470
 #: ../../src/objects/bonusbox.cpp:577 ../../src/objects/powerup.cpp:224
@@ -2362,11 +2301,8 @@ msgid "Destination Level"
 msgstr "Destino del nivel"
 
 #: ../../src/objects/level_exit.cpp:514
-msgid ""
-"Name of the level that should be entered. If empty uses the current level."
-msgstr ""
-"Se debería introducir un nombre para el nivel. Si está vacío se usa el nivel "
-"actual."
+msgid "Name of the level that should be entered. If empty uses the current level."
+msgstr "Se debería introducir un nombre para el nivel. Si está vacío se usa el nivel actual."
 
 #: ../../src/objects/level_exit.cpp:521
 msgid "Destination Entry"
@@ -2374,11 +2310,11 @@ msgstr "Entrada de destino"
 
 #: ../../src/objects/level_exit.cpp:521
 msgid ""
-"Name of the Entry in the destination level. If empty the entry point is the "
-"player start position."
+"Name of the Entry in the destination level. If empty the entry point is the player start "
+"position."
 msgstr ""
-"Nombre de la Entrada en el nivel de destino. Si está vacía el punto de "
-"entrada será la posición inicial del jugador."
+"Nombre de la Entrada en el nivel de destino. Si está vacía el punto de entrada será la "
+"posición inicial del jugador."
 
 #: ../../src/objects/level_exit.cpp:528
 #, fuzzy
@@ -2388,9 +2324,7 @@ msgstr "Menú del Nivel"
 #: ../../src/objects/level_exit.cpp:528
 #, fuzzy
 msgid "Name of the level that should be pushed onto return stack."
-msgstr ""
-"Se debería introducir un nombre para el nivel. Si está vacío se usa el nivel "
-"actual."
+msgstr "Se debería introducir un nombre para el nivel. Si está vacío se usa el nivel actual."
 
 #: ../../src/objects/level_exit.cpp:535
 msgid "Return Entry"
@@ -2407,8 +2341,7 @@ msgstr "Nombre de salida"
 
 #: ../../src/objects/level_exit.cpp:542
 msgid ""
-"Name of the Exit (use this in the overworld editor to set the path selected "
-"by this exit)."
+"Name of the Exit (use this in the overworld editor to set the path selected by this exit)."
 msgstr ""
 
 #: ../../src/objects/level_exit.cpp:549
