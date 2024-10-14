@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Secret Maryo Chronicles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-15 02:02+0300\n"
+"POT-Creation-Date: 2020-09-25 22:42+0300\n"
 "PO-Revision-Date: 2014-08-30 19:50+0200\n"
 "Last-Translator: Florian Richter <fluxey@gmail.com>\n"
 "Language-Team: UNMAINTAINED\n"
@@ -14,6 +14,309 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/level/level_settings.cpp:192
+#: ../../src/level/level_settings.cpp:446
+#: ../../src/level/level_settings.cpp:649
+#: ../../src/overworld/world_waypoint.cpp:755
+#: ../../src/overworld/world_waypoint.cpp:758
+#, fuzzy
+msgid "(None)"
+msgstr "無"
+
+#: ../../src/level/level_settings.cpp:193 ../../src/gui/menu_data.cpp:1851
+#: ../../src/gui/menu_data.cpp:2898
+msgid "None"
+msgstr "無"
+
+#: ../../src/level/level_settings.cpp:276 ../../src/level/level_editor.cpp:256
+#: ../../src/overworld/world_editor.cpp:127
+msgid "Save "
+msgstr "儲存 "
+
+#: ../../src/level/level_editor.cpp:187
+msgid "Create a new Level"
+msgstr "建立一個新等級"
+
+#: ../../src/level/level_editor.cpp:187 ../../src/level/level_editor.cpp:214
+#: ../../src/level/level_editor.cpp:218 ../../src/objects/level_entry.cpp:374
+#, fuzzy
+msgctxt "level"
+msgid "Name"
+msgstr "名字"
+
+#: ../../src/level/level_editor.cpp:196 ../../src/level/level.cpp:418
+msgid "Level "
+msgstr "等級"
+
+#: ../../src/level/level_editor.cpp:196 ../../src/overworld/world_editor.cpp:86
+msgid " already exists"
+msgstr " 已存在"
+
+#: ../../src/level/level_editor.cpp:208 ../../src/overworld/world_editor.cpp:82
+msgid "Created "
+msgstr "已建立 "
+
+#: ../../src/level/level_editor.cpp:218
+msgid "Load a Level"
+msgstr "載入等級"
+
+#: ../../src/level/level_editor.cpp:237
+#: ../../src/overworld/world_editor.cpp:114
+msgid "Loaded "
+msgstr "已載入 "
+
+#: ../../src/level/level_editor.cpp:265
+msgid "Save Level as"
+msgstr "儲存等級為"
+
+#: ../../src/level/level_editor.cpp:265
+msgid "New name"
+msgstr "新名稱"
+
+#: ../../src/level/level_editor.cpp:280
+msgid "Level was not yet saved"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:285
+msgid "Delete and Unload "
+msgstr "刪除並卸載"
+
+#. TRANS: Level editor left menu's entries follow
+#. TRANS: World editor left menu's entries follow
+#: ../../src/level/level_editor.cpp:369
+#: ../../src/overworld/world_editor.cpp:165
+msgid "---Sprites---"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:370
+#, fuzzy
+msgid "Green Ground"
+msgstr "地板"
+
+#: ../../src/level/level_editor.cpp:371
+#, fuzzy
+msgid "Desert Ground"
+msgstr "地板"
+
+#: ../../src/level/level_editor.cpp:372
+#, fuzzy
+msgid "Sand Ground"
+msgstr "地板"
+
+#: ../../src/level/level_editor.cpp:373
+#, fuzzy
+msgid "Castle Ground"
+msgstr "地板"
+
+#: ../../src/level/level_editor.cpp:374
+#, fuzzy
+msgid "Cave Ground"
+msgstr "地板"
+
+#: ../../src/level/level_editor.cpp:375
+#, fuzzy
+msgid "Underground"
+msgstr "未定"
+
+#: ../../src/level/level_editor.cpp:376
+msgid "Plastic Ground"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:377
+#, fuzzy
+msgid "Jungle Ground"
+msgstr "未定"
+
+#: ../../src/level/level_editor.cpp:378
+#, fuzzy
+msgid "Snow Ground"
+msgstr "地板"
+
+#: ../../src/level/level_editor.cpp:379
+#: ../../src/overworld/world_editor.cpp:177
+msgid "Blocks"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:380
+#: ../../src/overworld/world_editor.cpp:168
+msgid "Clouds"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:381
+#: ../../src/overworld/world_editor.cpp:169
+msgid "Hedges"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:382
+msgid "Trees"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:383
+#: ../../src/overworld/world_editor.cpp:170
+msgid "Plants"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:384
+#: ../../src/overworld/world_editor.cpp:171
+msgid "Cactus"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:385
+#, fuzzy
+msgid "Platforms"
+msgstr "平台 - "
+
+#: ../../src/level/level_editor.cpp:386
+#: ../../src/overworld/world_editor.cpp:174
+msgid "Pipes"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:387
+msgid "Pipe Connectors"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:388
+msgid "Library"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:389
+#: ../../src/overworld/world_editor.cpp:172
+msgid "Hills"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:390
+msgid "Signs"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:391
+msgid "Ropes"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:392
+msgid "Doors"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:393
+#: ../../src/overworld/world_editor.cpp:178
+msgid "Bones"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:394
+msgid "Windows"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:395
+msgid "Candy"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:396
+msgid "Stuff"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:397
+#: ../../src/overworld/world_editor.cpp:180
+#, fuzzy
+msgid "---Objects---"
+msgstr "物體： "
+
+#: ../../src/level/level_editor.cpp:398
+msgid "Boxes"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:399
+msgid "Enemies"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:400
+#: ../../src/overworld/world_editor.cpp:179
+msgid "Special"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:401
+#: ../../src/overworld/world_editor.cpp:182
+msgid "---Functions---"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:402 ../../src/gui/menu_data.cpp:630
+#: ../../src/overworld/world_editor.cpp:183
+msgid "New"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:403 ../../src/gui/menu_data.cpp:3101
+#: ../../src/gui/menu_data.cpp:3103 ../../src/overworld/world_editor.cpp:184
+#, fuzzy
+msgid "Load"
+msgstr "載入中"
+
+#: ../../src/level/level_editor.cpp:404 ../../src/gui/menu_data.cpp:3094
+#: ../../src/gui/menu_data.cpp:3096 ../../src/overworld/world_editor.cpp:185
+#, fuzzy
+msgid "Save"
+msgstr "儲存 "
+
+#: ../../src/level/level_editor.cpp:405
+#, fuzzy
+msgid "Save as"
+msgstr "儲存 "
+
+#: ../../src/level/level_editor.cpp:406 ../../src/gui/menu_data.cpp:632
+#: ../../src/objects/path.cpp:770
+msgid "Delete"
+msgstr ""
+
+#: ../../src/level/level_editor.cpp:407
+#, fuzzy
+msgid "Settings"
+msgstr "等級設定 ： "
+
+#: ../../src/level/level_player.cpp:3976 ../../src/video/animation.cpp:1574
+#: ../../src/enemies/krush.cpp:385 ../../src/enemies/flyon.cpp:567
+#: ../../src/enemies/gee.cpp:573 ../../src/enemies/rokko.cpp:581
+#: ../../src/enemies/larry.cpp:422 ../../src/enemies/spikeball.cpp:515
+#: ../../src/enemies/bosses/turtle_boss.cpp:1006 ../../src/enemies/pip.cpp:369
+#: ../../src/enemies/beetle.cpp:270 ../../src/enemies/furball.cpp:746
+#: ../../src/enemies/army.cpp:927 ../../src/enemies/eato.cpp:284
+#: ../../src/enemies/thromp.cpp:686 ../../src/objects/moving_platform.cpp:958
+#: ../../src/objects/level_entry.cpp:369 ../../src/objects/level_exit.cpp:485
+msgid "Direction"
+msgstr "方向"
+
+#: ../../src/level/level_player.cpp:3976
+msgid "Initial direction"
+msgstr "最初的方向"
+
+#: ../../src/level/level_manager.cpp:472
+msgid "Invalid target level."
+msgstr ""
+
+#: ../../src/level/level.cpp:220
+#, fuzzy
+msgid "Unsupported Level format : "
+msgstr "不支持的 : "
+
+#: ../../src/level/level.cpp:402
+msgid "Couldn't save level "
+msgstr "無法儲存等級"
+
+#: ../../src/level/level.cpp:418 ../../src/overworld/overworld.cpp:250
+#: ../../src/video/video.cpp:1436
+msgid " saved"
+msgstr "儲存"
+
+#: ../../src/level/level.cpp:716
+#, fuzzy
+msgid "Omega Mode disabled"
+msgstr "等极編輯器停用"
+
+#: ../../src/level/level.cpp:720
+msgid "Omega Mode enabled"
+msgstr ""
+
+#: ../../src/level/level.cpp:731
+#, fuzzy
+msgid "Kid cheat activated"
+msgstr "啟動時的速度"
 
 #: ../../src/audio/random_sound.cpp:451 ../../src/video/animation.cpp:1400
 msgid "Filename"
@@ -76,625 +379,110 @@ msgid ""
 "Volume reduction ends at this distance. Sound is not played beyond this."
 msgstr "音量在這個距離結束。聲音不再播放。"
 
-#: ../../src/user/savegame/savegame_loader.cpp:75
-#, fuzzy
-msgid "No description"
-msgstr "沒有說明"
+#: ../../src/scene/01_prologue.cpp:36
+msgid ""
+"The sinking sun sent out its last colourful beams over the Eastern Desert "
+"when a single individual was making his way through the ups and downs of the "
+"sandy dunes."
+msgstr ""
 
-#: ../../src/user/savegame/savegame.cpp:271
-msgid "Savegame "
-msgstr "儲存遊戲 "
+#: ../../src/scene/01_prologue.cpp:37
+msgid ""
+"When he reached the top of the highest dune, he gazed around, but to only "
+"see sand followed by more sand, by even more "
+"[colour='FFFFF000']sand[colour='FFFFFFFF']."
+msgstr ""
 
-#: ../../src/user/savegame/savegame.cpp:271
-msgid " loaded"
-msgstr "已載入"
+#: ../../src/scene/01_prologue.cpp:38
+msgid ""
+"He took out a map, but with the stars not yet visible on the darkening sky "
+"there was no means of orientation in this infinite sea of equally hostile "
+"sand dunes."
+msgstr ""
 
-#: ../../src/user/savegame/savegame.cpp:436
-#, fuzzy
-msgid "Couldn't save savegame "
-msgstr "無法儲存等級"
+#: ../../src/gui/debug_window.cpp:43
+msgid "Debugging Information"
+msgstr ""
 
-#: ../../src/user/savegame/savegame.cpp:439
-msgid "Saved to Slot "
-msgstr "儲存至列表單位 "
-
-#. TRANS: %u is replaced by the number of the save slot, starting with 1.
-#: ../../src/user/savegame/savegame.cpp:505
+#. TRANS: Do not translate the part in brackets
+#: ../../src/gui/debug_window.cpp:103
 #, c-format
-msgid "%u. Free Save"
+msgid "[colour='FFFFFF00']FPS: Best: %.02f Worst: %.02f Current: %0.2f"
 msgstr ""
 
-#: ../../src/user/savegame/savegame.cpp:527
-msgid " -  Level "
-msgstr " -  等級 "
+#: ../../src/gui/debug_window.cpp:111
+#, fuzzy, c-format
+msgid "Camera X: %d Y: %d"
+msgstr "照像：X "
 
-#: ../../src/user/savegame/savegame.cpp:534
-msgid " -  Unknown"
+#: ../../src/gui/debug_window.cpp:121
+#, c-format
+msgid "Level: %s (return stack size: %ld)"
 msgstr ""
 
-#: ../../src/user/savegame/savegame.cpp:538
-msgid " - Date "
-msgstr " - 日期 "
+#: ../../src/gui/debug_window.cpp:126
+#, fuzzy, c-format
+msgid "Overworld: %s"
+msgstr "載入超世界"
 
-#: ../../src/objects/spinbox.cpp:49
-msgid "Spinbox"
-msgstr "旋轉盒"
-
-#: ../../src/objects/sprite.cpp:1454 ../../src/enemies/static.cpp:315
-msgid "Image"
-msgstr "圖像"
-
-#: ../../src/objects/sprite.cpp:1454 ../../src/video/animation.cpp:1400
-#: ../../src/enemies/static.cpp:315
-msgid "Image filename"
-msgstr "圖像檔案名稱"
-
-#: ../../src/objects/moving_platform.cpp:939 ../../src/objects/path.cpp:745
-msgid "Move Type"
+#: ../../src/gui/debug_window.cpp:130
+#, c-format
+msgid "<Menu Active>"
 msgstr ""
 
-#: ../../src/objects/moving_platform.cpp:939
-msgid "Movement type."
+#: ../../src/gui/debug_window.cpp:133
+#, c-format
+msgid "Scene: %s"
 msgstr ""
 
-#: ../../src/objects/moving_platform.cpp:943
-#: ../../src/objects/level_exit.cpp:549 ../../src/enemies/static.cpp:330
-msgid "Path Identifier"
+#. TRANS: Abbreviations mean:
+#. TRANS: T=Total, P=Passive, M=Massive, E=Enemy, A=Active, H=Halfmassive
+#: ../../src/gui/debug_window.cpp:164
+#, c-format
+msgid "T: %lu P: %d M: %d E: %d A: %d H: %d"
 msgstr ""
 
-#: ../../src/objects/moving_platform.cpp:943 ../../src/enemies/static.cpp:330
-msgid "Name of the Path to move along."
+#. TRANS: Abbreviations mean:
+#. TRANS: BBox=Bonus boxes, GBox=Gold boxes, MPlat=Moving platforms
+#: ../../src/gui/debug_window.cpp:177
+#, c-format
+msgid "BBox: %d GBox: %d MPlat: %d"
 msgstr ""
 
-#: ../../src/objects/moving_platform.cpp:958
-#: ../../src/objects/level_entry.cpp:369 ../../src/objects/level_exit.cpp:485
-#: ../../src/video/animation.cpp:1574 ../../src/level/level_player.cpp:3976
-#: ../../src/enemies/spikeball.cpp:515 ../../src/enemies/rokko.cpp:581
-#: ../../src/enemies/gee.cpp:573 ../../src/enemies/beetle.cpp:270
-#: ../../src/enemies/flyon.cpp:567 ../../src/enemies/army.cpp:927
-#: ../../src/enemies/thromp.cpp:686 ../../src/enemies/eato.cpp:284
-#: ../../src/enemies/pip.cpp:369 ../../src/enemies/bosses/turtle_boss.cpp:1006
-#: ../../src/enemies/krush.cpp:385 ../../src/enemies/larry.cpp:422
-#: ../../src/enemies/furball.cpp:746
-msgid "Direction"
-msgstr "方向"
-
-#: ../../src/objects/moving_platform.cpp:958
-#: ../../src/enemies/spikeball.cpp:515 ../../src/enemies/gee.cpp:573
-#: ../../src/enemies/beetle.cpp:270 ../../src/enemies/army.cpp:927
-#: ../../src/enemies/bosses/turtle_boss.cpp:1006
-#: ../../src/enemies/krush.cpp:385 ../../src/enemies/larry.cpp:422
-#: ../../src/enemies/furball.cpp:746
-msgid "Starting direction."
+#: ../../src/gui/debug_window.cpp:185
+#, c-format
+msgid "Player X1: %.4f X2: %.4f"
 msgstr ""
 
-#: ../../src/objects/moving_platform.cpp:962 ../../src/enemies/gee.cpp:577
-#: ../../src/enemies/flyon.cpp:578 ../../src/enemies/thromp.cpp:697
-msgid "Distance"
-msgstr "距離"
-
-#: ../../src/objects/moving_platform.cpp:962
-msgid ""
-"Movable distance into its direction if type is line or radius if circle."
+#: ../../src/gui/debug_window.cpp:192
+#, c-format
+msgid "Player Y1: %.4f Y2: %.4f"
 msgstr ""
 
-#: ../../src/objects/moving_platform.cpp:970 ../../src/enemies/rokko.cpp:585
-#: ../../src/enemies/static.cpp:337 ../../src/enemies/flyon.cpp:586
-#: ../../src/enemies/thromp.cpp:705
-msgid "Speed"
-msgstr "速度"
-
-#: ../../src/objects/moving_platform.cpp:970 ../../src/enemies/static.cpp:337
-msgid "Maximum speed"
-msgstr "最高速度"
-
-#: ../../src/objects/moving_platform.cpp:978
-msgid "Touch time"
-msgstr "觸摸時間"
-
-#: ../../src/objects/moving_platform.cpp:978
-msgid "Time when touched until shaking starts"
-msgstr "觸碰到開始搖動的時間"
-
-#: ../../src/objects/moving_platform.cpp:986
-msgid "Shake time"
-msgstr "搖擺時間"
-
-# falling, not failing...
-#: ../../src/objects/moving_platform.cpp:986
-msgid "Time it's shaking until falling"
-msgstr "從晃動到落下的時間"
-
-#: ../../src/objects/moving_platform.cpp:994
-msgid "Touch move time"
-msgstr "觸碰移動時間"
-
-#: ../../src/objects/moving_platform.cpp:994
-msgid "If set does not move until this time has elapsed after touched"
-msgstr "如果設定，觸摸後無法移動直到時間消逝"
-
-#: ../../src/objects/moving_platform.cpp:1002
-msgid "Hor image count"
-msgstr "計算水平圖像"
-
-#: ../../src/objects/moving_platform.cpp:1002
-msgid "Horizontal middle image count"
-msgstr "計算水平中間的圖像"
-
-#: ../../src/objects/moving_platform.cpp:1012
-msgid "Image top left"
-msgstr "圖像左上方"
-
-#: ../../src/objects/moving_platform.cpp:1019
-msgid "Image top middle"
-msgstr "圖像上方中間"
-
-#: ../../src/objects/moving_platform.cpp:1026
-msgid "Image top right"
-msgstr "圖像右上方"
-
-#: ../../src/objects/moving_platform.cpp:1229
-msgid "Falling "
-msgstr "下降的 "
-
-#: ../../src/objects/moving_platform.cpp:1232
-msgid "Delayed "
-msgstr "延誤 "
-
-#: ../../src/objects/moving_platform.cpp:1235
-msgid "Moving "
-msgstr "移動 "
-
-#: ../../src/objects/moving_platform.cpp:1238
-msgid "Platform - "
-msgstr "平台 - "
-
-#: ../../src/objects/crate.cpp:59
-msgid "Crate"
+#: ../../src/gui/debug_window.cpp:199
+#, c-format
+msgid "Player XVel: %.4f, YVel: %.4f"
 msgstr ""
 
-#: ../../src/objects/path.cpp:482
-msgid "Path"
+#: ../../src/gui/debug_window.cpp:206
+#, c-format
+msgid "Player MState: %d Ground: %d (%s)"
 msgstr ""
 
-#: ../../src/objects/path.cpp:712
-msgid "Identifier"
-msgstr ""
-
-#: ../../src/objects/path.cpp:712
-msgid ""
-"Identifier name of the Path. This is needed for objects that can link to "
-"this."
-msgstr ""
-
-#: ../../src/objects/path.cpp:729
-msgid "Show Line"
-msgstr ""
-
-#: ../../src/objects/path.cpp:729
-msgid "Wether or not to show the path's moving line ingame."
-msgstr ""
-
-#: ../../src/objects/path.cpp:745
-msgid ""
-"Movement type. Mirror moves forth and back and rewind starts from the "
-"beginning again."
-msgstr ""
-
-#: ../../src/objects/path.cpp:757
-msgid "Segment"
-msgstr ""
-
-#: ../../src/objects/path.cpp:757
-msgid "Select the Segment to edit."
-msgstr ""
-
-#: ../../src/objects/path.cpp:761
-msgid "Add a Segment after the selected one."
-msgstr ""
-
-#: ../../src/objects/path.cpp:763
-msgid "Add"
-msgstr ""
-
-#: ../../src/objects/path.cpp:768
-msgid "Delete the selected Segment."
-msgstr ""
-
-#: ../../src/objects/path.cpp:770 ../../src/gui/menu_data.cpp:632
-#: ../../src/level/level_editor.cpp:406
-msgid "Delete"
-msgstr ""
-
-#: ../../src/objects/path.cpp:775
-msgid "Pos X1"
-msgstr ""
-
-#: ../../src/objects/path.cpp:775
-msgid "Line position X1"
-msgstr ""
-
-#: ../../src/objects/path.cpp:783
-msgid "Y1"
-msgstr ""
-
-#: ../../src/objects/path.cpp:783
-msgid "Line position Y1"
-msgstr ""
-
-#: ../../src/objects/path.cpp:791
-msgid "Pos X2"
-msgstr ""
-
-#: ../../src/objects/path.cpp:791
-msgid "Line position X2"
-msgstr ""
-
-#: ../../src/objects/path.cpp:799
-msgid "Y2"
-msgstr ""
-
-#: ../../src/objects/path.cpp:799
-msgid "Line position Y2"
-msgstr ""
-
-#: ../../src/objects/lava.cpp:55 ../../src/enemies/gee.cpp:684
-msgid "Lava"
-msgstr ""
-
-#: ../../src/objects/powerup.cpp:224 ../../src/objects/bonusbox.cpp:460
-#: ../../src/objects/bonusbox.cpp:470 ../../src/objects/bonusbox.cpp:577
-msgid "Berry"
-msgstr ""
-
-#: ../../src/objects/powerup.cpp:228
-msgid "Life berry"
-msgstr ""
-
-#: ../../src/objects/powerup.cpp:232 ../../src/objects/bonusbox.cpp:467
-#: ../../src/objects/bonusbox.cpp:491 ../../src/objects/bonusbox.cpp:598
-msgid "Poisonous berry"
-msgstr ""
-
-#: ../../src/objects/powerup.cpp:236 ../../src/objects/bonusbox.cpp:462
-#: ../../src/objects/bonusbox.cpp:476 ../../src/objects/bonusbox.cpp:583
-msgid "Ice berry"
-msgstr ""
-
-#: ../../src/objects/powerup.cpp:240 ../../src/objects/bonusbox.cpp:463
-#: ../../src/objects/bonusbox.cpp:479 ../../src/objects/bonusbox.cpp:586
-#, fuzzy
-msgid "Ghost berry"
-msgstr "鬼"
-
-#: ../../src/objects/powerup.cpp:449
-msgid "Fireberry"
-msgstr ""
-
-#: ../../src/objects/powerup.cpp:553
-#, fuzzy
-msgid "Cookie (3-UP)"
-msgstr "月亮 (3-UP)"
-
-#: ../../src/objects/text_box.cpp:64
-#, fuzzy
-msgid "Text Box"
-msgstr "文字盒"
-
-#: ../../src/objects/text_box.cpp:239
-msgid "Text"
-msgstr "內文"
-
-#: ../../src/objects/text_box.cpp:239
-msgid "Text to display when activated"
-msgstr "啟動時要顯示的文"
-
-#: ../../src/objects/level_entry.cpp:133 ../../src/objects/level_exit.cpp:208
-msgid " Beam"
-msgstr "光束運送"
-
-#: ../../src/objects/level_entry.cpp:136 ../../src/objects/level_exit.cpp:211
-msgid " Warp"
-msgstr " 扭曲"
-
-#: ../../src/objects/level_entry.cpp:369
-msgid "The direction to come out"
-msgstr "出現方向"
-
-#: ../../src/objects/level_entry.cpp:374 ../../src/level/level_editor.cpp:187
-#: ../../src/level/level_editor.cpp:214 ../../src/level/level_editor.cpp:218
-#, fuzzy
-msgctxt "level"
-msgid "Name"
-msgstr "名字"
-
-#: ../../src/objects/level_entry.cpp:374
-msgid "Name for identification"
-msgstr "辨識用名稱"
-
-#: ../../src/objects/enemystopper.cpp:61
-msgid "Enemystopper"
-msgstr "敵人阻止者"
-
-#: ../../src/objects/goldpiece.cpp:106
-#, fuzzy
-msgid "Red Falling Jewel"
-msgstr "下降的 "
-
-#: ../../src/objects/goldpiece.cpp:112
-#, fuzzy
-msgid "Falling Jewel"
-msgstr "下降的 "
-
-#: ../../src/objects/goldpiece.cpp:119
-msgid "Red Jewel"
-msgstr ""
-
-#: ../../src/objects/goldpiece.cpp:125 ../../src/objects/bonusbox.cpp:466
-#: ../../src/objects/bonusbox.cpp:488 ../../src/objects/bonusbox.cpp:595
-msgid "Jewel"
-msgstr ""
-
-#: ../../src/objects/bonusbox.cpp:79 ../../src/objects/bonusbox.cpp:152
-#, fuzzy
-msgid "Bonusbox Empty"
-msgstr "空盒子"
-
-#: ../../src/objects/bonusbox.cpp:161
-#, fuzzy
-msgid "Bonusbox Berry"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:165
-#, fuzzy
-msgid "Bonusbox Fire berry"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:169
-#, fuzzy
-msgid "Bonusbox Ice berry"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:173
-#, fuzzy
-msgid "Bonusbox Ghost berry"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:177
-#, fuzzy
-msgid "Bonusbox 1-Up berry"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:181
-#, fuzzy
-msgid "Bonusbox Lemon"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:193
-msgid "Bonusbox Poisonous berry"
-msgstr ""
-
-#: ../../src/objects/bonusbox.cpp:241
-#, fuzzy
-msgid "Bonusbox Jewel"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:245
-#, fuzzy
-msgid "Bonusbox Red Jewel"
-msgstr "紅利盒 : "
-
-#: ../../src/objects/bonusbox.cpp:453
-msgid "Animation"
-msgstr "生(指狀態)"
-
-#: ../../src/objects/bonusbox.cpp:453
-msgid ""
-"Use the Power animation if the box has a good or needed item for this level"
-msgstr "如果這盒子有這等級需要的東西使用激勵力量"
-
-#: ../../src/objects/bonusbox.cpp:458 ../../src/objects/bonusbox.cpp:497
-#: ../../src/overworld/overworld.cpp:54
-msgid "Empty"
-msgstr "空的"
-
-#: ../../src/objects/bonusbox.cpp:459 ../../src/objects/bonusbox.cpp:494
-#: ../../src/objects/bonusbox.cpp:601 ../../src/video/animation.cpp:1392
-#: ../../src/video/animation.cpp:1470 ../../src/video/animation.cpp:1486
-#: ../../src/video/animation.cpp:1566 ../../src/video/animation.cpp:1582
-#: ../../src/video/animation.cpp:1598 ../../src/video/animation.cpp:1614
-#: ../../src/video/animation.cpp:1630
-msgid "Random"
-msgstr "隨機"
-
-#: ../../src/objects/bonusbox.cpp:461 ../../src/objects/bonusbox.cpp:473
-#: ../../src/objects/bonusbox.cpp:580
-msgid "Fire berry"
-msgstr ""
-
-#: ../../src/objects/bonusbox.cpp:464 ../../src/objects/bonusbox.cpp:482
-#: ../../src/objects/bonusbox.cpp:589
-msgid "1-UP berry"
-msgstr ""
-
-#: ../../src/objects/bonusbox.cpp:465 ../../src/objects/bonusbox.cpp:485
-#: ../../src/objects/bonusbox.cpp:592 ../../src/objects/star.cpp:64
-msgid "Lemon"
-msgstr ""
-
-#: ../../src/objects/bonusbox.cpp:501 ../../src/gui/menu_data.cpp:2273
-#: ../../src/gui/menu_data.cpp:2290
-msgid "Item"
-msgstr "項目"
-
-#: ../../src/objects/bonusbox.cpp:501
-msgid "The item that gets spawned"
-msgstr "菌種項目"
-
-#: ../../src/objects/bonusbox.cpp:506 ../../src/objects/bonusbox.cpp:510
-#: ../../src/objects/bonusbox.cpp:618 ../../src/enemies/gee.cpp:586
-#: ../../src/enemies/gee.cpp:591 ../../src/enemies/gee.cpp:644
-#: ../../src/enemies/static.cpp:346 ../../src/enemies/static.cpp:350
-#: ../../src/enemies/static.cpp:419
-#: ../../src/enemies/bosses/turtle_boss.cpp:1035
-#: ../../src/enemies/bosses/turtle_boss.cpp:1039
-#: ../../src/enemies/bosses/turtle_boss.cpp:1096
-#: ../../src/enemies/furball.cpp:762 ../../src/enemies/furball.cpp:767
-#: ../../src/enemies/furball.cpp:784 ../../src/overworld/world_waypoint.cpp:540
-#: ../../src/overworld/world_waypoint.cpp:544
-#: ../../src/overworld/world_waypoint.cpp:662
-msgid "Enabled"
-msgstr "啟用"
-
-#: ../../src/objects/bonusbox.cpp:507 ../../src/objects/bonusbox.cpp:513
-#: ../../src/objects/box.cpp:690 ../../src/objects/box.cpp:705
-#: ../../src/enemies/gee.cpp:587 ../../src/enemies/gee.cpp:594
-#: ../../src/enemies/static.cpp:347 ../../src/enemies/static.cpp:353
-#: ../../src/enemies/bosses/turtle_boss.cpp:1036
-#: ../../src/enemies/bosses/turtle_boss.cpp:1042
-#: ../../src/enemies/furball.cpp:763 ../../src/enemies/furball.cpp:770
-#: ../../src/overworld/world_waypoint.cpp:541
-#: ../../src/overworld/world_waypoint.cpp:547
-msgid "Disabled"
-msgstr "停用"
-
-#: ../../src/objects/bonusbox.cpp:517
-msgid "Force item"
-msgstr "強迫項目"
-
-#: ../../src/objects/bonusbox.cpp:517
-msgid "Force best available item when activated"
-msgstr "啟動時強迫最適合的項目"
-
-#: ../../src/objects/bonusbox.cpp:527
-#, fuzzy
-msgid "Jewel color"
-msgstr "金色"
-
-#: ../../src/objects/bonusbox.cpp:527
-#, fuzzy
-msgid "Jewel color if the item is a jewel"
-msgstr "金幣的項目就呈現金色"
-
-#: ../../src/objects/level_exit.cpp:485
-msgid "Direction to move in"
-msgstr "移動的方向"
-
-#: ../../src/objects/level_exit.cpp:510
-msgid "Motion"
-msgstr ""
-
-#: ../../src/objects/level_exit.cpp:510
-msgid "Camera Motion"
-msgstr ""
-
-#: ../../src/objects/level_exit.cpp:514
-msgid "Destination Level"
-msgstr "目標等級"
-
-#: ../../src/objects/level_exit.cpp:514
-msgid ""
-"Name of the level that should be entered. If empty uses the current level."
-msgstr "輸入登入等級名稱。若空白，使用目前等級。"
-
-#: ../../src/objects/level_exit.cpp:521
-msgid "Destination Entry"
-msgstr "通往終點"
-
-#: ../../src/objects/level_exit.cpp:521
-msgid ""
-"Name of the Entry in the destination level. If empty the entry point is the "
-"player start position."
-msgstr "在目的等級裡的入口名稱。如果沒有指定，入口是遊戲起點。"
-
-#: ../../src/objects/level_exit.cpp:528
-#, fuzzy
-msgid "Return Level"
-msgstr "要清除等級嗎？"
-
-#: ../../src/objects/level_exit.cpp:528
-#, fuzzy
-msgid "Name of the level that should be pushed onto return stack."
-msgstr "輸入登入等級名稱。若空白，使用目前等級。"
-
-#: ../../src/objects/level_exit.cpp:535
-#, fuzzy
-msgid "Return Entry"
-msgstr "通往終點"
-
-#: ../../src/objects/level_exit.cpp:535
-msgid "Name of the Entry in the return level."
-msgstr ""
-
-#: ../../src/objects/level_exit.cpp:542
-#, fuzzy
-msgid "Exit Name"
-msgstr "名字"
-
-#: ../../src/objects/level_exit.cpp:542
-msgid ""
-"Name of the Exit (use this in the overworld editor to set the path selected "
-"by this exit)."
-msgstr ""
-
-#: ../../src/objects/level_exit.cpp:549
-msgid "Name of the Path to use for the camera movement."
-msgstr ""
-
-#: ../../src/objects/box.cpp:53
-msgid "Box"
-msgstr ""
-
-#: ../../src/objects/box.cpp:681
-msgid "Useable Count"
-msgstr "可使用的秒數"
-
-#: ../../src/objects/box.cpp:691 ../../src/objects/box.cpp:696
-#: ../../src/objects/box.cpp:732 ../../src/core/editor/editor.cpp:1605
-msgid "Massive"
-msgstr ""
-
-#: ../../src/objects/box.cpp:692 ../../src/objects/box.cpp:699
-#: ../../src/objects/box.cpp:735
-msgid "Ghost"
-msgstr "鬼"
-
-#: ../../src/objects/box.cpp:693 ../../src/objects/box.cpp:702
-#: ../../src/objects/box.cpp:738
-msgid "Semi Massive"
-msgstr ""
-
-#: ../../src/objects/box.cpp:709
-msgid "Invisible"
-msgstr "暗藏的"
-
-#: ../../src/objects/box.cpp:709
-msgid ""
-"Massive is invisible until activated.\n"
-"Ghost is only visible and activateable if in ghost mode.\n"
-"Semi Massive is like Massive but only touchable in the activation direction."
-msgstr ""
-
-#: ../../src/objects/box.cpp:753
-#, fuzzy
-msgid "(Invisible)"
-msgstr "暗藏的"
-
-#: ../../src/objects/box.cpp:756
-msgid "(Ghost block)"
-msgstr ""
-
-#: ../../src/objects/box.cpp:759
-msgid "(Invisible Semi Massive)"
-msgstr ""
-
-#: ../../src/objects/secret_area.cpp:67 ../../src/core/editor/editor.cpp:100
-msgid "Secret Area"
-msgstr ""
-
-#: ../../src/objects/secret_area.cpp:176
-msgid "You found a secret area!"
-msgstr ""
+#: ../../src/gui/debug_window.cpp:214
+#, fuzzy, c-format
+msgid "Game Mode: %d"
+msgstr "遊戲模式 :  "
+
+#: ../../src/gui/hud.cpp:159
+#, c-format
+msgid "Time %02d:%02d"
+msgstr "時間 %02d:%02d"
+
+#: ../../src/gui/hud.cpp:193
+#, fuzzy, c-format
+msgid "Points %08ld"
+msgstr "積分 %08d"
 
 #. TRANS: The text is copied from the end of the GPLv3. If there is an
 #. TRANS: accepted translation of the GPLv3 available in your language,
@@ -730,11 +518,6 @@ msgstr ""
 #: ../../src/gui/menu_data.cpp:330
 msgid "Credits"
 msgstr "榮譽"
-
-#: ../../src/gui/menu_data.cpp:630 ../../src/level/level_editor.cpp:402
-#: ../../src/overworld/world_editor.cpp:183
-msgid "New"
-msgstr ""
 
 #: ../../src/gui/menu_data.cpp:631
 msgid "Edit"
@@ -966,11 +749,6 @@ msgstr ""
 msgid "Joystick"
 msgstr ""
 
-#: ../../src/gui/menu_data.cpp:1851 ../../src/gui/menu_data.cpp:2898
-#: ../../src/level/level_settings.cpp:193
-msgid "None"
-msgstr "無"
-
 #: ../../src/gui/menu_data.cpp:1887
 msgid "Axis Hor"
 msgstr ""
@@ -1026,6 +804,11 @@ msgstr "跳"
 #: ../../src/gui/menu_data.cpp:2272 ../../src/gui/menu_data.cpp:2288
 msgid "Shoot"
 msgstr "發射"
+
+#: ../../src/gui/menu_data.cpp:2273 ../../src/gui/menu_data.cpp:2290
+#: ../../src/objects/bonusbox.cpp:501
+msgid "Item"
+msgstr "項目"
 
 #: ../../src/gui/menu_data.cpp:2274 ../../src/gui/menu_data.cpp:2289
 msgid "Action"
@@ -1100,24 +883,10 @@ msgstr "重新載入中"
 msgid "Enabled : "
 msgstr "啟用： "
 
-#: ../../src/gui/menu_data.cpp:3094 ../../src/gui/menu_data.cpp:3096
-#: ../../src/level/level_editor.cpp:404
-#: ../../src/overworld/world_editor.cpp:185
-#, fuzzy
-msgid "Save"
-msgstr "儲存 "
-
 #: ../../src/gui/menu_data.cpp:3095
 #, fuzzy
 msgid "Save the game"
 msgstr "儲存遊戲 "
-
-#: ../../src/gui/menu_data.cpp:3101 ../../src/gui/menu_data.cpp:3103
-#: ../../src/level/level_editor.cpp:403
-#: ../../src/overworld/world_editor.cpp:184
-#, fuzzy
-msgid "Load"
-msgstr "載入中"
 
 #: ../../src/gui/menu_data.cpp:3102
 #, fuzzy
@@ -1147,107 +916,57 @@ msgstr "輸入說明"
 msgid "Savegame loading failed"
 msgstr "儲存遊戲載入失敗： "
 
-#: ../../src/gui/hud.cpp:159
-#, c-format
-msgid "Time %02d:%02d"
-msgstr "時間 %02d:%02d"
+#: ../../src/user/savegame/savegame.cpp:271
+msgid "Savegame "
+msgstr "儲存遊戲 "
 
-#: ../../src/gui/hud.cpp:193
-#, fuzzy, c-format
-msgid "Points %08ld"
-msgstr "積分 %08d"
+#: ../../src/user/savegame/savegame.cpp:271
+msgid " loaded"
+msgstr "已載入"
 
-#: ../../src/gui/debug_window.cpp:43
-msgid "Debugging Information"
-msgstr ""
-
-#. TRANS: Do not translate the part in brackets
-#: ../../src/gui/debug_window.cpp:103
-#, c-format
-msgid "[colour='FFFFFF00']FPS: Best: %.02f Worst: %.02f Current: %0.2f"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:111
-#, fuzzy, c-format
-msgid "Camera X: %d Y: %d"
-msgstr "照像：X "
-
-#: ../../src/gui/debug_window.cpp:121
-#, c-format
-msgid "Level: %s (return stack size: %ld)"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:126
-#, fuzzy, c-format
-msgid "Overworld: %s"
-msgstr "載入超世界"
-
-#: ../../src/gui/debug_window.cpp:130
-#, c-format
-msgid "<Menu Active>"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:133
-#, c-format
-msgid "Scene: %s"
-msgstr ""
-
-#. TRANS: Abbreviations mean:
-#. TRANS: T=Total, P=Passive, M=Massive, E=Enemy, A=Active, H=Halfmassive
-#: ../../src/gui/debug_window.cpp:164
-#, c-format
-msgid "T: %lu P: %d M: %d E: %d A: %d H: %d"
-msgstr ""
-
-#. TRANS: Abbreviations mean:
-#. TRANS: BBox=Bonus boxes, GBox=Gold boxes, MPlat=Moving platforms
-#: ../../src/gui/debug_window.cpp:177
-#, c-format
-msgid "BBox: %d GBox: %d MPlat: %d"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:185
-#, c-format
-msgid "Player X1: %.4f X2: %.4f"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:192
-#, c-format
-msgid "Player Y1: %.4f Y2: %.4f"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:199
-#, c-format
-msgid "Player XVel: %.4f, YVel: %.4f"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:206
-#, c-format
-msgid "Player MState: %d Ground: %d (%s)"
-msgstr ""
-
-#: ../../src/gui/debug_window.cpp:214
-#, fuzzy, c-format
-msgid "Game Mode: %d"
-msgstr "遊戲模式 :  "
-
-#: ../../src/input/mouse.cpp:1149
-msgid "Snap to object mode enabled"
-msgstr ""
-
-#: ../../src/input/mouse.cpp:1152
-msgid "Snap to object mode disabled"
-msgstr ""
-
-#: ../../src/input/keyboard.cpp:256
+#: ../../src/user/savegame/savegame.cpp:436
 #, fuzzy
-msgid "Debug mode disabled"
-msgstr "等极編輯器停用"
+msgid "Couldn't save savegame "
+msgstr "無法儲存等級"
 
-#: ../../src/input/keyboard.cpp:262
+#: ../../src/user/savegame/savegame.cpp:439
+msgid "Saved to Slot "
+msgstr "儲存至列表單位 "
+
+#. TRANS: %u is replaced by the number of the save slot, starting with 1.
+#: ../../src/user/savegame/savegame.cpp:505
+#, c-format
+msgid "%u. Free Save"
+msgstr ""
+
+#: ../../src/user/savegame/savegame.cpp:527
+msgid " -  Level "
+msgstr " -  等級 "
+
+#: ../../src/user/savegame/savegame.cpp:534
+msgid " -  Unknown"
+msgstr ""
+
+#: ../../src/user/savegame/savegame.cpp:538
+msgid " - Date "
+msgstr " - 日期 "
+
+#: ../../src/user/savegame/savegame_loader.cpp:75
 #, fuzzy
-msgid "Debug mode enabled"
-msgstr "等极編輯器停用"
+msgid "No description"
+msgstr "沒有說明"
+
+#: ../../src/core/game_core.cpp:251
+msgid "Loading Level failed : "
+msgstr "載入等級失敗： "
+
+#: ../../src/core/game_core.cpp:361
+msgid "Loading Images"
+msgstr "圖像載入中"
+
+#: ../../src/core/game_core.cpp:498
+msgid "Loading Sounds"
+msgstr "音效載入中"
 
 #: ../../src/core/property_helper.cpp:514
 #: ../../src/core/property_helper.cpp:764
@@ -1423,18 +1142,6 @@ msgstr "灰色"
 msgid "violet"
 msgstr ""
 
-#: ../../src/core/game_core.cpp:251
-msgid "Loading Level failed : "
-msgstr "載入等級失敗： "
-
-#: ../../src/core/game_core.cpp:361
-msgid "Loading Images"
-msgstr "圖像載入中"
-
-#: ../../src/core/game_core.cpp:498
-msgid "Loading Sounds"
-msgstr "音效載入中"
-
 #. TRANS: Editor left menu 1st tab heading. Keep this short.
 #: ../../src/core/editor/editor.cpp:71
 #, fuzzy
@@ -1457,6 +1164,10 @@ msgstr "載入超世界"
 #, fuzzy
 msgid "Selection"
 msgstr "方向"
+
+#: ../../src/core/editor/editor.cpp:100 ../../src/objects/secret_area.cpp:67
+msgid "Secret Area"
+msgstr ""
 
 #. TRANS: displayed to the user when opening the editor
 #: ../../src/core/editor/editor.cpp:158 ../../src/video/loading_screen.cpp:68
@@ -1550,6 +1261,11 @@ msgstr ""
 msgid "Passive"
 msgstr "被動的 - "
 
+#: ../../src/core/editor/editor.cpp:1605 ../../src/objects/box.cpp:691
+#: ../../src/objects/box.cpp:696 ../../src/objects/box.cpp:732
+msgid "Massive"
+msgstr ""
+
 #: ../../src/core/editor/editor.cpp:1608
 #, fuzzy
 msgid "Halfmassive"
@@ -1564,6 +1280,258 @@ msgstr "可攀登的 - "
 #, fuzzy
 msgid "Front Passive"
 msgstr "被動掩護 - "
+
+#: ../../src/overworld/overworld.cpp:50
+msgid "Unnamed"
+msgstr "未命名"
+
+#: ../../src/overworld/overworld.cpp:54 ../../src/objects/bonusbox.cpp:458
+#: ../../src/objects/bonusbox.cpp:497
+msgid "Empty"
+msgstr "空的"
+
+#: ../../src/overworld/overworld.cpp:71
+msgid "Couldn't save world description "
+msgstr "無法儲存世界說明 "
+
+#: ../../src/overworld/overworld.cpp:245
+msgid "Couldn't save world "
+msgstr "無法儲存世界"
+
+#: ../../src/overworld/overworld.cpp:250
+#: ../../src/overworld/world_editor.cpp:86
+msgid "World "
+msgstr "世界 "
+
+#: ../../src/overworld/overworld.cpp:466
+msgid "Omega Mode unlocks all waypoints"
+msgstr ""
+
+#: ../../src/overworld/world_layer.cpp:50
+msgid "Line Start Point"
+msgstr "劃起點線"
+
+#: ../../src/overworld/world_layer.cpp:54
+msgid "Line End Point"
+msgstr "劃終點線"
+
+#: ../../src/overworld/world_layer.cpp:289
+msgid "Waypoint origin"
+msgstr "原始起點"
+
+#: ../../src/overworld/world_editor.cpp:67
+msgid "Create a new World"
+msgstr "建立新世界"
+
+#: ../../src/overworld/world_editor.cpp:67
+#: ../../src/overworld/world_editor.cpp:94
+#: ../../src/overworld/world_editor.cpp:98
+#, fuzzy
+msgctxt "world"
+msgid "Name"
+msgstr "名字"
+
+#: ../../src/overworld/world_editor.cpp:98
+msgid "Load an Overworld"
+msgstr "載入超世界"
+
+#: ../../src/overworld/world_editor.cpp:166
+msgid "Way"
+msgstr ""
+
+#: ../../src/overworld/world_editor.cpp:167
+msgid "Castle"
+msgstr ""
+
+#: ../../src/overworld/world_editor.cpp:173
+msgid "Mountains"
+msgstr ""
+
+#: ../../src/overworld/world_editor.cpp:175
+msgid "Lakes"
+msgstr ""
+
+#: ../../src/overworld/world_editor.cpp:176
+msgid "Bridges"
+msgstr ""
+
+#: ../../src/overworld/world_editor.cpp:181
+msgid "Generic"
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:126
+msgid "Waypoint"
+msgstr "路點"
+
+#: ../../src/overworld/world_waypoint.cpp:487
+#: ../../src/overworld/world_waypoint.cpp:491
+#: ../../src/overworld/world_waypoint.cpp:617
+msgid "Level"
+msgstr "等級"
+
+#: ../../src/overworld/world_waypoint.cpp:488
+#: ../../src/overworld/world_waypoint.cpp:494
+msgid "World"
+msgstr "世界"
+
+#: ../../src/overworld/world_waypoint.cpp:498
+msgid "Type"
+msgstr "類型"
+
+#: ../../src/overworld/world_waypoint.cpp:498
+msgid "Destination type"
+msgstr "目標類型"
+
+#: ../../src/overworld/world_waypoint.cpp:502
+msgid "Destination"
+msgstr "目標"
+
+#: ../../src/overworld/world_waypoint.cpp:502
+msgid "Destination level or world"
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:519
+msgid "Backward Direction"
+msgstr "向後"
+
+#: ../../src/overworld/world_waypoint.cpp:534
+msgid "Forward Direction"
+msgstr "向前"
+
+#: ../../src/overworld/world_waypoint.cpp:540
+#: ../../src/overworld/world_waypoint.cpp:544
+#: ../../src/overworld/world_waypoint.cpp:662 ../../src/enemies/gee.cpp:586
+#: ../../src/enemies/gee.cpp:591 ../../src/enemies/gee.cpp:644
+#: ../../src/enemies/static.cpp:346 ../../src/enemies/static.cpp:350
+#: ../../src/enemies/static.cpp:419
+#: ../../src/enemies/bosses/turtle_boss.cpp:1035
+#: ../../src/enemies/bosses/turtle_boss.cpp:1039
+#: ../../src/enemies/bosses/turtle_boss.cpp:1096
+#: ../../src/enemies/furball.cpp:762 ../../src/enemies/furball.cpp:767
+#: ../../src/enemies/furball.cpp:784 ../../src/objects/bonusbox.cpp:506
+#: ../../src/objects/bonusbox.cpp:510 ../../src/objects/bonusbox.cpp:618
+msgid "Enabled"
+msgstr "啟用"
+
+#: ../../src/overworld/world_waypoint.cpp:541
+#: ../../src/overworld/world_waypoint.cpp:547 ../../src/enemies/gee.cpp:587
+#: ../../src/enemies/gee.cpp:594 ../../src/enemies/static.cpp:347
+#: ../../src/enemies/static.cpp:353
+#: ../../src/enemies/bosses/turtle_boss.cpp:1036
+#: ../../src/enemies/bosses/turtle_boss.cpp:1042
+#: ../../src/enemies/furball.cpp:763 ../../src/enemies/furball.cpp:770
+#: ../../src/objects/box.cpp:690 ../../src/objects/box.cpp:705
+#: ../../src/objects/bonusbox.cpp:507 ../../src/objects/bonusbox.cpp:513
+msgid "Disabled"
+msgstr "停用"
+
+#: ../../src/overworld/world_waypoint.cpp:551
+msgid "Default Access"
+msgstr "預設權限"
+
+#: ../../src/overworld/world_waypoint.cpp:551
+msgid "Enable if the Waypoint should be always accessible."
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:558
+#, fuzzy
+msgid "Waypoint Exit"
+msgstr "路點"
+
+#: ../../src/overworld/world_waypoint.cpp:558
+msgid "Select the waypoint exit to edit."
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:562
+#: ../../src/overworld/world_waypoint.cpp:564
+#, fuzzy
+msgid "New Exit"
+msgstr "離開"
+
+#: ../../src/overworld/world_waypoint.cpp:564
+#, fuzzy
+msgid "Create a new exit by clicking."
+msgstr "建立一個新等級"
+
+#: ../../src/overworld/world_waypoint.cpp:568
+#: ../../src/overworld/world_waypoint.cpp:570
+#, fuzzy
+msgid "Delete Exit"
+msgstr "刪除"
+
+#: ../../src/overworld/world_waypoint.cpp:570
+msgid "Delete the currently selected exit by clicking."
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:584
+#, fuzzy
+msgid "Leave direction"
+msgstr "新增方向"
+
+#: ../../src/overworld/world_waypoint.cpp:584
+msgid "Direction key to press for leaving the waypoint for this exit"
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:589
+#, fuzzy
+msgid "Level Exit"
+msgstr "等极入口"
+
+#: ../../src/overworld/world_waypoint.cpp:589
+msgid "Name of the level exit in the level that activates this waypoint exit."
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:594
+#, fuzzy
+msgid "Line start UID"
+msgstr "劃起點線"
+
+#: ../../src/overworld/world_waypoint.cpp:594
+msgid "UID of the line start point to set Alex onto when taking this exit."
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:599
+#: ../../src/overworld/world_waypoint.cpp:601
+#: ../../src/overworld/world_waypoint.cpp:769
+#: ../../src/overworld/world_waypoint.cpp:783
+msgid "Locked"
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:600
+#: ../../src/overworld/world_waypoint.cpp:771
+msgid "Unlocked"
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:604
+msgid "Lock state"
+msgstr ""
+
+#: ../../src/overworld/world_waypoint.cpp:604
+msgid ""
+"Is this exit locked by default? PLEASE also set access to enabled on the "
+"target waypoint if you unlock by default!"
+msgstr ""
+
+#. TRANS: Prompt issued in the game console
+#: ../../src/scripting/scripting.cpp:104
+msgid "(console)"
+msgstr ""
+
+#: ../../src/video/img_manager.cpp:121
+msgid "Saving Textures"
+msgstr "儲存紋理"
+
+#: ../../src/video/img_manager.cpp:167
+msgid "Restoring Textures"
+msgstr "恢復紋理"
+
+#: ../../src/video/video.cpp:470
+msgid "Caching Images failed : Could not remove old images"
+msgstr "儲存快取圖像失敗：無法移除舊圖像"
+
+#: ../../src/video/video.cpp:493
+msgid "Caching Images"
+msgstr "儲存快取圖像"
 
 #. TRANS: Be careful with the length of this line, if
 #. TRANS: it is much longer than the English version,
@@ -1584,8 +1552,22 @@ msgstr ""
 #: ../../src/video/animation.cpp:1486 ../../src/video/animation.cpp:1566
 #: ../../src/video/animation.cpp:1582 ../../src/video/animation.cpp:1598
 #: ../../src/video/animation.cpp:1614 ../../src/video/animation.cpp:1630
+#: ../../src/objects/bonusbox.cpp:459 ../../src/objects/bonusbox.cpp:494
+#: ../../src/objects/bonusbox.cpp:601
+msgid "Random"
+msgstr "隨機"
+
+#: ../../src/video/animation.cpp:1392 ../../src/video/animation.cpp:1470
+#: ../../src/video/animation.cpp:1486 ../../src/video/animation.cpp:1566
+#: ../../src/video/animation.cpp:1582 ../../src/video/animation.cpp:1598
+#: ../../src/video/animation.cpp:1614 ../../src/video/animation.cpp:1630
 msgid "Additional random value"
 msgstr ""
+
+#: ../../src/video/animation.cpp:1400 ../../src/enemies/static.cpp:315
+#: ../../src/objects/sprite.cpp:1454
+msgid "Image filename"
+msgstr "圖像檔案名稱"
 
 #: ../../src/video/animation.cpp:1407
 msgid "Based on camera pos."
@@ -1755,287 +1737,47 @@ msgstr ""
 msgid "Clipping mode if particle is out the rectangle"
 msgstr ""
 
-#: ../../src/video/img_manager.cpp:121
-msgid "Saving Textures"
-msgstr "儲存紋理"
-
-#: ../../src/video/img_manager.cpp:167
-msgid "Restoring Textures"
-msgstr "恢復紋理"
-
-#: ../../src/video/video.cpp:470
-msgid "Caching Images failed : Could not remove old images"
-msgstr "儲存快取圖像失敗：無法移除舊圖像"
-
-#: ../../src/video/video.cpp:493
-msgid "Caching Images"
-msgstr "儲存快取圖像"
-
-#: ../../src/video/video.cpp:1436 ../../src/level/level.cpp:418
-#: ../../src/overworld/overworld.cpp:250
-msgid " saved"
-msgstr "儲存"
-
-#: ../../src/level/level.cpp:220
-#, fuzzy
-msgid "Unsupported Level format : "
-msgstr "不支持的 : "
-
-#: ../../src/level/level.cpp:402
-msgid "Couldn't save level "
-msgstr "無法儲存等級"
-
-#: ../../src/level/level.cpp:418 ../../src/level/level_editor.cpp:196
-msgid "Level "
-msgstr "等級"
-
-#: ../../src/level/level.cpp:716
-#, fuzzy
-msgid "Omega Mode disabled"
-msgstr "等极編輯器停用"
-
-#: ../../src/level/level.cpp:720
-msgid "Omega Mode enabled"
+#: ../../src/enemies/krush.cpp:385 ../../src/enemies/gee.cpp:573
+#: ../../src/enemies/larry.cpp:422 ../../src/enemies/spikeball.cpp:515
+#: ../../src/enemies/bosses/turtle_boss.cpp:1006
+#: ../../src/enemies/beetle.cpp:270 ../../src/enemies/furball.cpp:746
+#: ../../src/enemies/army.cpp:927 ../../src/objects/moving_platform.cpp:958
+msgid "Starting direction."
 msgstr ""
 
-#: ../../src/level/level.cpp:731
-#, fuzzy
-msgid "Kid cheat activated"
-msgstr "啟動時的速度"
-
-#: ../../src/level/level_player.cpp:3976
-msgid "Initial direction"
-msgstr "最初的方向"
-
-#: ../../src/level/level_settings.cpp:192
-#: ../../src/level/level_settings.cpp:446
-#: ../../src/level/level_settings.cpp:649
-#: ../../src/overworld/world_waypoint.cpp:755
-#: ../../src/overworld/world_waypoint.cpp:758
-#, fuzzy
-msgid "(None)"
-msgstr "無"
-
-#: ../../src/level/level_settings.cpp:276 ../../src/level/level_editor.cpp:256
-#: ../../src/overworld/world_editor.cpp:127
-msgid "Save "
-msgstr "儲存 "
-
-#: ../../src/level/level_editor.cpp:187
-msgid "Create a new Level"
-msgstr "建立一個新等級"
-
-#: ../../src/level/level_editor.cpp:196 ../../src/overworld/world_editor.cpp:86
-msgid " already exists"
-msgstr " 已存在"
-
-#: ../../src/level/level_editor.cpp:208 ../../src/overworld/world_editor.cpp:82
-msgid "Created "
-msgstr "已建立 "
-
-#: ../../src/level/level_editor.cpp:218
-msgid "Load a Level"
-msgstr "載入等級"
-
-#: ../../src/level/level_editor.cpp:237
-#: ../../src/overworld/world_editor.cpp:114
-msgid "Loaded "
-msgstr "已載入 "
-
-#: ../../src/level/level_editor.cpp:265
-msgid "Save Level as"
-msgstr "儲存等級為"
-
-#: ../../src/level/level_editor.cpp:265
-msgid "New name"
-msgstr "新名稱"
-
-#: ../../src/level/level_editor.cpp:280
-msgid "Level was not yet saved"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:285
-msgid "Delete and Unload "
-msgstr "刪除並卸載"
-
-#. TRANS: Level editor left menu's entries follow
-#. TRANS: World editor left menu's entries follow
-#: ../../src/level/level_editor.cpp:369
-#: ../../src/overworld/world_editor.cpp:165
-msgid "---Sprites---"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:370
-#, fuzzy
-msgid "Green Ground"
-msgstr "地板"
-
-#: ../../src/level/level_editor.cpp:371
-#, fuzzy
-msgid "Desert Ground"
-msgstr "地板"
-
-#: ../../src/level/level_editor.cpp:372
-#, fuzzy
-msgid "Sand Ground"
-msgstr "地板"
-
-#: ../../src/level/level_editor.cpp:373
-#, fuzzy
-msgid "Castle Ground"
-msgstr "地板"
-
-#: ../../src/level/level_editor.cpp:374
-#, fuzzy
-msgid "Cave Ground"
-msgstr "地板"
-
-#: ../../src/level/level_editor.cpp:375
-#, fuzzy
-msgid "Underground"
-msgstr "未定"
-
-#: ../../src/level/level_editor.cpp:376
-msgid "Plastic Ground"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:377
-#, fuzzy
-msgid "Jungle Ground"
-msgstr "未定"
-
-#: ../../src/level/level_editor.cpp:378
-#, fuzzy
-msgid "Snow Ground"
-msgstr "地板"
-
-#: ../../src/level/level_editor.cpp:379
-#: ../../src/overworld/world_editor.cpp:177
-msgid "Blocks"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:380
-#: ../../src/overworld/world_editor.cpp:168
-msgid "Clouds"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:381
-#: ../../src/overworld/world_editor.cpp:169
-msgid "Hedges"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:382
-msgid "Trees"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:383
-#: ../../src/overworld/world_editor.cpp:170
-msgid "Plants"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:384
-#: ../../src/overworld/world_editor.cpp:171
-msgid "Cactus"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:385
-#, fuzzy
-msgid "Platforms"
-msgstr "平台 - "
-
-#: ../../src/level/level_editor.cpp:386
-#: ../../src/overworld/world_editor.cpp:174
-msgid "Pipes"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:387
-msgid "Pipe Connectors"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:388
-msgid "Library"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:389
-#: ../../src/overworld/world_editor.cpp:172
-msgid "Hills"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:390
-msgid "Signs"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:391
-msgid "Ropes"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:392
-msgid "Doors"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:393
-#: ../../src/overworld/world_editor.cpp:178
-msgid "Bones"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:394
-msgid "Windows"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:395
-msgid "Candy"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:396
-msgid "Stuff"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:397
-#: ../../src/overworld/world_editor.cpp:180
-#, fuzzy
-msgid "---Objects---"
-msgstr "物體： "
-
-#: ../../src/level/level_editor.cpp:398
-msgid "Boxes"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:399
-msgid "Enemies"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:400
-#: ../../src/overworld/world_editor.cpp:179
-msgid "Special"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:401
-#: ../../src/overworld/world_editor.cpp:182
-msgid "---Functions---"
-msgstr ""
-
-#: ../../src/level/level_editor.cpp:405
-#, fuzzy
-msgid "Save as"
-msgstr "儲存 "
-
-#: ../../src/level/level_editor.cpp:407
-#, fuzzy
-msgid "Settings"
-msgstr "等級設定 ： "
-
-#: ../../src/level/level_manager.cpp:472
-msgid "Invalid target level."
-msgstr ""
-
-#: ../../src/enemies/rokko.cpp:581 ../../src/enemies/flyon.cpp:567
+#: ../../src/enemies/flyon.cpp:567 ../../src/enemies/rokko.cpp:581
 #: ../../src/enemies/thromp.cpp:686
 msgid "Direction it moves into."
 msgstr ""
 
-#: ../../src/enemies/rokko.cpp:585 ../../src/enemies/thromp.cpp:705
-msgid "Speed when activated"
-msgstr "啟動時的速度"
+#: ../../src/enemies/flyon.cpp:571 ../../src/enemies/eato.cpp:288
+#: ../../src/enemies/thromp.cpp:690
+msgid "Image directory"
+msgstr "圖像目錄"
+
+#: ../../src/enemies/flyon.cpp:571 ../../src/enemies/eato.cpp:288
+#: ../../src/enemies/thromp.cpp:690
+msgid "Directory containing the images"
+msgstr "包含圖像的目錄"
+
+#: ../../src/enemies/flyon.cpp:578 ../../src/enemies/gee.cpp:577
+#: ../../src/enemies/thromp.cpp:697 ../../src/objects/moving_platform.cpp:962
+msgid "Distance"
+msgstr "距離"
+
+#: ../../src/enemies/flyon.cpp:578
+msgid "Movable Distance into its direction"
+msgstr "到它的方向可移動的距離"
+
+#: ../../src/enemies/flyon.cpp:586 ../../src/enemies/rokko.cpp:585
+#: ../../src/enemies/static.cpp:337 ../../src/enemies/thromp.cpp:705
+#: ../../src/objects/moving_platform.cpp:970
+msgid "Speed"
+msgstr "速度"
+
+#: ../../src/enemies/flyon.cpp:586
+msgid "Initial speed when jumping out"
+msgstr "跳躍時的最初速度"
 
 #: ../../src/enemies/gee.cpp:577
 msgid "Movable distance"
@@ -2070,13 +1812,38 @@ msgstr "每次移動的距離"
 msgid "Electro"
 msgstr "載入超世界"
 
+#: ../../src/enemies/gee.cpp:684 ../../src/objects/lava.cpp:55
+msgid "Lava"
+msgstr ""
+
 #: ../../src/enemies/gee.cpp:687
 msgid "Venom"
 msgstr ""
 
+#: ../../src/enemies/rokko.cpp:585 ../../src/enemies/thromp.cpp:705
+msgid "Speed when activated"
+msgstr "啟動時的速度"
+
+#: ../../src/enemies/static.cpp:315 ../../src/objects/sprite.cpp:1454
+msgid "Image"
+msgstr "圖像"
+
 #: ../../src/enemies/static.cpp:322
 msgid "Rotation Speed"
 msgstr "旋轉速度"
+
+#: ../../src/enemies/static.cpp:330 ../../src/objects/moving_platform.cpp:943
+#: ../../src/objects/level_exit.cpp:549
+msgid "Path Identifier"
+msgstr ""
+
+#: ../../src/enemies/static.cpp:330 ../../src/objects/moving_platform.cpp:943
+msgid "Name of the Path to move along."
+msgstr ""
+
+#: ../../src/enemies/static.cpp:337 ../../src/objects/moving_platform.cpp:970
+msgid "Maximum speed"
+msgstr "最高速度"
 
 #: ../../src/enemies/static.cpp:357
 #, fuzzy
@@ -2095,41 +1862,6 @@ msgstr "距離"
 #: ../../src/enemies/static.cpp:361
 msgid "Resistance against Ice (0.0-1.0)"
 msgstr ""
-
-#: ../../src/enemies/beetle.cpp:281
-msgid "Color"
-msgstr ""
-
-#: ../../src/enemies/beetle.cpp:281
-msgid "Color."
-msgstr ""
-
-#: ../../src/enemies/flyon.cpp:571 ../../src/enemies/thromp.cpp:690
-#: ../../src/enemies/eato.cpp:288
-msgid "Image directory"
-msgstr "圖像目錄"
-
-#: ../../src/enemies/flyon.cpp:571 ../../src/enemies/thromp.cpp:690
-#: ../../src/enemies/eato.cpp:288
-msgid "Directory containing the images"
-msgstr "包含圖像的目錄"
-
-#: ../../src/enemies/flyon.cpp:578
-msgid "Movable Distance into its direction"
-msgstr "到它的方向可移動的距離"
-
-#: ../../src/enemies/flyon.cpp:586
-msgid "Initial speed when jumping out"
-msgstr "跳躍時的最初速度"
-
-#: ../../src/enemies/thromp.cpp:697
-msgid "Detection distance into its direction"
-msgstr "在這方向偵測路程"
-
-#: ../../src/enemies/pip.cpp:369
-#, fuzzy
-msgid "Starting direction"
-msgstr "最初的方向"
 
 #: ../../src/enemies/bosses/turtle_boss.cpp:1010
 msgid "Hits"
@@ -2169,9 +1901,26 @@ msgstr "等級"
 msgid "End the level if it is killed."
 msgstr ""
 
+#: ../../src/enemies/pip.cpp:369
+#, fuzzy
+msgid "Starting direction"
+msgstr "最初的方向"
+
+#: ../../src/enemies/beetle.cpp:281
+msgid "Color"
+msgstr ""
+
+#: ../../src/enemies/beetle.cpp:281
+msgid "Color."
+msgstr ""
+
 #: ../../src/enemies/furball.cpp:820
 msgid "Boss"
 msgstr ""
+
+#: ../../src/enemies/thromp.cpp:697
+msgid "Detection distance into its direction"
+msgstr "在這方向偵測路程"
 
 #: ../../src/enemies/beetle_barrage.cpp:356
 msgid "Initial beetle flying distance"
@@ -2194,230 +1943,477 @@ msgstr ""
 msgid "Number of beetles spit out at a time"
 msgstr ""
 
-#. TRANS: Prompt issued in the game console
-#: ../../src/scripting/scripting.cpp:104
-msgid "(console)"
+#: ../../src/objects/enemystopper.cpp:61
+msgid "Enemystopper"
+msgstr "敵人阻止者"
+
+#: ../../src/objects/box.cpp:53
+msgid "Box"
 msgstr ""
 
-#: ../../src/scene/01_prologue.cpp:36
+#: ../../src/objects/box.cpp:681
+msgid "Useable Count"
+msgstr "可使用的秒數"
+
+#: ../../src/objects/box.cpp:692 ../../src/objects/box.cpp:699
+#: ../../src/objects/box.cpp:735
+msgid "Ghost"
+msgstr "鬼"
+
+#: ../../src/objects/box.cpp:693 ../../src/objects/box.cpp:702
+#: ../../src/objects/box.cpp:738
+msgid "Semi Massive"
+msgstr ""
+
+#: ../../src/objects/box.cpp:709
+msgid "Invisible"
+msgstr "暗藏的"
+
+#: ../../src/objects/box.cpp:709
 msgid ""
-"The sinking sun sent out its last colourful beams over the Eastern Desert "
-"when a single individual was making his way through the ups and downs of the "
-"sandy dunes."
+"Massive is invisible until activated.\n"
+"Ghost is only visible and activateable if in ghost mode.\n"
+"Semi Massive is like Massive but only touchable in the activation direction."
 msgstr ""
 
-#: ../../src/scene/01_prologue.cpp:37
+#: ../../src/objects/box.cpp:753
+#, fuzzy
+msgid "(Invisible)"
+msgstr "暗藏的"
+
+#: ../../src/objects/box.cpp:756
+msgid "(Ghost block)"
+msgstr ""
+
+#: ../../src/objects/box.cpp:759
+msgid "(Invisible Semi Massive)"
+msgstr ""
+
+#: ../../src/objects/moving_platform.cpp:939 ../../src/objects/path.cpp:745
+msgid "Move Type"
+msgstr ""
+
+#: ../../src/objects/moving_platform.cpp:939
+msgid "Movement type."
+msgstr ""
+
+#: ../../src/objects/moving_platform.cpp:962
 msgid ""
-"When he reached the top of the highest dune, he gazed around, but to only "
-"see sand followed by more sand, by even more "
-"[colour='FFFFF000']sand[colour='FFFFFFFF']."
+"Movable distance into its direction if type is line or radius if circle."
 msgstr ""
 
-#: ../../src/scene/01_prologue.cpp:38
+#: ../../src/objects/moving_platform.cpp:978
+msgid "Touch time"
+msgstr "觸摸時間"
+
+#: ../../src/objects/moving_platform.cpp:978
+msgid "Time when touched until shaking starts"
+msgstr "觸碰到開始搖動的時間"
+
+#: ../../src/objects/moving_platform.cpp:986
+msgid "Shake time"
+msgstr "搖擺時間"
+
+# falling, not failing...
+#: ../../src/objects/moving_platform.cpp:986
+msgid "Time it's shaking until falling"
+msgstr "從晃動到落下的時間"
+
+#: ../../src/objects/moving_platform.cpp:994
+msgid "Touch move time"
+msgstr "觸碰移動時間"
+
+#: ../../src/objects/moving_platform.cpp:994
+msgid "If set does not move until this time has elapsed after touched"
+msgstr "如果設定，觸摸後無法移動直到時間消逝"
+
+#: ../../src/objects/moving_platform.cpp:1002
+msgid "Hor image count"
+msgstr "計算水平圖像"
+
+#: ../../src/objects/moving_platform.cpp:1002
+msgid "Horizontal middle image count"
+msgstr "計算水平中間的圖像"
+
+#: ../../src/objects/moving_platform.cpp:1012
+msgid "Image top left"
+msgstr "圖像左上方"
+
+#: ../../src/objects/moving_platform.cpp:1019
+msgid "Image top middle"
+msgstr "圖像上方中間"
+
+#: ../../src/objects/moving_platform.cpp:1026
+msgid "Image top right"
+msgstr "圖像右上方"
+
+#: ../../src/objects/moving_platform.cpp:1229
+msgid "Falling "
+msgstr "下降的 "
+
+#: ../../src/objects/moving_platform.cpp:1232
+msgid "Delayed "
+msgstr "延誤 "
+
+#: ../../src/objects/moving_platform.cpp:1235
+msgid "Moving "
+msgstr "移動 "
+
+#: ../../src/objects/moving_platform.cpp:1238
+msgid "Platform - "
+msgstr "平台 - "
+
+#: ../../src/objects/level_entry.cpp:133 ../../src/objects/level_exit.cpp:208
+msgid " Beam"
+msgstr "光束運送"
+
+#: ../../src/objects/level_entry.cpp:136 ../../src/objects/level_exit.cpp:211
+msgid " Warp"
+msgstr " 扭曲"
+
+#: ../../src/objects/level_entry.cpp:369
+msgid "The direction to come out"
+msgstr "出現方向"
+
+#: ../../src/objects/level_entry.cpp:374
+msgid "Name for identification"
+msgstr "辨識用名稱"
+
+#: ../../src/objects/text_box.cpp:64
+#, fuzzy
+msgid "Text Box"
+msgstr "文字盒"
+
+#: ../../src/objects/text_box.cpp:239
+msgid "Text"
+msgstr "內文"
+
+#: ../../src/objects/text_box.cpp:239
+msgid "Text to display when activated"
+msgstr "啟動時要顯示的文"
+
+#: ../../src/objects/path.cpp:482
+msgid "Path"
+msgstr ""
+
+#: ../../src/objects/path.cpp:712
+msgid "Identifier"
+msgstr ""
+
+#: ../../src/objects/path.cpp:712
 msgid ""
-"He took out a map, but with the stars not yet visible on the darkening sky "
-"there was no means of orientation in this infinite sea of equally hostile "
-"sand dunes."
+"Identifier name of the Path. This is needed for objects that can link to "
+"this."
 msgstr ""
 
-#: ../../src/overworld/world_waypoint.cpp:126
-msgid "Waypoint"
-msgstr "路點"
-
-#: ../../src/overworld/world_waypoint.cpp:487
-#: ../../src/overworld/world_waypoint.cpp:491
-#: ../../src/overworld/world_waypoint.cpp:617
-msgid "Level"
-msgstr "等級"
-
-#: ../../src/overworld/world_waypoint.cpp:488
-#: ../../src/overworld/world_waypoint.cpp:494
-msgid "World"
-msgstr "世界"
-
-#: ../../src/overworld/world_waypoint.cpp:498
-msgid "Type"
-msgstr "類型"
-
-#: ../../src/overworld/world_waypoint.cpp:498
-msgid "Destination type"
-msgstr "目標類型"
-
-#: ../../src/overworld/world_waypoint.cpp:502
-msgid "Destination"
-msgstr "目標"
-
-#: ../../src/overworld/world_waypoint.cpp:502
-msgid "Destination level or world"
+#: ../../src/objects/path.cpp:729
+msgid "Show Line"
 msgstr ""
 
-#: ../../src/overworld/world_waypoint.cpp:519
-msgid "Backward Direction"
-msgstr "向後"
-
-#: ../../src/overworld/world_waypoint.cpp:534
-msgid "Forward Direction"
-msgstr "向前"
-
-#: ../../src/overworld/world_waypoint.cpp:551
-msgid "Default Access"
-msgstr "預設權限"
-
-#: ../../src/overworld/world_waypoint.cpp:551
-msgid "Enable if the Waypoint should be always accessible."
+#: ../../src/objects/path.cpp:729
+msgid "Wether or not to show the path's moving line ingame."
 msgstr ""
 
-#: ../../src/overworld/world_waypoint.cpp:558
-#, fuzzy
-msgid "Waypoint Exit"
-msgstr "路點"
-
-#: ../../src/overworld/world_waypoint.cpp:558
-msgid "Select the waypoint exit to edit."
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:562
-#: ../../src/overworld/world_waypoint.cpp:564
-#, fuzzy
-msgid "New Exit"
-msgstr "離開"
-
-#: ../../src/overworld/world_waypoint.cpp:564
-#, fuzzy
-msgid "Create a new exit by clicking."
-msgstr "建立一個新等級"
-
-#: ../../src/overworld/world_waypoint.cpp:568
-#: ../../src/overworld/world_waypoint.cpp:570
-#, fuzzy
-msgid "Delete Exit"
-msgstr "刪除"
-
-#: ../../src/overworld/world_waypoint.cpp:570
-msgid "Delete the currently selected exit by clicking."
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:584
-#, fuzzy
-msgid "Leave direction"
-msgstr "新增方向"
-
-#: ../../src/overworld/world_waypoint.cpp:584
-msgid "Direction key to press for leaving the waypoint for this exit"
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:589
-#, fuzzy
-msgid "Level Exit"
-msgstr "等极入口"
-
-#: ../../src/overworld/world_waypoint.cpp:589
-msgid "Name of the level exit in the level that activates this waypoint exit."
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:594
-#, fuzzy
-msgid "Line start UID"
-msgstr "劃起點線"
-
-#: ../../src/overworld/world_waypoint.cpp:594
-msgid "UID of the line start point to set Alex onto when taking this exit."
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:599
-#: ../../src/overworld/world_waypoint.cpp:601
-#: ../../src/overworld/world_waypoint.cpp:769
-#: ../../src/overworld/world_waypoint.cpp:783
-msgid "Locked"
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:600
-#: ../../src/overworld/world_waypoint.cpp:771
-msgid "Unlocked"
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:604
-msgid "Lock state"
-msgstr ""
-
-#: ../../src/overworld/world_waypoint.cpp:604
+#: ../../src/objects/path.cpp:745
 msgid ""
-"Is this exit locked by default? PLEASE also set access to enabled on the "
-"target waypoint if you unlock by default!"
+"Movement type. Mirror moves forth and back and rewind starts from the "
+"beginning again."
 msgstr ""
 
-#: ../../src/overworld/world_layer.cpp:50
-msgid "Line Start Point"
-msgstr "劃起點線"
+#: ../../src/objects/path.cpp:757
+msgid "Segment"
+msgstr ""
 
-#: ../../src/overworld/world_layer.cpp:54
-msgid "Line End Point"
-msgstr "劃終點線"
+#: ../../src/objects/path.cpp:757
+msgid "Select the Segment to edit."
+msgstr ""
 
-#: ../../src/overworld/world_layer.cpp:289
-msgid "Waypoint origin"
-msgstr "原始起點"
+#: ../../src/objects/path.cpp:761
+msgid "Add a Segment after the selected one."
+msgstr ""
 
-#: ../../src/overworld/world_editor.cpp:67
-msgid "Create a new World"
-msgstr "建立新世界"
+#: ../../src/objects/path.cpp:763
+msgid "Add"
+msgstr ""
 
-#: ../../src/overworld/world_editor.cpp:67
-#: ../../src/overworld/world_editor.cpp:94
-#: ../../src/overworld/world_editor.cpp:98
+#: ../../src/objects/path.cpp:768
+msgid "Delete the selected Segment."
+msgstr ""
+
+#: ../../src/objects/path.cpp:775
+msgid "Pos X1"
+msgstr ""
+
+#: ../../src/objects/path.cpp:775
+msgid "Line position X1"
+msgstr ""
+
+#: ../../src/objects/path.cpp:783
+msgid "Y1"
+msgstr ""
+
+#: ../../src/objects/path.cpp:783
+msgid "Line position Y1"
+msgstr ""
+
+#: ../../src/objects/path.cpp:791
+msgid "Pos X2"
+msgstr ""
+
+#: ../../src/objects/path.cpp:791
+msgid "Line position X2"
+msgstr ""
+
+#: ../../src/objects/path.cpp:799
+msgid "Y2"
+msgstr ""
+
+#: ../../src/objects/path.cpp:799
+msgid "Line position Y2"
+msgstr ""
+
+#: ../../src/objects/goldpiece.cpp:106
 #, fuzzy
-msgctxt "world"
-msgid "Name"
+msgid "Red Falling Jewel"
+msgstr "下降的 "
+
+#: ../../src/objects/goldpiece.cpp:112
+#, fuzzy
+msgid "Falling Jewel"
+msgstr "下降的 "
+
+#: ../../src/objects/goldpiece.cpp:119
+msgid "Red Jewel"
+msgstr ""
+
+#: ../../src/objects/goldpiece.cpp:125 ../../src/objects/bonusbox.cpp:466
+#: ../../src/objects/bonusbox.cpp:488 ../../src/objects/bonusbox.cpp:595
+msgid "Jewel"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:79 ../../src/objects/bonusbox.cpp:152
+#, fuzzy
+msgid "Bonusbox Empty"
+msgstr "空盒子"
+
+#: ../../src/objects/bonusbox.cpp:161
+#, fuzzy
+msgid "Bonusbox Berry"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:165
+#, fuzzy
+msgid "Bonusbox Fire berry"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:169
+#, fuzzy
+msgid "Bonusbox Ice berry"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:173
+#, fuzzy
+msgid "Bonusbox Ghost berry"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:177
+#, fuzzy
+msgid "Bonusbox 1-Up berry"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:181
+#, fuzzy
+msgid "Bonusbox Lemon"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:193
+msgid "Bonusbox Poisonous berry"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:241
+#, fuzzy
+msgid "Bonusbox Jewel"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:245
+#, fuzzy
+msgid "Bonusbox Red Jewel"
+msgstr "紅利盒 : "
+
+#: ../../src/objects/bonusbox.cpp:453
+msgid "Animation"
+msgstr "生(指狀態)"
+
+#: ../../src/objects/bonusbox.cpp:453
+msgid ""
+"Use the Power animation if the box has a good or needed item for this level"
+msgstr "如果這盒子有這等級需要的東西使用激勵力量"
+
+#: ../../src/objects/bonusbox.cpp:460 ../../src/objects/bonusbox.cpp:470
+#: ../../src/objects/bonusbox.cpp:577 ../../src/objects/powerup.cpp:224
+msgid "Berry"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:461 ../../src/objects/bonusbox.cpp:473
+#: ../../src/objects/bonusbox.cpp:580
+msgid "Fire berry"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:462 ../../src/objects/bonusbox.cpp:476
+#: ../../src/objects/bonusbox.cpp:583 ../../src/objects/powerup.cpp:236
+msgid "Ice berry"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:463 ../../src/objects/bonusbox.cpp:479
+#: ../../src/objects/bonusbox.cpp:586 ../../src/objects/powerup.cpp:240
+#, fuzzy
+msgid "Ghost berry"
+msgstr "鬼"
+
+#: ../../src/objects/bonusbox.cpp:464 ../../src/objects/bonusbox.cpp:482
+#: ../../src/objects/bonusbox.cpp:589
+msgid "1-UP berry"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:465 ../../src/objects/bonusbox.cpp:485
+#: ../../src/objects/bonusbox.cpp:592 ../../src/objects/star.cpp:64
+msgid "Lemon"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:467 ../../src/objects/bonusbox.cpp:491
+#: ../../src/objects/bonusbox.cpp:598 ../../src/objects/powerup.cpp:232
+msgid "Poisonous berry"
+msgstr ""
+
+#: ../../src/objects/bonusbox.cpp:501
+msgid "The item that gets spawned"
+msgstr "菌種項目"
+
+#: ../../src/objects/bonusbox.cpp:517
+msgid "Force item"
+msgstr "強迫項目"
+
+#: ../../src/objects/bonusbox.cpp:517
+msgid "Force best available item when activated"
+msgstr "啟動時強迫最適合的項目"
+
+#: ../../src/objects/bonusbox.cpp:527
+#, fuzzy
+msgid "Jewel color"
+msgstr "金色"
+
+#: ../../src/objects/bonusbox.cpp:527
+#, fuzzy
+msgid "Jewel color if the item is a jewel"
+msgstr "金幣的項目就呈現金色"
+
+#: ../../src/objects/crate.cpp:59
+msgid "Crate"
+msgstr ""
+
+#: ../../src/objects/secret_area.cpp:176
+msgid "You found a secret area!"
+msgstr ""
+
+#: ../../src/objects/spinbox.cpp:49
+msgid "Spinbox"
+msgstr "旋轉盒"
+
+#: ../../src/objects/powerup.cpp:228
+msgid "Life berry"
+msgstr ""
+
+#: ../../src/objects/powerup.cpp:449
+msgid "Fireberry"
+msgstr ""
+
+#: ../../src/objects/powerup.cpp:553
+#, fuzzy
+msgid "Cookie (3-UP)"
+msgstr "月亮 (3-UP)"
+
+#: ../../src/objects/level_exit.cpp:485
+msgid "Direction to move in"
+msgstr "移動的方向"
+
+#: ../../src/objects/level_exit.cpp:510
+msgid "Motion"
+msgstr ""
+
+#: ../../src/objects/level_exit.cpp:510
+msgid "Camera Motion"
+msgstr ""
+
+#: ../../src/objects/level_exit.cpp:514
+msgid "Destination Level"
+msgstr "目標等級"
+
+#: ../../src/objects/level_exit.cpp:514
+msgid ""
+"Name of the level that should be entered. If empty uses the current level."
+msgstr "輸入登入等級名稱。若空白，使用目前等級。"
+
+#: ../../src/objects/level_exit.cpp:521
+msgid "Destination Entry"
+msgstr "通往終點"
+
+#: ../../src/objects/level_exit.cpp:521
+msgid ""
+"Name of the Entry in the destination level. If empty the entry point is the "
+"player start position."
+msgstr "在目的等級裡的入口名稱。如果沒有指定，入口是遊戲起點。"
+
+#: ../../src/objects/level_exit.cpp:528
+#, fuzzy
+msgid "Return Level"
+msgstr "要清除等級嗎？"
+
+#: ../../src/objects/level_exit.cpp:528
+#, fuzzy
+msgid "Name of the level that should be pushed onto return stack."
+msgstr "輸入登入等級名稱。若空白，使用目前等級。"
+
+#: ../../src/objects/level_exit.cpp:535
+#, fuzzy
+msgid "Return Entry"
+msgstr "通往終點"
+
+#: ../../src/objects/level_exit.cpp:535
+msgid "Name of the Entry in the return level."
+msgstr ""
+
+#: ../../src/objects/level_exit.cpp:542
+#, fuzzy
+msgid "Exit Name"
 msgstr "名字"
 
-#: ../../src/overworld/world_editor.cpp:86
-#: ../../src/overworld/overworld.cpp:250
-msgid "World "
-msgstr "世界 "
-
-#: ../../src/overworld/world_editor.cpp:98
-msgid "Load an Overworld"
-msgstr "載入超世界"
-
-#: ../../src/overworld/world_editor.cpp:166
-msgid "Way"
+#: ../../src/objects/level_exit.cpp:542
+msgid ""
+"Name of the Exit (use this in the overworld editor to set the path selected "
+"by this exit)."
 msgstr ""
 
-#: ../../src/overworld/world_editor.cpp:167
-msgid "Castle"
+#: ../../src/objects/level_exit.cpp:549
+msgid "Name of the Path to use for the camera movement."
 msgstr ""
 
-#: ../../src/overworld/world_editor.cpp:173
-msgid "Mountains"
+#: ../../src/input/mouse.cpp:1149
+msgid "Snap to object mode enabled"
 msgstr ""
 
-#: ../../src/overworld/world_editor.cpp:175
-msgid "Lakes"
+#: ../../src/input/mouse.cpp:1152
+msgid "Snap to object mode disabled"
 msgstr ""
 
-#: ../../src/overworld/world_editor.cpp:176
-msgid "Bridges"
-msgstr ""
+#: ../../src/input/keyboard.cpp:256
+#, fuzzy
+msgid "Debug mode disabled"
+msgstr "等极編輯器停用"
 
-#: ../../src/overworld/world_editor.cpp:181
-msgid "Generic"
-msgstr ""
-
-#: ../../src/overworld/overworld.cpp:50
-msgid "Unnamed"
-msgstr "未命名"
-
-#: ../../src/overworld/overworld.cpp:71
-msgid "Couldn't save world description "
-msgstr "無法儲存世界說明 "
-
-#: ../../src/overworld/overworld.cpp:245
-msgid "Couldn't save world "
-msgstr "無法儲存世界"
-
-#: ../../src/overworld/overworld.cpp:466
-msgid "Omega Mode unlocks all waypoints"
-msgstr ""
+#: ../../src/input/keyboard.cpp:262
+#, fuzzy
+msgid "Debug mode enabled"
+msgstr "等极編輯器停用"
 
 #~ msgid "Version "
 #~ msgstr "版本 "
