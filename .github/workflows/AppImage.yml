@@ -17,12 +17,22 @@ name: AppImage
 # file the .deb carries as DEBIAN/CHANGELOG, so this adds no second place where
 # a version is written down and could disagree.
 #
-# WHY IT IS BUILT ON BOOKWORM. glibc is backward compatible but not forward
+# WHY IT IS BUILT ON UBUNTU 22.04. glibc is backward compatible but not forward
 # compatible: a binary built against glibc 2.41 will not start on a system with
 # 2.36, but one built against 2.36 runs on both. So an AppImage is built on the
-# OLDEST distribution it should run on, and Debian bookworm is that choice here.
-# Bookworm ships SFML 2, so SFML 3 is compiled from source into the container
-# and bundled - which is what an AppImage is for.
+# OLDEST distribution it should run on. That used to be Debian bookworm (2.36),
+# which excluded Ubuntu 22.04 (2.35) - the most common LTS - and RHEL 9. Ubuntu
+# 22.04 is glibc 2.35, still supported, and has the CMake 3.22 that SFML 3 needs
+# (Debian bullseye, 2.31, is out of support and its package archive has moved).
+# Neither Ubuntu 22.04 nor bookworm ships SFML 3, so it is compiled from source into
+# the container and bundled - which is what an AppImage is for.
+#
+# It was tested by running the extracted AppImage in clean containers of Debian
+# bookworm and trixie, Ubuntu 22.04, 24.04 and 26.04 and Fedora 42 (glibc 2.35 to
+# 2.43), where it starts under a virtual display. The first build failed in ALL of
+# them: it needed libOpenGL.so.0, which only the bundled libGLU asked for and which is
+# not part of every desktop; build-appimage.sh now points the bundled libraries at
+# libGL.so.1 and refuses to pack an AppImage that still needs a GLVND-only library.
 #
 # WHICH ARCHITECTURES. AppImage needs a runtime binary for the CPU it runs on,
 # and those exist for x86_64, aarch64 and armhf only. There is no AppImage for
@@ -40,6 +50,16 @@ name: AppImage
 # tool's squashfs and runs the DYNAMIC binary inside, which qemu-user can run
 # (needs squashfs-tools, added to the deps above). continue-on-error stays as a
 # backstop while that path is proven on a real armhf-emulated run.
+#
+# WHICH DISTRIBUTIONS. One AppImage per CPU, TSC-<version>-<arch>, runs on every system whose
+# glibc is at least 2.35: Ubuntu 22.04 and newer (24.04, 26.04, 26.10), Debian 12 and newer,
+# Raspberry Pi OS bookworm and newer, Fedora, Arch and the rest. For Raspberry Pi OS the same
+# file is also published as TSC-<version>-raspberrypios-<arch> (built once, copied), because that
+# is what people look for there. Raspberry Pi OS 32-bit still runs on the ARMv6 Pi 1 and Zero;
+# Debian's and Ubuntu's armhf is ARMv7, so the armhf AppImage needs a Pi 2 or newer. It does not
+# run on glibc older than 2.35 (Debian 11, Raspberry Pi OS bullseye, RHEL 9). There is no AppImage
+# for ppc64el, riscv64 or s390x - the AppImage project ships a runtime for x86_64, aarch64, armhf
+# and i686 only - so those CPUs get the .deb from Deb.yml.
 #
 # ONE PER CPU, AND THERE IS NO MULTI-CPU ONE. An AppImage begins with a runtime
 # binary for one architecture - that is what the kernel executes when the file is
@@ -62,7 +82,7 @@ on:
         default: true
         type: boolean
       only:
-        description: 'Only these architectures - x86_64 aarch64 armhf - as x86_64,armhf or ["x86_64","armhf"]; empty = all of them'
+        description: 'Only these AppImages - x86_64 aarch64 armhf raspberrypios-armhf raspberrypios-aarch64 - as x86_64,armhf or ["x86_64","armhf"]; empty = all of them'
         required: false
         default: ''
         type: string
@@ -74,7 +94,7 @@ on:
         default: true
         type: boolean
       only:
-        description: 'Only these architectures - x86_64 aarch64 armhf - as x86_64,armhf or ["x86_64","armhf"]; empty = all of them'
+        description: 'Only these AppImages - x86_64 aarch64 armhf raspberrypios-armhf raspberrypios-aarch64 - as x86_64,armhf or ["x86_64","armhf"]; empty = all of them'
         required: false
         default: ''
         type: string
@@ -132,7 +152,7 @@ jobs:
           # once did (it failed to LOAD: "The template is not valid ...
           # Unexpected character encountered while parsing value: v", killing
           # all three architectures before a single step ran).
-          only="$(bash .github/scripts/matrix-only.sh "$IN_ONLY" x86_64 aarch64 armhf)"
+          only="$(bash .github/scripts/matrix-only.sh "$IN_ONLY" x86_64 aarch64 armhf raspberrypios-armhf raspberrypios-aarch64)"
           echo "only=$only" >> "$GITHUB_OUTPUT"
           if [ "$only" = '[]' ]; then
             echo "Building every architecture."
@@ -141,7 +161,7 @@ jobs:
           fi
 
   build:
-    name: AppImage ${{ matrix.arch }}
+    name: AppImage ${{ matrix.selector }}
     needs: version
     runs-on: ${{ matrix.runs_on }}
     continue-on-error: ${{ matrix.emulated || false }}
@@ -150,13 +170,28 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # The generic builds, on Ubuntu 22.04: glibc 2.35, the oldest release that is still supported and
+          # has the CMake 3.22 SFML 3 needs. An AppImage runs on every system whose glibc is at least the
+          # one it was built with, so this one runs on Ubuntu 22.04 and newer (24.04, 26.04, 26.10),
+          # Debian 12 and newer, Raspberry Pi OS bookworm and newer, Fedora, Arch, ...
+          # Raspberry Pi OS is Debian, so the armhf and aarch64 ones are also Raspberry Pi OS's.
           - arch: x86_64
+            selector: x86_64
+            image: ubuntu:22.04
             docker_platform: linux/amd64
             runs_on: ubuntu-24.04
           - arch: aarch64
+            selector: aarch64
+            also: raspberrypios-aarch64
+            aliases: raspberrypios
+            image: ubuntu:22.04
             docker_platform: linux/arm64
             runs_on: ubuntu-24.04-arm
           - arch: armhf
+            selector: armhf
+            also: raspberrypios-armhf
+            aliases: raspberrypios
+            image: ubuntu:22.04
             docker_platform: linux/arm/v7
             runs_on: ubuntu-24.04
             emulated: true
@@ -176,7 +211,7 @@ jobs:
     # dead before its first step. `needs.version.outputs.only` is always valid
     # JSON, and `[]` means all of them.
     env:
-      BUILD_THIS: ${{ needs.version.outputs.only == '[]' || contains(fromJSON(needs.version.outputs.only), matrix.arch) }}
+      BUILD_THIS: ${{ needs.version.outputs.only == '[]' || contains(fromJSON(needs.version.outputs.only), matrix.selector) || (matrix.also && contains(fromJSON(needs.version.outputs.only), matrix.also)) }}
 
     steps:
       - uses: actions/checkout@v4
@@ -193,19 +228,21 @@ jobs:
         if: ${{ env.BUILD_THIS == 'true' }}
         run: |
           set -euo pipefail
-          # TSC_SFML=source: bookworm ships SFML 2, and an AppImage bundles its
+          # TSC_SFML=source: Ubuntu 22.04 ships SFML 2, and an AppImage bundles its
           # libraries, so SFML 3 is compiled into the container.
           docker run --rm --platform ${{ matrix.docker_platform }} \
             -v "$PWD":/src -w /src \
             -e TSC_VERSION='${{ needs.version.outputs.version }}' \
             -e TSC_APPIMAGE_ARCH='${{ matrix.arch }}' \
+            -e TSC_APPIMAGE_DISTRO='${{ matrix.distro }}' \
+            -e TSC_APPIMAGE_ALIASES='${{ matrix.aliases }}' \
             -e TSC_SFML=source \
             -e DEBIAN_FRONTEND=noninteractive \
-            debian:bookworm \
+            '${{ matrix.image }}' \
             bash -c '
               set -euo pipefail
               bash .github/scripts/install-build-dependencies.sh \
-                file wget xz-utils zsync desktop-file-utils squashfs-tools
+                file wget xz-utils zsync desktop-file-utils squashfs-tools patchelf
               bash .github/scripts/build-tsc.sh
               bash .github/scripts/build-appimage.sh
             '
@@ -213,7 +250,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ env.BUILD_THIS == 'true' }}
         with:
-          name: appimage-${{ matrix.arch }}
+          name: appimage-${{ matrix.selector }}
           path: dist/
           if-no-files-found: error
 
@@ -255,11 +292,13 @@ jobs:
           fi
           echo "AppImages built:"
           for b in $built; do echo "  $b"; done
-          for want in x86_64 aarch64 armhf; do
-            case "$built" in
-              *"-$want.AppImage"*) ;;
-              *) echo "::warning::no AppImage for $want - see that build job's log" ;;
-            esac
+          # What a complete release has, from the one list that says so
+          # (expected-assets.sh), instead of a loop here that has to be kept in step with it.
+          # An exact file name each - `*-x86_64.AppImage` would also match the Ubuntu one.
+          version="${{ needs.version.outputs.version }}"
+          bash .github/scripts/expected-assets.sh "$version" | while read -r kind selector asset sums; do
+            [ "$kind" = appimage ] || continue
+            [ -e "assets/$asset" ] || echo "::warning::no $asset ($selector) - see that build job's log"
           done
 
       # The release these AppImages go to. Created if it is not there yet, with

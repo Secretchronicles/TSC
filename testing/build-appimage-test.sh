@@ -84,7 +84,7 @@ fi
 # The AppImage must be checked BEFORE its checksums are written, so a rejected
 # one leaves nothing behind that looks publishable.
 check_line="$(grep -n 'A CHECK THAT CANNOT RUN' "$script" | cut -d: -f1)"
-sum_line="$(grep -n 'md5sum    "\${name}.AppImage"' "$script" | cut -d: -f1)"
+sum_line="$(grep -n 'md5sum    "\${each}.AppImage"' "$script" | cut -d: -f1)"
 if [ -n "$check_line" ] && [ -n "$sum_line" ] && [ "$check_line" -lt "$sum_line" ]; then
     ok "the check runs before the checksums are written"
 else

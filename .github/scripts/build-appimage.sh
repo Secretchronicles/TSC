@@ -21,6 +21,12 @@
 #   TSC_PREFIX    the prefix it was staged under          (default: /usr)
 #   TSC_APPIMAGE_ARCH  x86_64 | aarch64 | armhf  (default: from uname -m)
 #   TSC_OUT       where the AppImage is written           (default: ./dist)
+#   TSC_APPIMAGE_DISTRO   the distribution it was built on and is for, e.g. ubuntu2604;
+#                         it goes into the name: TSC-<version>-<distro>-<arch>
+#                         (default: none - the generic bookworm build, TSC-<version>-<arch>)
+#   TSC_APPIMAGE_ALIASES  space-separated further distro names the SAME file is also
+#                         published under, e.g. raspberrypios: the same file under the
+#                         name people look for it by, built and checked once
 #
 # Produces, in $TSC_OUT, named the way the .deb assets are named - the game,
 # the version, what it runs on - and with the same two checksum files beside it.
@@ -150,26 +156,55 @@ export VERSION="$version"
 export APPIMAGE_EXTRACT_AND_RUN=1
 
 mkdir -p "$out"
-name="TSC-${version}-${arch}"
+name="TSC-${version}-${TSC_APPIMAGE_DISTRO:+${TSC_APPIMAGE_DISTRO}-}${arch}"
 
+# Deploy only; the AppImage is packed below, AFTER the libraries have been made portable.
 "$tools/linuxdeploy/AppRun" \
     --appdir "$appdir" \
     --executable "$appdir/usr/bin/tsc" \
     --desktop-file "$desktop" \
-    --icon-file "$icon" \
-    --output appimage
+    --icon-file "$icon"
 
-# linuxdeploy names its output after the desktop file's Name and $VERSION; the
-# release wants it named like every other asset.
-produced="$(find . -maxdepth 1 -name '*.AppImage' -newer "$appdir" -print -quit)"
-if [ -z "$produced" ]; then
-    produced="$(find . -maxdepth 1 -name '*.AppImage' -print -quit)"
-fi
-if [ -z "$produced" ]; then
-    echo "build-appimage.sh: linuxdeploy produced no AppImage" >&2
+# THE LIBRARIES THE AppImage CARRIES MUST NOT NEED WHAT THE HOST MAY NOT HAVE.
+#
+# linuxdeploy bundles libGLU.so.1, and on Debian and Ubuntu that library is linked against
+# libOpenGL.so.0 - one of the GLVND dispatch libraries, in the package libopengl0. linuxdeploy
+# does not bundle those (they must pair with the host's GL driver), and libopengl0 is not part of
+# every desktop: on a clean Debian bookworm, Debian trixie, Ubuntu 22.04, 24.04, 26.04 and Fedora 42
+# container the AppImage failed with
+#   error while loading shared libraries: libOpenGL.so.0: cannot open shared object file
+# before it drew a frame. tsc itself links libGL.so.1, which exists wherever there is any OpenGL at
+# all and exports every function libOpenGL does, so the bundled libraries are pointed at that.
+# (GLU only calls ordinary OpenGL functions.)
+if ! command -v patchelf >/dev/null 2>&1; then
+    echo "build-appimage.sh: patchelf is required (apt install patchelf): without it the AppImage" \
+         "would need libOpenGL.so.0, which many systems do not have." >&2
     exit 1
 fi
-mv "$produced" "$out/${name}.AppImage"
+while IFS= read -r -d '' lib; do
+    if patchelf --print-needed "$lib" 2>/dev/null | grep -qx 'libOpenGL.so.0'; then
+        patchelf --replace-needed libOpenGL.so.0 libGL.so.1 "$lib"
+        echo "build-appimage.sh: ${lib#$appdir/} needs libGL.so.1 instead of libOpenGL.so.0"
+    fi
+done < <(find "$appdir/usr" -type f \( -name '*.so' -o -name '*.so.*' -o -path '*/bin/*' \) -print0)
+
+# The same, as a check that cannot be forgotten: nothing in the AppImage may need a GLVND-only
+# library that is not inside it.
+glvnd_only='libOpenGL.so.0 libGLdispatch.so.0 libGLX.so.0'
+leaks=""
+while IFS= read -r -d '' lib; do
+    for want in $glvnd_only; do
+        if patchelf --print-needed "$lib" 2>/dev/null | grep -qx "$want" && [ ! -e "$appdir/usr/lib/$want" ]; then
+            leaks="$leaks ${lib#$appdir/}->$want"
+        fi
+    done
+done < <(find "$appdir/usr" -type f \( -name '*.so' -o -name '*.so.*' -o -path '*/bin/*' \) -print0)
+if [ -n "$leaks" ]; then
+    echo "build-appimage.sh: these would not start on a system without the GLVND libraries:$leaks" >&2
+    exit 1
+fi
+
+appimagetool --no-appstream "$appdir" "$out/${name}.AppImage"
 chmod +x "$out/${name}.AppImage"
 
 # Does the packed AppImage actually FIND its game data? This is what the
@@ -214,10 +249,23 @@ elif ! env HOME="${HOME:-/tmp}" "$check/usr/bin/tsc" --print-paths; then
 fi
 rm -rf "$check"
 
+# The same bytes under the other distributions' names (see TSC_APPIMAGE_ALIASES): built and
+# checked once, named for each. Checksum files are per name, as everywhere else.
+names="$name"
+for alias in ${TSC_APPIMAGE_ALIASES:-}; do
+    case "$alias" in *[!a-z0-9]*|"") echo "build-appimage.sh: bad alias '$alias'" >&2; exit 1 ;; esac
+    alias_name="TSC-${version}-${alias}-${arch}"
+    cp "$out/${name}.AppImage" "$out/${alias_name}.AppImage"
+    chmod +x "$out/${alias_name}.AppImage"
+    names="$names $alias_name"
+done
+
 (
     cd "$out"
-    md5sum    "${name}.AppImage" > "${name}.AppImage.md5sum"
-    sha256sum "${name}.AppImage" > "${name}.AppImage.sha256sum"
+    for each in $names; do
+        md5sum    "${each}.AppImage" > "${each}.AppImage.md5sum"
+        sha256sum "${each}.AppImage" > "${each}.AppImage.sha256sum"
+    done
 )
 
 echo "Built $out/${name}.AppImage"

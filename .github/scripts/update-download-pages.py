@@ -56,7 +56,7 @@ CPU = {
 DISTRO = {
     "resolute": "Ubuntu 26.04 Resolute Raccoon",
     "forky": "Debian 14 Forky",
-    "noble": "Ubuntu 24.04 Noble Numbat",
+    "noble": "Ubuntu 26.04 Noble Numbat",
     "jammy": "Ubuntu 22.04 Jammy Jellyfish",
     "bookworm": "Debian 12 Bookworm",
     "bullseye": "Debian 11 Bullseye",
@@ -209,8 +209,31 @@ def arch_key(a):
     return ARCH_ORDER.index(a) if a in ARCH_ORDER else len(ARCH_ORDER)
 
 
+# The AppImage that runs on glibc 2.35 and newer is TSC-<version>-<arch>.AppImage; the same file is
+# also published as TSC-<version>-raspberrypios-<arch>.AppImage (AppImage.yml).
+APPIMAGE_DISTROS = [("raspberrypios", "Raspberry Pi OS")]
+
+
+def split_appimage(key):
+    # "ubuntu2610-aarch64" -> ("ubuntu2610", "aarch64"); "x86_64" -> ("", "x86_64")
+    for distro, _ in APPIMAGE_DISTROS:
+        if key.startswith(distro + "-"):
+            return distro, key[len(distro) + 1:]
+    return "", key
+
+
+def appimage_sort(key):
+    distro, arch = split_appimage(key)
+    names = [d for d, _ in APPIMAGE_DISTROS]
+    # the generic builds first, then by distribution, then 64-bit x86, 64-bit ARM, 32-bit ARM
+    return (names.index(distro) + 1 if distro in names else 0, arch_key(arch))
+
+
 def cpu_label(key):
-    return CPU.get(key, key)
+    distro, arch = split_appimage(key)
+    label = CPU.get(arch, arch)
+    names = dict(APPIMAGE_DISTROS)
+    return "%s - %s" % (names[distro], label) if distro in names else label
 
 
 def build_section(lang, version, tag, tag_url, date, assets, md5, sha, base_url):
@@ -251,7 +274,7 @@ def build_section(lang, version, tag, tag_url, date, assets, md5, sha, base_url)
     # AppImage
     if buckets["appimage"]:
         rows = [row(t, base_url, version, t["p_linux"], cpu_label(k), n, md5, sha)
-                for (k, n) in sorted(buckets["appimage"], key=lambda kn: arch_key(kn[0]))]
+                for (k, n) in sorted(buckets["appimage"], key=lambda kn: appimage_sort(kn[0]))]
         add_table("beta-appimage", t["h_appimage"], rows)
     # Flatpak
     if buckets["flatpak"]:

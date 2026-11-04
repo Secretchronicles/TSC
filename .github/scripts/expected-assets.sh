@@ -61,9 +61,13 @@ for distro in resolute forky; do
     echo "deb scripts-${distro} ${distro}-build-deb.zip nosums"
 done
 
-# AppImage.yml
+# AppImage.yml: the AppImage of each CPU (built on Ubuntu 22.04, runs on glibc 2.35 and newer),
+# and the same file under the Raspberry Pi OS name for the two ARM ones. The selector is the matrix entry's `selector`, which the workflow's `only` accepts.
 for arch in x86_64 aarch64 armhf; do
     echo "appimage ${arch} TSC-${v}-${arch}.AppImage sums"
+done
+for arch in aarch64 armhf; do
+    echo "appimage raspberrypios-${arch} TSC-${v}-raspberrypios-${arch}.AppImage sums"
 done
 
 # Flatpak.yml
