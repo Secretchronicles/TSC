@@ -297,44 +297,52 @@ void cJoystick::Handle_Motion(const sf::Event& evt)
 
     // Right change
     if (m_right != wasRight) {
-        sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_right, sf::Keyboard::Scancode::Unknown, false, false, false, false});
         if (m_right) {
+            sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_right, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Down(newevt);
         }
         else {
+            // A release must be a KeyReleased event: cKeyboard::Key_Up() reads it as one.
+            sf::Event newevt(sf::Event::KeyReleased{pPreferences->m_key_right, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Up(newevt);
         }
     }
 
     // Left change
     if (m_left != wasLeft) {
-        sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_left, sf::Keyboard::Scancode::Unknown, false, false, false, false});
         if (m_left) {
+            sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_left, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Down(newevt);
         }
         else {
+            // A release must be a KeyReleased event: cKeyboard::Key_Up() reads it as one.
+            sf::Event newevt(sf::Event::KeyReleased{pPreferences->m_key_left, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Up(newevt);
         }
     }
 
     // Up change
     if (m_up != wasUp) {
-        sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_up, sf::Keyboard::Scancode::Unknown, false, false, false, false});
         if (m_up) {
+            sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_up, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Down(newevt);
         }
         else {
+            // A release must be a KeyReleased event: cKeyboard::Key_Up() reads it as one.
+            sf::Event newevt(sf::Event::KeyReleased{pPreferences->m_key_up, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Up(newevt);
         }
     }
 
     // Down change
     if (m_down != wasDown) {
-        sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_down, sf::Keyboard::Scancode::Unknown, false, false, false, false});
         if (m_down) {
+            sf::Event newevt(sf::Event::KeyPressed{pPreferences->m_key_down, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Down(newevt);
         }
         else {
+            // A release must be a KeyReleased event: cKeyboard::Key_Up() reads it as one.
+            sf::Event newevt(sf::Event::KeyReleased{pPreferences->m_key_down, sf::Keyboard::Scancode::Unknown, false, false, false, false});
             pKeyboard->Key_Up(newevt);
         }
     }

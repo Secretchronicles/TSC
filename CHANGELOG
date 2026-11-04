@@ -1,5 +1,18 @@
 2026-11-04  Lauri Ojansivu  <x@xet7.org>
 
+	* Fix: A gamepad aborted the game with "Assertion `keyReleased'
+		failed" (keyboard.cpp, cKeyboard::Key_Up) as soon as a direction
+		that had been pressed was let go (#734). TSC turns joystick input
+		into keyboard events, and cJoystick::Handle_Motion() built a
+		sf::Event::KeyPressed for the release as well as for the press,
+		while Key_Up() reads its argument as a KeyReleased; in a build
+		without assertions the null pointer was dereferenced instead.
+		The four directions now release with a KeyReleased, as
+		Handle_Button_Up_Event() always did. The new test
+		testing/joystick-key-events-test.sh checks, over all of src/,
+		that every key event built in the code has the type its call
+		reads, and fails on the old code. (by Lauri Ojansivu)
+
 	* Fix: The AppImage did not start on Raspberry Pi OS, nor on any
 		other Linux that does not happen to have libopengl0 installed.
 		linuxdeploy bundled libGLU.so.1, which is linked against
