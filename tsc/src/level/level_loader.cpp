@@ -490,7 +490,11 @@ std::vector<cSprite*> cLevelLoader::Create_Sprites_From_XML_Tag(const std::strin
 
     // If image not available display placeholder
     if (!p_sprite->m_start_image) {
-        p_sprite->Set_Image(pVideo->Get_Surface(utf8_to_path("game/image_not_found.png")), true, true);
+        // Get_Surface() returns the surface the image manager owns and hands to every caller, so the
+        // sprite must NOT take ownership of it (the third argument, del_img): each sprite with a
+        // missing image would delete the one shared placeholder, and the second delete - and the
+        // image manager's own at shutdown - read freed memory (#725).
+        p_sprite->Set_Image(pVideo->Get_Surface(utf8_to_path("game/image_not_found.png")), true);
         p_sprite->Set_Massive_Type(MASS_PASSIVE); // It sholdn't hinder gameplay
         p_sprite->Set_Active(false); // only display it in the editor
     }

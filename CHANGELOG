@@ -1,5 +1,21 @@
 2026-11-04  Lauri Ojansivu  <x@xet7.org>
 
+	* Fix: Dying in Mountain Trials crashed the game with an
+		AddressSanitizer "heap-use-after-free ... in
+		cGL_Surface::~cGL_Surface()" (#725). The level loader puts the
+		"image not found" placeholder on every sprite whose image is
+		missing, and it did so with Set_Image(..., true, true): the last
+		argument makes the sprite delete the surface when it dies, but
+		cVideo::Get_Surface() returns the one surface the image manager
+		owns, so every such sprite owned the same placeholder. Leaving the
+		level deleted it with the first of them and deleted it again with
+		the next (and the image manager did once more at shutdown). The
+		sprite no longer takes ownership. The new test
+		testing/shared-surface-ownership-test.sh finds any Set_Image() that
+		hands a Get_Surface() result to a sprite to delete, and fails on
+		the old line. The report names more crashes than the one it
+		describes; this is the one with a trace. (by Lauri Ojansivu)
+
 	* Fix: A gamepad aborted the game with "Assertion `keyReleased'
 		failed" (keyboard.cpp, cKeyboard::Key_Up) as soon as a direction
 		that had been pressed was let go (#734). TSC turns joystick input
