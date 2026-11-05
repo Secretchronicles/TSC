@@ -14,7 +14,12 @@ name: Windows
 # needs, with cegui and mruby left out on purpose.
 #
 # 64-BIT is the build that works. MSYS2's UCRT64 environment has SFML 3.0.2,
-# which is what TSC needs since the SFML 3 port (#729).
+# which is what TSC needs since the SFML 3 port (#729). Its libxml++ 2.6 has
+# since been delisted from ucrt64.db as well ("target not found:
+# mingw-w64-ucrt-x86_64-libxml++2.6"), while the package itself is still served
+# and still matches what ucrt64 ships (it imports libxml2-16.dll and
+# libglibmm-2.4-1.dll, from the listed libxml2 and glibmm). So win64 installs that
+# one package by URL with `pacman -U`, which checks MSYS2's signature on it.
 #
 # 32-BIT builds against a WeKan-maintained mirror. MSYS2 ended 32-bit support in
 # May 2024: the mingw32 database still carries the TOOLCHAIN (gcc 16.1.0, cmake,
@@ -154,7 +159,8 @@ jobs:
               mingw-w64-ucrt-x86_64-pkgconf
               mingw-w64-ucrt-x86_64-ruby
               mingw-w64-ucrt-x86_64-sfml
-              mingw-w64-ucrt-x86_64-libxml++2.6
+              mingw-w64-ucrt-x86_64-libxml2
+              mingw-w64-ucrt-x86_64-glibmm
               mingw-w64-ucrt-x86_64-boost
               mingw-w64-ucrt-x86_64-glew
               mingw-w64-ucrt-x86_64-glm
@@ -208,6 +214,20 @@ jobs:
           # per-arch package set is matrix.setup_install (win64: everything from
           # ucrt64; win32: only the toolchain - its libraries come next).
           install: ${{ matrix.setup_install }}
+
+      # win64 only: libxml++ 2.6 is delisted from ucrt64.db (see the top of this
+      # file), so `pacman -S` cannot see it; the file is still on repo.msys2.org.
+      # `pacman -U` installs it from there and verifies MSYS2's signature, and
+      # its dependencies (libxml2, glibmm 2.4, cc-libs) are the listed ones
+      # installed above. When ucrt64 drops the file too, this is the line to
+      # point at a mirror, as win32 already does.
+      - name: Install libxml++ 2.6 (delisted from ucrt64)
+        if: ${{ env.BUILD_THIS == 'true' && matrix.msystem == 'UCRT64' }}
+        run: |
+          set -euo pipefail
+          pacman -U --needed --noconfirm \
+            'https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-libxml++2.6-2.42.3-5-any.pkg.tar.zst'
+          pkg-config --modversion libxml++-2.6
 
       # win32 only: MSYS2 dropped 32-bit, so its i686 LIBRARY packages (sfml,
       # boost, glew, freetype, ..., and libxml++2.6) are delisted from mingw32.db

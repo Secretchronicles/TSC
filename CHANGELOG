@@ -1,5 +1,16 @@
 2026-11-05  Lauri Ojansivu  <x@xet7.org>
 
+	* Fix: The win64 build stopped while setting up MSYS2 with "target
+		not found: mingw-w64-ucrt-x86_64-libxml++2.6": MSYS2 dropped
+		libxml++ 2.6 from its ucrt64 database, as it had dropped the
+		32-bit libraries. The package file is still served and still
+		links against what ucrt64 ships (libxml2-16.dll and
+		libglibmm-2.4-1.dll), so win64 installs libxml2 and glibmm from
+		the database and that one package by URL with pacman -U, which
+		checks MSYS2's signature. The new test
+		testing/windows-libxmlpp-test.sh fails on the old workflow.
+		(by Lauri Ojansivu)
+
 	* Fix: The macOS builds stopped at the last link with "Undefined
 		symbols: _CFBundleCopyBundleURL, referenced from: _main in
 		main.cpp.o" on arm64 and x86_64 alike. main() finds the game
