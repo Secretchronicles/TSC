@@ -342,6 +342,17 @@ else()
     find_package(Iconv REQUIRED)
     find_package(LibIntl REQUIRED)
     target_link_libraries(tsc ${Iconv_LIBRARIES} ${LIBINTL_LIBRARIES})
+    # main() finds the game data inside the .app with CFBundleGetMainBundle()
+    # and friends, which are in CoreFoundation. Nothing linked it by name: it
+    # used to arrive through another library's dependencies, and with
+    # -dead_strip_dylibs and the current dependency set it no longer does, so
+    # both macOS jobs ended with
+    #   "_CFBundleCopyBundleURL", referenced from: _main in main.cpp.o
+    #   ld: symbol(s) not found for architecture arm64
+    if (APPLE)
+      find_library(TSC_COREFOUNDATION CoreFoundation REQUIRED)
+      target_link_libraries(tsc ${TSC_COREFOUNDATION})
+    endif()
   endif()
 endif()
 

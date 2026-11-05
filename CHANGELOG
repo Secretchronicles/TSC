@@ -1,3 +1,16 @@
+2026-11-05  Lauri Ojansivu  <x@xet7.org>
+
+	* Fix: The macOS builds stopped at the last link with "Undefined
+		symbols: _CFBundleCopyBundleURL, referenced from: _main in
+		main.cpp.o" on arm64 and x86_64 alike. main() finds the game
+		data inside the .app bundle with CoreFoundation's CFBundle
+		functions, and CMakeLists.txt never named that framework; it used
+		to arrive with another library and no longer does. macOS now
+		finds CoreFoundation and links it. The new test
+		testing/macos-corefoundation-test.sh checks that, that only macOS
+		asks for it, and on a Mac links a program that calls the same
+		functions. (by Lauri Ojansivu)
+
 2026-11-04  Lauri Ojansivu  <x@xet7.org>
 
 	* Fix: Dying in Mountain Trials crashed the game with an
